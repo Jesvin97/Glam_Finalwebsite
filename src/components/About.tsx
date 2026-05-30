@@ -2,7 +2,7 @@
 
   return (
 
-    <section className="about-section">
+    <section className="about-section" id="about">
 
       <div className="about-image">
 
