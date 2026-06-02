@@ -1,0 +1,17 @@
+# Glammore Premium Unisex Salon
+
+Official web platform for Glammore Unisex Salon in Thiruvalla, Kerala.
+
+## Base URL
+https://glammoresalon.in
+
+## Core Routes
+- [/](https://glammoresalon.in/): Homepage with Hero section, About details, 3-service teaser grid, marquee customer testimonials, and direct WhatsApp contact forms.
+- [/services](https://glammoresalon.in/services): Core interactive booking routes containing category filters for 19+ services, package-building selections tag systems, and customized WhatsApp booking checkout.
+- [/blogs](https://glammoresalon.in/blogs): Premium beauty and skincare lifestyle journal powered by dynamic CMS fallbacks.
+
+## Contact & Location
+- **Address:** Club 7 Junction, MC Road, Thiruvalla, Kerala, India
+- **WhatsApp:** +91 9645915329
+- **Social Media:** Instagram (@glammore.unisex.salon), Facebook (glammoresalon), YouTube (@Glammoreunisexsalon)
+- **Official Credits:** Powered by Raphael Group (https://raphaelgroup.in)
