@@ -2,7 +2,7 @@
 
   return (
 
-    <section className="about-section">
+    <section className="about-section" id="about">
 
       <div className="about-image">
 
@@ -16,11 +16,11 @@
       <div className="about-content">
 
         <p className="about-tag">
-          ABOUT GLAMMORE
+          ABOUT GLAM'MORE
         </p>
 
         <h2>
-          Premium Luxury
+          Luxury
           <span className="gold-text">
             {" "}Salon Experience
           </span>

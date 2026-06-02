@@ -1,36 +1,78 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Glammore Premium Unisex Salon — Official Web Platform
 
-## Getting Started
+An elite, high-end web experience crafted for **Glammore Premium Unisex Salon**, located at Club 7 Junction, MC Road, Thiruvalla, Kerala. This platform is built with modern web technologies, boasting a dark gold glassmorphic aesthetic, interactive service packages, and a robust headless CMS architecture.
 
-First, run the development server:
+---
 
+## ✨ Features Implemented
+
+### 1. Dedicated & Interactive Services Showcase (`/services`)
+- **Complete 19+ Service Grid:** Showcases every treatment with customized descriptions, curated visual banners, and dynamic add-to-booking selectors.
+- **Category Filter Tabs:** Smooth filter transitions for Hair Styling, Nail Care, Grooming & Waxing, Skin & Wellness, and Weddings & Events.
+- **Dynamic Bottom Booking Console:** A full-width, glassmorphic bottom panel that slides up elegantly once a service is selected.
+- **Conversational WhatsApp Integration:** Multi-select state compiler that compiles appointment preferences, stylist notes, and selections into a clean conversational template sent straight to WhatsApp (`+91 9645915329`).
+
+### 2. Live Content Management (Sanity.io Studio at `/studio`)
+An embedded administration studio connected to project ID `oewfkbvj`, fully supporting 100% free-tier limits:
+- **Testimonial Manager:** Add and edit customer cards and avatars.
+- **Service Menu Editor:** Control title, description, and dynamic image pathways.
+- **FAQ Accordion Handler:** Update and order accordion cards.
+- **Lifestyle Journal (Blogs) Schema:** Write and publish styling blogs.
+- *Resilient local mock data fallbacks are integrated to guarantee absolute site visual performance even if offline or database empty.*
+
+### 3. Sleek Homepage & Sizing Optimizations
+- **Typography-Based Footer Branding:** Features a luxurious gold serif brand header: `"Glammore Premium Unisex Salon"` with wide tracking and letters.
+- **Unified Visual Flow:** Tightened vertical paddings between the homepage services card grid and the rolling Testimonial marquee decks, making them feel like a single, cohesive experience.
+- **Low-Profile FAQ accordion:** Tighter margins, smaller, clean headers, and centered alignment formatted exactly like the other core sections.
+- **Fully Centered Mobile Footer:** Overrides align copyright notices, links, and powered taglines cleanly on phones.
+
+---
+
+## 🛠️ Technology Stack
+
+- **Core Framework:** Next.js 15+ (App Router, Turbopack dev, React 19)
+- **Styling Engine:** PostCSS with custom variables and Vanilla CSS utility classes (dark gold glassmorphism, responsive grids, Webkit blurs)
+- **Headless CMS:** Sanity.io Studio v3 & `@sanity/image-url` optimization engines
+- **Icons Kit:** React Icons (`fa` / FontAwesome suite)
+
+---
+
+## 🚀 Getting Started
+
+### 1. Clone & Install Dependencies
+Navigate to the project root and run:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Configure Environment variables
+Ensure you have a `.env.local` file containing the Sanity Project configurations:
+```env
+NEXT_PUBLIC_SANITY_PROJECT_ID="oewfkbvj"
+NEXT_PUBLIC_SANITY_DATASET="production"
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 3. Run Development Server
+Start the Turbopack dev server:
+```bash
+npm run dev
+```
+Open [http://localhost:3000](http://localhost:3000) to view it live in your browser with Fast Refresh!
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 4. Build for Production
+Verify typescript compilation, CSS rules, and static routing generations:
+```bash
+npm run build
+```
+This produces an extremely compact, high-speed production bundle with dynamic routes and optimized pre-rendered static pages.
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 📍 Location & Contact
+- **Address:** 📍 Club 7 Junction, MC Road, Thiruvalla, Kerala, India
+- **WhatsApp Support:** 📞 [+91 9645915329](https://wa.me/919645915329)
+- **Facebook:** [Glammore Salon Official](https://www.facebook.com/glammoresalon/)
+- **YouTube:** [@Glammoreunisexsalon](https://www.youtube.com/@Glammoreunisexsalon)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+*Created and maintained by **Raphael Group** — [raphaelgroup.in](https://raphaelgroup.in)*
