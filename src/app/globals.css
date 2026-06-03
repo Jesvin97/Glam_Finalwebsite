@@ -6,6 +6,8 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  max-width: 100vw;
 }
 
 body {
@@ -1304,6 +1306,10 @@ h1, h2, h3,
   .footer-right {
 
     justify-content: center;
+  }
+
+  .testimonials-section {
+    padding: 30px 20px 0px;
   }
 
 }
