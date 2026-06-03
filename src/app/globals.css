@@ -133,7 +133,7 @@ h1, h2, h3,
 
 .hero {
 
-  min-height: 100vh;
+  min-height: 75vh;
 
   display: flex;
 
@@ -141,7 +141,7 @@ h1, h2, h3,
 
   justify-content: space-between;
 
-  padding: 190px 80px 80px;
+  padding: 130px 80px 60px;
 
   gap: 50px;
 
