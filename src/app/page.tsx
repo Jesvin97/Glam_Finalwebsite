@@ -6,6 +6,7 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import FAQ from "@/components/FAQ";
 import Testimonials from "@/components/Testimonials";
+import Photos from "@/components/Photos";
 
 export default function Home() {
 
@@ -22,6 +23,8 @@ export default function Home() {
       <Services />
 
       <Testimonials />
+
+      <Photos />
 
       <FAQ />
     

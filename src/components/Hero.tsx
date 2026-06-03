@@ -37,7 +37,7 @@
       <div className="hero-image">
 
         <img
-          src="/images/model.jpeg"
+          src="/images/model.png"
           alt="Beauty Model"
         />
 
