@@ -55,7 +55,9 @@ export default function Services() {
   return (
     <section className="services" id="services">
       <div className="section-title" style={{ marginBottom: "40px" }}>
-        <p>OUR SERVICES</p>
+        <h2 style={{ fontSize: "52px", textTransform: "uppercase", letterSpacing: "4px", color: "white", fontFamily: "Playfair Display, serif", fontWeight: "700" }}>
+          OUR SERVICES
+        </h2>
       </div>
 
       <div className="services-grid">

@@ -19,9 +19,10 @@ export default function Gallery() {
 
   return (
     <section className="gallery-section">
-      <div className="gallery-header">
-        <span>OUR GALLERY</span>
-        <h2>Beauty In Every Frame</h2>
+      <div className="gallery-header" style={{ marginBottom: "40px", textAlign: "center" }}>
+        <h2 style={{ fontSize: "52px", textTransform: "uppercase", letterSpacing: "4px", color: "white", fontFamily: "Playfair Display, serif", fontWeight: "700" }}>
+          OUR GALLERY
+        </h2>
       </div>
 
       {/* First Row */}

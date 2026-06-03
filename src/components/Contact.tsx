@@ -42,7 +42,7 @@ ${formData.message}`;
       <div className="contact-container">
         {/* LEFT SIDE - FIND US */}
         <div className="map-column" style={{ flex: 1, display: "flex", flexDirection: "column" }}>
-          <h2 style={{ color: "#d4af37", fontSize: "22px", fontWeight: "700", letterSpacing: "2px", textTransform: "uppercase", marginBottom: "25px", fontFamily: "Playfair Display, serif" }}>
+          <h2 style={{ color: "#d4af37", fontSize: "22px", fontWeight: "700", letterSpacing: "2px", textTransform: "uppercase", marginBottom: "25px", fontFamily: "Playfair Display, serif", textAlign: "center" }}>
             Find Us
           </h2>
           <div className="map-container" style={{ flex: 1 }}>
@@ -67,7 +67,7 @@ ${formData.message}`;
 
         {/* RIGHT SIDE - CONTACT US */}
         <div className="form-column" style={{ flex: 1, display: "flex", flexDirection: "column" }}>
-          <h2 style={{ color: "#d4af37", fontSize: "22px", fontWeight: "700", letterSpacing: "2px", textTransform: "uppercase", marginBottom: "25px", fontFamily: "Playfair Display, serif" }}>
+          <h2 style={{ color: "#d4af37", fontSize: "22px", fontWeight: "700", letterSpacing: "2px", textTransform: "uppercase", marginBottom: "25px", fontFamily: "Playfair Display, serif", textAlign: "center" }}>
             Contact Us
           </h2>
           <form

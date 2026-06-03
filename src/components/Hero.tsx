@@ -22,12 +22,8 @@
 
         <div className="hero-buttons">
 
-          <a href="#services" className="primary-btn">
-            Our Services
-          </a>
-
-          <a href="#contact" className="secondary-btn">
-            Book Appointment
+          <a href="/services" className="primary-btn">
+            Book Your Visit
           </a>
 
         </div>

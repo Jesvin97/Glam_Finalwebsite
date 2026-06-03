@@ -133,7 +133,7 @@ h1, h2, h3,
 
 .hero {
 
-  min-height: 75vh;
+  min-height: 65vh;
 
   display: flex;
 
@@ -141,7 +141,7 @@ h1, h2, h3,
 
   justify-content: space-between;
 
-  padding: 130px 80px 60px;
+  padding: 110px 80px 40px;
 
   gap: 50px;
 
@@ -511,6 +511,22 @@ h1, h2, h3,
   gap: 50px;
 
   margin-top: 40px;
+}
+
+@media (min-width: 1025px) {
+  .contact-container {
+    position: relative;
+  }
+  .contact-container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: calc(50% - 1px);
+    width: 2px;
+    background: linear-gradient(180deg, transparent, #d4af37 20%, #d4af37 80%, transparent);
+    z-index: 2;
+  }
 }
 
  /* ========================================
@@ -1297,8 +1313,12 @@ h1, h2, h3,
 ======================================== */
 
 .testimonials-section {
-  padding: 40px 80px 10px;
+  padding: 30px 80px 0px;
   background: linear-gradient(180deg, black, #050505);
+}
+
+.testimonials-section .section-title {
+  margin-bottom: 25px; /* Reduced from 70px to bring the cards closer to the title */
 }
 
 /* TESTIMONIAL MARQUEE LAYOUTS */
@@ -1306,7 +1326,7 @@ h1, h2, h3,
   display: flex;
   flex-direction: column;
   gap: 20px;
-  padding: 40px 0;
+  padding: 20px 0;
   overflow: hidden;
   position: relative;
   width: 100%;
@@ -2207,11 +2227,11 @@ h1, h2, h3,
 ======================================== */
 
 .scroll-left {
-  animation: galleryLeft 40s linear infinite;
+  animation: galleryLeft 30s linear infinite;
 }
 
 .scroll-right {
-  animation: galleryRight 40s linear infinite;
+  animation: galleryRight 30s linear infinite;
 }
 
 @keyframes galleryLeft {

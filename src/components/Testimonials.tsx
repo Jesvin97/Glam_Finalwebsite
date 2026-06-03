@@ -252,10 +252,8 @@ export default function Testimonials() {
   return (
     <section className="testimonials-section" id="testimonials">
       <div className="section-title">
-        <p>TESTIMONIALS</p>
-        <h2>
-          What Our
-          <span className="gold-text"> Clients Say</span>
+        <h2 style={{ fontSize: "52px", textTransform: "uppercase", letterSpacing: "4px", color: "white", fontFamily: "Playfair Display, serif", fontWeight: "700" }}>
+          TESTIMONIALS
         </h2>
       </div>
 
