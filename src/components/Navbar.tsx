@@ -1,9 +1,36 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
+import Lottie from "lottie-react";
+import menuAnimation from "../../animation/navbar.json";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const lottieRef = useRef<any>(null);
+  const hasInitialized = useRef(false);
+
+  useEffect(() => {
+    if (!lottieRef.current) return;
+
+    // On first render, go to frame 0 (hamburger state)
+    if (!hasInitialized.current) {
+      lottieRef.current.goToAndStop(0, true);
+      hasInitialized.current = true;
+      return;
+    }
+
+    if (isMenuOpen) {
+      // Play forward: hamburger → X (frames 0 to 60)
+      lottieRef.current.setDirection(1);
+      lottieRef.current.setSpeed(2.5);
+      lottieRef.current.play();
+    } else {
+      // Play reverse: X → hamburger (frames 60 to 0)
+      lottieRef.current.setDirection(-1);
+      lottieRef.current.setSpeed(2.5);
+      lottieRef.current.play();
+    }
+  }, [isMenuOpen]);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -26,13 +53,19 @@ export default function Navbar() {
             style={{ width: "50px", height: "auto" }}
           />
           <span className="navbar-brand-text">
-            Glam'more Unisex Salon
+            Glam&apos;more Unisex Salon
           </span>
         </a>
 
-        {/* HAMBURGER MENU */}
+        {/* HAMBURGER MENU - Lottie Animation */}
         <div className="hamburger" onClick={toggleMenu}>
-          {isMenuOpen ? "✕" : "☰"}
+          <Lottie
+            lottieRef={lottieRef}
+            animationData={menuAnimation}
+            loop={false}
+            autoplay={false}
+            style={{ width: 36, height: 36 }}
+          />
         </div>
 
         {/* NAVIGATION */}
@@ -79,4 +112,4 @@ export default function Navbar() {
       </div>
     </>
   );
-}
+}

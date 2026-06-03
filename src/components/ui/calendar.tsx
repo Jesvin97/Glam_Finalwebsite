@@ -13,7 +13,7 @@ function Calendar({
   ...props
 }: CalendarProps) {
   return (
-    <div className="calendar-wrapper" style={{ padding: "10px", background: "#0b0b0b", border: "1px solid rgba(212, 175, 55, 0.2)", borderRadius: "16px", display: "inline-block", width: "100%" }}>
+    <div className="calendar-wrapper" style={{ padding: "6px", background: "#0b0b0b", border: "1px solid rgba(212, 175, 55, 0.2)", borderRadius: "16px", display: "inline-block", width: "100%" }}>
       <DayPicker
         showOutsideDays={showOutsideDays}
         className={className}
@@ -24,7 +24,7 @@ function Calendar({
       />
       <style>{`
         .rdp {
-          --rdp-cell-size: 38px;
+          --rdp-cell-size: 30px;
           --rdp-accent-color: #d4af37;
           --rdp-background-color: rgba(212, 175, 55, 0.15);
           margin: 0 auto;
@@ -65,20 +65,20 @@ function Calendar({
         .rdp-head_cell {
           color: #888;
           font-weight: 600;
-          font-size: 13px;
+          font-size: 12px;
         }
         .rdp-caption_label {
           font-weight: 700;
           color: #d4af37;
-          font-size: 16px;
+          font-size: 14px;
         }
         .rdp-caption_dropdowns,
         .rdp-dropdowns {
           display: flex;
-          gap: 8px;
+          gap: 6px;
           justify-content: center;
           align-items: center;
-          margin-bottom: 12px;
+          margin-bottom: 8px;
           width: 100%;
         }
         .rdp-dropdown {
@@ -86,8 +86,8 @@ function Calendar({
           color: white;
           border: 1px solid rgba(212, 175, 55, 0.3);
           border-radius: 6px;
-          padding: 6px 12px;
-          font-size: 14px;
+          padding: 4px 8px;
+          font-size: 12px;
           font-weight: 500;
           font-family: inherit;
           outline: none;
