@@ -22,9 +22,6 @@ export default function Gallery() {
       <div className="gallery-header">
         <span>OUR GALLERY</span>
         <h2>Beauty In Every Frame</h2>
-        <p>
-          Explore our transformations, luxury treatments, and signature looks.
-        </p>
       </div>
 
       {/* First Row */}
