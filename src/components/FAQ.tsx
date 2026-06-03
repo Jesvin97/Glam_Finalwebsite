@@ -64,9 +64,10 @@ export default function FAQ() {
 
   return (
     <section className="faq-section">
-      {/* CENTERED HEADER */}
       <div className="section-title" style={{ marginBottom: "40px", width: "100%", textAlign: "center" }}>
-        <p>FAQ</p>
+        <h2 style={{ fontSize: "52px", textTransform: "uppercase", letterSpacing: "4px", color: "#d4af37", fontFamily: "Playfair Display, serif", fontWeight: "700" }}>
+          FAQ
+        </h2>
       </div>
 
       {/* CENTERED FAQ ACCORDIONS */}
