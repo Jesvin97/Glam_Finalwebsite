@@ -25,8 +25,11 @@ const lato = Lato({
 });
 
 export const metadata: Metadata = {
-  title: "Glam'more | Unisex Salon in Thiruvalla",
-  description: "Top unisex salon in Thiruvalla. World-class bridal makeup, haircuts, nail art, and luxury spa.",
+  title: "Glam'more | Best Unisex Salon & Bridal Makeup in Thiruvalla",
+  description: "Glam'more is the premier unisex salon and spa in Thiruvalla, Kerala. Offering world-class bridal makeup, haircuts, nail art, and luxury wellness therapies.",
+  alternates: {
+    canonical: "https://glammoresalon.in",
+  },
 };
 
 export const viewport = {
