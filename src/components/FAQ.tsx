@@ -64,8 +64,8 @@ export default function FAQ() {
 
   return (
     <section className="faq-section">
-      <div className="section-title" style={{ marginBottom: "40px", width: "100%", textAlign: "center" }}>
-        <h2 style={{ fontSize: "clamp(32px, 6vw, 52px)", textTransform: "uppercase", letterSpacing: "4px", color: "#d4af37", fontFamily: "Playfair Display, serif", fontWeight: "700" }}>
+      <div className="section-title faq-title-container">
+        <h2 className="gold-section-heading">
           FAQ
         </h2>
       </div>

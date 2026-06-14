@@ -45,12 +45,11 @@ export default function Navbar() {
       <nav className="navbar">
 
         {/* LOGO */}
-        <a href="/" className="logo-link" style={{ display: "flex", alignItems: "center", gap: "12px", textDecoration: "none" }}>
+        <a href="/" className="logo-link navbar-logo-link">
           <img
             src="/images/logo.png"
             alt="Glam'more Logo"
-            className="logo-image"
-            style={{ width: "50px", height: "auto" }}
+            className="logo-image navbar-logo-img"
           />
           <span className="navbar-brand-text">
             Glam&apos;more Unisex Salon
@@ -64,7 +63,7 @@ export default function Navbar() {
             animationData={menuAnimation}
             loop={false}
             autoplay={false}
-            style={{ width: 36, height: 36 }}
+            className="navbar-menu-icon"
           />
         </div>
 

@@ -2405,3 +2405,127 @@ h1, h2, h3,
     animation-duration: 15s;
   }
 }
+
+/* ========================================
+   EXTRACTED INLINE STYLES FOR CLEAN SEO/HTML
+======================================== */
+
+.gold-section-heading {
+  font-size: clamp(32px, 6vw, 52px) !important;
+  text-transform: uppercase !important;
+  letter-spacing: 4px !important;
+  color: #d4af37 !important;
+  font-family: 'Playfair Display', serif !important;
+  font-weight: 700 !important;
+}
+
+.navbar-logo-link {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  text-decoration: none !important;
+}
+
+.navbar-logo-img {
+  width: 50px !important;
+  height: auto !important;
+}
+
+.navbar-menu-icon {
+  width: 36px !important;
+  height: 36px !important;
+}
+
+.footer-title {
+  color: #d4af37 !important;
+  font-size: 20px !important;
+  font-weight: 700 !important;
+  letter-spacing: 2px !important;
+  text-transform: uppercase !important;
+  margin-bottom: 8px !important;
+  font-family: 'Playfair Display', serif !important;
+  line-height: 1.4 !important;
+}
+
+.footer-text-muted {
+  color: #aaa !important;
+  font-size: 13px !important;
+  line-height: 1.6 !important;
+  margin-bottom: 4px !important;
+  max-width: 450px !important;
+}
+
+.footer-text-muted-compact {
+  color: #aaa !important;
+  font-size: 13px !important;
+  margin-bottom: 12px !important;
+}
+
+.footer-text-copyright {
+  color: #aaa !important;
+  font-size: 13px !important;
+}
+
+.footer-powered-by {
+  margin-top: 12px !important;
+  font-size: 12px !important;
+  color: #aaa !important;
+}
+
+.footer-powered-by-link {
+  color: #d4af37 !important;
+  text-decoration: underline !important;
+}
+
+.whatsapp-green-text {
+  color: #25D366 !important;
+}
+
+.contact-column-flex {
+  flex: 1 !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.contact-section-title {
+  color: #d4af37 !important;
+  font-size: 22px !important;
+  font-weight: 700 !important;
+  letter-spacing: 2px !important;
+  text-transform: uppercase !important;
+  margin-bottom: 25px !important;
+  font-family: 'Playfair Display', serif !important;
+  text-align: center !important;
+}
+
+.contact-map-wrapper {
+  flex: 1 !important;
+}
+
+.contact-map-iframe {
+  border: 0 !important;
+}
+
+.contact-map-details-desc {
+  margin-bottom: 8px !important;
+}
+
+.contact-map-details-phone {
+  font-weight: 600 !important;
+  color: #d4af37 !important;
+}
+
+.faq-title-container {
+  margin-bottom: 40px !important;
+  width: 100% !important;
+  text-align: center !important;
+}
+
+.photos-title-container {
+  margin-bottom: 40px !important;
+  text-align: center !important;
+}
+
+.services-title-container {
+  margin-bottom: 40px !important;
+}

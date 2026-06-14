@@ -69,7 +69,7 @@ export default function Blog() {
         {displayBlogs.map((blog, index) => {
           // Resolve image path safely (either local string or Sanity dynamic URL)
           const imageUrl = (blog.image && typeof blog.image !== "string")
-            ? urlFor(blog.image).url()
+            ? urlFor(blog.image).width(800).auto('format').quality(80).url()
             : (blog.image || "/images/model.jpeg");
 
           return (

@@ -19,8 +19,8 @@ export default function Gallery() {
 
   return (
     <section className="gallery-section">
-      <div className="gallery-header" style={{ marginBottom: "40px", textAlign: "center" }}>
-        <h2 style={{ fontSize: "clamp(32px, 6vw, 52px)", textTransform: "uppercase", letterSpacing: "4px", color: "#d4af37", fontFamily: "Playfair Display, serif", fontWeight: "700" }}>
+      <div className="gallery-header photos-title-container">
+        <h2 className="gold-section-heading">
           OUR GALLERY
         </h2>
       </div>

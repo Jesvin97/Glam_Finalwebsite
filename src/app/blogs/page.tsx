@@ -1,17 +1,11 @@
-"use client";
+import type { Metadata } from "next";
+import BlogsClient from "./BlogsClient";
 
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import Blogs from "@/components/Blogs";
+export const metadata: Metadata = {
+  title: "Expert Beauty & Lifestyle Blogs | Glam'more Journal",
+  description: "Read the latest trends in luxury hairstyles, wellness therapies, and professional beauty guides from our expert stylists in Thiruvalla.",
+};
 
-export default function BlogsPage() {
-  return (
-    <>
-      <Navbar />
-      <main className="blogs-page">
-        <Blogs />
-      </main>
-      <Footer />
-    </>
-  );
+export default function Page() {
+  return <BlogsClient />;
 }
