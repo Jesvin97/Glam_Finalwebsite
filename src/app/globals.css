@@ -1,3 +1,11 @@
+:root {
+  --color-background-primary: #ffffff;
+  --color-background-secondary: #f9f9f9;
+  --color-border-tertiary: rgba(212, 175, 55, 0.2);
+  --color-text-secondary: #666666;
+  --border-radius-lg: 16px;
+}
+
 * {
   margin: 0;
   padding: 0;
