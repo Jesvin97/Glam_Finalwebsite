@@ -2755,3 +2755,20 @@ h1, h2, h3,
     flex: none !important;
   }
 }
+
+/* ========================================
+   HOMEPAGE TRANSFORMATIONS SECTION
+======================================== */
+
+.transformations-section {
+  padding: 80px 20px !important;
+  background: #050505 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+}
+
+.transformations-heading {
+  text-align: center !important;
+  margin-bottom: 40px !important;
+}
