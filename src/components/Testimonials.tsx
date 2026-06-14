@@ -3,6 +3,7 @@
 import * as React from "react"
 import { client } from "@/sanity/client"
 import { urlFor } from "@/sanity/image"
+import ScrollReveal from "./ScrollReveal"
 
 // Lightweight classname helper to safely concat classes
 function cn(...inputs: any[]) {
@@ -252,13 +253,17 @@ export default function Testimonials() {
 
   return (
     <section className="testimonials-section" id="testimonials">
-      <div className="section-title">
-        <h2 className="gold-section-heading">
-          TESTIMONIALS
-        </h2>
-      </div>
+      <ScrollReveal direction="up">
+        <div className="section-title">
+          <h2 className="gold-section-heading">
+            TESTIMONIALS
+          </h2>
+        </div>
+      </ScrollReveal>
 
-      <TestimonialMarquee items={displayItems} variant="dual" speed={30} />
+      <ScrollReveal direction="none" delay={200}>
+        <TestimonialMarquee items={displayItems} variant="dual" speed={30} />
+      </ScrollReveal>
     </section>
   );
 }

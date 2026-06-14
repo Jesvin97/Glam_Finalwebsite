@@ -75,7 +75,7 @@ export default function Navbar() {
           </li>
 
           <li>
-            <a href="#about">About Us</a>
+            <a href="/#about">About Us</a>
           </li>
 
           <li>
@@ -87,7 +87,7 @@ export default function Navbar() {
           </li>
 
           <li>
-            <a href="#contact">Contact Us</a>
+            <a href="/#contact">Contact Us</a>
           </li>
 
           <li>
@@ -103,10 +103,10 @@ export default function Navbar() {
       {/* MOBILE MENU */}
       <div className={`mobile-menu ${isMenuOpen ? "active" : ""}`}>
         <a href="/" onClick={closeMenu}>Home</a>
-        <a href="#about" onClick={closeMenu}>About Us</a>
+        <a href="/#about" onClick={closeMenu}>About Us</a>
         <a href="/services" onClick={closeMenu}>Services</a>
         <a href="/blogs" onClick={closeMenu}>Blogs</a>
-        <a href="#contact" onClick={closeMenu}>Contact Us</a>
+        <a href="/#contact" onClick={closeMenu}>Contact Us</a>
         <a href="/services" onClick={closeMenu} className="book-btn">Book Now</a>
       </div>
     </>
