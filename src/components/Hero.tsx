@@ -43,12 +43,10 @@ export default function Hero() {
 
       <ScrollReveal direction="right" delay={200} className="hero-image-reveal">
         <div className="hero-image">
-          {/* Ken Burns Dynamic Background Slideshow */}
-          <div className="hero-slideshow">
-            <div className="slide slide-1" style={{ backgroundImage: "url('/images/model.png')" }} />
-            <div className="slide slide-2" style={{ backgroundImage: "url('/images/Salon seating area.jpeg')" }} />
-            <div className="slide slide-3" style={{ backgroundImage: "url('/images/waiting area.jpeg')" }} />
-          </div>
+          <img
+            src="/images/model.png"
+            alt="Glam'more Beauty Model"
+          />
         </div>
       </ScrollReveal>
     </section>
