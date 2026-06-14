@@ -2769,6 +2769,7 @@ h1, h2, h3,
 }
 
 .transformations-heading {
+  font-size: clamp(24px, 4vw, 36px) !important;
   text-align: center !important;
   margin-bottom: 40px !important;
 }

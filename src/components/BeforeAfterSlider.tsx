@@ -218,7 +218,7 @@ export default function BeforeAfterSlider({
   // Inline styling objects
   const styles = {
     wrapper: {
-      maxWidth: "600px",
+      maxWidth: "550px",
       width: "100%",
       margin: "0 auto",
       fontFamily: "var(--font-lato), 'Lato', Arial, sans-serif",
@@ -242,7 +242,7 @@ export default function BeforeAfterSlider({
     sliderContainer: {
       position: "relative" as const,
       width: "100%",
-      aspectRatio: "4/5",
+      aspectRatio: "3/2",
       borderRadius: "12px",
       overflow: "hidden",
       cursor: "ew-resize",
