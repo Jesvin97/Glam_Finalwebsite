@@ -2,6 +2,8 @@
 import { useState } from "react";
 import ScrollReveal from "./ScrollReveal";
 
+import { FaPhoneAlt } from "react-icons/fa";
+
 export default function Contact() {
   const [formData, setFormData] = useState({
     name: "",
@@ -65,7 +67,9 @@ ${formData.message}`;
                   First Floor, Professional Building, SH 1, Kollam - Theni Hwy, Thukalassery, Thiruvalla, Kerala 689115, India
                 </p>
                 <p className="contact-map-details-phone">
-                  Phone: +91 96459 15329
+                  <a href="tel:+919645915329" style={{ color: '#d4af37', textDecoration: 'underline', display: 'inline-flex', alignItems: 'center', gap: '8px', fontWeight: 'bold' }}>
+                    <FaPhoneAlt size={14} /> Phone: +91 96459 15329
+                  </a>
                 </p>
               </div>
             </div>
