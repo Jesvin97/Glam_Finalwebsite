@@ -55,105 +55,120 @@ export default function ServicesClient() {
       title: "Acrylic nails",
       category: "nails",
       description: "High-quality, durable acrylic extensions with custom premium nail art and luxury finish at Thiruvalla's top beauty and nail salon.",
-      image: "https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=600&q=80",
+      image: "https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=500&q=80",
+      price: "₹1,499",
     },
     {
       id: "body-waxing",
       title: "Body waxing",
       category: "grooming",
       description: "Full body smooth waxing treatment using premium, gentle organic wax for delicate skin, available in Thiruvalla, Kerala.",
-      image: "https://images.unsplash.com/photo-1590439471364-192aa707f685?auto=format&fit=crop&w=600&q=80",
+      image: "https://images.unsplash.com/photo-1590439471364-192aa707f685?auto=format&fit=crop&w=500&q=80",
+      price: "₹1,999",
     },
     {
       id: "bridal-services",
       title: "Bridal services",
       category: "events",
       description: "Luxury comprehensive Kerala bridal makeup, hair styling, and wellness treatments tailored for your special wedding day in Thiruvalla.",
-      image: "https://images.unsplash.com/photo-1591555200999-7c531495e921?auto=format&fit=crop&w=600&q=80",
+      image: "https://images.unsplash.com/photo-1591555200999-7c531495e921?auto=format&fit=crop&w=500&q=80",
+      price: "₹9,999",
     },
     {
       id: "eyebrow-threading",
       title: "Eyebrow threading",
       category: "grooming",
       description: "Precision eyebrow threading for ultra-clean, beautifully defined brow contours by expert beauticians in Thiruvalla.",
-      image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=600&q=80",
+      image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=500&q=80",
+      price: "₹149",
     },
     {
       id: "eyelashes",
       title: "Eyelashes",
       category: "grooming",
       description: "Premium individual eyelashes and volume extension services for a mesmerizing, natural look in Thiruvalla, Kerala.",
-      image: "https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=600&q=80",
+      image: "https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=500&q=80",
+      price: "₹999",
     },
     {
       id: "hair-extensions",
       title: "Hair extensions",
       category: "hair",
       description: "100% natural, premium human hair extensions for length, volume, and custom styling, professionally fitted in Thiruvalla.",
-      image: "https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?auto=format&fit=crop&w=600&q=80",
+      image: "https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?auto=format&fit=crop&w=500&q=80",
+      price: "₹5,999",
     },
     {
       id: "haircut",
       title: "Haircut",
       category: "hair",
       description: "Precision styling, trend-forward haircuts, and expert hair texturizing for men, women, and kids by master stylists in Thiruvalla.",
-      image: "https://images.unsplash.com/photo-1605497788044-5a32c7078486?auto=format&fit=crop&w=600&q=80",
+      image: "https://images.unsplash.com/photo-1605497788044-5a32c7078486?auto=format&fit=crop&w=500&q=80",
+      price: "₹499",
     },
     {
       id: "hairstyling",
       title: "Hairstyling",
       category: "hair",
       description: "Luxury blowouts, elegant updos, and custom event hairstyling for all hair types at Thiruvalla's leading unisex salon.",
-      image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=600&q=80",
+      image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=500&q=80",
+      price: "₹799",
     },
     {
       id: "makeup-services",
       title: "Make-up services",
       category: "events",
       description: "Flawless HD and airbrush makeup styles for celebrity shoots, family events, and parties by professional makeup artists in Thiruvalla.",
-      image: "https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?auto=format&fit=crop&w=600&q=80",
+      image: "https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?auto=format&fit=crop&w=500&q=80",
+      price: "₹2,499",
     },
     {
       id: "massages",
       title: "Massages",
       category: "skin",
       description: "Deep tissue, aromatherapy, and muscle relief massages in our quiet wellness spa in Thukalassery, Thiruvalla.",
-      image: "https://images.unsplash.com/photo-1600334129128-685c5582fd35?auto=format&fit=crop&w=600&q=80",
+      image: "https://images.unsplash.com/photo-1600334129128-685c5582fd35?auto=format&fit=crop&w=500&q=80",
+      price: "₹1,799",
     },
     {
       id: "pedicures",
       title: "Pedicures",
       category: "nails",
       description: "Revitalizing foot spa therapy, organic scrub exfoliation, and precision nail care at our premium Thiruvalla nail studio.",
-      image: "https://images.unsplash.com/photo-1519014816548-bf5fe059798b?auto=format&fit=crop&w=600&q=80",
+      image: "https://images.unsplash.com/photo-1519014816548-bf5fe059798b?auto=format&fit=crop&w=500&q=80",
+      price: "₹799",
     },
     {
       id: "shaving",
       title: "Shaving",
       category: "grooming",
       description: "Traditional hot towel classic shave, beard detailing, styling, and skin hydration for men in Thiruvalla.",
-      image: "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=600&q=80",
+      image: "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=500&q=80",
+      price: "₹299",
     },
     {
       id: "spa-services",
       title: "Spa services",
       category: "skin",
       description: "Premium wellness packages, full-body body scrub therapies, and premium stress relief at the best unisex spa in Thiruvalla.",
-      image: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=600&q=80",
+      image: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=500&q=80",
+      price: "₹2,499",
     },
     {
       id: "waxing",
       title: "Waxing",
       category: "grooming",
       description: "Fast, gentle precision waxing for facial and body grooming by experienced professionals in Thiruvalla.",
-      image: "https://images.unsplash.com/photo-1590439471364-192aa707f685?auto=format&fit=crop&w=600&q=80",
+      image: "https://images.unsplash.com/photo-1590439471364-192aa707f685?auto=format&fit=crop&w=500&q=80",
+      price: "₹399",
     },
     {
       id: "wedding-prep",
       title: "Wedding and event preparation",
       category: "events",
       description: "Complete hair, skin, and styling packages for Kerala weddings and events in Thiruvalla.",
-      image: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=600&q=80",
+      image: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=500&q=80",
+      price: "₹4,999",
     },
   ];
 
@@ -416,14 +431,20 @@ Message/Special Requests: ${bookingDetails.message || "None"}`;
                           <h3>{localInfo.title}</h3>
                           <p>{localInfo.description}</p>
                           
-                          <div className="card-action-row">
+                          <div className="card-action-row" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '15px' }}>
+                            {service.price && (
+                              <span className="service-price-badge" style={{ color: '#dfba49', fontWeight: 'bold', fontSize: '15px', fontFamily: 'var(--font-cormorant-family), serif' }}>
+                                {language === "ml" ? `തുടങ്ങുന്നത് ` : `Starting from `}{service.price}
+                              </span>
+                            )}
                             <button
                               type="button"
                               className={`card-select-btn ${isSelected ? "selected-btn" : ""}`}
+                              style={{ margin: 0 }}
                             >
                               {isSelected 
-                                ? (language === "en" ? "Remove Service" : "ഒഴിവാക്കുക") 
-                                : (language === "en" ? "Add to Package" : "പാക്കേജിലേക്ക് ചേർക്കുക")
+                                ? (language === "en" ? "Remove" : "ഒഴിവാക്കുക") 
+                                : (language === "en" ? "Add" : "ചേർക്കുക")
                               }
                             </button>
                           </div>
@@ -665,6 +686,28 @@ Message/Special Requests: ${bookingDetails.message || "None"}`;
                     </span>
                   </div>
                 )}
+              </div>
+
+              {/* WHATSAPP ADVISORY ALERT BOX */}
+              <div className="whatsapp-advisory-alert" style={{
+                background: 'rgba(223, 186, 73, 0.04)',
+                border: '1px solid rgba(223, 186, 73, 0.15)',
+                borderRadius: '16px',
+                padding: '18px 20px',
+                marginBottom: '30px',
+                display: 'flex',
+                alignItems: 'flex-start',
+                gap: '12px'
+              }}>
+                <span style={{ color: '#dfba49', fontSize: '18px', lineHeight: 1 }}>💬</span>
+                <div style={{ fontSize: '13px', color: '#bbb', lineHeight: '1.5' }}>
+                  <strong>{language === "en" ? "Booking via WhatsApp" : "വാട്സാപ്പ് വഴി ബുക്ക് ചെയ്യുക"}</strong>
+                  <p style={{ margin: '4px 0 0', color: '#999' }}>
+                    {language === "en" 
+                      ? "Your booking request will open directly in WhatsApp. Our representative will verify real-time salon availability and confirm your booking shortly."
+                      : "നിങ്ങളുടെ ബുക്കിംഗ് വിവരങ്ങൾ വാട്സാപ്പ് ചാറ്റിൽ തുറന്നു വരും. മെസ്സേജ് അയച്ചയുടൻ സലൂൺ പ്രതിനിധി തീയതിയും സമയവും പരിശോധിച്ച് ബുക്കിംഗ് സ്ഥിരീകരിക്കുന്നതാണ്."}
+                  </p>
+                </div>
               </div>
 
               {/* Navigation Action Rows */}
