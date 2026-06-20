@@ -263,6 +263,12 @@ export default function Testimonials() {
 
       <ScrollReveal direction="none" delay={200}>
         <TestimonialMarquee items={displayItems} variant="dual" speed={30} />
+        <div className="testimonial-dots-indicator">
+          <span className="dot active"></span>
+          <span className="dot"></span>
+          <span className="dot"></span>
+          <span className="dot"></span>
+        </div>
       </ScrollReveal>
     </section>
   );

@@ -248,7 +248,7 @@ h1, h2, h3,
     #f5d76e
   );
 
-  color: white;
+  color: #111111;
 
   text-decoration: none;
 
@@ -679,6 +679,12 @@ h1, h2, h3,
   min-height: 120px;
 
   resize: none;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #A9A9A9 !important;
+  opacity: 1 !important;
 }
 
  
@@ -1479,9 +1485,36 @@ h1, h2, h3,
 
 .testimonial-username-v2 {
   font-size: 11px;
-  color: #888;
+  color: #ccc;
   letter-spacing: 0.5px;
   margin-top: 2px;
+}
+
+.testimonial-dots-indicator {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .testimonial-dots-indicator {
+    display: flex !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    margin-top: 24px !important;
+  }
+  
+  .testimonial-dots-indicator .dot {
+    width: 8px !important;
+    height: 8px !important;
+    border-radius: 50% !important;
+    background: rgba(212, 175, 55, 0.2) !important;
+    transition: all 0.3s ease !important;
+  }
+  
+  .testimonial-dots-indicator .dot.active {
+    background: #d4af37 !important;
+    transform: scale(1.2) !important;
+    box-shadow: 0 0 8px rgba(212, 175, 55, 0.5) !important;
+  }
 }
 
 /* GRADIENTS & OVERLAYS */
@@ -1619,8 +1652,8 @@ h1, h2, h3,
 .category-tab-btn {
   padding: 12px 24px;
   background: #0b0b0b;
-  border: 1px solid rgba(212, 175, 55, 0.15);
-  color: #ccc;
+  border: 1px solid rgba(212, 175, 55, 0.45);
+  color: #e5e5e5;
   border-radius: 30px;
   font-size: 14px;
   font-weight: 500;
@@ -2098,22 +2131,7 @@ h1, h2, h3,
 
 @media (max-width: 768px) {
   .navbar-brand-text {
-    font-size: 16px;
-    letter-spacing: 1px;
-  }
-}
-
-@media (max-width: 500px) {
-  .navbar-brand-text {
-    font-size: 13px;
-    letter-spacing: 0.5px;
-  }
-}
-
-@media (max-width: 420px) {
-  .navbar-brand-text {
-    font-size: 11px;
-    letter-spacing: 0.5px;
+    display: none !important;
   }
 }
 
@@ -2187,7 +2205,7 @@ h1, h2, h3,
   left: 0;
   background: linear-gradient(
     to right,
-    #faf8f5,
+    #000000,
     transparent
   );
 }
@@ -2196,7 +2214,7 @@ h1, h2, h3,
   right: 0;
   background: linear-gradient(
     to left,
-    #faf8f5,
+    #000000,
     transparent
   );
 }
@@ -2594,8 +2612,8 @@ h1, h2, h3,
 
 .services-tab-btn {
   background: rgba(255, 255, 255, 0.02) !important;
-  border: 1px solid rgba(212, 175, 55, 0.15) !important;
-  color: #aaa !important;
+  border: 1px solid rgba(212, 175, 55, 0.45) !important;
+  color: #e5e5e5 !important;
   padding: 10px 24px !important;
   font-family: var(--font-lato), 'Lato', Arial, sans-serif !important;
   font-size: 14px !important;

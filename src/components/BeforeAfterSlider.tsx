@@ -366,8 +366,9 @@ export default function BeforeAfterSlider({
     } as React.CSSProperties,
 
     thumbnailText: {
-      fontSize: "10px",
-      color: "var(--color-text-secondary, #666666)",
+      fontSize: "13px",
+      color: "#222222",
+      fontWeight: "600",
       marginTop: "8px",
       textAlign: "center" as const,
       letterSpacing: "0.5px"
