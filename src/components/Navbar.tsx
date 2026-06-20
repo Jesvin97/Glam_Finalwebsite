@@ -45,12 +45,11 @@ export default function Navbar() {
       <nav className="navbar">
 
         {/* LOGO */}
-        <a href="/" className="logo-link" style={{ display: "flex", alignItems: "center", gap: "12px", textDecoration: "none" }}>
+        <a href="/" className="logo-link navbar-logo-link">
           <img
             src="/images/logo.png"
             alt="Glam'more Logo"
-            className="logo-image"
-            style={{ width: "50px", height: "auto" }}
+            className="logo-image navbar-logo-img"
           />
           <span className="navbar-brand-text">
             Glam&apos;more Unisex Salon
@@ -64,7 +63,7 @@ export default function Navbar() {
             animationData={menuAnimation}
             loop={false}
             autoplay={false}
-            style={{ width: 36, height: 36 }}
+            className="navbar-menu-icon"
           />
         </div>
 
@@ -76,7 +75,7 @@ export default function Navbar() {
           </li>
 
           <li>
-            <a href="#about">About Us</a>
+            <a href="/#about">About Us</a>
           </li>
 
           <li>
@@ -88,7 +87,7 @@ export default function Navbar() {
           </li>
 
           <li>
-            <a href="#contact">Contact Us</a>
+            <a href="/#contact">Contact Us</a>
           </li>
 
           <li>
@@ -104,10 +103,10 @@ export default function Navbar() {
       {/* MOBILE MENU */}
       <div className={`mobile-menu ${isMenuOpen ? "active" : ""}`}>
         <a href="/" onClick={closeMenu}>Home</a>
-        <a href="#about" onClick={closeMenu}>About Us</a>
+        <a href="/#about" onClick={closeMenu}>About Us</a>
         <a href="/services" onClick={closeMenu}>Services</a>
         <a href="/blogs" onClick={closeMenu}>Blogs</a>
-        <a href="#contact" onClick={closeMenu}>Contact Us</a>
+        <a href="/#contact" onClick={closeMenu}>Contact Us</a>
         <a href="/services" onClick={closeMenu} className="book-btn">Book Now</a>
       </div>
     </>

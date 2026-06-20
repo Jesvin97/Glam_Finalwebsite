@@ -5,4 +5,40 @@ Allow: /
 Disallow: /studio/
 Disallow: /_next/
 
+# Explicitly allow AI Search Bots
+User-agent: ChatGPT-User
+Allow: /
+Disallow: /studio/
+Disallow: /_next/
+
+User-agent: OAI-SearchBot
+Allow: /
+Disallow: /studio/
+Disallow: /_next/
+
+User-agent: Google-Extended
+Allow: /
+Disallow: /studio/
+Disallow: /_next/
+
+User-agent: PerplexityBot
+Allow: /
+Disallow: /studio/
+Disallow: /_next/
+
+User-agent: Perplexity-User
+Allow: /
+Disallow: /studio/
+Disallow: /_next/
+
+User-agent: Claude-User
+Allow: /
+Disallow: /studio/
+Disallow: /_next/
+
+User-agent: Claude-SearchBot
+Allow: /
+Disallow: /studio/
+Disallow: /_next/
+
 Sitemap: https://glammoresalon.in/sitemap.xml

@@ -11,20 +11,23 @@ export default function Footer() {
     <footer className="footer">
       {/* LEFT */}
       <div className="footer-left">
-        <h2 style={{ color: "#d4af37", fontSize: "20px", fontWeight: "700", letterSpacing: "2px", textTransform: "uppercase", marginBottom: "8px", fontFamily: "Playfair Display, serif", lineHeight: "1.4" }}>
+        <h2 className="footer-title">
           Glam'more Unisex Salon
         </h2>
-        <p style={{ color: "#aaa", fontSize: "13px", lineHeight: "1.6", marginBottom: "12px", maxWidth: "450px" }}>
+        <p className="footer-text-muted">
           First Floor, Professional Building, SH 1, Kollam - Theni Hwy, Thukalassery, Thiruvalla, Kerala 689115, India
         </p>
-        <p style={{ color: "#666", fontSize: "13px" }}>All Rights Reserved, 2026</p>
-        <p style={{ marginTop: "12px", fontSize: "12px", color: "#555" }}>
+        <p className="footer-text-muted-compact">
+          Phone: +91 96459 15329
+        </p>
+        <p className="footer-text-copyright">All Rights Reserved, 2026</p>
+        <p className="footer-powered-by">
           Powered by Raphael Group -{" "}
           <a
             href="https://raphaelgroup.in"
             target="_blank"
             rel="noopener noreferrer"
-            style={{ color: "#d4af37", textDecoration: "underline" }}
+            className="footer-powered-by-link"
           >
             raphaelgroup.in
           </a>
@@ -34,9 +37,9 @@ export default function Footer() {
       {/* CENTER */}
       <div className="footer-center">
         <a href="/">Home</a>
-        <a href="#about">About</a>
-        <a href="#blog">Blogs</a>
-        <a href="#contact">Contact</a>
+        <a href="/#about">About</a>
+        <a href="/blogs">Blogs</a>
+        <a href="/#contact">Contact</a>
       </div>
 
       {/* RIGHT */}
@@ -45,31 +48,36 @@ export default function Footer() {
           <a
             href="https://instagram.com/glammore.unisex.salon"
             target="_blank"
+            aria-label="Follow Glam'more on Instagram"
           >
             <FaInstagram />
           </a>
           <a
             href="https://www.facebook.com/glammoresalon/"
             target="_blank"
+            aria-label="Follow Glam'more on Facebook"
           >
             <FaFacebookF />
           </a>
           <a
             href="https://www.youtube.com/@Glammoreunisexsalon"
             target="_blank"
+            aria-label="Subscribe to Glam'more on YouTube"
           >
             <FaYoutube />
           </a>
           <a
             href="https://wa.me/919645915329"
             target="_blank"
-            style={{ color: "#25D366" }}
+            className="whatsapp-green-text"
+            aria-label="Chat with Glam'more on WhatsApp"
           >
             <FaWhatsapp />
           </a>
           <a
             href="https://maps.app.goo.gl/XUFVqGPK9REuB6yf8"
             target="_blank"
+            aria-label="Find Glam'more on Google Maps"
           >
             <FaGoogle />
           </a>

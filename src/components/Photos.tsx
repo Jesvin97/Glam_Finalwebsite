@@ -1,4 +1,5 @@
  "use client";
+import ScrollReveal from "./ScrollReveal";
 
 export default function Gallery() {
   const row1 = [
@@ -19,39 +20,45 @@ export default function Gallery() {
 
   return (
     <section className="gallery-section">
-      <div className="gallery-header" style={{ marginBottom: "40px", textAlign: "center" }}>
-        <h2 style={{ fontSize: "clamp(32px, 6vw, 52px)", textTransform: "uppercase", letterSpacing: "4px", color: "#d4af37", fontFamily: "Playfair Display, serif", fontWeight: "700" }}>
-          OUR GALLERY
-        </h2>
-      </div>
+      <ScrollReveal direction="up">
+        <div className="gallery-header photos-title-container">
+          <h2 className="gold-section-heading">
+            OUR GALLERY
+          </h2>
+        </div>
+      </ScrollReveal>
 
       {/* First Row */}
-      <div className="gallery-marquee">
-        <div className="gallery-track scroll-left">
-          {[...row1, ...row1].map((img, index) => (
-            <div className="gallery-card" key={`row1-${index}`}>
-              <img
-                src={img}
-                alt={`Gallery Image ${index + 1}`}
-              />
-            </div>
-          ))}
+      <ScrollReveal direction="none" delay={200}>
+        <div className="gallery-marquee">
+          <div className="gallery-track scroll-left">
+            {[...row1, ...row1].map((img, index) => (
+              <div className="gallery-card" key={`row1-${index}`}>
+                <img
+                  src={img}
+                  alt={`Gallery Image ${index + 1}`}
+                />
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
+      </ScrollReveal>
 
       {/* Second Row */}
-      <div className="gallery-marquee">
-        <div className="gallery-track scroll-right">
-          {[...row2, ...row2].map((img, index) => (
-            <div className="gallery-card" key={`row2-${index}`}>
-              <img
-                src={img}
-                alt={`Gallery Image ${index + 1}`}
-              />
-            </div>
-          ))}
+      <ScrollReveal direction="none" delay={300}>
+        <div className="gallery-marquee">
+          <div className="gallery-track scroll-right">
+            {[...row2, ...row2].map((img, index) => (
+              <div className="gallery-card" key={`row2-${index}`}>
+                <img
+                  src={img}
+                  alt={`Gallery Image ${index + 1}`}
+                />
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
+      </ScrollReveal>
     </section>
   );
 }

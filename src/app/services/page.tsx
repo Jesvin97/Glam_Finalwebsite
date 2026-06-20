@@ -1,476 +1,155 @@
-"use client";
+import type { Metadata } from "next";
+import ServicesClient from "./ServicesClient";
 
-import { useState } from "react";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import { FaCheckCircle, FaTimes, FaCalendarAlt, FaClock, FaUser } from "react-icons/fa";
-import { Calendar } from "@/components/ui/calendar";
-
+export const metadata: Metadata = {
+  title: "Services & Treatments | Glam'more Salon Thiruvalla",
+  description: "Explore our full menu of hair cutting, creative coloring, acrylic gel nail extensions, spa pedicures, and skincare treatments at Glam'more.",
+};
 
 interface ServiceItem {
   id: string;
   title: string;
-  category: "hair" | "nails" | "grooming" | "skin" | "events";
+  category: string;
   description: string;
   image: string;
-  price?: string;
 }
 
-export default function ServicesPage() {
-  const [selectedServices, setSelectedServices] = useState<string[]>([]);
-  const [categoryFilter, setCategoryFilter] = useState<string>("all");
-  const [searchQuery, setSearchQuery] = useState<string>("");
-  
-  // Date Helpers
-  const getTodayDateString = () => {
-    const today = new Date();
-    const year = today.getFullYear();
-    const month = String(today.getMonth() + 1).padStart(2, "0");
-    const day = String(today.getDate()).padStart(2, "0");
-    return `${year}-${month}-${day}`;
-  };
-
-  const [selectedDate, setSelectedDate] = useState<Date | undefined>(new Date());
-
-  // Booking Form State
-  const [bookingDetails, setBookingDetails] = useState({
-    name: "",
-    date: getTodayDateString(),
-    time: "",
-    message: "",
-  });
-
-  const categories = [
-    { id: "all", name: "All Services" },
-    { id: "hair", name: "Hair Styling" },
-    { id: "nails", name: "Nail Care" },
-    { id: "grooming", name: "Grooming & Waxing" },
-    { id: "skin", name: "Skin & Wellness" },
-    { id: "events", name: "Weddings & Events" },
-  ];
-
-  const servicesData: ServiceItem[] = [
+const servicesData: ServiceItem[] = [
     {
       id: "acrylic-nails",
       title: "Acrylic nails",
       category: "nails",
       description: "High-quality, durable acrylic extensions with custom premium nail art and luxury finish at Thiruvalla's top beauty and nail salon.",
-      image: "/images/nail-polish .jpeg",
+      image: "https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=600&q=80",
     },
     {
       id: "body-waxing",
       title: "Body waxing",
       category: "grooming",
       description: "Full body smooth waxing treatment using premium, gentle organic wax for delicate skin, available in Thiruvalla, Kerala.",
-      image: "/images/spa-area.jpeg",
+      image: "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&w=600&q=80",
     },
     {
       id: "bridal-services",
       title: "Bridal services",
       category: "events",
       description: "Luxury comprehensive Kerala bridal makeup, hair styling, and wellness treatments tailored for your special wedding day in Thiruvalla.",
-      image: "/images/model.jpeg",
+      image: "https://images.unsplash.com/photo-1594744803329-e58b31de215f?auto=format&fit=crop&w=600&q=80",
     },
     {
       id: "eyebrow-shaping",
       title: "Eyebrow shaping",
       category: "grooming",
       description: "Professional eyebrow mapping and precision shaping to perfectly frame your face at Thiruvalla's premier beauty studio.",
-      image: "/images/model2.jpeg",
+      image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=600&q=80",
     },
     {
       id: "eyebrow-threading",
       title: "Eyebrow threading",
       category: "grooming",
       description: "Precision eyebrow threading for ultra-clean, beautifully defined brow contours by expert beauticians in Thiruvalla.",
-      image: "/images/model2.jpeg",
+      image: "https://images.unsplash.com/photo-1620574387735-3624d75b2dbc?auto=format&fit=crop&w=600&q=80",
     },
     {
       id: "eyelashes",
       title: "Eyelashes",
       category: "grooming",
       description: "Premium individual eyelashes and volume extension services for a mesmerizing, natural look in Thiruvalla, Kerala.",
-      image: "/images/model.jpeg",
+      image: "https://images.unsplash.com/photo-1583001931096-959e9a1a6223?auto=format&fit=crop&w=600&q=80",
     },
     {
       id: "hair-extensions",
       title: "Hair extensions",
       category: "hair",
       description: "100% natural, premium human hair extensions for length, volume, and custom styling, professionally fitted in Thiruvalla.",
-      image: "/images/model.jpeg",
+      image: "https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=600&q=80",
     },
     {
       id: "haircut",
       title: "Haircut",
       category: "hair",
       description: "Precision styling, trend-forward haircuts, and expert hair texturizing for men, women, and kids by master stylists in Thiruvalla.",
-      image: "/images/male model.jpeg",
+      image: "https://images.unsplash.com/photo-1605497788044-5a32c7078486?auto=format&fit=crop&w=600&q=80",
     },
     {
       id: "hairstyling",
       title: "Hairstyling",
       category: "hair",
       description: "Luxury blowouts, elegant updos, and custom event hairstyling for all hair types at Thiruvalla's leading unisex salon.",
-      image: "/images/model.jpeg",
+      image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=600&q=80",
     },
     {
       id: "makeup-services",
       title: "Make-up services",
       category: "events",
       description: "Flawless HD and airbrush makeup styles for celebrity shoots, family events, and parties by professional makeup artists in Thiruvalla.",
-      image: "/images/model2.jpeg",
+      image: "https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?auto=format&fit=crop&w=600&q=80",
     },
     {
       id: "massages",
       title: "Massages",
       category: "skin",
       description: "Deep tissue, aromatherapy, and muscle relief massages in our quiet wellness spa in Thukalassery, Thiruvalla.",
-      image: "/images/spa-area.jpeg",
+      image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=600&q=80",
     },
     {
       id: "mobile-salon",
       title: "Mobile salon service",
       category: "events",
       description: "Experience premium luxury salon styling, cuts, and bridal makeovers at your home or hotel room anywhere in Thiruvalla.",
-      image: "/images/Salon seating area.jpeg",
+      image: "https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=600&q=80",
     },
     {
       id: "pedicures",
       title: "Pedicures",
       category: "nails",
       description: "Revitalizing foot spa therapy, organic scrub exfoliation, and precision nail care at our premium Thiruvalla nail studio.",
-      image: "/images/nail-polish .jpeg",
+      image: "https://images.unsplash.com/photo-1519014816548-bf5fe059798b?auto=format&fit=crop&w=600&q=80",
     },
     {
       id: "shampoo-conditioning",
       title: "Shampoo & conditioning",
       category: "hair",
       description: "Deep cleansing hair wash paired with organic hydration conditioning treatment in Thiruvalla.",
-      image: "/images/reception-area.jpeg",
+      image: "https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=600&q=80",
     },
     {
       id: "shaving",
       title: "Shaving",
       category: "grooming",
       description: "Traditional hot towel classic shave, beard detailing, styling, and skin hydration for men in Thiruvalla.",
-      image: "/images/male model.jpeg",
+      image: "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=600&q=80",
     },
     {
       id: "skincare",
       title: "Skin care",
       category: "skin",
       description: "Advanced facials, organic peels, and custom hydration therapies for glowing skin at our Thiruvalla wellness center.",
-      image: "/images/model2.jpeg",
+      image: "https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=600&q=80",
     },
     {
       id: "spa-services",
       title: "Spa services",
       category: "skin",
       description: "Premium wellness packages, full-body body scrub therapies, and premium stress relief at the best unisex spa in Thiruvalla.",
-      image: "/images/spa-area.jpeg",
+      image: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=600&q=80",
     },
     {
       id: "waxing",
       title: "Waxing",
       category: "grooming",
       description: "Fast, gentle precision waxing for facial and body grooming by experienced professionals in Thiruvalla.",
-      image: "/images/spa-area.jpeg",
+      image: "https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=600&q=80",
     },
     {
       id: "wedding-prep",
       title: "Wedding and event preparation",
       category: "events",
       description: "Complete hair, skin, and styling packages for Kerala weddings and events in Thiruvalla.",
-      image: "/images/model.jpeg",
+      image: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=600&q=80",
     },
   ];
 
-  const handleToggleService = (serviceTitle: string) => {
-    if (selectedServices.includes(serviceTitle)) {
-      setSelectedServices(selectedServices.filter((s) => s !== serviceTitle));
-    } else {
-      setSelectedServices([...selectedServices, serviceTitle]);
-    }
-  };
-
-  const handleRemoveService = (serviceTitle: string) => {
-    setSelectedServices(selectedServices.filter((s) => s !== serviceTitle));
-  };
-
-  const handleClearSelection = () => {
-    setSelectedServices([]);
-  };
-
-  const handleDateSelect = (date: Date | undefined) => {
-    setSelectedDate(date);
-    if (date) {
-      const year = date.getFullYear();
-      const month = String(date.getMonth() + 1).padStart(2, "0");
-      const day = String(date.getDate()).padStart(2, "0");
-      const dateStr = `${year}-${month}-${day}`;
-      setBookingDetails((prev) => ({ ...prev, date: dateStr }));
-    } else {
-      setBookingDetails((prev) => ({ ...prev, date: "" }));
-    }
-  };
-
-  const handleFormChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setBookingDetails({
-      ...bookingDetails,
-      [e.target.name]: e.target.value,
-    });
-  };
-
-  const handleBookingSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (selectedServices.length === 0) {
-      alert("Please select at least one service before proceeding.");
-      return;
-    }
-
-    // Date validation
-    if (bookingDetails.date) {
-      const todayStr = getTodayDateString();
-      if (bookingDetails.date < todayStr) {
-        alert("Appointment date cannot be in the past.");
-        return;
-      }
-    }
-
-    // Time validation (9 AM to 7 PM)
-    if (bookingDetails.time) {
-      const [hours, minutes] = bookingDetails.time.split(":").map(Number);
-      if (hours < 9 || hours > 19 || (hours === 19 && minutes > 0)) {
-        alert("Appointments can only be booked between 9:00 AM and 7:00 PM.");
-        return;
-      }
-    }
-
-    const formatTimeTo12Hour = (timeStr: string) => {
-      if (!timeStr) return "";
-      const [hoursStr, minutesStr] = timeStr.split(":");
-      let hours = Number(hoursStr);
-      const ampm = hours >= 12 ? "PM" : "AM";
-      hours = hours % 12;
-      hours = hours ? hours : 12;
-      return `${hours}:${minutesStr} ${ampm}`;
-    };
-
-    const phoneNumber = "919645915329";
-    const servicesList = selectedServices.map((s) => `- ${s}`).join("\n");
-
-    const text = `Hello Glam'more Salon,
-
-I would like to book a comfort session for the following services:
-${servicesList}
-
-Name: ${bookingDetails.name}
-Preferred Date: ${bookingDetails.date}
-Preferred Time: ${formatTimeTo12Hour(bookingDetails.time)}
-Message: ${bookingDetails.message || "None"}`;
-
-    const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(text)}`;
-    window.open(whatsappURL, "_blank");
-  };
-
-  const filteredServices = servicesData.filter((service) => {
-    const matchesCategory = categoryFilter === "all" || service.category === categoryFilter;
-    const matchesSearch = service.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
-                          service.description.toLowerCase().includes(searchQuery.toLowerCase());
-    return matchesCategory && matchesSearch;
-  });
-
-  return (
-    <>
-      <Navbar />
-
-      <main className="services-page">
-        <header className="services-page-header">
-          <h1 style={{ fontSize: "54px", textTransform: "uppercase", letterSpacing: "4px", margin: "0 0 20px", fontFamily: "Playfair Display, serif", fontWeight: "700" }}>
-            Our <span className="gold-text">Services</span>
-          </h1>
-          <p className="services-subtitle">
-            Select multiple services below to build your customized pampering package.
-          </p>
-        </header>
-
-        {/* CONTROLS */}
-        <section className="services-controls">
-          <div className="search-bar-wrapper">
-            <input
-              type="text"
-              placeholder="Search services (e.g. Nails, Haircut...)"
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              className="search-input"
-            />
-          </div>
-
-          <div className="category-tabs">
-            {categories.map((cat) => (
-              <button
-                key={cat.id}
-                onClick={() => setCategoryFilter(cat.id)}
-                className={`category-tab-btn ${categoryFilter === cat.id ? "active" : ""}`}
-              >
-                {cat.name}
-              </button>
-            ))}
-          </div>
-        </section>
-
-        {/* SERVICES LAYOUT */}
-        <section className="services-layout">
-          <div className="services-page-grid">
-            {filteredServices.length > 0 ? (
-              filteredServices.map((service) => {
-                const isSelected = selectedServices.includes(service.title);
-                return (
-                  <div
-                    key={service.id}
-                    className={`service-showcase-card ${isSelected ? "selected" : ""}`}
-                    onClick={() => handleToggleService(service.title)}
-                  >
-                    <div className="service-card-image-wrapper">
-                      <img src={service.image} alt={service.title} />
-                      {isSelected && (
-                        <div className="card-selected-badge">
-                          <FaCheckCircle /> Selected
-                        </div>
-                      )}
-                    </div>
-                    
-                    <div className="service-card-info">
-                      <h3>{service.title}</h3>
-                      <p>{service.description}</p>
-                      
-                      <div className="card-action-row">
-                        <button
-                          type="button"
-                          className={`card-select-btn ${isSelected ? "selected-btn" : ""}`}
-                        >
-                          {isSelected ? "Remove Service" : "Add to Booking"}
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                );
-              })
-            ) : (
-              <div className="no-services-found">
-                <p>No services matched your search criteria. Please try another query.</p>
-              </div>
-            )}
-          </div>
-
-          {/* DYNAMIC FLOATING BOOKING BOTTOM PANEL */}
-          {selectedServices.length > 0 && (
-            <aside className="booking-bottom-panel">
-              {/* LEFT COLUMN: SELECTIONS */}
-              <div className="booking-panel-left">
-                <div className="booking-sidebar-header">
-                  <h2>Your Selections</h2>
-                  <button
-                    type="button"
-                    onClick={handleClearSelection}
-                    className="clear-all-btn"
-                  >
-                    Clear All ({selectedServices.length})
-                  </button>
-                </div>
-
-                {/* SELECTED TAGS */}
-                <div className="selected-tags-container">
-                  {selectedServices.map((s) => (
-                    <span className="selected-tag" key={s}>
-                      {s}
-                      <button
-                        type="button"
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          handleRemoveService(s);
-                        }}
-                        className="remove-tag-btn"
-                      >
-                        <FaTimes />
-                      </button>
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              {/* RIGHT COLUMN: BOOKING FORM */}
-              <div className="booking-panel-right">
-                <form onSubmit={handleBookingSubmit} className="booking-sidebar-form">
-                  <h3>Confirm Appointment</h3>
-                  
-                  <div className="booking-form-main-layout">
-                    {/* LEFT COLUMN: Inputs stacked vertically */}
-                    <div className="booking-form-inputs-left">
-                      <div className="input-group">
-                        <span className="input-icon"><FaUser /></span>
-                        <input
-                          type="text"
-                          name="name"
-                          placeholder="Your Name"
-                          value={bookingDetails.name}
-                          onChange={handleFormChange}
-                          required
-                        />
-                      </div>
-
-                      <div className="input-group">
-                        <span className="input-icon"><FaClock /></span>
-                        <input
-                          type="time"
-                          name="time"
-                          min="09:00"
-                          max="19:00"
-                          value={bookingDetails.time}
-                          onChange={handleFormChange}
-                          required
-                        />
-                      </div>
-
-                      <div className="input-group textarea-group">
-                        <textarea
-                          name="message"
-                          placeholder="Preferred Stylist or Special Instructions..."
-                          value={bookingDetails.message}
-                          onChange={handleFormChange}
-                        ></textarea>
-                      </div>
-                    </div>
-
-                    {/* RIGHT COLUMN: The Interactive Inline Calendar! */}
-                    <div className="booking-form-calendar-right">
-                      <label className="calendar-field-label">
-                        Select Appointment Date:
-                      </label>
-                      <Calendar
-                        mode="single"
-                        selected={selectedDate}
-                        onSelect={handleDateSelect}
-                        disabled={{ before: new Date() }}
-                        className="rounded-lg border"
-                        captionLayout="dropdown"
-                        startMonth={new Date()}
-                        endMonth={new Date(new Date().getFullYear() + 2, 11)}
-                      />
-                    </div>
-                  </div>
-
-                  <button type="submit" className="booking-submit-btn">
-                    Complete Via Whatsapp
-                  </button>
-                </form>
-              </div>
-            </aside>
-          )}
-        </section>
-      </main>
-
-      <Footer />
-    </>
-  );
+export default function Page() {
+  return <ServicesClient />;
 }

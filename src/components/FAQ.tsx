@@ -1,6 +1,6 @@
 "use client";
-
 import { useState, useEffect } from "react";
+import ScrollReveal from "./ScrollReveal";
 import { client } from "@/sanity/client";
 import {
   Accordion,
@@ -64,32 +64,36 @@ export default function FAQ() {
 
   return (
     <section className="faq-section">
-      <div className="section-title" style={{ marginBottom: "40px", width: "100%", textAlign: "center" }}>
-        <h2 style={{ fontSize: "clamp(32px, 6vw, 52px)", textTransform: "uppercase", letterSpacing: "4px", color: "#d4af37", fontFamily: "Playfair Display, serif", fontWeight: "700" }}>
-          FAQ
-        </h2>
-      </div>
+      <ScrollReveal direction="up">
+        <div className="section-title faq-title-container">
+          <h2 className="gold-section-heading">
+            FAQ
+          </h2>
+        </div>
+      </ScrollReveal>
 
       {/* CENTERED FAQ ACCORDIONS */}
-      <div className="faq-right">
-        <Accordion defaultValue={["faq-0"]} className="faq-accordion-group">
-          {displayFaqs.map((faq, index) => {
-            const itemValue = `faq-${index}`;
-            return (
-              <AccordionItem key={index} value={itemValue} className="faq-card">
-                <AccordionTrigger className="faq-question">
-                  <h3>{faq.question}</h3>
-                </AccordionTrigger>
-                <AccordionContent className="faq-answer">
-                  <div className="faq-answer-inner">
-                    <p>{faq.answer}</p>
-                  </div>
-                </AccordionContent>
-              </AccordionItem>
-            );
-          })}
-        </Accordion>
-      </div>
+      <ScrollReveal direction="up" delay={200}>
+        <div className="faq-right">
+          <Accordion defaultValue={["faq-0"]} className="faq-accordion-group">
+            {displayFaqs.map((faq, index) => {
+              const itemValue = `faq-${index}`;
+              return (
+                <AccordionItem key={index} value={itemValue} className="faq-card">
+                  <AccordionTrigger className="faq-question">
+                    <h3>{faq.question}</h3>
+                  </AccordionTrigger>
+                  <AccordionContent className="faq-answer">
+                    <div className="faq-answer-inner">
+                      <p>{faq.answer}</p>
+                    </div>
+                  </AccordionContent>
+                </AccordionItem>
+              );
+            })}
+          </Accordion>
+        </div>
+      </ScrollReveal>
 
       {/* FAQPage Structured Data Schema for Google, Bing and AI Engines */}
       <script

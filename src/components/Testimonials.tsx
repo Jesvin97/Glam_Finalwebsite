@@ -3,6 +3,7 @@
 import * as React from "react"
 import { client } from "@/sanity/client"
 import { urlFor } from "@/sanity/image"
+import ScrollReveal from "./ScrollReveal"
 
 // Lightweight classname helper to safely concat classes
 function cn(...inputs: any[]) {
@@ -96,7 +97,7 @@ const TestimonialCard = React.memo(({ item, variant = "default" }: { item: Testi
 
   // Resolve image path safely (either local string or Sanity dynamic URL)
   const imageUrl = (item.avatar && typeof item.avatar !== "string")
-    ? urlFor(item.avatar).url()
+    ? urlFor(item.avatar).width(150).height(150).auto('format').quality(80).url()
     : (item.avatar || "/images/model.jpeg");
 
   return (
@@ -130,6 +131,7 @@ export function TestimonialMarquee({ items, variant = "default", className, spee
 
   const itemsToDisplay = React.useMemo(() => {
     let result = [...items]
+    if (result.length === 0) return [];
     while (result.length < 10) {
       result = [...result, ...items]
     }
@@ -251,13 +253,17 @@ export default function Testimonials() {
 
   return (
     <section className="testimonials-section" id="testimonials">
-      <div className="section-title">
-        <h2 style={{ fontSize: "clamp(32px, 6vw, 52px)", textTransform: "uppercase", letterSpacing: "4px", color: "#d4af37", fontFamily: "Playfair Display, serif", fontWeight: "700" }}>
-          TESTIMONIALS
-        </h2>
-      </div>
+      <ScrollReveal direction="up">
+        <div className="section-title">
+          <h2 className="gold-section-heading">
+            TESTIMONIALS
+          </h2>
+        </div>
+      </ScrollReveal>
 
-      <TestimonialMarquee items={displayItems} variant="dual" speed={30} />
+      <ScrollReveal direction="none" delay={200}>
+        <TestimonialMarquee items={displayItems} variant="dual" speed={30} />
+      </ScrollReveal>
     </section>
   );
 }
