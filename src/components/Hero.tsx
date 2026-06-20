@@ -1,8 +1,11 @@
 "use client";
 
 import ScrollReveal from "./ScrollReveal";
+import { useLanguage } from "./LanguageContext";
 
 export default function Hero() {
+  const { t } = useLanguage();
+
   return (
     <section className="hero">
       {/* Floating Gold Sparkle Particles */}
@@ -20,22 +23,16 @@ export default function Hero() {
       <ScrollReveal direction="left" className="hero-content-reveal">
         <div className="hero-content">
           <h1>
-            Premium Unisex Salon
-            <br />
-            <span className="gold-text">
-              in Thiruvalla
-            </span>
+            {t("heroTitle")}
           </h1>
 
           <p>
-            Welcome to Glam'more, the leading unisex salon in Thiruvalla. 
-            Discover luxury treatments, expert styling, flawless bridal makeup, 
-            and revitalizing wellness services designed to make you feel your absolute best.
+            {t("heroSubtitle")}
           </p>
 
           <div className="hero-buttons">
             <a href="/services" className="primary-btn">
-              Book Your Visit
+              {t("bookVisit")}
             </a>
           </div>
         </div>

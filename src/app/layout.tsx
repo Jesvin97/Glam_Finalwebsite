@@ -1,7 +1,22 @@
 import type { Metadata } from "next";
-import { Josefin_Sans, Lora, Lato } from "next/font/google";
+import { Josefin_Sans, Lora, Lato, Cormorant_Garamond, Montserrat } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
+
+const cormorantGaramond = Cormorant_Garamond({
+  variable: "--font-cormorant",
+  subsets: ["latin"],
+  display: "swap",
+  weight: ["300", "400", "500", "600", "700"],
+  style: ["normal", "italic"],
+});
+
+const montserrat = Montserrat({
+  variable: "--font-montserrat",
+  subsets: ["latin"],
+  display: "swap",
+  weight: ["300", "400", "500", "600", "700"],
+});
 
 const josefinSans = Josefin_Sans({
   variable: "--font-josefin",
@@ -54,6 +69,10 @@ export const viewport = {
   initialScale: 1,
 };
 
+import { LanguageProvider } from "@/components/LanguageContext";
+import CustomCursor from "@/components/CustomCursor";
+import AudioBranding from "@/components/AudioBranding";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -62,7 +81,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${josefinSans.variable} ${lora.variable} ${lato.variable} h-full antialiased`}
+      className={`${cormorantGaramond.variable} ${montserrat.variable} ${josefinSans.variable} ${lora.variable} ${lato.variable} h-full antialiased`}
     >
       <head>
         <script
@@ -136,7 +155,13 @@ export default function RootLayout({
           />
         </noscript>
       </head>
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <LanguageProvider>
+          <CustomCursor />
+          <AudioBranding />
+          {children}
+        </LanguageProvider>
+      </body>
     </html>
   );
 }
