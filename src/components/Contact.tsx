@@ -1,10 +1,11 @@
 'use client';
 import { useState } from "react";
 import ScrollReveal from "./ScrollReveal";
-
+import { useLanguage } from "./LanguageContext";
 import { FaPhoneAlt } from "react-icons/fa";
 
 export default function Contact() {
+  const { t, language } = useLanguage();
   const [formData, setFormData] = useState({
     name: "",
     message: "",
@@ -28,7 +29,13 @@ export default function Contact() {
 
     const phoneNumber = "919645915329";
 
-    const text = `Hello Glam'more Salon,
+    const text = language === "ml"
+      ? `ഹലോ ഗ്ലാംമോർ സലൂൺ,
+
+എന്റെ പേര് ${formData.name}.
+
+${formData.message}`
+      : `Hello Glam'more Salon,
 
 My name is ${formData.name}.
 
@@ -47,7 +54,7 @@ ${formData.message}`;
         <ScrollReveal direction="left" className="map-column contact-column-flex">
           <div>
             <h2 className="contact-section-title">
-              Find Us
+              {language === "ml" ? "ഞങ്ങളെ കണ്ടെത്തുക" : "Find Us"}
             </h2>
             <div className="map-container contact-map-wrapper">
               <iframe
@@ -64,11 +71,13 @@ ${formData.message}`;
               <div className="map-details">
                 <h3>Glam'more Unisex Salon</h3>
                 <p className="contact-map-details-desc">
-                  First Floor, Professional Building, SH 1, Kollam - Theni Hwy, Thukalassery, Thiruvalla, Kerala 689115, India
+                  {language === "ml"
+                    ? "ഫസ്റ്റ് ഫ്ലോർ, പ്രൊഫഷണൽ ബിൽഡിംഗ്, എം.സി റോഡ് (SH 1), തുകലശ്ശേരി, തിരുവല്ല, കേരളം 689115, ഇന്ത്യ"
+                    : "First Floor, Professional Building, SH 1, Kollam - Theni Hwy, Thukalassery, Thiruvalla, Kerala 689115, India"}
                 </p>
                 <p className="contact-map-details-phone">
                   <a href="tel:+919645915329" style={{ color: '#d4af37', textDecoration: 'underline', display: 'inline-flex', alignItems: 'center', gap: '8px', fontWeight: 'bold' }}>
-                    <FaPhoneAlt size={14} /> Phone: +91 96459 15329
+                    <FaPhoneAlt size={14} /> {language === "ml" ? "ഫോൺ" : "Phone"}: +91 96459 15329
                   </a>
                 </p>
               </div>
@@ -80,7 +89,7 @@ ${formData.message}`;
         <ScrollReveal direction="right" delay={200} className="form-column contact-column-flex">
           <div>
             <h2 className="contact-section-title">
-              Contact Us
+              {t("contactTitle")}
             </h2>
             <form
               className="contact-form"
@@ -89,7 +98,7 @@ ${formData.message}`;
               <input
                 type="text"
                 name="name"
-                placeholder="Your Name"
+                placeholder={t("namePlace")}
                 value={formData.name}
                 onChange={handleChange}
                 required
@@ -97,7 +106,7 @@ ${formData.message}`;
 
               <textarea
                 name="message"
-                placeholder="Your Message"
+                placeholder={t("msgPlace")}
                 value={formData.message}
                 onChange={handleChange}
                 required
@@ -107,7 +116,7 @@ ${formData.message}`;
                 type="submit"
                 className="primary-btn"
               >
-                Send Message
+                {t("sendMsg")}
               </button>
             </form>
           </div>

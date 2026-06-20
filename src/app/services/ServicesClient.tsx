@@ -22,8 +22,6 @@ export default function ServicesClient() {
   const [categoryFilter, setCategoryFilter] = useState<string>("all");
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [wizardStep, setWizardStep] = useState<number>(1);
-  const [selectedStylist, setSelectedStylist] = useState<string>("any");
-
   // Date Helpers
   const getTodayDateString = () => {
     const today = new Date();
@@ -35,7 +33,6 @@ export default function ServicesClient() {
 
   const [selectedDate, setSelectedDate] = useState<Date | undefined>(new Date());
 
-  // Booking Form State
   const [bookingDetails, setBookingDetails] = useState({
     name: "",
     date: getTodayDateString(),
@@ -51,22 +48,6 @@ export default function ServicesClient() {
     { id: "skin", name: language === "en" ? "Skin & Wellness" : "സ്കിൻ & വെൽനസ്" },
     { id: "events", name: language === "en" ? "Weddings & Events" : "വിവാഹങ്ങൾ & ഇവന്റുകൾ" },
   ];
-
-  const stylists = [
-    { id: "any", name: language === "en" ? "Any Available Specialist" : "ലഭ്യമായ ഏതെങ്കിലും സ്റ്റൈലിസ്റ്റ്", role: language === "en" ? "Optimal scheduling flexibility" : "പെട്ടെന്ന് ബുക്കിംഗ് ലഭിക്കാൻ" },
-    { id: "anju", name: "Anju S.", role: language === "en" ? "Master Bridal Makeup & Skin Aesthetics" : "മാസ്റ്റർ ബ്രൈഡൽ മേക്കപ്പ് സ്പെഷ്യലിസ്റ്റ്" },
-    { id: "remya", name: "Remya K.", role: language === "en" ? "Senior Nail Art & Extensions Specialist" : "സീനിയർ നെയിൽ ആർട്ട് വിദഗ്ദ്ധ" },
-    { id: "rahul", name: "Rahul V.", role: language === "en" ? "Master Hair Sculptor & Styling Director" : "മാസ്റ്റർ ഹെയർ സ്റ്റൈലിസ്റ്റ്" },
-  ];
-
-  const getSpecialistNameForCategory = (category: string) => {
-    switch (category) {
-      case "nails": return "Remya K.";
-      case "hair": return "Rahul V.";
-      case "events": return "Anju S.";
-      default: return "Anju / Rahul";
-    }
-  };
 
   const servicesData: ServiceItem[] = [
     {
@@ -258,9 +239,6 @@ export default function ServicesClient() {
       }
     }
 
-    const selectedStylistObj = stylists.find(s => s.id === selectedStylist);
-    const stylistInfo = selectedStylistObj ? `${selectedStylistObj.name} (${selectedStylistObj.role})` : "Any Available Specialist";
-
     const phoneNumber = "919645915329";
     const servicesList = selectedServices.map((s) => `- ${s}`).join("\n");
 
@@ -272,11 +250,79 @@ ${servicesList}
 Name: ${bookingDetails.name}
 Preferred Date: ${bookingDetails.date}
 Preferred Time: ${formatTimeTo12Hour(bookingDetails.time)}
-Stylist/Specialist: ${stylistInfo}
 Message/Special Requests: ${bookingDetails.message || "None"}`;
 
     const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(text)}`;
     window.open(whatsappURL, "_blank");
+  };
+
+  const getTranslatedService = (id: string, defaultTitle: string, defaultDesc: string) => {
+    if (language !== "ml") return { title: defaultTitle, description: defaultDesc };
+
+    const servicesTranslations: Record<string, { title: string; description: string }> = {
+      "acrylic-nails": {
+        title: "അക്രിലിക് നഖങ്ങൾ",
+        description: "തിരുവല്ലയിലെ മുൻനിര ബ്യൂട്ടി ആൻഡ് നെയിൽ സലൂണിൽ പ്രീമിയം നെയിൽ ആർട്ടോടും അത്യാധുനിക ഫിനിഷിംഗോടും കൂടിയ അക്രിലിക് എക്സ്റ്റൻഷനുകൾ."
+      },
+      "body-waxing": {
+        title: "ബോഡി വാക്സിംഗ്",
+        description: "തിരുവല്ലയിൽ ലഭ്യമായ പ്രീമിയം ഓർഗാനിക് വാക്സ് ഉപയോഗിച്ചുള്ള പൂർണ്ണ ബോഡി സുഗമമായ വാക്സിംഗ് ട്രീറ്റ്മെന്റ്."
+      },
+      "bridal-services": {
+        title: "ബ്രൈഡൽ സേവനങ്ങൾ",
+        description: "നിങ്ങളുടെ പ്രത്യേക വിവാഹദിനത്തിനായി തിരുവല്ലയിൽ പ്രത്യേകമായി തയ്യാറാക്കിയ സമഗ്രമായ കേരള ബ്രൈഡൽ മേക്കപ്പ്, ഹെയർ സ്റ്റൈലിംഗ് സേവനങ്ങൾ."
+      },
+      "eyebrow-threading": {
+        title: "ഐബ്രോ ത്രെഡിംഗ്",
+        description: "തിരുവല്ലയിലെ വിദഗ്ദ്ധരായ ബ്യൂട്ടീഷ്യൻമാർ ചെയ്യുന്ന കൃത്യതയാർന്ന ഐബ്രോ ത്രെഡിംഗ് സേവനം."
+      },
+      "eyelashes": {
+        title: "ഐലാഷ് എക്സ്റ്റൻഷനുകൾ",
+        description: "മനോഹരവും സ്വാഭാവികവുമായ രൂപത്തിനായി പ്രീമിയം വ്യക്തിഗത ഐലാഷ് എക്സ്റ്റൻഷൻ സേവനങ്ങൾ."
+      },
+      "hair-extensions": {
+        title: "ഹെയർ എക്സ്റ്റൻഷനുകൾ",
+        description: "നീളത്തിനും വോളിയത്തിനുമായി പ്രൊഫഷണലായി ഘടിപ്പിച്ച 100% സ്വാഭാവിക ഹെയർ എക്സ്റ്റൻഷനുകൾ."
+      },
+      "haircut": {
+        title: "ഹെയർകട്ട്",
+        description: "തിരുവല്ലയിലെ മാസ്റ്റർ സ്റ്റൈലിസ്റ്റുകൾ ചെയ്യുന്ന പുരുഷന്മാർക്കും സ്ത്രീകൾക്കും കുട്ടികൾക്കുമുള്ള ട്രെൻഡിംഗ് ഹെയർകട്ടുകൾ."
+      },
+      "hairstyling": {
+        title: "ഹെയർ സ്റ്റൈലിംഗ്",
+        description: "തിരുവല്ലയിലെ പ്രമുഖ യൂണിസെക്സ് സലൂണിൽ എല്ലാത്തരം മുടികൾക്കുമായി ലേറ്റസ്റ്റ് ഹെയർ സ്റ്റൈലുകൾ."
+      },
+      "makeup-services": {
+        title: "മേക്കപ്പ് സേവനങ്ങൾ",
+        description: "വിവാഹങ്ങൾക്കും പാർട്ടികൾക്കുമായി പ്രൊഫഷണൽ മേക്കപ്പ് ആർട്ടിസ്റ്റുകൾ ചെയ്യുന്ന ഫ്ലാവ്‌ലെസ് എച്ച്ഡി, എയർബ്രഷ് മേക്കപ്പ്."
+      },
+      "massages": {
+        title: "മസാജ് തെറാപ്പികൾ",
+        description: "തിരുവല്ലയിലെ ഞങ്ങളുടെ വെൽനസ് സ്പായിൽ ലഭ്യമായ ഡീപ് ടിഷ്യൂ, അരോമാതെറാപ്പി റിലാക്സിംഗ് മസാജുകൾ."
+      },
+      "pedicures": {
+        title: "പെഡിക്യൂറുകൾ",
+        description: "ഞങ്ങളുടെ തിരുവല്ലയിലെ നെയിൽ സ്റ്റുഡിയോയിൽ ഫൂട്ട് സ്പാ തെറാപ്പിയും ഓർഗാനിക് സ്ക്രബ് എക്സ്ഫോളിയേഷനും."
+      },
+      "shaving": {
+        title: "ഷേവിംഗ്",
+        description: "പരമ്പരാഗത ഹോട്ട് ടവൽ ഷേവിംഗ്, ബിയർഡ് ഡിറ്റെയിലിംഗ്, ഹൈഡ്രേഷൻ ട്രീറ്റ്മെന്റ്."
+      },
+      "spa-services": {
+        title: "സ്പാ സേവനങ്ങൾ",
+        description: "തിരുവല്ലയിലെ ഏറ്റവും മികച്ച സ്പായിൽ ബോഡി സ്ക്രബ് തെറാപ്പികളും പ്രീമിയം സ്ട്രെസ് റിലീഫ് പാക്കേജുകളും."
+      },
+      "waxing": {
+        title: "വാക്സിംഗ്",
+        description: "വിദഗ്ദ്ധരായ പ്രൊഫഷണലുകൾ ചെയ്യുന്ന ഫേഷ്യൽ & ബോഡി ഹെയർ റിമൂവൽ വാക്സിംഗ് സേവനം."
+      },
+      "wedding-prep": {
+        title: "വെഡ്ഡിംഗ് & ഇവന്റ് പ്രിപ്പറേഷൻ",
+        description: "കേരള വിവാഹങ്ങൾക്കും ഇവന്റുകൾക്കുമായി ഹെയർ, സ്കിൻ, സ്റ്റൈലിംഗ് പാക്കേജുകൾ."
+      }
+    };
+
+    return servicesTranslations[id] || { title: defaultTitle, description: defaultDesc };
   };
 
   const filteredServices = servicesData.filter((service) => {
@@ -349,6 +395,7 @@ Message/Special Requests: ${bookingDetails.message || "None"}`;
                 {filteredServices.length > 0 ? (
                   filteredServices.map((service) => {
                     const isSelected = selectedServices.includes(service.title);
+                    const localInfo = getTranslatedService(service.id, service.title, service.description);
                     return (
                       <div
                         key={service.id}
@@ -357,34 +404,17 @@ Message/Special Requests: ${bookingDetails.message || "None"}`;
                         style={{ position: 'relative' }}
                       >
                         <div className="service-card-image-wrapper">
-                          <img src={service.image} alt={service.title} />
+                          <img src={service.image} alt={localInfo.title} />
                           {isSelected && (
                             <div className="card-selected-badge">
                               <FaCheckCircle /> {language === "en" ? "Selected" : "തിരഞ്ഞെടുത്തു"}
                             </div>
                           )}
-                          
-                          {/* Premium Stylist Hover Preview Overlay */}
-                          <div className="stylist-badge-overlay" style={{
-                            position: 'absolute',
-                            bottom: '12px',
-                            left: '12px',
-                            background: 'rgba(10, 10, 10, 0.85)',
-                            padding: '4px 10px',
-                            borderRadius: '8px',
-                            fontSize: '11px',
-                            color: '#dfba49',
-                            border: '1px solid rgba(223, 186, 73, 0.3)',
-                            fontWeight: '600',
-                            letterSpacing: '0.5px'
-                          }}>
-                            {language === "en" ? `Specialist: ${getSpecialistNameForCategory(service.category)}` : `വിദഗ്ദ്ധൻ: ${getSpecialistNameForCategory(service.category)}`}
-                          </div>
                         </div>
                         
                         <div className="service-card-info">
-                          <h3>{service.title}</h3>
-                          <p>{service.description}</p>
+                          <h3>{localInfo.title}</h3>
+                          <p>{localInfo.description}</p>
                           
                           <div className="card-action-row">
                             <button
@@ -411,12 +441,12 @@ Message/Special Requests: ${bookingDetails.message || "None"}`;
           </>
         )}
 
-        {/* STEP 2: SCHEDULING & STYLIST SELECTOR */}
+        {/* STEP 2: SCHEDULING */}
         {wizardStep === 2 && (
           <section className="wizard-step-section" style={{ maxWidth: '900px', margin: '0 auto', padding: '0 20px' }}>
             <div className="wizard-card-layout" style={{ background: '#121212', borderRadius: '24px', border: '1px solid rgba(223, 186, 73, 0.15)', padding: '40px' }}>
               <h2 style={{ fontFamily: 'var(--font-cormorant-family), serif', color: '#dfba49', fontSize: '32px', marginBottom: '30px', textAlign: 'center' }}>
-                {language === "en" ? "Schedule & Select Stylists" : "തീയതിയും സ്റ്റൈലിസ്റ്റും തിരഞ്ഞെടുക്കുക"}
+                {language === "en" ? "Schedule Appointment" : "തീയതിയും സമയവും തിരഞ്ഞെടുക്കുക"}
               </h2>
 
               <div className="wizard-grid-2col" style={{ display: 'grid', gridTemplateColumns: '1.2fr 1fr', gap: '40px' }}>
@@ -466,41 +496,11 @@ Message/Special Requests: ${bookingDetails.message || "None"}`;
                   </div>
                 </div>
 
-                {/* Right Side: Stylist Grid List & Form Fields */}
+                {/* Right Side: Form Fields */}
                 <div className="wizard-right-pane">
-                  <div className="stylists-selector-wrapper" style={{ marginBottom: '30px' }}>
-                    <label style={{ fontSize: '13px', textTransform: 'uppercase', letterSpacing: '1px', color: '#888', display: 'block', marginBottom: '12px' }}>
-                      3. {language === "en" ? "Assign Stylist Specialist" : "സ്റ്റൈലിസ്റ്റിനെ തിരഞ്ഞെടുക്കുക"}
-                    </label>
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                      {stylists.map((st) => (
-                        <div
-                          key={st.id}
-                          onClick={() => setSelectedStylist(st.id)}
-                          style={{
-                            padding: '12px 18px',
-                            borderRadius: '12px',
-                            border: `1.5px solid ${selectedStylist === st.id ? '#dfba49' : 'rgba(255, 255, 255, 0.05)'}`,
-                            background: selectedStylist === st.id ? 'rgba(223, 186, 73, 0.06)' : '#0e0e0e',
-                            cursor: 'pointer',
-                            transition: 'all 0.2s ease',
-                            display: 'flex',
-                            flexDirection: 'column',
-                            gap: '2px'
-                          }}
-                        >
-                          <span style={{ color: selectedStylist === st.id ? '#dfba49' : '#fff', fontWeight: '600', fontSize: '14px' }}>
-                            {st.name}
-                          </span>
-                          <span style={{ color: '#888', fontSize: '11px' }}>{st.role}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
                   <div className="form-fields-wrapper">
                     <label style={{ fontSize: '13px', textTransform: 'uppercase', letterSpacing: '1px', color: '#888', display: 'block', marginBottom: '10px' }}>
-                      4. {language === "en" ? "Guest Details" : "വിവരങ്ങൾ നൽകുക"}
+                      3. {language === "en" ? "Guest Details" : "വിവരങ്ങൾ നൽകുക"}
                     </label>
                     
                     <div className="input-group" style={{ position: 'relative', display: 'flex', alignItems: 'center', marginBottom: '16px' }}>
@@ -642,15 +642,6 @@ Message/Special Requests: ${bookingDetails.message || "None"}`;
                     </span>
                     <span style={{ color: '#fff', fontSize: '15px', fontWeight: '600' }}>
                       {formatTimeTo12Hour(bookingDetails.time)}
-                    </span>
-                  </div>
-
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
-                    <span style={{ fontSize: '11px', textTransform: 'uppercase', letterSpacing: '1px', color: '#888' }}>
-                      {language === "en" ? "Preferred Stylist" : "സ്റ്റൈലിസ്റ്റ്"}
-                    </span>
-                    <span style={{ color: '#dfba49', fontSize: '15px', fontWeight: '600' }}>
-                      {stylists.find(s => s.id === selectedStylist)?.name || "Any Available Specialist"}
                     </span>
                   </div>
 
