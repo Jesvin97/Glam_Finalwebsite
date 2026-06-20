@@ -716,21 +716,7 @@ Message/Special Requests: ${bookingDetails.message || "None"}`;
 
         {/* PERSISTENT FLOATING BOTTOM PANEL (STEP 1 ONLY) */}
         {selectedServices.length > 0 && wizardStep === 1 && (
-          <aside className="booking-bottom-panel" style={{
-            position: 'fixed',
-            bottom: '24px',
-            right: '24px',
-            background: 'rgba(18, 18, 18, 0.85)',
-            border: '1px solid rgba(223, 186, 73, 0.3)',
-            borderRadius: '20px',
-            backdropFilter: 'blur(16px)',
-            padding: '20px 24px',
-            boxShadow: '0 10px 40px rgba(0,0,0,0.6)',
-            zIndex: 999,
-            display: 'flex',
-            alignItems: 'center',
-            gap: '24px'
-          }}>
+          <aside className="booking-bottom-panel">
             <div style={{ display: 'flex', flexDirection: 'column' }}>
               <span style={{ fontSize: '11px', color: '#888', textTransform: 'uppercase', letterSpacing: '1px' }}>
                 {language === "en" ? "Selected Package" : "തിരഞ്ഞെടുത്ത പാക്കേജ്"}
