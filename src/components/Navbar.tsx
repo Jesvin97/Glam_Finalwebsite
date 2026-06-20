@@ -92,33 +92,6 @@ export default function Navbar() {
             <a href="/#contact">{t("contact")}</a>
           </li>
 
-          <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginLeft: '20px' }}>
-            <li className="lang-switcher-li" style={{ display: 'flex', alignItems: 'center' }}>
-              <button
-                onClick={() => setLanguage(language === "en" ? "ml" : "en")}
-                style={{
-                  background: 'rgba(212, 175, 55, 0.1)',
-                  border: '1px solid rgba(212, 175, 55, 0.4)',
-                  color: '#dfba49',
-                  padding: '5px 12px',
-                  borderRadius: '12px',
-                  fontSize: '11px',
-                  cursor: 'pointer',
-                  fontWeight: 'bold',
-                  letterSpacing: '0.5px'
-                }}
-              >
-                {language === "en" ? "ML" : "EN"}
-              </button>
-            </li>
-
-            <li>
-              <a href="/services" className="book-btn">
-                {t("bookNow")}
-              </a>
-            </li>
-          </div>
-
         </ul>
 
       </nav>
@@ -131,29 +104,7 @@ export default function Navbar() {
         <a href="/blogs" onClick={closeMenu}>{t("blogs")}</a>
         <a href="/#contact" onClick={closeMenu}>{t("contact")}</a>
         
-        <button
-          onClick={() => {
-            setLanguage(language === "en" ? "ml" : "en");
-            closeMenu();
-          }}
-          style={{
-            background: 'none',
-            border: '1px solid rgba(223, 186, 73, 0.3)',
-            color: '#dfba49',
-            padding: '8px 16px',
-            borderRadius: '20px',
-            fontSize: '12px',
-            cursor: 'pointer',
-            margin: '10px 0',
-            fontWeight: '600',
-            width: 'fit-content'
-          }}
-        >
-          🌐 {language === "en" ? "മലയാളം (ML)" : "English (EN)"}
-        </button>
-
-        <a href="/services" onClick={closeMenu} className="book-btn">{t("bookNow")}</a>
       </div>
     </>
   );
-}
+}

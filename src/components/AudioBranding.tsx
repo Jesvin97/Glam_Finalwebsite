@@ -1,44 +1,40 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useCallback } from "react";
+import AudioAutoplayTrigger from "./AudioAutoplayTrigger";
 
+/**
+ * AudioBranding component – sets up background audio and hands the start
+ * logic to <AudioAutoplayTrigger/> which listens for the first user interaction
+ * (click, scroll, or touch) and then triggers playback.
+ */
 export default function AudioBranding() {
   const audioRef = useRef<HTMLAudioElement | null>(null);
-  const startedRef = useRef(false);
 
+  // Lazily creates the Audio object and plays it. Wrapped in useCallback so the
+  // function reference is stable for the trigger component.
+  const startAudio = useCallback(() => {
+    if (!audioRef.current) {
+      const audio = new Audio("https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3");
+      audio.loop = true;
+      audio.volume = 0.15; // Soft background level
+      audioRef.current = audio;
+    }
+    // play() returns a promise; catch any remaining autoplay block.
+    audioRef.current?.play().catch(() => {
+      console.log("Audio autoplay still blocked after user interaction");
+    });
+  }, []);
+
+  // Ensure the audio is paused when the component unmounts (e.g., navigation)
   useEffect(() => {
-    // Instantiate background audio loop
-    audioRef.current = new Audio("https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3");
-    audioRef.current.loop = true;
-    audioRef.current.volume = 0.15; // Set a soft background level
-
-    const handleFirstInteraction = () => {
-      if (startedRef.current || !audioRef.current) return;
-      
-      audioRef.current.play()
-        .then(() => {
-          startedRef.current = true;
-          // Remove listener once successfully started
-          window.removeEventListener("click", handleFirstInteraction);
-          window.removeEventListener("scroll", handleFirstInteraction);
-        })
-        .catch((err) => {
-          console.log("Audio autoplay waiting for valid user interaction:", err);
-        });
-    };
-
-    window.addEventListener("click", handleFirstInteraction);
-    window.addEventListener("scroll", handleFirstInteraction);
-
     return () => {
-      window.removeEventListener("click", handleFirstInteraction);
-      window.removeEventListener("scroll", handleFirstInteraction);
       if (audioRef.current) {
         audioRef.current.pause();
       }
     };
   }, []);
 
-  // Return null so no visual HTML elements or branding pills are rendered in the DOM
-  return null;
+  // The trigger component does all the work – we just render it.
+  return <AudioAutoplayTrigger startAudio={startAudio} />;
 }
