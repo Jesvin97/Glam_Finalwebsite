@@ -8,7 +8,6 @@ import Footer from "@/components/Footer";
 import FAQ from "@/components/FAQ";
 import Testimonials from "@/components/Testimonials";
 import Photos from "@/components/Photos";
-import BeforeAfterSlider from "@/components/BeforeAfterSlider";
 
 export const metadata: Metadata = {
   title: "Glam'more | Unisex Salon in Thiruvalla",
@@ -26,11 +25,6 @@ export default function Home() {
       <Hero />
     
       <About />
-
-      <section className="transformations-section">
-        <h2 className="gold-section-heading transformations-heading">Transformations</h2>
-        <BeforeAfterSlider />
-      </section>
 
       <Services />
 
