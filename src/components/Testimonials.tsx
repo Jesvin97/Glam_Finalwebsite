@@ -96,9 +96,9 @@ const TestimonialCard = React.memo(({ item, variant = "default" }: { item: Testi
   const isFlush = variant === "flush";
 
   // Resolve image path safely (either local string or Sanity dynamic URL)
-  const imageUrl = (item.avatar && typeof item.avatar !== "string")
+  const imageUrl: string = (item.avatar && typeof item.avatar !== "string")
     ? urlFor(item.avatar).width(150).height(150).auto('format').quality(80).url()
-    : (item.avatar || "/images/model.jpeg");
+    : (item.avatar as string || "/images/model.jpeg");
 
   return (
     <div className={cn("testimonial-card-v2", isFlush && "flush")}>
