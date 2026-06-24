@@ -20,6 +20,7 @@ export default function Hero() {
       <ScrollReveal direction="left" className="hero-content-reveal">
         <div className="hero-content">
           <h1>
+            <span className="mobile-only-glammore">Glam'more <br /></span>
             Premium Unisex Salon & Bridal Studio in Thiruvalla
           </h1>
 

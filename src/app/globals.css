@@ -3000,4 +3000,18 @@ h1, h2, h3,
   from { width: 0%; }
   to   { width: 100%; }
 }
+
+.mobile-only-glammore {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .mobile-only-glammore {
+    display: block;
+    color: #d4af37; /* matches primary gold */
+    font-size: 1em; /* matches size of h1 */
+    margin-bottom: 0.2em;
+    font-family: 'Playfair Display', serif;
+  }
+}
 
