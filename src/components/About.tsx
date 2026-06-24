@@ -2,10 +2,7 @@
 
 import React from "react";
 import ScrollReveal from "./ScrollReveal";
-import { useLanguage } from "./LanguageContext";
-
 export default function About() {
-  const { t } = useLanguage();
 
   return (
     <section className="about-section" id="about">
@@ -21,19 +18,19 @@ export default function About() {
       <ScrollReveal direction="right" className="about-content-wrapper">
         <div className="about-content">
           <p className="about-tag">
-            {t("aboutTag")}
+            ABOUT GLAM&apos;MORE
           </p>
 
           <h2>
-            {t("aboutTitle")}
+            Luxury Salon Experience
           </h2>
 
           <p className="about-description">
-            {t("aboutDesc")}
+            Step into a world where elegance, beauty and luxury come together. Our salon offers world-class beauty treatments, professional hair care, premium styling, and personalized wellness experiences designed for modern beauty standards.
           </p>
 
           <a href="/#contact" className="primary-btn">
-            {t("bookVisit")}
+            Book Your Visit
           </a>
         </div>
       </ScrollReveal>

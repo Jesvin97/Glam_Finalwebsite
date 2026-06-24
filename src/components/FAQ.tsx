@@ -2,14 +2,13 @@
 import { useState, useEffect } from "react";
 import ScrollReveal from "./ScrollReveal";
 import { client } from "@/sanity/client";
+
 import {
   Accordion,
   AccordionItem,
   AccordionTrigger,
   AccordionContent,
 } from "@/components/ui/accordion";
-
-import { useLanguage } from "./LanguageContext";
 
 interface FAQItem {
   question: string;
@@ -18,7 +17,6 @@ interface FAQItem {
 
 export default function FAQ() {
   const [faqs, setFaqs] = useState<FAQItem[]>([]);
-  const { t, language } = useLanguage();
 
   const fallbackFaqs = [
     {
@@ -86,17 +84,13 @@ export default function FAQ() {
     fetchFaqs();
   }, []);
 
-  const displayFaqs = language === "ml"
-    ? (faqs.length > 0 ? faqs : fallbackFaqsMl)
-    : (faqs.length > 0 ? faqs : fallbackFaqs);
+  const displayFaqs = faqs.length > 0 ? faqs : fallbackFaqs;
 
   return (
     <section className="faq-section">
       <ScrollReveal direction="up">
         <div className="section-title faq-title-container">
-          <h2 className="gold-section-heading">
-            {t("faqTitle")}
-          </h2>
+          <h2 className="gold-section-heading">Frequently Asked Questions</h2>
         </div>
       </ScrollReveal>
 

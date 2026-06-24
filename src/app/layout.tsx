@@ -42,7 +42,26 @@ const lato = Lato({
 
 export const metadata: Metadata = {
   title: "Glam'more | Best Unisex Salon & Bridal Makeup in Thiruvalla",
-  description: "Glam'more is the premier unisex salon and spa in Thiruvalla, Kerala. Offering world-class bridal makeup, haircuts, nail art, and luxury wellness therapies.",
+  description: "Glam'more is the premier unisex salon and spa in Thiruvalla, Kerala. Offering bridal makeup, haircuts, acrylic nails, eyebrow threading, facials, massages, waxing, hair extensions, pedicures, and luxury wellness therapies.",
+  keywords: [
+    // Brand
+    "Glammore salon", "Glam'more", "unisex salon Thiruvalla", "best salon Thiruvalla",
+    "luxury salon Kerala", "beauty parlour Thiruvalla", "salon near me Thiruvalla",
+    // Services — exact match
+    "acrylic nails Thiruvalla", "body waxing Thiruvalla", "bridal services Thiruvalla",
+    "bridal makeup Kerala", "eyebrow shaping Thiruvalla", "eyebrow threading Thiruvalla",
+    "eyelash extensions Thiruvalla", "haircut Thiruvalla", "hair extensions Kerala",
+    "hairstyling Thiruvalla", "makeup services Thiruvalla", "massage Thiruvalla",
+    "pedicure Thiruvalla", "shampoo conditioning salon", "shaving salon Thiruvalla",
+    "skin care Thiruvalla", "waxing salon Kerala", "wedding preparation salon",
+    "facial spa Thiruvalla", "nail salon Thiruvalla",
+    // GEO / local intent
+    "salon Pathanamthitta", "salon Kottayam", "salon Alappuzha", "MC Road salon",
+    "Club 7 Junction salon", "Thiruvalla beauty",
+    // AEO / question intent
+    "best bridal makeup artist Thiruvalla", "unisex salon near Thiruvalla",
+    "where to get acrylic nails in Kerala",
+  ],
   alternates: {
     canonical: "https://glammoresalon.in",
   },
@@ -69,7 +88,7 @@ export const viewport = {
   initialScale: 1,
 };
 
-import { LanguageProvider } from "@/components/LanguageContext";
+
 import CustomCursor from "@/components/CustomCursor";
 import AudioBranding from "@/components/AudioBranding";
 
@@ -126,7 +145,32 @@ export default function RootLayout({
               "sameAs": [
                 "https://www.instagram.com/glammoresalon_thiruvalla",
                 "https://www.facebook.com/glammoresalonthiruvalla"
-              ]
+              ],
+              "hasOfferCatalog": {
+                "@type": "OfferCatalog",
+                "name": "Salon & Beauty Services",
+                "itemListElement": [
+                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Acrylic Nails" } },
+                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Body Waxing" } },
+                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Bridal Services" } },
+                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Eyebrow Shaping" } },
+                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Eyebrow Threading" } },
+                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Eyelash Extensions" } },
+                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Haircut" } },
+                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Hair Extensions" } },
+                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Hairstyling" } },
+                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Make-up Services" } },
+                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Massages" } },
+                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Pedicures" } },
+                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Shampoo & Conditioning" } },
+                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Shaving" } },
+                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Skin Care" } },
+                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Waxing" } },
+                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Wedding and Event Preparation" } },
+                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Facial Spa" } },
+                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Nail Salon" } }
+                ]
+              }
             }),
           }}
         />
@@ -156,11 +200,9 @@ export default function RootLayout({
         </noscript>
       </head>
       <body className="min-h-full flex flex-col">
-        <LanguageProvider>
-          <CustomCursor />
-          <AudioBranding />
-          {children}
-        </LanguageProvider>
+        <CustomCursor />
+        <AudioBranding />
+        {children}
       </body>
     </html>
   );

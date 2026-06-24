@@ -1,10 +1,7 @@
 "use client";
 
 import ScrollReveal from "./ScrollReveal";
-import { useLanguage } from "./LanguageContext";
-
 export default function Hero() {
-  const { t } = useLanguage();
 
   return (
     <section className="hero">
@@ -23,16 +20,16 @@ export default function Hero() {
       <ScrollReveal direction="left" className="hero-content-reveal">
         <div className="hero-content">
           <h1>
-            {t("heroTitle")}
+            Premium Unisex Salon & Bridal Studio in Thiruvalla
           </h1>
 
           <p>
-            {t("heroSubtitle")}
+            Step into a world where elegance, beauty, and luxury come together. Thiruvalla&apos;s leading destination for premium grooming, professional haircuts, nail extensions, and bridal artistry.
           </p>
 
           <div className="hero-buttons">
             <a href="/services" className="primary-btn">
-              {t("bookVisit")}
+              Book Your Visit
             </a>
           </div>
         </div>

@@ -1,4 +1,5 @@
-import type { Metadata } from "next";
+"use client";
+
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Services from "@/components/Services";
@@ -8,36 +9,27 @@ import Footer from "@/components/Footer";
 import FAQ from "@/components/FAQ";
 import Testimonials from "@/components/Testimonials";
 import Photos from "@/components/Photos";
-
-export const metadata: Metadata = {
-  title: "Glam'more | Unisex Salon in Thiruvalla",
-  description: "Top unisex salon in Thiruvalla. World-class bridal makeup, haircuts, nail art, and luxury spa therapies in Kerala.",
-};
+import IntroLoader from "@/components/IntroLoader";
 
 export default function Home() {
-
   return (
-
     <main>
 
+      
+      {/* 
+        We render the rest of the page even while the splash is showing 
+        so it preloads images and is ready to be revealed immediately.
+      */}
+      <IntroLoader />
       <Navbar />
-
       <Hero />
-    
       <About />
-
       <Services />
-
       <Testimonials />
-
       <Photos />
-
       <FAQ />
-    
       <Contact />
-
       <Footer />
-
     </main>
   );
 }

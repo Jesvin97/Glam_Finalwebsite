@@ -1,15 +1,14 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import Lottie from "lottie-react";
+import Lottie, { LottieRefCurrentProps } from "lottie-react";
 import menuAnimation from "../../animation/navbar.json";
-import { useLanguage } from "./LanguageContext";
+import Link from "next/link";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const lottieRef = useRef<any>(null);
+  const lottieRef = useRef<LottieRefCurrentProps>(null);
   const hasInitialized = useRef(false);
-  const { language, setLanguage, t } = useLanguage();
 
   useEffect(() => {
     if (!lottieRef.current) return;
@@ -47,7 +46,7 @@ export default function Navbar() {
       <nav className="navbar">
 
         {/* LOGO */}
-        <a href="/" className="logo-link navbar-logo-link">
+        <Link href="/" className="logo-link navbar-logo-link">
           <img
             src="/images/logo.png"
             alt="Glam'more Logo"
@@ -56,7 +55,7 @@ export default function Navbar() {
           <span className="navbar-brand-text">
             Glam&apos;more Unisex Salon
           </span>
-        </a>
+        </Link>
 
         {/* HAMBURGER MENU - Lottie Animation */}
         <div className="hamburger" onClick={toggleMenu}>
@@ -73,23 +72,23 @@ export default function Navbar() {
         <ul className="nav-links">
 
           <li>
-            <a href="/">{t("home")}</a>
+            <Link href="/">Home</Link>
           </li>
 
           <li>
-            <a href="/#about">{t("about")}</a>
+            <Link href="/#about">About Us</Link>
           </li>
 
           <li>
-            <a href="/services">{t("services")}</a>
+            <Link href="/services">Services</Link>
           </li>
 
           <li>
-            <a href="/blogs">{t("blogs")}</a>
+            <Link href="/blogs">Blogs</Link>
           </li>
 
           <li>
-            <a href="/#contact">{t("contact")}</a>
+            <Link href="/#contact">Contact Us</Link>
           </li>
 
         </ul>
@@ -98,11 +97,11 @@ export default function Navbar() {
 
       {/* MOBILE MENU */}
       <div className={`mobile-menu ${isMenuOpen ? "active" : ""}`}>
-        <a href="/" onClick={closeMenu}>{t("home")}</a>
-        <a href="/#about" onClick={closeMenu}>{t("about")}</a>
-        <a href="/services" onClick={closeMenu}>{t("services")}</a>
-        <a href="/blogs" onClick={closeMenu}>{t("blogs")}</a>
-        <a href="/#contact" onClick={closeMenu}>{t("contact")}</a>
+        <Link href="/" onClick={closeMenu}>Home</Link>
+        <Link href="/#about" onClick={closeMenu}>About Us</Link>
+        <Link href="/services" onClick={closeMenu}>Services</Link>
+        <Link href="/blogs" onClick={closeMenu}>Blogs</Link>
+        <Link href="/#contact" onClick={closeMenu}>Contact Us</Link>
         
       </div>
     </>

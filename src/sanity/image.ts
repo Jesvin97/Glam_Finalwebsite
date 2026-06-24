@@ -4,6 +4,6 @@ import { client } from "./client";
 const builder = createImageUrlBuilder(client);
 
 // Converts any Sanity image reference safely to an optimized CDN URL
-export function urlFor(source: any) {
+export function urlFor(source: unknown) {
   return builder.image(source);
 }

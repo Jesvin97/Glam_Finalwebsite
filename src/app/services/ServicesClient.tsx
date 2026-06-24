@@ -5,7 +5,8 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { FaCheckCircle, FaTimes, FaClock, FaUser, FaChevronRight, FaChevronLeft, FaWhatsapp } from "react-icons/fa";
 import { Calendar } from "@/components/ui/calendar";
-import { useLanguage } from "@/components/LanguageContext";
+
+
 
 interface ServiceItem {
   id: string;
@@ -17,7 +18,6 @@ interface ServiceItem {
 }
 
 export default function ServicesClient() {
-  const { t, language } = useLanguage();
   const [selectedServices, setSelectedServices] = useState<string[]>([]);
   const [categoryFilter, setCategoryFilter] = useState<string>("all");
   const [searchQuery, setSearchQuery] = useState<string>("");
@@ -41,12 +41,12 @@ export default function ServicesClient() {
   });
 
   const categories = [
-    { id: "all", name: language === "en" ? "All Services" : "എല്ലാ സേവനങ്ങളും" },
-    { id: "hair", name: language === "en" ? "Hair Styling" : "ഹെയർ സ്റ്റൈലിംഗ്" },
-    { id: "nails", name: language === "en" ? "Nail Care" : "നഖ പരിചരണം" },
-    { id: "grooming", name: language === "en" ? "Grooming & Waxing" : "ഗ്രൂമിംഗ് & വാക്സിംഗ്" },
-    { id: "skin", name: language === "en" ? "Skin & Wellness" : "സ്കിൻ & വെൽനസ്" },
-    { id: "events", name: language === "en" ? "Weddings & Events" : "വിവാഹങ്ങൾ & ഇവന്റുകൾ" },
+    { id: "all", name: "All Services" },
+    { id: "hair", name: "Hair Styling" },
+    { id: "nails", name: "Nail Care" },
+    { id: "grooming", name: "Grooming & Waxing" },
+    { id: "skin", name: "Skin & Wellness" },
+    { id: "events", name: "Weddings & Events" },
   ];
 
   const servicesData: ServiceItem[] = [
@@ -222,17 +222,17 @@ export default function ServicesClient() {
   const handleBookingSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (selectedServices.length === 0) {
-      alert(language === "en" ? "Please select at least one service before proceeding." : "ദയവായി കുറഞ്ഞത് ഒരു സേവനമെങ്കിലും തിരഞ്ഞെടുക്കുക.");
+      alert("Please select at least one service before proceeding.");
       return;
     }
 
     if (!bookingDetails.name.trim()) {
-      alert(language === "en" ? "Please enter your name." : "ദയവായി നിങ്ങളുടെ പേര് നൽകുക.");
+      alert("Please enter your name.");
       return;
     }
 
     if (!bookingDetails.time) {
-      alert(language === "en" ? "Please select a time slot." : "ദയവായി സമയം തിരഞ്ഞെടുക്കുക.");
+      alert("Please select a time slot.");
       return;
     }
 
@@ -240,7 +240,7 @@ export default function ServicesClient() {
     if (bookingDetails.date) {
       const todayStr = getTodayDateString();
       if (bookingDetails.date < todayStr) {
-        alert(language === "en" ? "Appointment date cannot be in the past." : "ബുക്കിംഗ് തീയതി കഴിഞ്ഞുപോയതാകരുത്.");
+        alert("Appointment date cannot be in the past.");
         return;
       }
     }
@@ -249,7 +249,7 @@ export default function ServicesClient() {
     if (bookingDetails.time) {
       const [hours, minutes] = bookingDetails.time.split(":").map(Number);
       if (hours < 9 || hours > 19 || (hours === 19 && minutes > 0)) {
-        alert(language === "en" ? "Appointments can only be booked between 9:00 AM and 7:00 PM." : "സേവനങ്ങൾ രാവിലെ 9:00 നും വൈകുന്നേരം 7:00 നും ഇടയിൽ മാത്രമേ ലഭ്യമാകൂ.");
+        alert("Appointments can only be booked between 9:00 AM and 7:00 PM.");
         return;
       }
     }
@@ -272,72 +272,7 @@ Message/Special Requests: ${bookingDetails.message || "None"}`;
   };
 
   const getTranslatedService = (id: string, defaultTitle: string, defaultDesc: string) => {
-    if (language !== "ml") return { title: defaultTitle, description: defaultDesc };
-
-    const servicesTranslations: Record<string, { title: string; description: string }> = {
-      "acrylic-nails": {
-        title: "അക്രിലിക് നഖങ്ങൾ",
-        description: "തിരുവല്ലയിലെ മുൻനിര ബ്യൂട്ടി ആൻഡ് നെയിൽ സലൂണിൽ പ്രീമിയം നെയിൽ ആർട്ടോടും അത്യാധുനിക ഫിനിഷിംഗോടും കൂടിയ അക്രിലിക് എക്സ്റ്റൻഷനുകൾ."
-      },
-      "body-waxing": {
-        title: "ബോഡി വാക്സിംഗ്",
-        description: "തിരുവല്ലയിൽ ലഭ്യമായ പ്രീമിയം ഓർഗാനിക് വാക്സ് ഉപയോഗിച്ചുള്ള പൂർണ്ണ ബോഡി സുഗമമായ വാക്സിംഗ് ട്രീറ്റ്മെന്റ്."
-      },
-      "bridal-services": {
-        title: "ബ്രൈഡൽ സേവനങ്ങൾ",
-        description: "നിങ്ങളുടെ പ്രത്യേക വിവാഹദിനത്തിനായി തിരുവല്ലയിൽ പ്രത്യേകമായി തയ്യാറാക്കിയ സമഗ്രമായ കേരള ബ്രൈഡൽ മേക്കപ്പ്, ഹെയർ സ്റ്റൈലിംഗ് സേവനങ്ങൾ."
-      },
-      "eyebrow-threading": {
-        title: "ഐബ്രോ ത്രെഡിംഗ്",
-        description: "തിരുവല്ലയിലെ വിദഗ്ദ്ധരായ ബ്യൂട്ടീഷ്യൻമാർ ചെയ്യുന്ന കൃത്യതയാർന്ന ഐബ്രോ ത്രെഡിംഗ് സേവനം."
-      },
-      "eyelashes": {
-        title: "ഐലാഷ് എക്സ്റ്റൻഷനുകൾ",
-        description: "മനോഹരവും സ്വാഭാവികവുമായ രൂപത്തിനായി പ്രീമിയം വ്യക്തിഗത ഐലാഷ് എക്സ്റ്റൻഷൻ സേവനങ്ങൾ."
-      },
-      "hair-extensions": {
-        title: "ഹെയർ എക്സ്റ്റൻഷനുകൾ",
-        description: "നീളത്തിനും വോളിയത്തിനുമായി പ്രൊഫഷണലായി ഘടിപ്പിച്ച 100% സ്വാഭാവിക ഹെയർ എക്സ്റ്റൻഷനുകൾ."
-      },
-      "haircut": {
-        title: "ഹെയർകട്ട്",
-        description: "തിരുവല്ലയിലെ മാസ്റ്റർ സ്റ്റൈലിസ്റ്റുകൾ ചെയ്യുന്ന പുരുഷന്മാർക്കും സ്ത്രീകൾക്കും കുട്ടികൾക്കുമുള്ള ട്രെൻഡിംഗ് ഹെയർകട്ടുകൾ."
-      },
-      "hairstyling": {
-        title: "ഹെയർ സ്റ്റൈലിംഗ്",
-        description: "തിരുവല്ലയിലെ പ്രമുഖ യൂണിസെക്സ് സലൂണിൽ എല്ലാത്തരം മുടികൾക്കുമായി ലേറ്റസ്റ്റ് ഹെയർ സ്റ്റൈലുകൾ."
-      },
-      "makeup-services": {
-        title: "മേക്കപ്പ് സേവനങ്ങൾ",
-        description: "വിവാഹങ്ങൾക്കും പാർട്ടികൾക്കുമായി പ്രൊഫഷണൽ മേക്കപ്പ് ആർട്ടിസ്റ്റുകൾ ചെയ്യുന്ന ഫ്ലാവ്‌ലെസ് എച്ച്ഡി, എയർബ്രഷ് മേക്കപ്പ്."
-      },
-      "massages": {
-        title: "മസാജ് തെറാപ്പികൾ",
-        description: "തിരുവല്ലയിലെ ഞങ്ങളുടെ വെൽനസ് സ്പായിൽ ലഭ്യമായ ഡീപ് ടിഷ്യൂ, അരോമാതെറാപ്പി റിലാക്സിംഗ് മസാജുകൾ."
-      },
-      "pedicures": {
-        title: "പെഡിക്യൂറുകൾ",
-        description: "ഞങ്ങളുടെ തിരുവല്ലയിലെ നെയിൽ സ്റ്റുഡിയോയിൽ ഫൂട്ട് സ്പാ തെറാപ്പിയും ഓർഗാനിക് സ്ക്രബ് എക്സ്ഫോളിയേഷനും."
-      },
-      "shaving": {
-        title: "ഷേവിംഗ്",
-        description: "പരമ്പരാഗത ഹോട്ട് ടവൽ ഷേവിംഗ്, ബിയർഡ് ഡിറ്റെയിലിംഗ്, ഹൈഡ്രേഷൻ ട്രീറ്റ്മെന്റ്."
-      },
-      "spa-services": {
-        title: "സ്പാ സേവനങ്ങൾ",
-        description: "തിരുവല്ലയിലെ ഏറ്റവും മികച്ച സ്പായിൽ ബോഡി സ്ക്രബ് തെറാപ്പികളും പ്രീമിയം സ്ട്രെസ് റിലീഫ് പാക്കേജുകളും."
-      },
-      "waxing": {
-        title: "വാക്സിംഗ്",
-        description: "വിദഗ്ദ്ധരായ പ്രൊഫഷണലുകൾ ചെയ്യുന്ന ഫേഷ്യൽ & ബോഡി ഹെയർ റിമൂവൽ വാക്സിംഗ് സേവനം."
-      },
-      "wedding-prep": {
-        title: "വെഡ്ഡിംഗ് & ഇവന്റ് പ്രിപ്പറേഷൻ",
-        description: "കേരള വിവാഹങ്ങൾക്കും ഇവന്റുകൾക്കുമായി ഹെയർ, സ്കിൻ, സ്റ്റൈലിംഗ് പാക്കേജുകൾ."
-      }
-    };
-
-    return servicesTranslations[id] || { title: defaultTitle, description: defaultDesc };
+    return { title: defaultTitle, description: defaultDesc };
   };
 
   const filteredServices = servicesData.filter((service) => {
@@ -354,10 +289,10 @@ Message/Special Requests: ${bookingDetails.message || "None"}`;
       <main className="services-page">
         <header className="services-page-header">
           <h1 style={{ fontSize: "54px", textTransform: "uppercase", letterSpacing: "4px", margin: "0 0 20px", fontFamily: "var(--font-cormorant-family), serif", fontWeight: "700" }}>
-            {t("servicesTitle")}
+            Services
           </h1>
           <p className="services-subtitle">
-            {t("servicesSubtitle")}
+            Explore our curated list of beauty and wellness services.
           </p>
         </header>
 
@@ -365,15 +300,15 @@ Message/Special Requests: ${bookingDetails.message || "None"}`;
         {selectedServices.length > 0 && (
           <div className="wizard-step-progress" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '24px', marginBottom: '40px' }}>
             <span style={{ fontSize: '13px', fontWeight: wizardStep === 1 ? '700' : '400', color: wizardStep === 1 ? '#dfba49' : '#888', textTransform: 'uppercase', letterSpacing: '1px', borderBottom: wizardStep === 1 ? '2px solid #dfba49' : 'none', paddingBottom: '4px' }}>
-              1. {language === "en" ? "Select Services" : "സേവനങ്ങൾ"}
+              1. "Select Services"
             </span>
             <FaChevronRight size={10} style={{ color: '#555' }} />
             <span style={{ fontSize: '13px', fontWeight: wizardStep === 2 ? '700' : '400', color: wizardStep === 2 ? '#dfba49' : '#888', textTransform: 'uppercase', letterSpacing: '1px', borderBottom: wizardStep === 2 ? '2px solid #dfba49' : 'none', paddingBottom: '4px' }}>
-              2. {language === "en" ? "Schedule & Stylists" : "തീയതി & സ്റ്റൈലിസ്റ്റ്"}
+              2. "Schedule & Stylists"
             </span>
             <FaChevronRight size={10} style={{ color: '#555' }} />
             <span style={{ fontSize: '13px', fontWeight: wizardStep === 3 ? '700' : '400', color: wizardStep === 3 ? '#dfba49' : '#888', textTransform: 'uppercase', letterSpacing: '1px', borderBottom: wizardStep === 3 ? '2px solid #dfba49' : 'none', paddingBottom: '4px' }}>
-              3. {language === "en" ? "Confirm Package" : "കൺഫേം ചെയ്യുക"}
+              3. "Confirm Package"
             </span>
           </div>
         )}
@@ -385,7 +320,7 @@ Message/Special Requests: ${bookingDetails.message || "None"}`;
               <div className="search-bar-wrapper">
                 <input
                   type="text"
-                  placeholder={t("searchPlaceholder")}
+                  placeholder="Search services..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   className="search-input"
@@ -422,7 +357,7 @@ Message/Special Requests: ${bookingDetails.message || "None"}`;
                           <img src={service.image} alt={localInfo.title} />
                           {isSelected && (
                             <div className="card-selected-badge">
-                              <FaCheckCircle /> {language === "en" ? "Selected" : "തിരഞ്ഞെടുത്തു"}
+                              <FaCheckCircle /> "Selected"
                             </div>
                           )}
                         </div>
@@ -434,7 +369,7 @@ Message/Special Requests: ${bookingDetails.message || "None"}`;
                           <div className="card-action-row" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '15px' }}>
                             {service.price && (
                               <span className="service-price-badge" style={{ color: '#dfba49', fontWeight: 'bold', fontSize: '15px', fontFamily: 'var(--font-cormorant-family), serif' }}>
-                                {language === "ml" ? `തുടങ്ങുന്നത് ` : `Starting from `}{service.price}
+                                `Starting from `${service.price}
                               </span>
                             )}
                             <button
@@ -443,8 +378,8 @@ Message/Special Requests: ${bookingDetails.message || "None"}`;
                               style={{ margin: 0 }}
                             >
                               {isSelected 
-                                ? (language === "en" ? "Remove" : "ഒഴിവാക്കുക") 
-                                : (language === "en" ? "Add" : "ചേർക്കുക")
+                                ? "Remove" 
+                                : "Add"
                               }
                             </button>
                           </div>
@@ -454,7 +389,7 @@ Message/Special Requests: ${bookingDetails.message || "None"}`;
                   })
                 ) : (
                   <div className="no-services-found">
-                    <p>{language === "en" ? "No services matched your search criteria." : "സേവനങ്ങൾ ഒന്നും കണ്ടെത്താനായില്ല."}</p>
+                    <p>No services matched your search criteria.</p>
                   </div>
                 )}
               </div>
@@ -467,7 +402,7 @@ Message/Special Requests: ${bookingDetails.message || "None"}`;
           <section className="wizard-step-section" style={{ maxWidth: '900px', margin: '0 auto', padding: '0 20px' }}>
             <div className="wizard-card-layout" style={{ background: '#121212', borderRadius: '24px', border: '1px solid rgba(223, 186, 73, 0.15)', padding: '40px' }}>
               <h2 style={{ fontFamily: 'var(--font-cormorant-family), serif', color: '#dfba49', fontSize: '32px', marginBottom: '30px', textAlign: 'center' }}>
-                {language === "en" ? "Schedule Appointment" : "തീയതിയും സമയവും തിരഞ്ഞെടുക്കുക"}
+                "Schedule Appointment"
               </h2>
 
               <div className="wizard-grid-2col" style={{ display: 'grid', gridTemplateColumns: '1.2fr 1fr', gap: '40px' }}>
@@ -475,7 +410,7 @@ Message/Special Requests: ${bookingDetails.message || "None"}`;
                 <div className="wizard-left-pane">
                   <div className="calendar-wrapper" style={{ marginBottom: '30px', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                     <label style={{ fontSize: '13px', textTransform: 'uppercase', letterSpacing: '1px', color: '#888', alignSelf: 'flex-start', marginBottom: '10px' }}>
-                      1. {language === "en" ? "Select Appointment Date" : "തീയതി തിരഞ്ഞെടുക്കുക"}
+                      1. "Select Appointment Date"
                     </label>
                     <Calendar
                       mode="single"
@@ -491,7 +426,7 @@ Message/Special Requests: ${bookingDetails.message || "None"}`;
 
                   <div className="time-selector-wrapper">
                     <label style={{ fontSize: '13px', textTransform: 'uppercase', letterSpacing: '1px', color: '#888', display: 'block', marginBottom: '10px' }}>
-                      2. {language === "en" ? "Preferred Timing (9 AM - 7 PM)" : "സമയം തിരഞ്ഞെടുക്കുക (രാവിലെ 9 മുതൽ വൈകിട്ട് 7 വരെ)"}
+                      2. "Preferred Timing (9 AM - 7 PM)"
                     </label>
                     <div style={{ position: 'relative', display: 'flex', alignItems: 'center' }}>
                       <span style={{ position: 'absolute', left: '16px', color: '#dfba49' }}><FaClock /></span>
@@ -521,7 +456,7 @@ Message/Special Requests: ${bookingDetails.message || "None"}`;
                 <div className="wizard-right-pane">
                   <div className="form-fields-wrapper">
                     <label style={{ fontSize: '13px', textTransform: 'uppercase', letterSpacing: '1px', color: '#888', display: 'block', marginBottom: '10px' }}>
-                      3. {language === "en" ? "Guest Details" : "വിവരങ്ങൾ നൽകുക"}
+                      3. "Guest Details"
                     </label>
                     
                     <div className="input-group" style={{ position: 'relative', display: 'flex', alignItems: 'center', marginBottom: '16px' }}>
@@ -529,7 +464,7 @@ Message/Special Requests: ${bookingDetails.message || "None"}`;
                       <input
                         type="text"
                         name="name"
-                        placeholder={t("namePlace")}
+                        placeholder="Your name"
                         value={bookingDetails.name}
                         onChange={handleFormChange}
                         required
@@ -547,7 +482,7 @@ Message/Special Requests: ${bookingDetails.message || "None"}`;
 
                     <textarea
                       name="message"
-                      placeholder={t("msgPlace")}
+                      placeholder="Any special requests or notes (optional)"
                       value={bookingDetails.message}
                       onChange={handleFormChange}
                       style={{
@@ -585,18 +520,18 @@ Message/Special Requests: ${bookingDetails.message || "None"}`;
                     fontWeight: '600'
                   }}
                 >
-                  <FaChevronLeft size={10} /> {language === "en" ? "Back to Services" : "തിരികെ പോകുക"}
+                  <FaChevronLeft size={10} /> "Back to Services"
                 </button>
 
                 <button
                   type="button"
                   onClick={() => {
                     if (!bookingDetails.name.trim()) {
-                      alert(language === "en" ? "Please enter your name." : "ദയവായി നിങ്ങളുടെ പേര് നൽകുക.");
+                      alert("Please enter your name.");
                       return;
                     }
                     if (!bookingDetails.time) {
-                      alert(language === "en" ? "Please select an appointment time slot." : "ദയവായി സമയം തിരഞ്ഞെടുക്കുക.");
+                      alert("Please select an appointment time slot.");
                       return;
                     }
                     setWizardStep(3);
@@ -615,7 +550,7 @@ Message/Special Requests: ${bookingDetails.message || "None"}`;
                     fontWeight: '700'
                   }}
                 >
-                  {language === "en" ? "Confirm Package Details" : "അടുത്ത പടി"} <FaChevronRight size={10} />
+                  "Confirm Package Details" <FaChevronRight size={10} />
                 </button>
               </div>
             </div>
@@ -627,16 +562,16 @@ Message/Special Requests: ${bookingDetails.message || "None"}`;
           <section className="wizard-step-section" style={{ maxWidth: '650px', margin: '0 auto', padding: '0 20px' }}>
             <div className="wizard-card-layout" style={{ background: '#121212', borderRadius: '24px', border: '1px solid rgba(223, 186, 73, 0.15)', padding: '40px' }}>
               <h2 style={{ fontFamily: 'var(--font-cormorant-family), serif', color: '#dfba49', fontSize: '32px', marginBottom: '10px', textAlign: 'center' }}>
-                {language === "en" ? "Confirm Your Package" : "പാക്കേജ് ഉറപ്പുവരുത്തുക"}
+                "Confirm Your Package"
               </h2>
               <p style={{ color: '#888', fontSize: '13px', textAlign: 'center', marginBottom: '30px' }}>
-                {language === "en" ? "Please review your appointment summary below before compiling it to WhatsApp." : "താഴെ നൽകിയിരിക്കുന്ന വിവരങ്ങൾ ശരിയാണോ എന്ന് പരിശോധിക്കുക."}
+                "Please review your appointment summary below before compiling it to WhatsApp."
               </p>
 
               <div className="review-summary-details" style={{ display: 'flex', flexDirection: 'column', gap: '20px', background: '#0a0a0a', borderRadius: '16px', padding: '24px', border: '1px solid rgba(255, 255, 255, 0.05)', marginBottom: '30px' }}>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', borderBottom: '1px solid rgba(255, 255, 255, 0.05)', paddingBottom: '16px' }}>
                   <span style={{ fontSize: '11px', textTransform: 'uppercase', letterSpacing: '1px', color: '#888' }}>
-                    {language === "en" ? "Selected Services" : "തിരഞ്ഞെടുത്ത സേവനങ്ങൾ"}
+                    "Selected Services"
                   </span>
                   <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginTop: '4px' }}>
                     {selectedServices.map((s) => (
@@ -650,7 +585,7 @@ Message/Special Requests: ${bookingDetails.message || "None"}`;
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
                     <span style={{ fontSize: '11px', textTransform: 'uppercase', letterSpacing: '1px', color: '#888' }}>
-                      {language === "en" ? "Appointment Date" : "ബുക്കിംഗ് തീയതി"}
+                      "Appointment Date"
                     </span>
                     <span style={{ color: '#fff', fontSize: '15px', fontWeight: '600' }}>
                       {bookingDetails.date}
@@ -659,7 +594,7 @@ Message/Special Requests: ${bookingDetails.message || "None"}`;
 
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
                     <span style={{ fontSize: '11px', textTransform: 'uppercase', letterSpacing: '1px', color: '#888' }}>
-                      {language === "en" ? "Appointment Time" : "ബുക്കിംഗ് സമയം"}
+                      "Appointment Time"
                     </span>
                     <span style={{ color: '#fff', fontSize: '15px', fontWeight: '600' }}>
                       {formatTimeTo12Hour(bookingDetails.time)}
@@ -668,7 +603,7 @@ Message/Special Requests: ${bookingDetails.message || "None"}`;
 
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
                     <span style={{ fontSize: '11px', textTransform: 'uppercase', letterSpacing: '1px', color: '#888' }}>
-                      {language === "en" ? "Guest Name" : "കസ്റ്റമറുടെ പേര്"}
+                      "Guest Name"
                     </span>
                     <span style={{ color: '#fff', fontSize: '15px', fontWeight: '600' }}>
                       {bookingDetails.name}
@@ -679,7 +614,7 @@ Message/Special Requests: ${bookingDetails.message || "None"}`;
                 {bookingDetails.message && (
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '4px', borderTop: '1px solid rgba(255, 255, 255, 0.05)', paddingTop: '16px' }}>
                     <span style={{ fontSize: '11px', textTransform: 'uppercase', letterSpacing: '1px', color: '#888' }}>
-                      {language === "en" ? "Special Requests" : "പ്രത്യേക നിർദ്ദേശങ്ങൾ"}
+                      "Special Requests"
                     </span>
                     <span style={{ color: '#ccc', fontSize: '13px', fontStyle: 'italic' }}>
                       &quot;{bookingDetails.message}&quot;
@@ -701,11 +636,9 @@ Message/Special Requests: ${bookingDetails.message || "None"}`;
               }}>
                 <span style={{ color: '#dfba49', fontSize: '18px', lineHeight: 1 }}>💬</span>
                 <div style={{ fontSize: '13px', color: '#bbb', lineHeight: '1.5' }}>
-                  <strong>{language === "en" ? "Booking via WhatsApp" : "വാട്സാപ്പ് വഴി ബുക്ക് ചെയ്യുക"}</strong>
+                  <strong>Booking via WhatsApp</strong>
                   <p style={{ margin: '4px 0 0', color: '#999' }}>
-                    {language === "en" 
-                      ? "Your booking request will open directly in WhatsApp. Our representative will verify real-time salon availability and confirm your booking shortly."
-                      : "നിങ്ങളുടെ ബുക്കിംഗ് വിവരങ്ങൾ വാട്സാപ്പ് ചാറ്റിൽ തുറന്നു വരും. മെസ്സേജ് അയച്ചയുടൻ സലൂൺ പ്രതിനിധി തീയതിയും സമയവും പരിശോധിച്ച് ബുക്കിംഗ് സ്ഥിരീകരിക്കുന്നതാണ്."}
+                    {"Your booking request will open directly in WhatsApp. Our representative will verify real-time salon availability and confirm your booking shortly."}
                   </p>
                 </div>
               </div>
@@ -729,7 +662,7 @@ Message/Special Requests: ${bookingDetails.message || "None"}`;
                     fontWeight: '600'
                   }}
                 >
-                  <FaChevronLeft size={10} /> {language === "en" ? "Edit Details" : "മാറ്റം വരുത്തുക"}
+                  <FaChevronLeft size={10} /> "Edit Details"
                 </button>
 
                 <button
@@ -750,7 +683,7 @@ Message/Special Requests: ${bookingDetails.message || "None"}`;
                     boxShadow: '0 4px 15px rgba(37, 211, 102, 0.25)'
                   }}
                 >
-                  <FaWhatsapp size={16} /> {language === "en" ? "Book Via WhatsApp" : "വാട്സാപ്പ് വഴി ബുക്ക് ചെയ്യുക"}
+                  <FaWhatsapp size={16} /> "Book Via WhatsApp"
                 </button>
               </div>
             </div>
@@ -762,10 +695,10 @@ Message/Special Requests: ${bookingDetails.message || "None"}`;
           <aside className="booking-bottom-panel">
             <div style={{ display: 'flex', flexDirection: 'column' }}>
               <span style={{ fontSize: '11px', color: '#888', textTransform: 'uppercase', letterSpacing: '1px' }}>
-                {language === "en" ? "Selected Package" : "തിരഞ്ഞെടുത്ത പാക്കേജ്"}
+                "Selected Package"
               </span>
               <span style={{ fontSize: '16px', fontWeight: '700', color: '#dfba49', marginTop: '2px' }}>
-                {selectedServices.length} {selectedServices.length === 1 ? (language === "en" ? "Service" : "സേവനം") : (language === "en" ? "Services" : "സേവനങ്ങൾ")}
+                {selectedServices.length} {selectedServices.length === 1 ? "Service" : "Services"}
               </span>
             </div>
             
@@ -783,7 +716,7 @@ Message/Special Requests: ${bookingDetails.message || "None"}`;
                   fontWeight: '500'
                 }}
               >
-                {language === "en" ? "Reset" : "റീസെറ്റ്"}
+                "Reset"
               </button>
               
               <button
@@ -802,7 +735,7 @@ Message/Special Requests: ${bookingDetails.message || "None"}`;
                   gap: '6px'
                 }}
               >
-                {language === "en" ? "Next Step" : "അടുത്ത പടി"} <FaChevronRight size={10} />
+                "Next Step" <FaChevronRight size={10} />
               </button>
             </div>
           </aside>

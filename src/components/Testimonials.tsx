@@ -6,14 +6,14 @@ import { urlFor } from "@/sanity/image"
 import ScrollReveal from "./ScrollReveal"
 
 // Lightweight classname helper to safely concat classes
-function cn(...inputs: any[]) {
+function cn(...inputs: unknown[]) {
   return inputs.filter(Boolean).join(" ");
 }
 
 export interface Testimonial {
   name: string
   text: string
-  avatar: any
+  avatar: unknown
   role?: string
   username?: string
   profileLink?: string
@@ -263,12 +263,6 @@ export default function Testimonials() {
 
       <ScrollReveal direction="none" delay={200}>
         <TestimonialMarquee items={displayItems} variant="dual" speed={30} />
-        <div className="testimonial-dots-indicator">
-          <span className="dot active"></span>
-          <span className="dot"></span>
-          <span className="dot"></span>
-          <span className="dot"></span>
-        </div>
       </ScrollReveal>
     </section>
   );
