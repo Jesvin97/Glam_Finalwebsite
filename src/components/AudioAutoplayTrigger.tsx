@@ -20,16 +20,16 @@ export default function AudioAutoplayTrigger({
       triggered = true;
       startAudio();
       window.removeEventListener('click', handler);
-      window.removeEventListener('scroll', handler);
       window.removeEventListener('touchstart', handler);
+      window.removeEventListener('keydown', handler);
     };
     window.addEventListener('click', handler, { passive: true });
-    window.addEventListener('scroll', handler, { passive: true });
     window.addEventListener('touchstart', handler, { passive: true });
+    window.addEventListener('keydown', handler, { passive: true });
     return () => {
       window.removeEventListener('click', handler);
-      window.removeEventListener('scroll', handler);
       window.removeEventListener('touchstart', handler);
+      window.removeEventListener('keydown', handler);
     };
   }, [startAudio]);
 
