@@ -13,7 +13,7 @@ function cn(...inputs: unknown[]) {
 export interface Testimonial {
   name: string
   text: string
-  avatar: unknown
+  avatar?: any
   role?: string
   username?: string
   profileLink?: string
