@@ -93,7 +93,7 @@ export default function RootLayout({
               "@id": "https://glammoresalon.in/#salon",
               "url": "https://glammoresalon.in",
               "telephone": "+919645915329",
-              "priceRange": "$$",
+              "priceRange": "₹",
               "address": {
                 "@type": "PostalAddress",
                 "streetAddress": "First Floor, Professional Building, SH 1, Kollam - Theni Hwy, Thukalassery",

@@ -369,7 +369,7 @@ Message/Special Requests: ${bookingDetails.message || "None"}`;
                           <div className="card-action-row" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '15px' }}>
                             {service.price && (
                               <span className="service-price-badge" style={{ color: '#dfba49', fontWeight: 'bold', fontSize: '15px', fontFamily: 'var(--font-cormorant-family), serif' }}>
-                                `Starting from `${service.price}
+                                {`Starting from ₹${service.price}`}
                               </span>
                             )}
                             <button
