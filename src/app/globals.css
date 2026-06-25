@@ -2422,15 +2422,7 @@ h1, h2, h3,
     border-radius: 16px;
   }
 
-  /* Luxury Staggered Heights */
-
-  .gallery-card:nth-child(odd) img {
-    height: 240px;
-  }
-
-  .gallery-card:nth-child(even) img {
-    height: 280px;
-  }
+  /* Removed Staggered Heights for uniform sizing */
 
   .gallery-marquee {
     margin-bottom: 14px;
@@ -2475,13 +2467,7 @@ h1, h2, h3,
     border-radius: 14px;
   }
 
-  .gallery-card:nth-child(odd) img {
-    height: 210px;
-  }
-
-  .gallery-card:nth-child(even) img {
-    height: 240px;
-  }
+  /* Removed Staggered Heights for small mobile */
 
   .gallery-marquee::before,
   .gallery-marquee::after {

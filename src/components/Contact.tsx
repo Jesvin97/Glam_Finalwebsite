@@ -47,7 +47,7 @@ ${formData.message}`;
         <ScrollReveal direction="left" className="map-column contact-column-flex">
           <div>
             <h2 className="contact-section-title">
-              "Find Us"
+              Find Us
             </h2>
             <div className="map-container contact-map-wrapper">
               <iframe
@@ -64,11 +64,11 @@ ${formData.message}`;
               <div className="map-details">
                 <h3>Glam'more Unisex Salon</h3>
                 <p className="contact-map-details-desc">
-                  "First Floor, Professional Building, SH 1, Kollam - Theni Hwy, Thukalassery, Thiruvalla, Kerala 689115, India"
+                  First Floor, Professional Building, SH 1, Kollam - Theni Hwy, Thukalassery, Thiruvalla, Kerala 689115, India
                 </p>
                 <p className="contact-map-details-phone">
                   <a href="tel:+919645915329" style={{ color: '#d4af37', textDecoration: 'underline', display: 'inline-flex', alignItems: 'center', gap: '8px', fontWeight: 'bold' }}>
-                    <FaPhoneAlt size={14} /> "Phone": +91 96459 15329
+                    <FaPhoneAlt size={14} /> Phone: +91 96459 15329
                   </a>
                 </p>
               </div>

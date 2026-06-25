@@ -56,7 +56,7 @@ export default function ServicesClient() {
       category: "nails",
       description: "High-quality, durable acrylic extensions with custom premium nail art and luxury finish at Thiruvalla's top beauty and nail salon.",
       image: "https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=500&q=80",
-      price: "₹1,499",
+      price: "1,499",
     },
     {
       id: "body-waxing",
@@ -64,7 +64,7 @@ export default function ServicesClient() {
       category: "grooming",
       description: "Full body smooth waxing treatment using premium, gentle organic wax for delicate skin, available in Thiruvalla, Kerala.",
       image: "https://images.unsplash.com/photo-1590439471364-192aa707f685?auto=format&fit=crop&w=500&q=80",
-      price: "₹1,999",
+      price: "1,999",
     },
     {
       id: "bridal-services",
@@ -72,15 +72,15 @@ export default function ServicesClient() {
       category: "events",
       description: "Luxury comprehensive Kerala bridal makeup, hair styling, and wellness treatments tailored for your special wedding day in Thiruvalla.",
       image: "https://images.unsplash.com/photo-1591555200999-7c531495e921?auto=format&fit=crop&w=500&q=80",
-      price: "₹9,999",
+      price: "9,999",
     },
     {
       id: "eyebrow-threading",
-      title: "Eyebrow threading",
+      title: "Eyebrow shaping & threading",
       category: "grooming",
       description: "Precision eyebrow threading for ultra-clean, beautifully defined brow contours by expert beauticians in Thiruvalla.",
       image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=500&q=80",
-      price: "₹149",
+      price: "149",
     },
     {
       id: "eyelashes",
@@ -88,7 +88,7 @@ export default function ServicesClient() {
       category: "grooming",
       description: "Premium individual eyelashes and volume extension services for a mesmerizing, natural look in Thiruvalla, Kerala.",
       image: "https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=500&q=80",
-      price: "₹999",
+      price: "999",
     },
     {
       id: "hair-extensions",
@@ -96,7 +96,7 @@ export default function ServicesClient() {
       category: "hair",
       description: "100% natural, premium human hair extensions for length, volume, and custom styling, professionally fitted in Thiruvalla.",
       image: "https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?auto=format&fit=crop&w=500&q=80",
-      price: "₹5,999",
+      price: "5,999",
     },
     {
       id: "haircut",
@@ -104,7 +104,7 @@ export default function ServicesClient() {
       category: "hair",
       description: "Precision styling, trend-forward haircuts, and expert hair texturizing for men, women, and kids by master stylists in Thiruvalla.",
       image: "https://images.unsplash.com/photo-1605497788044-5a32c7078486?auto=format&fit=crop&w=500&q=80",
-      price: "₹499",
+      price: "499",
     },
     {
       id: "hairstyling",
@@ -112,7 +112,7 @@ export default function ServicesClient() {
       category: "hair",
       description: "Luxury blowouts, elegant updos, and custom event hairstyling for all hair types at Thiruvalla's leading unisex salon.",
       image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=500&q=80",
-      price: "₹799",
+      price: "799",
     },
     {
       id: "makeup-services",
@@ -120,7 +120,7 @@ export default function ServicesClient() {
       category: "events",
       description: "Flawless HD and airbrush makeup styles for celebrity shoots, family events, and parties by professional makeup artists in Thiruvalla.",
       image: "https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?auto=format&fit=crop&w=500&q=80",
-      price: "₹2,499",
+      price: "2,499",
     },
     {
       id: "massages",
@@ -128,7 +128,7 @@ export default function ServicesClient() {
       category: "skin",
       description: "Deep tissue, aromatherapy, and muscle relief massages in our quiet wellness spa in Thukalassery, Thiruvalla.",
       image: "https://images.unsplash.com/photo-1600334129128-685c5582fd35?auto=format&fit=crop&w=500&q=80",
-      price: "₹1,799",
+      price: "1,799",
     },
     {
       id: "pedicures",
@@ -136,7 +136,7 @@ export default function ServicesClient() {
       category: "nails",
       description: "Revitalizing foot spa therapy, organic scrub exfoliation, and precision nail care at our premium Thiruvalla nail studio.",
       image: "https://images.unsplash.com/photo-1519014816548-bf5fe059798b?auto=format&fit=crop&w=500&q=80",
-      price: "₹799",
+      price: "799",
     },
     {
       id: "shaving",
@@ -144,7 +144,7 @@ export default function ServicesClient() {
       category: "grooming",
       description: "Traditional hot towel classic shave, beard detailing, styling, and skin hydration for men in Thiruvalla.",
       image: "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=500&q=80",
-      price: "₹299",
+      price: "299",
     },
     {
       id: "spa-services",
@@ -152,7 +152,7 @@ export default function ServicesClient() {
       category: "skin",
       description: "Premium wellness packages, full-body body scrub therapies, and premium stress relief at the best unisex spa in Thiruvalla.",
       image: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=500&q=80",
-      price: "₹2,499",
+      price: "2,499",
     },
     {
       id: "waxing",
@@ -160,7 +160,7 @@ export default function ServicesClient() {
       category: "grooming",
       description: "Fast, gentle precision waxing for facial and body grooming by experienced professionals in Thiruvalla.",
       image: "https://images.unsplash.com/photo-1590439471364-192aa707f685?auto=format&fit=crop&w=500&q=80",
-      price: "₹399",
+      price: "399",
     },
     {
       id: "wedding-prep",
@@ -168,7 +168,7 @@ export default function ServicesClient() {
       category: "events",
       description: "Complete hair, skin, and styling packages for Kerala weddings and events in Thiruvalla.",
       image: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=500&q=80",
-      price: "₹4,999",
+      price: "4,999",
     },
   ];
 
@@ -245,11 +245,11 @@ export default function ServicesClient() {
       }
     }
 
-    // Time validation (9 AM to 7 PM)
+    // Time validation (8:30 AM to 8 PM)
     if (bookingDetails.time) {
       const [hours, minutes] = bookingDetails.time.split(":").map(Number);
-      if (hours < 9 || hours > 19 || (hours === 19 && minutes > 0)) {
-        alert("Appointments can only be booked between 9:00 AM and 7:00 PM.");
+      if (hours < 8 || (hours === 8 && minutes < 30) || hours > 20 || (hours === 20 && minutes > 0)) {
+        alert("Appointments can only be booked between 8:30 AM and 8:00 PM.");
         return;
       }
     }
@@ -426,15 +426,15 @@ Message/Special Requests: ${bookingDetails.message || "None"}`;
 
                   <div className="time-selector-wrapper">
                     <label style={{ fontSize: '13px', textTransform: 'uppercase', letterSpacing: '1px', color: '#888', display: 'block', marginBottom: '10px' }}>
-                      2. "Preferred Timing (9 AM - 7 PM)"
+                      2. "Preferred Timing (8:30 AM - 8 PM)"
                     </label>
                     <div style={{ position: 'relative', display: 'flex', alignItems: 'center' }}>
                       <span style={{ position: 'absolute', left: '16px', color: '#dfba49' }}><FaClock /></span>
                       <input
                         type="time"
                         name="time"
-                        min="09:00"
-                        max="19:00"
+                        min="08:30"
+                        max="20:00"
                         value={bookingDetails.time}
                         onChange={handleFormChange}
                         required

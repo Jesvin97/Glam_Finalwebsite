@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Josefin_Sans, Lora, Lato, Cormorant_Garamond, Montserrat } from "next/font/google";
+import { Cormorant_Garamond, Montserrat } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 
@@ -18,27 +18,6 @@ const montserrat = Montserrat({
   weight: ["300", "400", "500", "600", "700"],
 });
 
-const josefinSans = Josefin_Sans({
-  variable: "--font-josefin",
-  subsets: ["latin"],
-  display: "swap",
-  weight: ["300", "400", "600", "700"],
-});
-
-const lora = Lora({
-  variable: "--font-lora",
-  subsets: ["latin"],
-  display: "swap",
-  weight: ["400", "500", "600", "700"],
-  style: ["normal", "italic"],
-});
-
-const lato = Lato({
-  variable: "--font-lato",
-  subsets: ["latin"],
-  display: "swap",
-  weight: ["300", "400", "700", "900"],
-});
 
 export const metadata: Metadata = {
   title: "Glam'more | Best Unisex Salon & Bridal Makeup in Thiruvalla",
@@ -100,7 +79,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${cormorantGaramond.variable} ${montserrat.variable} ${josefinSans.variable} ${lora.variable} ${lato.variable} h-full antialiased`}
+      className={`${cormorantGaramond.variable} ${montserrat.variable} h-full antialiased`}
     >
       <head>
         <script
@@ -139,8 +118,8 @@ export default function RootLayout({
                   "Saturday",
                   "Sunday"
                 ],
-                "opens": "09:00",
-                "closes": "19:00"
+                "opens": "08:30",
+                "closes": "20:00"
               },
               "sameAs": [
                 "https://www.instagram.com/glammoresalon_thiruvalla",
@@ -174,30 +153,6 @@ export default function RootLayout({
             }),
           }}
         />
-        {/* Meta Pixel Code */}
-        <Script id="facebook-pixel" strategy="afterInteractive">
-          {`
-            !function(f,b,e,v,n,t,s)
-            {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-            n.queue=[];t=b.createElement(e);t.async=!0;
-            t.src=v;s=b.getElementsByTagName(e)[0];
-            s.parentNode.insertBefore(t,s)}(window, document,'script',
-            'https://connect.facebook.net/en_US/fbevents.js');
-            fbq('init', '1091234567890123'); // Placeholder Meta Pixel ID, can be replaced by user
-            fbq('track', 'PageView');
-          `}
-        </Script>
-        <noscript>
-          <img
-            height="1"
-            width="1"
-            style={{ display: "none" }}
-            src="https://www.facebook.com/tr?id=1091234567890123&ev=PageView&noscript=1"
-            alt=""
-          />
-        </noscript>
       </head>
       <body className="min-h-full flex flex-col">
         <CustomCursor />
