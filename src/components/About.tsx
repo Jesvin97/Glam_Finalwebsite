@@ -1,7 +1,9 @@
+"use client";
+
 import React from "react";
 import ScrollReveal from "./ScrollReveal";
-
 export default function About() {
+
   return (
     <section className="about-section" id="about">
       <ScrollReveal direction="left" className="about-image-wrapper">
@@ -16,24 +18,15 @@ export default function About() {
       <ScrollReveal direction="right" className="about-content-wrapper">
         <div className="about-content">
           <p className="about-tag">
-            ABOUT GLAM'MORE
+            ABOUT GLAM&apos;MORE
           </p>
 
           <h2>
-            Luxury
-            <span className="gold-text">
-              {" "}Salon Experience
-            </span>
+            Luxury Salon Experience
           </h2>
 
           <p className="about-description">
-            Step into a world where elegance,
-            beauty and luxury come together.
-            Our salon offers world-class beauty
-            treatments, professional care,
-            premium styling and personalized
-            wellness experiences designed for
-            modern beauty standards.
+            Step into a world where elegance, beauty and luxury come together. Our salon offers world-class beauty treatments, professional hair care, premium styling, and personalized wellness experiences designed for modern beauty standards.
           </p>
 
           <a href="/#contact" className="primary-btn">

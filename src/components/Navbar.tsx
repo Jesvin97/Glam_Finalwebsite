@@ -1,12 +1,13 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import Lottie from "lottie-react";
+import Lottie, { LottieRefCurrentProps } from "lottie-react";
 import menuAnimation from "../../animation/navbar.json";
+import Link from "next/link";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const lottieRef = useRef<any>(null);
+  const lottieRef = useRef<LottieRefCurrentProps>(null);
   const hasInitialized = useRef(false);
 
   useEffect(() => {
@@ -45,7 +46,7 @@ export default function Navbar() {
       <nav className="navbar">
 
         {/* LOGO */}
-        <a href="/" className="logo-link navbar-logo-link">
+        <Link href="/" className="logo-link navbar-logo-link">
           <img
             src="/images/logo.png"
             alt="Glam'more Logo"
@@ -54,7 +55,7 @@ export default function Navbar() {
           <span className="navbar-brand-text">
             Glam&apos;more Unisex Salon
           </span>
-        </a>
+        </Link>
 
         {/* HAMBURGER MENU - Lottie Animation */}
         <div className="hamburger" onClick={toggleMenu}>
@@ -71,29 +72,23 @@ export default function Navbar() {
         <ul className="nav-links">
 
           <li>
-            <a href="/">Home</a>
+            <Link href="/">Home</Link>
           </li>
 
           <li>
-            <a href="/#about">About Us</a>
+            <Link href="/#about">About Us</Link>
           </li>
 
           <li>
-            <a href="/services">Services</a>
+            <Link href="/services">Services</Link>
           </li>
 
           <li>
-            <a href="/blogs">Blogs</a>
+            <Link href="/blogs">Blogs</Link>
           </li>
 
           <li>
-            <a href="/#contact">Contact Us</a>
-          </li>
-
-          <li>
-            <a href="/services" className="book-btn">
-              Book Now
-            </a>
+            <Link href="/#contact">Contact Us</Link>
           </li>
 
         </ul>
@@ -102,13 +97,13 @@ export default function Navbar() {
 
       {/* MOBILE MENU */}
       <div className={`mobile-menu ${isMenuOpen ? "active" : ""}`}>
-        <a href="/" onClick={closeMenu}>Home</a>
-        <a href="/#about" onClick={closeMenu}>About Us</a>
-        <a href="/services" onClick={closeMenu}>Services</a>
-        <a href="/blogs" onClick={closeMenu}>Blogs</a>
-        <a href="/#contact" onClick={closeMenu}>Contact Us</a>
-        <a href="/services" onClick={closeMenu} className="book-btn">Book Now</a>
+        <Link href="/" onClick={closeMenu}>Home</Link>
+        <Link href="/#about" onClick={closeMenu}>About Us</Link>
+        <Link href="/services" onClick={closeMenu}>Services</Link>
+        <Link href="/blogs" onClick={closeMenu}>Blogs</Link>
+        <Link href="/#contact" onClick={closeMenu}>Contact Us</Link>
+        
       </div>
     </>
   );
-}
+}

@@ -1,8 +1,8 @@
 "use client";
 
 import ScrollReveal from "./ScrollReveal";
-
 export default function Hero() {
+
   return (
     <section className="hero">
       {/* Floating Gold Sparkle Particles */}
@@ -20,17 +20,12 @@ export default function Hero() {
       <ScrollReveal direction="left" className="hero-content-reveal">
         <div className="hero-content">
           <h1>
-            Premium Unisex Salon
-            <br />
-            <span className="gold-text">
-              in Thiruvalla
-            </span>
+            <span className="mobile-only-glammore">Glam'more <br /></span>
+            Premium Unisex Salon & Bridal Studio in Thiruvalla
           </h1>
 
           <p>
-            Welcome to Glam'more, the leading unisex salon in Thiruvalla. 
-            Discover luxury treatments, expert styling, flawless bridal makeup, 
-            and revitalizing wellness services designed to make you feel your absolute best.
+            Step into a world where elegance, beauty, and luxury come together. Thiruvalla&apos;s leading destination for premium grooming, professional haircuts, nail extensions, and bridal artistry.
           </p>
 
           <div className="hero-buttons">

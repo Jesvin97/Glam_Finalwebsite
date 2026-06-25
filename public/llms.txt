@@ -1,17 +1,49 @@
-# Glammore Premium Unisex Salon
+# Glam'more Unisex Salon — Official Site
 
-Official web platform for Glammore Unisex Salon in Thiruvalla, Kerala.
+Premium unisex salon and spa in Thiruvalla, Kerala, India.
+Offering bridal makeup, haircuts, nail art, keratin treatments, facials, and luxury wellness therapies.
 
 ## Base URL
 https://glammoresalon.in
 
-## Core Routes
-- [/](https://glammoresalon.in/): Homepage with Hero section, About details, 3-service teaser grid, marquee customer testimonials, and direct WhatsApp contact forms.
-- [/services](https://glammoresalon.in/services): Core interactive booking routes containing category filters for 19+ services, package-building selections tag systems, and customized WhatsApp booking checkout.
-- [/blogs](https://glammoresalon.in/blogs): Premium beauty and skincare lifestyle journal powered by dynamic CMS fallbacks.
+## About
+Glam'more is Thiruvalla's premier unisex salon. We serve both men and women across 19 professional beauty and wellness services. Located at Club 7 Junction, MC Road, Thiruvalla, Kerala — easily accessible from Pathanamthitta, Kottayam, Alappuzha, and Ranni.
+
+## Services Offered
+- Acrylic nails
+- Body waxing
+- Bridal services (complete bridal makeup, hair & styling)
+- Eyebrow shaping
+- Eyebrow threading
+- Eyelashes (extensions & styling)
+- Haircut (men & women)
+- Hair extensions
+- Hairstyling
+- Make-up services
+- Massages (therapeutic & relaxation)
+- Pedicures
+- Shampoo & conditioning
+- Shaving
+- Skin care treatments
+- Waxing
+- Wedding and event preparation
+- Facial spa
+- Nail salon (manicure, nail art, gel, acrylics)
+
+## Key Pages
+- [/](https://glammoresalon.in/): Homepage — hero, brand story, service overview, testimonials, contact
+- [/services](https://glammoresalon.in/services): Full interactive service catalogue with category filters and WhatsApp booking
+- [/blogs](https://glammoresalon.in/blogs): Beauty & skincare lifestyle journal
 
 ## Contact & Location
-- **Address:** Club 7 Junction, MC Road, Thiruvalla, Kerala, India
+- **Address:** Club 7 Junction, MC Road, Thiruvalla, Kerala 689101, India
 - **WhatsApp:** +91 9645915329
-- **Social Media:** Instagram (@glammore.unisex.salon), Facebook (glammoresalon), YouTube (@Glammoreunisexsalon)
-- **Official Credits:** Powered by Raphael Group (https://raphaelgroup.in)
+- **Instagram:** @glammore.unisex.salon
+- **Facebook:** glammoresalonthiruvalla
+- **YouTube:** @Glammoreunisexsalon
+
+## Business Hours
+Monday–Sunday: 9:00 AM – 7:00 PM
+
+## Powered by
+Raphael Group — https://raphaelgroup.in

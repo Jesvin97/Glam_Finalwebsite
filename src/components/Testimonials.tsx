@@ -6,14 +6,14 @@ import { urlFor } from "@/sanity/image"
 import ScrollReveal from "./ScrollReveal"
 
 // Lightweight classname helper to safely concat classes
-function cn(...inputs: any[]) {
+function cn(...inputs: unknown[]) {
   return inputs.filter(Boolean).join(" ");
 }
 
 export interface Testimonial {
   name: string
   text: string
-  avatar: any
+  avatar?: any
   role?: string
   username?: string
   profileLink?: string
@@ -95,11 +95,6 @@ MarqueeRow.displayName = "MarqueeRow"
 const TestimonialCard = React.memo(({ item, variant = "default" }: { item: Testimonial, variant?: "default" | "flush" }) => {
   const isFlush = variant === "flush";
 
-  // Resolve image path safely (either local string or Sanity dynamic URL)
-  const imageUrl = (item.avatar && typeof item.avatar !== "string")
-    ? urlFor(item.avatar).width(150).height(150).auto('format').quality(80).url()
-    : (item.avatar || "/images/model.jpeg");
-
   return (
     <div className={cn("testimonial-card-v2", isFlush && "flush")}>
       <div className="card-gradient-overlay" />
@@ -110,9 +105,6 @@ const TestimonialCard = React.memo(({ item, variant = "default" }: { item: Testi
         </p>
 
         <div className="testimonial-user-v2">
-          <div className="testimonial-avatar-v2">
-            <img src={imageUrl} alt={item.name} loading="eager" />
-          </div>
           <div className="testimonial-info-v2">
             <span className="testimonial-name-v2">{item.name}</span>
             {item.username && (
@@ -201,36 +193,61 @@ export default function Testimonials() {
       name: "Aiswarya Nair",
       username: "aiswarya.nair",
       role: "Bridal Client",
-      avatar: "/images/model.jpeg",
       text: "Glam'more is hands down the best salon in Thiruvalla! The bridal makeup and luxury spa session was absolute perfection. Highly recommended!",
     },
     {
       name: "Rohan Mathew",
       username: "rohan.mathew",
       role: "Gold Member",
-      avatar: "/images/male model.jpeg",
       text: "The haircut and beard grooming here is outstanding. The staff is professional, the ambiance is luxurious, and the attention to detail is unmatched.",
     },
     {
       name: "Sneha Joseph",
       username: "sneha.joseph",
       role: "Regular Client",
-      avatar: "/images/model2.jpeg",
       text: "Their nail art and skincare treatment are world-class. It's a true luxury wellness experience that keeps me coming back every month.",
     },
     {
       name: "Anjali Krishna",
       username: "anjali.krishna",
       role: "Regular Client",
-      avatar: "/images/model.jpeg",
       text: "Step into pure luxury! Glam'more's attention to detail, luxury organic products, and highly skilled styling team completely transformed my hair styling routine.",
     },
     {
       name: "Dr. Sandeep Kurian",
       username: "dr.sandeep",
       role: "Gold Member",
-      avatar: "/images/male model.jpeg",
       text: "Exceptional service and extremely relaxing ambiance. Their head massage and skincare treatments are absolutely restorative after a busy week.",
+    },
+    {
+      name: "Lakshmi Menon",
+      username: "lakshmi.m",
+      role: "Bridal Client",
+      text: "I booked Glam'more for my wedding and they made me look like an absolute princess! Their premium bridal package is worth every penny.",
+    },
+    {
+      name: "Arjun Varma",
+      username: "arjun.v",
+      role: "Regular Client",
+      text: "The best men's grooming experience in the city. The VIP room and attention to detail during my beard styling was phenomenal.",
+    },
+    {
+      name: "Meera George",
+      username: "meera.g",
+      role: "Regular Client",
+      text: "Loved the keratin hair treatment! My hair has never felt this soft and shiny before. The ambiance of the salon is pure bliss.",
+    },
+    {
+      name: "Priya Pillai",
+      username: "priya.pillai",
+      role: "Premium Client",
+      text: "A truly international standard salon in our town. Their facial treatments and skin care routines use authentic luxury products. Amazing!",
+    },
+    {
+      name: "Kiran Kumar",
+      username: "kiran.k",
+      role: "Gold Member",
+      text: "From the moment you walk in, you are treated like royalty. The massage therapy and overall vibe is just exceptional.",
     }
   ];
 
@@ -263,12 +280,6 @@ export default function Testimonials() {
 
       <ScrollReveal direction="none" delay={200}>
         <TestimonialMarquee items={displayItems} variant="dual" speed={30} />
-        <div className="testimonial-dots-indicator">
-          <span className="dot active"></span>
-          <span className="dot"></span>
-          <span className="dot"></span>
-          <span className="dot"></span>
-        </div>
       </ScrollReveal>
     </section>
   );

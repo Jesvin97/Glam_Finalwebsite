@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import ScrollReveal from "./ScrollReveal";
 import { client } from "@/sanity/client";
+
 import {
   Accordion,
   AccordionItem,
@@ -36,12 +37,35 @@ export default function FAQ() {
     {
       question: "What are the operating hours for Glam'more Unisex Salon in Thiruvalla?",
       answer:
-        "Glam'more Unisex Salon in Thiruvalla is open every day from Monday to Sunday, from 10:00 AM to 9:30 PM (including Sundays). We recommend booking your appointments in advance to secure your preferred master stylist, although walk-in clients are always welcome based on seat availability.",
+        "Glam'more Unisex Salon in Thiruvalla is open every day from Monday to Sunday, from 8:30 AM to 8:00 PM (including Sundays). We recommend booking your appointments in advance to secure your preferred master stylist, although walk-in clients are always welcome based on seat availability.",
     },
     {
       question: "Do you provide premium nail art and pedicure services?",
       answer:
         "Yes, we are a fully equipped nail art salon in Thiruvalla. Our services include high-quality acrylic gel nail extensions, custom nail art designs, spa pedicures, and pampering manicures. We use safe, long-lasting gel polishes to keep your nails looking flawless, strong, and beautiful.",
+    },
+  ];
+
+  const fallbackFaqsMl = [
+    {
+      question: "തിരുവല്ലയിൽ ഗ്ലാംമോറിനെ മികച്ച സലൂൺ ആക്കുന്നത് എന്താണ്?",
+      answer: "തിരുവല്ലയിലെ ഏറ്റവും പ്രശസ്തമായ യൂണിസെക്സ് സലൂണാണ് ഗ്ലാംമോർ. മികച്ച ഹെയർ സ്റ്റൈലിംഗ്, സ്കിൻ കെയർ തെറാപ്പികൾ, സൗന്ദര്യവർദ്ധക സേവനങ്ങൾ എന്നിവ ഞങ്ങൾ നൽകുന്നു. പ്രൊഫഷണൽ ഹെയർ സ്റ്റൈലിസ്റ്റുകളും മികച്ച ഉൽപ്പന്നങ്ങളുമാണ് ഞങ്ങളുടെ പ്രത്യേകത.",
+    },
+    {
+      question: "തിരുവല്ലയിൽ വിവാഹ മേക്കപ്പ് സേവനങ്ങൾ നൽകുന്നുണ്ടോ?",
+      answer: "അതെ, ഞങ്ങൾ ഉയർന്ന നിലവാരത്തിലുള്ള ബ്രൈഡൽ മേക്കപ്പ് സേവനങ്ങൾ നൽകുന്നു. എച്ച്ഡി (HD), എയർബ്രഷ് മേക്കപ്പ്, വിവാഹത്തിന് മുന്നോടിയായുള്ള ഫേഷ്യലുകൾ എന്നിവ ഞങ്ങളുടെ പ്രത്യേകതകളാണ്.",
+    },
+    {
+      question: "എന്തൊക്കെ ഹെയർ സ്റ്റൈലിംഗ് സേവനങ്ങളാണ് ഇവിടെ ലഭ്യമായിട്ടുള്ളത്?",
+      answer: "കൃത്യതയാർന്ന ഹെയർകട്ടുകൾ, ഹെയർ സ്റ്റൈലുകൾ, ഹെയർ സ്മൂത്തനിംഗ്, കെരാറ്റിൻ ട്രീറ്റ്മെന്റുകൾ, ഹെയർ സ്പാകൾ എന്നിവ ഞങ്ങൾ നൽകുന്നു.",
+    },
+    {
+      question: "ഗ്ലാംമോർ സലൂണിന്റെ പ്രവർത്തന സമയം എപ്പോഴൊക്കെയാണ്?",
+      answer: "ഞങ്ങൾ തിങ്കൾ മുതൽ ഞായർ വരെ എല്ലാ ദിവസവും രാവിലെ 8:30 മുതൽ രാത്രി 8:00 വരെ പ്രവർത്തിക്കുന്നു. ബുക്കിംഗുകൾ മുൻകൂട്ടി ചെയ്യുവാൻ ഞങ്ങൾ നിർദ്ദേശിക്കുന്നു.",
+    },
+    {
+      question: "നിങ്ങൾ നെയിൽ ആർട്ടും പെഡിക്യൂർ സേവനങ്ങളും നൽകാറുണ്ടോ?",
+      answer: "അതെ, തിരുവല്ലയിലെ ഏറ്റവും മികച്ച നെയിൽ സ്റ്റുഡിയോയാണ് ഞങ്ങളുടേത്. അക്രിലിക് ജെൽ നെയിൽ എക്സ്റ്റൻഷൻ, പെഡിക്യൂർ, മാനിക്യൂർ സേവനങ്ങൾ എന്നിവ ഞങ്ങൾ നൽകുന്നു.",
     },
   ];
 
@@ -66,9 +90,7 @@ export default function FAQ() {
     <section className="faq-section">
       <ScrollReveal direction="up">
         <div className="section-title faq-title-container">
-          <h2 className="gold-section-heading">
-            FAQ
-          </h2>
+          <h2 className="gold-section-heading">Frequently Asked Questions</h2>
         </div>
       </ScrollReveal>
 
