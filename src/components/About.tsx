@@ -29,8 +29,9 @@ export default function About() {
             Step into a world where elegance, beauty and luxury come together. Our salon offers world-class beauty treatments, professional hair care, premium styling, and personalized wellness experiences designed for modern beauty standards.
           </p>
 
-          <a href="/#contact" className="primary-btn">
+          <a href="/#contact" className="btn-luxury">
             Book Your Visit
+            <span className="btn-luxury-hover-effect"></span>
           </a>
         </div>
       </ScrollReveal>

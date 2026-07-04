@@ -1,48 +1,63 @@
 "use client";
 import ScrollReveal from "./ScrollReveal";
 
-/**
- * Landing-page Services section — lightweight teaser only.
- * Full service catalogue + booking lives at /services.
- */
 export default function Services() {
   const highlights = [
-    { emoji: "💍", label: "Bridal & Wedding" },
-    { emoji: "✂️", label: "Hair & Styling" },
-    { emoji: "💅", label: "Nails & Extensions" },
-    { emoji: "🧖", label: "Spa & Massage" },
-    { emoji: "✨", label: "Skin & Facials" },
-    { emoji: "💄", label: "Makeup & Beauty" },
+    { 
+      label: "Bridal & Wedding", 
+      image: "/images/bridal.jpg", // Ensure user uploads this
+      desc: "Bespoke bridal artistry and pre-wedding therapies."
+    },
+    { 
+      label: "Hair & Styling", 
+      image: "/images/hair.jpg", 
+      desc: "Masterful cuts, advanced coloring, and extensions."
+    },
+    { 
+      label: "Spa & Massage", 
+      image: "/images/spa.jpg", 
+      desc: "Rejuvenating therapies for mind, body, and soul."
+    },
+    { 
+      label: "Nails & Beauty", 
+      image: "/images/nails.jpg", 
+      desc: "Acrylics, gel art, and flawless manicures."
+    }
   ];
 
   return (
-    <section className="services" id="services">
+    <section className="services-editorial" id="services">
       <ScrollReveal direction="up">
-        <div className="section-title services-title-container">
-          <h2 className="gold-section-heading">What We Offer</h2>
-          <p className="services-subtitle">
-            19 premium services — from bridal styling to luxury spa therapies.
-            All under one roof in Thiruvalla.
-          </p>
+        <div className="section-title-editorial">
+          <p className="subtitle-elegant">Our Expertise</p>
+          <h2>Signature Services</h2>
         </div>
       </ScrollReveal>
 
-      {/* Category pill grid — decorative teaser, no fetch needed */}
-      <ScrollReveal direction="up" delay={100}>
-        <div className="services-highlights-grid">
-          {highlights.map((h, i) => (
-            <div key={i} className="services-highlight-pill">
-              <span className="pill-emoji">{h.emoji}</span>
-              <span className="pill-label">{h.label}</span>
+      <div className="services-editorial-grid">
+        {highlights.map((h, i) => (
+          <ScrollReveal direction="up" delay={i * 100} key={i}>
+            <div className="service-card-editorial">
+              {/* Replace with actual high-res images */}
+              <div 
+                className="service-card-bg"
+                style={{ backgroundImage: `url(${h.image})`, backgroundColor: '#1a1a1a' }}
+              />
+              <div className="service-card-overlay">
+                <h3>{h.label}</h3>
+                <p>{h.desc}</p>
+                <span className="discover-link">Discover ⟶</span>
+              </div>
             </div>
-          ))}
-        </div>
-      </ScrollReveal>
+          </ScrollReveal>
+        ))}
+      </div>
 
-      <ScrollReveal direction="up" delay={200}>
-        <div className="center-btn-container">
-          <a href="/services" className="primary-btn">
-            Explore All Services &amp; Book Now →
+      <ScrollReveal direction="up" delay={300}>
+        <div className="services-cta-editorial">
+          <a href="/services" className="btn-luxury">
+            View Full Menu
+            <span className="btn-luxury-hover-effect"></span>
           </a>
         </div>
       </ScrollReveal>

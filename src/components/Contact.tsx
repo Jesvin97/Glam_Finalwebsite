@@ -103,8 +103,9 @@ ${formData.message}`;
                 required
               ></textarea>
 
-              <button type="submit" className="primary-btn">
+              <button type="submit" className="btn-luxury" style={{ marginTop: '20px', cursor: 'pointer' }}>
                 Send Message
+                <span className="btn-luxury-hover-effect"></span>
               </button>
             </form>
           </div>

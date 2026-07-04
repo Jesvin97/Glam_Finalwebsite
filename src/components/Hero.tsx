@@ -1,47 +1,53 @@
 "use client";
 
 import ScrollReveal from "./ScrollReveal";
+import { useEffect, useState } from "react";
+
 export default function Hero() {
+  const [offsetY, setOffsetY] = useState(0);
+
+  const handleScroll = () => {
+    setOffsetY(window.pageYOffset);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <section className="hero">
-      {/* Floating Gold Sparkle Particles */}
-      <div className="hero-sparkles">
-        <div className="sparkle" />
-        <div className="sparkle" />
-        <div className="sparkle" />
-        <div className="sparkle" />
-        <div className="sparkle" />
-        <div className="sparkle" />
-        <div className="sparkle" />
-        <div className="sparkle" />
-      </div>
+    <section className="hero-editorial">
+      {/* Parallax Background Image */}
+      <div 
+        className="hero-bg-parallax" 
+        style={{ transform: `translateY(${offsetY * 0.5}px)` }}
+      />
+      
+      {/* Dark overlay for text readability */}
+      <div className="hero-overlay" />
 
-      <ScrollReveal direction="left" className="hero-content-reveal">
-        <div className="hero-content">
+      <ScrollReveal direction="up" className="hero-content-wrapper">
+        <div className="hero-text-content">
+          <p className="hero-subtitle">Thiruvalla's Premier Destination</p>
           <h1>
-            <span className="mobile-only-glammore">Glam'more <br /></span>
-            Premium Unisex Salon & Bridal Studio in Thiruvalla
+            Luxury Grooming <br />
+            <span className="hero-gold-text">& Bridal Artistry</span>
           </h1>
-
-          <p>
-            Step into a world where elegance, beauty, and luxury come together. Thiruvalla&apos;s leading destination for premium grooming, professional haircuts, nail extensions, and bridal artistry.
+          <p className="hero-description">
+            Step into a world where elegance, beauty, and luxury come together. Redefining the salon experience with bespoke treatments and masterful styling.
           </p>
 
-          <div className="hero-buttons">
-            <a href="/services" className="primary-btn">
+          <div className="hero-cta-container">
+            <a href="/services" className="btn-luxury">
               Book Your Visit
+              <span className="btn-luxury-hover-effect"></span>
             </a>
+            
+            {/* Scroll indicator directly under the button */}
+            <div className="scroll-indicator">
+              <div className="scroll-line"></div>
+            </div>
           </div>
-        </div>
-      </ScrollReveal>
-
-      <ScrollReveal direction="right" delay={200} className="hero-image-reveal">
-        <div className="hero-image">
-          <img
-            src="/images/model.png"
-            alt="Glam'more Beauty Model"
-          />
         </div>
       </ScrollReveal>
     </section>
