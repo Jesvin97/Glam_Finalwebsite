@@ -271,7 +271,7 @@ export default function Testimonials() {
   return (
     <section className="testimonials-section" id="testimonials">
       <ScrollReveal direction="up">
-        <div className="section-title">
+        <div className="section-title text-center">
           <h2 className="gold-section-heading">
             TESTIMONIALS
           </h2>
