@@ -10,7 +10,7 @@ export default function Services() {
     },
     { 
       label: "Hair & Styling", 
-      image: "/images/hair.jpg", 
+      image: "/images/haircutç.jpg", 
       desc: "Masterful cuts, advanced coloring, and extensions."
     },
     { 
@@ -20,7 +20,7 @@ export default function Services() {
     },
     { 
       label: "Nails & Beauty", 
-      image: "/images/nails.jpg", 
+      image: "/images/nailart.jpg", 
       desc: "Acrylics, gel art, and flawless manicures."
     }
   ];
@@ -52,15 +52,7 @@ export default function Services() {
           </ScrollReveal>
         ))}
       </div>
-
-      <ScrollReveal direction="up" delay={300}>
-        <div className="services-cta-editorial">
-          <a href="/services" className="btn-luxury">
-            View Full Menu
-            <span className="btn-luxury-hover-effect"></span>
-          </a>
-        </div>
-      </ScrollReveal>
+ 
     </section>
   );
 }
