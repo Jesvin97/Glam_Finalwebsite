@@ -2,12 +2,21 @@
 
 import ScrollReveal from "./ScrollReveal";
 import { useEffect, useState } from "react";
+import Image from "next/image";
 
 export default function Hero() {
   return (
     <section className="hero-editorial">
       {/* Static Background Image */}
-      <div className="hero-bg-parallax" />
+      <div className="hero-bg-parallax">
+        <Image
+          src="/images/model.png"
+          alt="Hero Background"
+          fill
+          priority
+          style={{ objectFit: "cover", objectPosition: "top center" }}
+        />
+      </div>
       
       {/* Dark overlay for text readability */}
       <div className="hero-overlay" />

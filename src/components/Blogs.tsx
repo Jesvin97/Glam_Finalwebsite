@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { client } from "@/sanity/client";
 import { urlFor } from "@/sanity/image";
+import Image from "next/image";
 
 interface BlogItem {
   title: string;
@@ -74,7 +75,13 @@ export default function Blog() {
 
           return (
             <div className="blog-card" key={index}>
-              <img src={imageUrl} alt={blog.title} />
+              <Image 
+                src={imageUrl} 
+                alt={blog.title} 
+                width={800} 
+                height={500} 
+                style={{ width: '100%', height: 'auto', objectFit: 'cover' }} 
+              />
 
               <div className="blog-content">
                 <span className="blog-category">{blog.category}</span>

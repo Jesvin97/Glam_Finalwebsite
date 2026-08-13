@@ -4,6 +4,7 @@ import { useState, useRef, useEffect } from "react";
 import Lottie, { LottieRefCurrentProps } from "lottie-react";
 import menuAnimation from "../../animation/navbar.json";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -56,10 +57,13 @@ export default function Navbar() {
 
         {/* LOGO */}
         <Link href="/" className="logo-link navbar-logo-link">
-          <img
+          <Image
             src="/images/logo.png"
             alt="Glam'more Logo"
             className="logo-image navbar-logo-img"
+            width={60}
+            height={60}
+            priority
           />
           <span className="navbar-brand-text">
             Glam&apos;more Unisex Salon

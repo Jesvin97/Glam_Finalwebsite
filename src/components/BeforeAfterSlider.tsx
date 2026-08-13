@@ -23,6 +23,7 @@
 "use client";
 
 import React, { useState, useEffect, useRef, useCallback } from "react";
+import Image from "next/image";
 
 interface TransformationItem {
   id: number;
@@ -422,16 +423,20 @@ export default function BeforeAfterSlider({
           aria-label="Before and after transformation slider"
         >
           {/* After image is rendering as base background */}
-          <img
+          <Image
             src={activeSet.afterSrc}
             alt={`${activeSet.title} after result`}
+            fill
+            sizes="(max-width: 768px) 100vw, 550px"
             style={styles.image}
           />
 
           {/* Before image is rendering as clipped overlay */}
-          <img
+          <Image
             src={activeSet.beforeSrc}
             alt={`${activeSet.title} before state`}
+            fill
+            sizes="(max-width: 768px) 100vw, 550px"
             style={styles.overlayImage}
           />
 
@@ -460,9 +465,11 @@ export default function BeforeAfterSlider({
         // MOBILE TOGGLE BUTTON SLIDER VARIANT
         <div>
           <div style={{ ...styles.sliderContainer, cursor: "default" }}>
-            <img
+            <Image
               src={showAfterMobile ? activeSet.afterSrc : activeSet.beforeSrc}
               alt={`${activeSet.title} - ${showAfterMobile ? "After" : "Before"} result`}
+              fill
+              sizes="100vw"
               style={styles.image}
             />
             {/* Absolute indicator tag overlay */}
@@ -510,9 +517,11 @@ export default function BeforeAfterSlider({
                   }
                 }}
               >
-                <img
+                <Image
                   src={item.beforeSrc}
                   alt={`${item.category} thumbnail`}
+                  fill
+                  sizes="180px"
                   style={styles.thumbnailImg}
                 />
               </div>

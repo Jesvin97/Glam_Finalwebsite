@@ -2,15 +2,19 @@
 
 import React from "react";
 import ScrollReveal from "./ScrollReveal";
+import Image from "next/image";
 export default function About() {
 
   return (
     <section className="about-section" id="about">
       <ScrollReveal direction="left" className="about-image-wrapper">
         <div className="about-image">
-          <img
+          <Image
             src="/images/reception-area.jpeg"
             alt="Glam'more Salon Interior Reception Area"
+            width={800}
+            height={600}
+            style={{ width: "100%", height: "auto" }}
           />
         </div>
       </ScrollReveal>

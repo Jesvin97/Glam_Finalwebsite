@@ -1,5 +1,6 @@
  "use client";
 import ScrollReveal from "./ScrollReveal";
+import Image from "next/image";
 
 export default function Gallery() {
  const row1 = [
@@ -34,9 +35,11 @@ const row2 = [
           <div className="gallery-track scroll-left">
             {[...row1, ...row1].map((img, index) => (
               <div className="gallery-card" key={`row1-${index}`}>
-                <img
+                <Image
                   src={img}
                   alt={`Gallery Image ${index + 1}`}
+                  width={280}
+                  height={420}
                 />
               </div>
             ))}
@@ -50,9 +53,11 @@ const row2 = [
           <div className="gallery-track scroll-right">
             {[...row2, ...row2].map((img, index) => (
               <div className="gallery-card" key={`row2-${index}`}>
-                <img
+                <Image
                   src={img}
                   alt={`Gallery Image ${index + 1}`}
+                  width={280}
+                  height={420}
                 />
               </div>
             ))}

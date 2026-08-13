@@ -193,19 +193,13 @@ h1, h2, h3,
   left: 0;
   width: 100%;
   height: calc(100% - 80px);
-  background-image: url('/images/model.png');
-  background-size: cover;
-  background-position: top center;
-  background-repeat: no-repeat;
   z-index: 0;
   will-change: transform;
 }
 
 @media (max-width: 768px) {
   .hero-bg-parallax {
-    /* On mobile, ensure the image still covers the entire background */
-    background-size: cover; 
-    background-position: top center;
+    /* Kept for reference */
   }
 }
 

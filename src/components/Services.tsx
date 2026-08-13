@@ -1,5 +1,6 @@
 "use client";
 import ScrollReveal from "./ScrollReveal";
+import Image from "next/image";
 
 export default function Services() {
   const highlights = [
@@ -10,7 +11,7 @@ export default function Services() {
     },
     { 
       label: "Hair & Styling", 
-      image: "/images/haircutç.jpg", 
+      image: "/images/haircut.jpg", 
       desc: "Masterful cuts, advanced coloring, and extensions."
     },
     { 
@@ -41,8 +42,10 @@ export default function Services() {
               {/* Replace with actual high-res images */}
               <div 
                 className="service-card-bg"
-                style={{ backgroundImage: `url(${h.image})`, backgroundColor: '#1a1a1a' }}
-              />
+                style={{ backgroundColor: '#1a1a1a' }}
+              >
+                <Image src={h.image} alt={h.label} fill style={{ objectFit: "cover" }} />
+              </div>
               <div className="service-card-overlay">
                 <h3>{h.label}</h3>
                 <p>{h.desc}</p>
