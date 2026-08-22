@@ -1,6 +1,7 @@
 "use client";
 import ScrollReveal from "./ScrollReveal";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Services() {
   const highlights = [
@@ -38,8 +39,9 @@ export default function Services() {
       <div className="services-editorial-grid">
         {highlights.map((h, i) => (
           <ScrollReveal direction="up" delay={i * 100} key={i}>
-            <div className="service-card-editorial">
-              {/* Replace with actual high-res images */}
+            <Link href="/services" style={{ textDecoration: 'none' }}>
+              <div className="service-card-editorial">
+                {/* Replace with actual high-res images */}
               <div 
                 className="service-card-bg"
                 style={{ backgroundColor: '#1a1a1a' }}
@@ -52,6 +54,7 @@ export default function Services() {
                 <span className="discover-link">Discover ⟶</span>
               </div>
             </div>
+            </Link>
           </ScrollReveal>
         ))}
       </div>

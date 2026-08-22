@@ -101,15 +101,12 @@ const TestimonialCard = React.memo(({ item, variant = "default" }: { item: Testi
 
       <div className="testimonial-card-content">
         <p className="testimonial-text-v2">
-          &quot;{item.text}&quot;
+          {item.text}
         </p>
 
         <div className="testimonial-user-v2">
           <div className="testimonial-info-v2">
             <span className="testimonial-name-v2">{item.name}</span>
-            {item.username && (
-              <span className="testimonial-username-v2">@{item.username}</span>
-            )}
           </div>
         </div>
       </div>
@@ -190,64 +187,79 @@ export default function Testimonials() {
 
   const fallbackTestimonials: Testimonial[] = [
     {
-      name: "Aiswarya Nair",
-      username: "aiswarya.nair",
+      name: "Damsel Kuriakose",
+      username: "Local Guide",
+      role: "Client",
+      text: "I had a wonderful experience bringing both of my daughters to Glam'more Salon for their hair styling! The team was remarkably accommodating, patient, and gentle. Both of their hair styles turned out absolutely beautiful and exceeded our expectations. Highly recommended!",
+    },
+    {
+      name: "PRIYA ELSA",
+      username: "priya.elsa",
       role: "Bridal Client",
-      text: "Glam'more is hands down the best salon in Thiruvalla! The bridal makeup and luxury spa session was absolute perfection. Highly recommended!",
+      text: "Had a wonderful makeover experience at Glam More Unisex Salon for a wedding function. Kathir’s makeup, Salman’s hairstyle, and the beautiful saree draping by Harani were all excellent. I received so many compliments and absolutely loved my look!",
     },
     {
-      name: "Rohan Mathew",
-      username: "rohan.mathew",
-      role: "Gold Member",
-      text: "The haircut and beard grooming here is outstanding. The staff is professional, the ambiance is luxurious, and the attention to detail is unmatched.",
+      name: "Ashiq Muhammad",
+      username: "ashiq.m",
+      role: "Client",
+      text: "Hi, I came to Glammore unisex salon in Thukalessery for hair cut and shaving. The service is excellent. The staffs are very friendly. I LOVED THE SERVICE AND IS A MUST TRY FOR EVERYONE.",
     },
     {
-      name: "Sneha Joseph",
-      username: "sneha.joseph",
-      role: "Regular Client",
-      text: "Their nail art and skincare treatment are world-class. It's a true luxury wellness experience that keeps me coming back every month.",
+      name: "Jaitha Sree",
+      username: "jaitha.sree",
+      role: "Client",
+      text: "I had such a lovely experience! ❤️ I got a detan, veg peel, and threading done, and I’m really happy with the service. The staff were professional, welcoming. A special mention to Lincy Chechi, who was incredibly friendly. Definitely looking forward to visiting again. ✨",
     },
     {
-      name: "Anjali Krishna",
-      username: "anjali.krishna",
-      role: "Regular Client",
-      text: "Step into pure luxury! Glam'more's attention to detail, luxury organic products, and highly skilled styling team completely transformed my hair styling routine.",
+      name: "Devnandhu kurup",
+      username: "devnandhu.k",
+      role: "Client",
+      text: "Had a really good experience. The beard cut came out exactly how I wanted, and they also suggested a style that suited my face better than I expected. The service was friendly, professional, and they paid attention to the small details.",
     },
     {
-      name: "Dr. Sandeep Kurian",
-      username: "dr.sandeep",
-      role: "Gold Member",
-      text: "Exceptional service and extremely relaxing ambiance. Their head massage and skincare treatments are absolutely restorative after a busy week.",
-    },
-    {
-      name: "Lakshmi Menon",
-      username: "lakshmi.m",
+      name: "Ranjini R",
+      username: "ranjini.r",
       role: "Bridal Client",
-      text: "I booked Glam'more for my wedding and they made me look like an absolute princess! Their premium bridal package is worth every penny.",
+      text: "I had a wonderful experience with glam more unisex makeup studio and I’m truly 100% satisfied with their work. Lincy did my saree draping beautifully, Kathir did an amazing job with my makeup and hair. The look was flawless. Highly recommended!",
     },
     {
-      name: "Arjun Varma",
-      username: "arjun.v",
-      role: "Regular Client",
-      text: "The best men's grooming experience in the city. The VIP room and attention to detail during my beard styling was phenomenal.",
+      name: "SHERIN M THOMAS",
+      username: "sherin.thomas",
+      role: "Client",
+      text: "Good service and friendly staff and the manager was very thorough in explaining everything also the owner was so helpful in detailing everything..I recommend this place for everybody (10/10). Mr. sherif did a wonderful job with my hair smoothening..Surely coming back 😍😍",
     },
     {
-      name: "Meera George",
-      username: "meera.g",
-      role: "Regular Client",
-      text: "Loved the keratin hair treatment! My hair has never felt this soft and shiny before. The ambiance of the salon is pure bliss.",
+      name: "Mo Anas",
+      username: "mo.anas",
+      role: "Bridal Client",
+      text: "I took bridal services from glammore and their services were amazing. Took the HD makeup and all the prebridal services. I was really happy that I took the makeup and it made my big day so special. Thank u glammore.",
     },
     {
-      name: "Priya Pillai",
-      username: "priya.pillai",
-      role: "Premium Client",
-      text: "A truly international standard salon in our town. Their facial treatments and skin care routines use authentic luxury products. Amazing!",
+      name: "Akhil Krishnan",
+      username: "Local Guide",
+      role: "Client",
+      text: "Amazing experience with Anas! He understood my curls perfectly and gave me exactly the haircut I wanted. Really happy with the result.🤍",
     },
     {
-      name: "Kiran Kumar",
-      username: "kiran.k",
-      role: "Gold Member",
-      text: "From the moment you walk in, you are treated like royalty. The massage therapy and overall vibe is just exceptional.",
+      name: "Anu Varghese",
+      username: "anu.varghese",
+      role: "Client",
+      text: "Very nice experience.... Staff very genuin service... Especially lincy doing very gud services... Overall am satisfied",
+    },
+    {
+      name: "jagatheesh jj",
+      role: "Client",
+      text: "They had done my hair cut . I am more pleasure to review Glam more because they had done an absolute excellence in their work. Staff, ambiance and work are really appreciated. Thank you",
+    },
+    {
+      name: "Sunil Kumar.n",
+      role: "Client",
+      text: "Had a wonderful experience at Glam’more Unisex Salon. Great ambiance, skilled staff, and top-notch service. Highly recommended for anyone looking for a premium grooming experience. Best of luck with the new venture!❤️",
+    },
+    {
+      name: "Ajith Kumar",
+      role: "Client",
+      text: "Great experience in Thiruvalla! Mohammed Rashid gave an excellent shave—professional, polite, and skilled. Highly recommended.",
     }
   ];
 
