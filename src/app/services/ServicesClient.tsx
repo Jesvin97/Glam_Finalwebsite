@@ -4,7 +4,7 @@ import "./services.css";
 import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { FaTimes, FaClock, FaUser, FaPlus, FaCheck } from "react-icons/fa";
+import { FaTimes, FaClock, FaUser, FaPlus, FaCheck, FaCalendarAlt, FaMagic } from "react-icons/fa";
 import { Calendar } from "@/components/ui/calendar";
 
 const WHATSAPP_NUMBER = "919645915329";
@@ -12,10 +12,21 @@ const WHATSAPP_NUMBER = "919645915329";
 interface ServiceItem {
   id: string;
   title: string;
-  category: "hair" | "nails" | "grooming" | "skin" | "events";
+  category: "hair" | "nails" | "grooming" | "waxing" | "skin" | "events";
   description: string;
   price?: string;
   duration?: string;
+  image?: string;
+}
+
+interface CategoryMeta {
+  id: "hair" | "events" | "nails" | "skin" | "grooming" | "waxing";
+  name: string;
+  tagline: string;
+  description: string;
+  bannerImage: string;
+  ctaPrimary: string;
+  ctaSecondary: string;
 }
 
 const toDateString = (d: Date) => {
@@ -40,49 +51,83 @@ export default function ServicesClient() {
     message: "",
   });
 
-  const categories = [
+  const filterCategories = [
     { id: "all", name: "All Collections" },
-    { id: "hair", name: "Hair Styling" },
-    { id: "nails", name: "Nail Care" },
-    { id: "grooming", name: "Grooming & Waxing" },
-    { id: "skin", name: "Skin & Wellness" },
-    { id: "events", name: "Weddings & Events" },
+    { id: "hair", name: "Hair Styling & Extensions" },
+    { id: "events", name: "Bridal, Makeup & Events" },
+    { id: "nails", name: "Nail Care & Extensions" },
+    { id: "skin", name: "Skin & Deep Wellness" },
+    { id: "grooming", name: "Brows, Lashes & Men's Grooming" },
+    { id: "waxing", name: "Waxing & Smooth Skin Care" },
+  ];
+
+  const categoryMetaList: CategoryMeta[] = [
+    {
+      id: "hair",
+      name: "Hair Styling & Extensions",
+      tagline: "Signature Hair Artistry",
+      description: "Transform your hair with precision cuts, couture blowouts, and 100% natural human hair extensions masterfully fitted for extraordinary length, volume, and silky movement.",
+      bannerImage: "/images/haircut.jpg",
+      ctaPrimary: "Book Hair Stylist",
+      ctaSecondary: "Explore Extensions",
+    },
+    {
+      id: "events",
+      name: "Bridal, Makeup & Event Glamour",
+      tagline: "Bridal Artistry & Occasions",
+      description: "Comprehensive Kerala bridal makeup, HD airbrush application, and full wedding party preparations tailored to make your most memorable celebrations truly magical.",
+      bannerImage: "/images/bridal.jpg",
+      ctaPrimary: "Book Bridal Artist",
+      ctaSecondary: "View Event Packages",
+    },
+    {
+      id: "nails",
+      name: "Nail Care & Extensions",
+      tagline: "Hand & Foot Spa Therapy",
+      description: "Durable luxury acrylic extensions, custom artistic detailing, high-shine gel manicures, and organic foot spa pedicures designed for timeless elegance.",
+      bannerImage: "/images/nailart.jpg",
+      ctaPrimary: "Schedule Nail Spa",
+      ctaSecondary: "Explore Nail Art",
+    },
+    {
+      id: "skin",
+      name: "Skin & Deep Wellness",
+      tagline: "Rejuvenation Rituals",
+      description: "Rejuvenating facial treatments, deep tissue massage therapy, and stress-relieving botanical body scrubs crafted to nourish skin and soul.",
+      bannerImage: "/images/spa-area.jpeg",
+      ctaPrimary: "Book Spa Ritual",
+      ctaSecondary: "Discover Treatments",
+    },
+    {
+      id: "grooming",
+      name: "Brows, Lashes & Men's Grooming",
+      tagline: "Essential Brow, Lash & Beard Care",
+      description: "Expertly contoured eyebrow threading, voluminous lash extensions, and classic hot-towel beard shaping designed for effortless daily refinement.",
+      bannerImage: "/images/male model.jpeg",
+      ctaPrimary: "Book Grooming",
+      ctaSecondary: "View Grooming Menu",
+    },
+    {
+      id: "waxing",
+      name: "Waxing & Smooth Skin Care",
+      tagline: "Botanical Skin Care",
+      description: "Silk-smooth body exfoliation and precision facial waxing treatments crafted with soothing botanical formulas for luminous, hair-free skin.",
+      bannerImage: "/images/10.webp",
+      ctaPrimary: "Book Waxing Session",
+      ctaSecondary: "View Waxing Menu",
+    },
   ];
 
   const servicesData: ServiceItem[] = [
-    // ── Weddings & Events ──────────────────────────────────────────────────
+    // ── Hair Styling & Extensions ──
     {
-      id: "bridal-services",
-      title: "Bridal services",
-      category: "events",
-      description: "Luxury comprehensive Kerala bridal makeup, hair styling, and wellness treatments tailored for your special wedding day in Thiruvalla.",
-      price: "9,999",
-      duration: "4–6 hrs",
-    },
-    {
-      id: "wedding-prep",
-      title: "Wedding & event preparation",
-      category: "events",
-      description: "Complete hair, skin, and styling packages for Kerala weddings and events — coordinated across the full bridal party.",
-      price: "4,999",
-      duration: "2–4 hrs",
-    },
-    {
-      id: "makeup-services",
-      title: "Make-up services",
-      category: "events",
-      description: "Flawless HD and airbrush makeup styles for celebrity shoots, family events, and parties.",
-      price: "2,499",
-      duration: "60–90 min",
-    },
-    // ── Hair Styling ───────────────────────────────────────────────────────
-    {
-      id: "hair-extensions",
-      title: "Hair extensions",
+      id: "haircut",
+      title: "Haircut",
       category: "hair",
-      description: "100% natural, premium human hair extensions for length, volume, and custom styling, professionally fitted.",
-      price: "5,999",
-      duration: "2–3 hrs",
+      description: "Precision styling, trend-forward haircuts, and expert hair texturizing by master stylists.",
+      price: "499",
+      duration: "30–45 min",
+      image: "/images/Haircut.png"
     },
     {
       id: "hairstyling",
@@ -91,40 +136,82 @@ export default function ServicesClient() {
       description: "Luxury blowouts, elegant updos, and custom event hairstyling for all hair types.",
       price: "799",
       duration: "45–60 min",
+      image: "/images/Hair_stylingjpeg.jpeg"
     },
     {
-      id: "haircut",
-      title: "Haircut",
+      id: "hair-extensions",
+      title: "Hair Extensions",
       category: "hair",
-      description: "Precision styling, trend-forward haircuts, and expert hair texturizing by master stylists.",
-      price: "499",
-      duration: "30–45 min",
+      description: "100% natural, premium human hair extensions for length, volume, and custom styling, professionally fitted.",
+      price: "5,999",
+      duration: "2–3 hrs",
+      image: "/images/Hiar_extension.jpeg"
     },
-    // ── Nail Care ──────────────────────────────────────────────────────────
+    // ── Bridal, Makeup & Event Glamour ──
     {
-      id: "acrylic-nails",
-      title: "Acrylic nails",
-      category: "nails",
-      description: "High-quality, durable acrylic extensions with custom premium nail art and luxury finish.",
-      price: "1,499",
+      id: "bridal-services",
+      title: "Bridal Services",
+      category: "events",
+      description: "Luxury comprehensive Kerala bridal makeup, hair styling, and wellness treatments tailored for your special wedding day in Thiruvalla.",
+      price: "9,999",
+      duration: "4–6 hrs",
+      image: "/images/bridal.jpg"
+    },
+    {
+      id: "wedding-prep",
+      title: "Wedding & Event Preparation",
+      category: "events",
+      description: "Complete hair, skin, and styling packages for Kerala weddings and events — coordinated across the full bridal party.",
+      price: "4,999",
+      duration: "2–4 hrs",
+      image: "/images/model.jpeg"
+    },
+    {
+      id: "makeup-services",
+      title: "Makeup Services",
+      category: "events",
+      description: "Flawless HD and airbrush makeup styles for celebrity shoots, family events, and parties.",
+      price: "2,499",
       duration: "60–90 min",
+      image: "/images/3.jpg"
+    },
+    // ── Nail Care & Extensions ──
+    {
+      id: "gel-manicure",
+      title: "Gel Manicure",
+      category: "nails",
+      description: "Long-lasting gel polish manicure with cuticle care, nail shaping, and glossy topcoat.",
+      price: "999",
+      duration: "45 min",
+      image: "/images/Gel Manicure.png"
     },
     {
       id: "pedicures",
-      title: "Pedicures",
+      title: "Spa Pedicure",
       category: "nails",
       description: "Revitalizing foot spa therapy, organic scrub exfoliation, and precision nail care.",
       price: "799",
       duration: "45–60 min",
+      image: "/images/Spa pedicures.png"
     },
-    // ── Skin & Wellness ────────────────────────────────────────────────────
+    {
+      id: "acrylic-nails",
+      title: "Acrylic Nails & Art",
+      category: "nails",
+      description: "High-quality, durable acrylic extensions with custom premium nail art and luxury finish.",
+      price: "1,499",
+      duration: "60–90 min",
+      image: "/images/nailart.jpg"
+    },
+    // ── Skin & Deep Wellness ──
     {
       id: "spa-services",
-      title: "Spa services",
+      title: "Spa services & scrub",
       category: "skin",
       description: "Premium wellness packages, full-body body scrub therapies, and stress relief.",
       price: "2,499",
       duration: "90 min",
+      image: "/images/spa.jpg"
     },
     {
       id: "massages",
@@ -133,52 +220,67 @@ export default function ServicesClient() {
       description: "Deep tissue, aromatherapy, and muscle relief massages in our quiet wellness spa.",
       price: "1,799",
       duration: "60 min",
+      image: "/images/5.webp"
     },
-    // ── Grooming & Waxing ──────────────────────────────────────────────────
+    {
+      id: "radiance-facial",
+      title: "Radiance Facial Ritual",
+      category: "skin",
+      description: "Deep hydrating facial treatment infused with botanical antioxidants for an instant luminous glow.",
+      price: "1,899",
+      duration: "60 min",
+      image: "/images/6.webp"
+    },
+    // ── Brows, Lashes & Men's Grooming ──
     {
       id: "eyebrow-threading",
-      title: "Eyebrow threading",
+      title: "Eyebrow Threading",
       category: "grooming",
-      description: "Precision eyebrow threading for ultra-clean, beautifully defined brow contours by expert beauticians.",
+      description: "Ultra-clean thread shaping for sharp, beautifully defined brow arches.",
       price: "150",
       duration: "15 min",
+      image: "/images/Eyebrow threading.png"
     },
     {
       id: "eyelashes",
-      title: "Eyelash extensions",
+      title: "Eyelash Extensions",
       category: "grooming",
       description: "Premium individual eyelashes and volume extension services for a mesmerizing, natural look.",
       price: "999",
       duration: "60–90 min",
-    },
-    {
-      id: "body-waxing",
-      title: "Body waxing",
-      category: "grooming",
-      description: "Full body smooth waxing treatment using premium, gentle organic wax for delicate skin.",
-      price: "1,999",
-      duration: "45–75 min",
-    },
-    {
-      id: "waxing",
-      title: "Facial waxing",
-      category: "grooming",
-      description: "Fast, gentle precision waxing for facial grooming — upper lip, chin, and full face — by experienced professionals.",
-      price: "299",
-      duration: "20–30 min",
+      image: "/images/9.webp"
     },
     {
       id: "shaving",
-      title: "Shaving & beard styling",
+      title: "Shaving & Beard Styling",
       category: "grooming",
-      description: "Traditional hot towel classic shave, beard detailing, shaping, and skin hydration for men.",
+      description: "Traditional hot towel shave, beard detailing, precision edging, and skin hydration.",
       price: "399",
       duration: "30–45 min",
+      image: "/images/male model.jpeg"
+    },
+    // ── Waxing & Smooth Skin Care ──
+    {
+      id: "body-waxing",
+      title: "Body Waxing",
+      category: "waxing",
+      description: "Full-body smooth waxing treatment using soothing organic wax formulated for sensitive skin.",
+      price: "1,999",
+      duration: "45–75 min",
+      image: "/images/10.webp"
+    },
+    {
+      id: "waxing",
+      title: "Facial Waxing",
+      category: "waxing",
+      description: "Fast, gentle precision waxing for upper lip, chin, and full face by experienced estheticians.",
+      price: "299",
+      duration: "20–30 min",
+      image: "/images/2.webp"
     },
   ];
 
-  // ── Helpers ──────────────────────────────────────────────────────────────
-
+  // ── Helpers ──
   const totalPrice = selectedServices.reduce((sum, title) => {
     const service = servicesData.find((s) => s.title === title);
     if (!service?.price) return sum;
@@ -186,7 +288,6 @@ export default function ServicesClient() {
   }, 0);
 
   const handleToggleService = (serviceTitle: string) => {
-    // functional update avoids stale-closure over selectedServices
     setSelectedServices((prev) =>
       prev.includes(serviceTitle)
         ? prev.filter((s) => s !== serviceTitle)
@@ -200,14 +301,12 @@ export default function ServicesClient() {
 
   const handleDateSelect = (date: Date | undefined) => {
     setSelectedDate(date);
-    // functional update avoids stale-closure over bookingDetails
     setBookingDetails((prev) => ({ ...prev, date: date ? toDateString(date) : "" }));
   };
 
   const handleFormChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setBookingDetails((prev) => ({ ...prev, [name]: value }));
-    // clear error on change
     setFormErrors((prev) => ({ ...prev, [name]: undefined }));
   };
 
@@ -224,7 +323,6 @@ export default function ServicesClient() {
   const handleBookingSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Inline validation — no alert()
     const errors: { name?: string; phone?: string; time?: string } = {};
     if (!bookingDetails.name.trim()) errors.name = "Please enter your full name.";
     if (!bookingDetails.phone.trim()) errors.phone = "Please enter your phone number.";
@@ -260,114 +358,192 @@ export default function ServicesClient() {
     setIsDrawerOpen(false);
   };
 
+  const visibleCategories = categoryMetaList.filter(
+    (cat) => categoryFilter === "all" || categoryFilter === cat.id
+  );
+
   return (
     <>
       <Navbar />
 
-      <main className="menu-page">
-        {/* EDITORIAL HEADER */}
-        <header className="menu-header">
-          <p className="subtitle-elegant">Curated Treatments</p>
-          <h1 className="menu-title">The Collection</h1>
-        </header>
+      <main className="services-page-container">
+        {/* ── 1. HERO SECTION ── */}
+        <section className="services-hero-section">
+          <div className="hero-content-wrapper">
+            <span className="hero-badge-tag">GLAM'MORE EXPERIENCES</span>
+            <h1 className="hero-main-title">Luxury Beauty & Styling Collections</h1>
+            <p className="hero-intro-text">
+              Immerse yourself in our curated luxury treatment menu. From bespoke bridal artistry to signature hair extensions and revitalizing spa rituals, explore our complete service offerings below.
+            </p>
+          </div>
 
-        {/* LAYOUT GRID */}
-        <div className="menu-layout">
-          
-          {/* CATEGORY SIDEBAR */}
-          <aside className="menu-sidebar">
-            <ul className="category-list">
-              {categories.map((cat) => (
-                <li key={cat.id}>
-                  <button
-                    onClick={() => setCategoryFilter(cat.id)}
-                    className={`category-link ${categoryFilter === cat.id ? "active" : ""}`}
-                  >
-                    {cat.name}
-                  </button>
-                </li>
-              ))}
-            </ul>
-          </aside>
+          <div className="hero-banner-image-container">
+            <img
+              src="/images/Salon seating area.jpeg"
+              alt="Glammore Salon Experience"
+              className="hero-banner-image"
+            />
+            <div className="hero-banner-overlay" />
+          </div>
+        </section>
 
-          {/* SERVICES LIST */}
-          <section className="menu-items-container">
-            {categories
-              .filter(cat => cat.id !== "all" && (categoryFilter === "all" || categoryFilter === cat.id))
-              .map(category => {
-                const catServices = servicesData.filter(s => s.category === category.id);
-                if (catServices.length === 0) return null;
+        {/* ── CATEGORY FILTER NAVIGATION ── */}
+        <nav className="category-filter-nav">
+          <ul className="filter-pill-list">
+            {filterCategories.map((cat) => (
+              <li key={cat.id}>
+                <button
+                  onClick={() => setCategoryFilter(cat.id)}
+                  className={`filter-pill-btn ${categoryFilter === cat.id ? "active" : ""}`}
+                >
+                  {cat.name}
+                </button>
+              </li>
+            ))}
+          </ul>
+        </nav>
 
-                return (
-                  <div key={category.id} className="menu-category-section">
-                    <h2 className="category-section-title">{category.name}</h2>
-                    <div className="menu-list">
-                      {catServices.map((service) => {
-                        const isSelected = selectedServices.includes(service.title);
-                        return (
-                          <div
-                            key={service.id}
-                            className={`menu-row ${isSelected ? "selected" : ""}`}
-                            onClick={() => handleToggleService(service.title)}
-                            role="button"
-                            aria-pressed={isSelected}
-                          >
-                            <div className="menu-row-content">
-                              <div className="menu-row-header">
-                                <h3>{service.title}</h3>
-                                {service.price && (
-                                  <span className="menu-row-price">from ₹{service.price}</span>
-                                )}
-                              </div>
-                              <p className="menu-row-desc">{service.description}</p>
-                              {service.duration && (
-                                <span className="menu-row-duration">
-                                  <FaClock size={11} /> {service.duration}
-                                </span>
-                              )}
-                            </div>
+        {/* ── 2. CATEGORY SECTIONS (ALTERNATING IMAGE LEFT / IMAGE RIGHT) ── */}
+        <div className="categories-stack">
+          {visibleCategories.map((category, index) => {
+            const catSubServices = servicesData.filter((s) => s.category === category.id);
+            const isImageLeft = index % 2 === 0;
 
-                            <div className="menu-row-action">
-                              {isSelected ? <FaCheck size={14} /> : <FaPlus size={14} />}
-                            </div>
-                          </div>
-                        );
-                      })}
+            return (
+              <section
+                key={category.id}
+                id={`category-${category.id}`}
+                className="category-block-section"
+              >
+                {/* ── CATEGORY FEATURE BANNER ── */}
+                <div
+                  className={`category-feature-banner ${
+                    isImageLeft ? "banner-image-left" : "banner-image-right"
+                  }`}
+                >
+                  {/* Image Side */}
+                  <div className="banner-image-wrapper">
+                    <img
+                      src={category.bannerImage}
+                      alt={category.name}
+                      className="banner-image"
+                    />
+                    <div className="banner-image-gradient" />
+                  </div>
+
+                  {/* Text Side */}
+                  <div className="banner-text-content">
+                    <span className="banner-category-tag">
+                      {category.tagline}
+                    </span>
+                    <h2 className="banner-category-title">{category.name}</h2>
+                    <p className="banner-intro-paragraph">
+                      {category.description}
+                    </p>
+                    <div className="banner-cta-group">
+                      <button
+                        className="banner-btn primary-btn"
+                        onClick={() => setIsDrawerOpen(true)}
+                      >
+                        {category.ctaPrimary}
+                      </button>
+                      <button
+                        className="banner-btn secondary-btn"
+                        onClick={() => {
+                          const el = document.getElementById(`sub-services-${category.id}`);
+                          el?.scrollIntoView({ behavior: "smooth" });
+                        }}
+                      >
+                        {category.ctaSecondary}
+                      </button>
                     </div>
                   </div>
-                );
-            })}
-          </section>
+                </div>
+
+                {/* ── SUB-SERVICES GRID BELOW BANNER ── */}
+                <div id={`sub-services-${category.id}`} className="sub-services-wrapper">
+                  <div className="sub-services-header-label">
+                    <span className="sub-services-arrow"><FaMagic size={12} /></span> Select Treatments in {category.name}
+                  </div>
+
+                  <div className="sub-services-grid">
+                    {catSubServices.map((service) => {
+                      const isSelected = selectedServices.includes(service.title);
+                      return (
+                        <div
+                          key={service.id}
+                          className={`sub-service-card ${isSelected ? "selected" : ""}`}
+                          onClick={() => handleToggleService(service.title)}
+                          role="button"
+                          tabIndex={0}
+                          aria-pressed={isSelected}
+                        >
+                          <div className="sub-service-image-box">
+                            {service.image ? (
+                              <img src={service.image} alt={service.title} />
+                            ) : (
+                              <div className="sub-service-placeholder" />
+                            )}
+                            <button
+                              className="sub-service-add-btn"
+                              aria-label={isSelected ? "Remove service" : "Add service"}
+                            >
+                              {isSelected ? <FaCheck size={13} /> : <FaPlus size={13} />}
+                            </button>
+                          </div>
+
+                          <div className="sub-service-info">
+                            <div className="sub-service-title-row">
+                              <h3 className="sub-service-title">{service.title}</h3>
+                              {service.price && (
+                                <span className="sub-service-price">₹{service.price}</span>
+                              )}
+                            </div>
+                            <p className="sub-service-desc">{service.description}</p>
+                            {service.duration && (
+                              <span className="sub-service-duration">
+                                <FaClock size={11} /> {service.duration}
+                              </span>
+                            )}
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+              </section>
+            );
+          })}
         </div>
       </main>
 
-      {/* FLOATING BOOKING PILL */}
+      {/* ── FLOATING BOOKING PILL BAR ── */}
       <div className={`booking-pill-container ${selectedServices.length > 0 ? "visible" : ""}`}>
         <div className="booking-pill" onClick={() => setIsDrawerOpen(true)}>
           <div className="booking-pill-text">
             <span className="count">
-              {selectedServices.length} service{selectedServices.length !== 1 ? "s" : ""} · est. ₹{totalPrice.toLocaleString("en-IN")}
+              {selectedServices.length} service{selectedServices.length !== 1 ? "s" : ""} selected · Est. ₹{totalPrice.toLocaleString("en-IN")}
             </span>
-            <span className="label">Book Appointment</span>
+            <span className="label">Schedule Visit</span>
           </div>
           <div className="booking-pill-icon">⟶</div>
         </div>
       </div>
 
-      {/* SLIDE-OUT BOOKING DRAWER */}
-      <div className={`drawer-overlay ${isDrawerOpen ? 'open' : ''}`} onClick={() => setIsDrawerOpen(false)}></div>
-      <aside className={`booking-drawer ${isDrawerOpen ? 'open' : ''}`}>
+      {/* ── SLIDE-OUT BOOKING DRAWER ── */}
+      <div className={`drawer-overlay ${isDrawerOpen ? "open" : ""}`} onClick={() => setIsDrawerOpen(false)} />
+      <aside className={`booking-drawer ${isDrawerOpen ? "open" : ""}`}>
         <button className="drawer-close" onClick={() => setIsDrawerOpen(false)}>
           <FaTimes />
         </button>
 
         <h2 className="drawer-title">Schedule Visit</h2>
-        
+
         {selectedServices.length > 0 && (
           <div className="drawer-services">
             <p className="drawer-label">Selected Services</p>
             <div className="drawer-tags">
-              {selectedServices.map(s => (
+              {selectedServices.map((s) => (
                 <span key={s} className="drawer-tag">
                   {s} <FaTimes className="remove-tag" onClick={() => handleRemoveService(s)} />
                 </span>
@@ -378,7 +554,10 @@ export default function ServicesClient() {
 
         <form onSubmit={handleBookingSubmit} className="drawer-form" noValidate>
           <div className="form-group">
-            <label className="drawer-label">Date</label>
+            <label className="drawer-label">
+              <FaCalendarAlt style={{ display: "inline", marginRight: 6, color: "#d4af37" }} />
+              Preferred Date
+            </label>
             <div className="calendar-container">
               <Calendar
                 mode="single"
@@ -391,7 +570,7 @@ export default function ServicesClient() {
           </div>
 
           <div className="form-group">
-            <label className="drawer-label">Time (8:30 AM – 8:00 PM)</label>
+            <label className="drawer-label">Time Slot (8:30 AM – 8:00 PM)</label>
             <div className="input-with-icon">
               <FaClock className="input-icon" />
               <input
@@ -443,7 +622,7 @@ export default function ServicesClient() {
             <label className="drawer-label">Special Requests</label>
             <textarea
               name="message"
-              placeholder="Any notes for your stylist?"
+              placeholder="Any specific instructions for your appointment?"
               value={bookingDetails.message}
               onChange={handleFormChange}
               className="luxury-input textarea"
@@ -458,7 +637,7 @@ export default function ServicesClient() {
           )}
 
           <button type="submit" className="btn-luxury drawer-submit-btn">
-            Confirm via WhatsApp <span className="btn-luxury-hover-effect"></span>
+            Confirm via WhatsApp <span className="btn-luxury-hover-effect" />
           </button>
         </form>
       </aside>
