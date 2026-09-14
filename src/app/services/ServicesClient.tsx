@@ -12,7 +12,7 @@ const WHATSAPP_NUMBER = "919645915329";
 interface ServiceItem {
   id: string;
   title: string;
-  category: "hair" | "nails" | "grooming" | "waxing" | "skin" | "events";
+  category: "hair" | "nails" | "grooming" | "waxing" | "events";
   description: string;
   price?: string;
   duration?: string;
@@ -20,7 +20,7 @@ interface ServiceItem {
 }
 
 interface CategoryMeta {
-  id: "hair" | "events" | "nails" | "skin" | "grooming" | "waxing";
+  id: "hair" | "events" | "nails" | "grooming" | "waxing";
   name: string;
   tagline: string;
   description: string;
@@ -56,7 +56,6 @@ export default function ServicesClient() {
     { id: "hair", name: "Hair Styling & Extensions" },
     { id: "events", name: "Bridal, Makeup & Events" },
     { id: "nails", name: "Nail Care & Extensions" },
-    { id: "skin", name: "Skin & Deep Wellness" },
     { id: "grooming", name: "Brows, Lashes & Men's Grooming" },
     { id: "waxing", name: "Waxing & Smooth Skin Care" },
   ];
@@ -88,15 +87,6 @@ export default function ServicesClient() {
       bannerImage: "/images/nailart.jpg",
       ctaPrimary: "Schedule Nail Spa",
       ctaSecondary: "Explore Nail Art",
-    },
-    {
-      id: "skin",
-      name: "Skin & Deep Wellness",
-      tagline: "Rejuvenation Rituals",
-      description: "Rejuvenating facial treatments, deep tissue massage therapy, and stress-relieving botanical body scrubs crafted to nourish skin and soul.",
-      bannerImage: "/images/spa-area.jpeg",
-      ctaPrimary: "Book Spa Ritual",
-      ctaSecondary: "Discover Treatments",
     },
     {
       id: "grooming",
@@ -202,34 +192,6 @@ export default function ServicesClient() {
       price: "1,499",
       duration: "60–90 min",
       image: "/images/nailart.jpg"
-    },
-    // ── Skin & Deep Wellness ──
-    {
-      id: "spa-services",
-      title: "Spa services & scrub",
-      category: "skin",
-      description: "Premium wellness packages, full-body body scrub therapies, and stress relief.",
-      price: "2,499",
-      duration: "90 min",
-      image: "/images/spa.jpg"
-    },
-    {
-      id: "massages",
-      title: "Massages",
-      category: "skin",
-      description: "Deep tissue, aromatherapy, and muscle relief massages in our quiet wellness spa.",
-      price: "1,799",
-      duration: "60 min",
-      image: "/images/5.webp"
-    },
-    {
-      id: "radiance-facial",
-      title: "Radiance Facial Ritual",
-      category: "skin",
-      description: "Deep hydrating facial treatment infused with botanical antioxidants for an instant luminous glow.",
-      price: "1,899",
-      duration: "60 min",
-      image: "/images/6.webp"
     },
     // ── Brows, Lashes & Men's Grooming ──
     {
