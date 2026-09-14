@@ -25,8 +25,8 @@ interface CategoryMeta {
   tagline: string;
   description: string;
   bannerImage: string;
-  ctaPrimary: string;
-  ctaSecondary: string;
+  ctaPrimary?: string;
+  ctaSecondary?: string;
 }
 
 const toDateString = (d: Date) => {
@@ -67,8 +67,6 @@ export default function ServicesClient() {
       tagline: "Signature Hair Artistry",
       description: "Transform your hair with precision cuts, couture blowouts, and 100% natural human hair extensions masterfully fitted for extraordinary length, volume, and silky movement.",
       bannerImage: "/images/haircut.jpg",
-      ctaPrimary: "Book Hair Stylist",
-      ctaSecondary: "Explore Extensions",
     },
     {
       id: "events",
@@ -76,8 +74,6 @@ export default function ServicesClient() {
       tagline: "Bridal Artistry & Occasions",
       description: "Comprehensive Kerala bridal makeup, HD airbrush application, and full wedding party preparations tailored to make your most memorable celebrations truly magical.",
       bannerImage: "/images/bridal.jpg",
-      ctaPrimary: "Book Bridal Artist",
-      ctaSecondary: "View Event Packages",
     },
     {
       id: "nails",
@@ -85,8 +81,6 @@ export default function ServicesClient() {
       tagline: "Hand & Foot Spa Therapy",
       description: "Durable luxury acrylic extensions, custom artistic detailing, high-shine gel manicures, and organic foot spa pedicures designed for timeless elegance.",
       bannerImage: "/images/nailart.jpg",
-      ctaPrimary: "Schedule Nail Spa",
-      ctaSecondary: "Explore Nail Art",
     },
     {
       id: "grooming",
@@ -94,8 +88,6 @@ export default function ServicesClient() {
       tagline: "Essential Brow, Lash & Beard Care",
       description: "Expertly contoured eyebrow threading, voluminous lash extensions, and classic hot-towel beard shaping designed for effortless daily refinement.",
       bannerImage: "/images/male model.jpeg",
-      ctaPrimary: "Book Grooming",
-      ctaSecondary: "View Grooming Menu",
     },
     {
       id: "waxing",
@@ -103,8 +95,6 @@ export default function ServicesClient() {
       tagline: "Botanical Skin Care",
       description: "Silk-smooth body exfoliation and precision facial waxing treatments crafted with soothing botanical formulas for luminous, hair-free skin.",
       bannerImage: "/images/10.webp",
-      ctaPrimary: "Book Waxing Session",
-      ctaSecondary: "View Waxing Menu",
     },
   ];
 
@@ -402,23 +392,29 @@ export default function ServicesClient() {
                     <p className="banner-intro-paragraph">
                       {category.description}
                     </p>
-                    <div className="banner-cta-group">
-                      <button
-                        className="banner-btn primary-btn"
-                        onClick={() => setIsDrawerOpen(true)}
-                      >
-                        {category.ctaPrimary}
-                      </button>
-                      <button
-                        className="banner-btn secondary-btn"
-                        onClick={() => {
-                          const el = document.getElementById(`sub-services-${category.id}`);
-                          el?.scrollIntoView({ behavior: "smooth" });
-                        }}
-                      >
-                        {category.ctaSecondary}
-                      </button>
-                    </div>
+                    {(category.ctaPrimary || category.ctaSecondary) && (
+                      <div className="banner-cta-group">
+                        {category.ctaPrimary && (
+                          <button
+                            className="banner-btn primary-btn"
+                            onClick={() => setIsDrawerOpen(true)}
+                          >
+                            {category.ctaPrimary}
+                          </button>
+                        )}
+                        {category.ctaSecondary && (
+                          <button
+                            className="banner-btn secondary-btn"
+                            onClick={() => {
+                              const el = document.getElementById(`sub-services-${category.id}`);
+                              el?.scrollIntoView({ behavior: "smooth" });
+                            }}
+                          >
+                            {category.ctaSecondary}
+                          </button>
+                        )}
+                      </div>
+                    )}
                   </div>
                 </div>
 
