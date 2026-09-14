@@ -248,7 +248,7 @@ export default function ServicesClient() {
       description: "Premium individual eyelashes and volume extension services for a mesmerizing, natural look.",
       price: "999",
       duration: "60–90 min",
-      image: "/images/9.webp"
+      image: "/images/Eyelash Extensions.png"
     },
     {
       id: "shaving",
@@ -257,7 +257,7 @@ export default function ServicesClient() {
       description: "Traditional hot towel shave, beard detailing, precision edging, and skin hydration.",
       price: "399",
       duration: "30–45 min",
-      image: "/images/male model.jpeg"
+      image: "/images/Shaving & Beard Styling.png"
     },
     // ── Waxing & Smooth Skin Care ──
     {
