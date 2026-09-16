@@ -66,7 +66,7 @@ const defaultSliderData = {
       id: 3,
       category: "Skincare Treatment",
       beforeSrc: "/images/spa-area.jpeg",
-      afterSrc: "/images/reception-area.jpeg",
+      afterSrc: "/images/reception-area.jpg",
       title: "Skincare treatment transformation"
     }
   ] as TransformationItem[]

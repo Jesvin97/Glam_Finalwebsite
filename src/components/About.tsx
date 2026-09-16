@@ -10,7 +10,7 @@ export default function About() {
       <ScrollReveal direction="left" className="about-image-wrapper">
         <div className="about-image">
           <Image
-            src="/images/reception-area.jpeg"
+            src="/images/reception-area.jpg"
             alt="Glam'more Salon Interior Reception Area"
             width={800}
             height={600}

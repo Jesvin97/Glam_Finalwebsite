@@ -365,7 +365,7 @@ export default function ServicesClient() {
               <section
                 key={category.id}
                 id={`category-${category.id}`}
-                className="category-block-section"
+                className={`category-block-section category-${category.id}`}
               >
                 {/* ── CATEGORY FEATURE BANNER ── */}
                 <div
