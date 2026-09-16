@@ -219,7 +219,7 @@ export default function ServicesClient() {
       description: "Full-body smooth waxing treatment using soothing organic wax formulated for sensitive skin.",
       price: "1,999",
       duration: "45–75 min",
-      image: "/images/10.webp"
+      image: "/images/Body Waxing.png"
     },
     {
       id: "waxing",
@@ -228,7 +228,7 @@ export default function ServicesClient() {
       description: "Fast, gentle precision waxing for upper lip, chin, and full face by experienced estheticians.",
       price: "299",
       duration: "20–30 min",
-      image: "/images/2.webp"
+      image: "/images/Facial Waxing.png"
     },
   ];
 
