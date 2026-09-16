@@ -66,7 +66,7 @@ export default function ServicesClient() {
       name: "Hair Styling & Extensions",
       tagline: "Signature Hair Artistry",
       description: "Transform your hair with precision cuts, couture blowouts, and 100% natural human hair extensions masterfully fitted for extraordinary length, volume, and silky movement.",
-      bannerImage: "/images/haircut.jpg",
+      bannerImage: "/images/Hair Styling & Extensions.png",
     },
     {
       id: "events",
@@ -94,7 +94,7 @@ export default function ServicesClient() {
       name: "Waxing & Smooth Skin Care",
       tagline: "",
       description: "Silk-smooth body exfoliation and precision facial waxing treatments crafted with soothing botanical formulas for luminous, hair-free skin.",
-      bannerImage: "/images/10.webp",
+      bannerImage: "/images/Waxing & Smooth Skin Care.png",
     },
   ];
 
