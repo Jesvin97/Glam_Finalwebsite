@@ -34,13 +34,7 @@ export default function Footer() {
         </p>
       </div>
 
-      {/* CENTER */}
-      <div className="footer-center">
-        <a href="/">Home</a>
-        <a href="/#about">About</a>
-        <a href="/blogs">Blogs</a>
-        <a href="/#contact">Contact</a>
-      </div>
+
 
       {/* RIGHT */}
       <div className="footer-right">
