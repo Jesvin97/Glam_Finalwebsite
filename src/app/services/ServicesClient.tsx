@@ -92,7 +92,7 @@ export default function ServicesClient() {
     {
       id: "waxing",
       name: "Waxing & Smooth Skin Care",
-      tagline: "Botanical Skin Care",
+      tagline: "",
       description: "Silk-smooth body exfoliation and precision facial waxing treatments crafted with soothing botanical formulas for luminous, hair-free skin.",
       bannerImage: "/images/10.webp",
     },
