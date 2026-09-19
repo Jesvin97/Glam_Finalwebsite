@@ -3052,4 +3052,40 @@ h1, h2, h3,
     width: 75px !important;
   }
 }
+
+/* ========================================
+   FLOATING BOUNCING WHATSAPP BUTTON
+======================================== */
+.whatsapp-float-btn {
+  position: fixed !important;
+  bottom: 24px !important;
+  right: 24px !important;
+  z-index: 999999 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 60px !important;
+  height: 60px !important;
+  background-color: #25D366 !important;
+  color: #ffffff !important;
+  border-radius: 50% !important;
+  box-shadow: 0 4px 18px rgba(37, 211, 102, 0.45), 0 2px 8px rgba(0, 0, 0, 0.3) !important;
+  text-decoration: none !important;
+  animation: bounceFloat 2s infinite ease-in-out !important;
+  transition: transform 0.3s ease, background-color 0.3s ease !important;
+}
+
+.whatsapp-float-btn:hover {
+  background-color: #20ba5a !important;
+  transform: scale(1.1) !important;
+}
+
+@keyframes bounceFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
 
