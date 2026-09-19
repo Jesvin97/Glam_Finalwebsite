@@ -3054,8 +3054,17 @@ h1, h2, h3,
 }
 
 /* ========================================
-   FLOATING PULSING WHATSAPP BUTTON
+   FLOATING BOUNCING & PULSING WHATSAPP BUTTON
 ======================================== */
+@keyframes bounceUp {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-14px);
+  }
+}
+
 .floating_btn {
   position: fixed !important;
   bottom: 30px !important;
@@ -3067,6 +3076,7 @@ h1, h2, h3,
   align-items: center !important;
   justify-content: center !important;
   z-index: 999999 !important;
+  animation: bounceUp 2s infinite ease-in-out !important;
 }
 
 .floating_btn a {
