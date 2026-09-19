@@ -7,12 +7,12 @@ export default function Services() {
   const highlights = [
     { 
       label: "Bridal & Wedding", 
-      image: "/images/bridal.jpg", // Ensure user uploads this
+      image: "/images/bridal.jpg",
       desc: "Bespoke bridal artistry and pre-wedding therapies."
     },
     { 
       label: "Hair & Styling", 
-      image: "/images/haircut.jpg", 
+      image: "/images/Hair_stylingjpeg.jpeg", 
       desc: "Masterful cuts, advanced coloring, and extensions."
     },
     { 
