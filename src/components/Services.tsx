@@ -41,14 +41,17 @@ export default function Services() {
           <ScrollReveal direction="up" delay={i * 100} key={i}>
             <Link href="/services" style={{ textDecoration: 'none' }}>
               <div className="service-card-editorial">
-                {/* Replace with actual high-res images */}
-              <div 
-                className="service-card-bg"
-                style={{ backgroundColor: '#1a1a1a' }}
-              >
-                <Image src={h.image} alt={h.label} fill style={{ objectFit: "cover" }} />
-              </div>
-              <div className="service-card-overlay">
+                <div className="service-card-bg">
+                  <Image 
+                    src={h.image} 
+                    alt={h.label} 
+                    fill 
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                    className="object-cover w-full h-full"
+                    priority={i < 2}
+                  />
+                </div>
+                <div className="service-card-overlay z-10">
                 <h3>{h.label}</h3>
                 <p>{h.desc}</p>
                 <span className="discover-link">Discover ⟶</span>
