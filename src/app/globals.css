@@ -2910,6 +2910,9 @@ h1, h2, h3,
   body, a, button, input, textarea, select, .service-showcase-card, .category-tab-btn, .services-tab-btn {
     cursor: none !important;
   }
+  .whatsapp-float-btn {
+    cursor: pointer !important;
+  }
 }
 
 /* INTRO SCENE ANIMATION */
