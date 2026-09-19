@@ -70,6 +70,7 @@ export const viewport = {
 
 import CustomCursor from "@/components/CustomCursor";
 import AudioBranding from "@/components/AudioBranding";
+import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 
 export default function RootLayout({
   children,
@@ -154,10 +155,11 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="min-h-full flex flex-col">
+      <body className="min-h-full flex flex-col relative">
         <CustomCursor />
         {/* <AudioBranding /> */}  {/* Temporarily disabled */}
         {children}
+        <FloatingWhatsApp />
       </body>
     </html>
   );
