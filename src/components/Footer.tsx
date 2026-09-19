@@ -61,14 +61,6 @@ export default function Footer() {
             <FaYoutube />
           </a>
           <a
-            href="https://wa.me/919645915329"
-            target="_blank"
-            className="whatsapp-green-text"
-            aria-label="Chat with Glam'more on WhatsApp"
-          >
-            <FaWhatsapp />
-          </a>
-          <a
             href="https://maps.app.goo.gl/XUFVqGPK9REuB6yf8"
             target="_blank"
             aria-label="Find Glam'more on Google Maps"
