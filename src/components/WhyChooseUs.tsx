@@ -6,7 +6,7 @@ export default function WhyChooseUs() {
   const features = [
     {
       icon: FaSmile,
-      title: "5000+ Happy Clients",
+      title: "200+ Happy Clients",
       description: "Trusted by thousands across Kerala for exceptional beauty & hair care",
     },
     {
