@@ -1,6 +1,7 @@
 "use client";
 
-import { FaHeart, FaCut, FaGem, FaSparkles } from "react-icons/fa6";
+import { FaHeart, FaGem } from "react-icons/fa";
+import { FaScissors, FaSparkles } from "react-icons/fa6";
 
 export default function WhyChooseUs() {
   const features = [
@@ -9,7 +10,7 @@ export default function WhyChooseUs() {
       title: "200+ Happy Clients",
     },
     {
-      icon: FaCut,
+      icon: FaScissors,
       title: "Expert Master Stylists",
     },
     {
