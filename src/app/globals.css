@@ -392,6 +392,13 @@ h1, h2, h3,
   transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+.service-card-bg img {
+  object-fit: cover !important;
+  object-position: center !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
 .service-card-overlay {
   position: absolute;
   bottom: 0;
