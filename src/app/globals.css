@@ -3067,7 +3067,7 @@ h1, h2, h3,
 
 .floating_btn {
   position: fixed !important;
-  bottom: 30px !important;
+  bottom: 30px;
   right: 30px !important;
   width: 100px !important;
   height: 100px !important;
