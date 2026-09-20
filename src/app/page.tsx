@@ -9,6 +9,7 @@ import Footer from "@/components/Footer";
 import FAQ from "@/components/FAQ";
 import Testimonials from "@/components/Testimonials";
 import Photos from "@/components/Photos";
+import WhyChooseUs from "@/components/WhyChooseUs";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <Navbar />
       <Hero />
       <About />
+      <WhyChooseUs />
       <Services />
       <Testimonials />
       <Photos />
