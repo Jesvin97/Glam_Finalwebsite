@@ -1,7 +1,7 @@
 "use client";
 
 import { FaHeart, FaGem } from "react-icons/fa";
-import { FaScissors, FaSparkles } from "react-icons/fa6";
+import { FaScissors, FaWandMagicSparkles } from "react-icons/fa6";
 
 export default function WhyChooseUs() {
   const features = [
@@ -18,7 +18,7 @@ export default function WhyChooseUs() {
       title: "Premium Products",
     },
     {
-      icon: FaSparkles,
+      icon: FaWandMagicSparkles,
       title: "Personalized Beauty Care",
     },
   ];
