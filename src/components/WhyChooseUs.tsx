@@ -1,7 +1,7 @@
 "use client";
 
-import { FaHeart, FaGem } from "react-icons/fa";
-import { FaScissors, FaWandMagicSparkles } from "react-icons/fa6";
+import { FaHeart, FaClock, FaUserFriends } from "react-icons/fa";
+import { FaScissors } from "react-icons/fa6";
 
 export default function WhyChooseUs() {
   const features = [
@@ -11,22 +11,22 @@ export default function WhyChooseUs() {
     },
     {
       icon: FaScissors,
-      title: "Expert Master Stylists",
+      title: "Experienced Stylists",
     },
     {
-      icon: FaGem,
-      title: "Premium Products",
+      icon: FaUserFriends,
+      title: "Men & Women Welcome",
     },
     {
-      icon: FaWandMagicSparkles,
-      title: "Personalized Beauty Care",
+      icon: FaClock,
+      title: "Open 7 Days, 8:30 AM – 8 PM",
     },
   ];
 
   return (
     <section className="why-choose-us-section">
       <div className="why-header">
-        <h2>Why Glam'more?</h2>
+        <h2>Why Glam&apos;more?</h2>
         <div className="why-header-underline"></div>
       </div>
 
