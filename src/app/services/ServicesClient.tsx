@@ -2,6 +2,7 @@
 import "./services.css";
 
 import { useState } from "react";
+import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { FaTimes, FaClock, FaUser, FaPlus, FaCheck, FaCalendarAlt, FaMagic } from "react-icons/fa";
@@ -14,7 +15,6 @@ interface ServiceItem {
   title: string;
   category: "hair" | "nails" | "grooming" | "waxing" | "events";
   description: string;
-  price?: string;
   duration?: string;
   image?: string;
 }
@@ -105,7 +105,6 @@ export default function ServicesClient() {
       title: "Haircut",
       category: "hair",
       description: "Precision styling, trend-forward haircuts, and expert hair texturizing by master stylists.",
-      price: "499",
       duration: "30–45 min",
       image: "/images/Haircut.png"
     },
@@ -114,7 +113,6 @@ export default function ServicesClient() {
       title: "Hairstyling",
       category: "hair",
       description: "Luxury blowouts, elegant updos, and custom event hairstyling for all hair types.",
-      price: "799",
       duration: "45–60 min",
       image: "/images/Hair_stylingjpeg.jpeg"
     },
@@ -123,7 +121,6 @@ export default function ServicesClient() {
       title: "Hair Extensions",
       category: "hair",
       description: "100% natural, premium human hair extensions for length, volume, and custom styling, professionally fitted.",
-      price: "5,999",
       duration: "2–3 hrs",
       image: "/images/Hiar_extension.jpeg"
     },
@@ -133,7 +130,6 @@ export default function ServicesClient() {
       title: "Bridal Services",
       category: "events",
       description: "Luxury comprehensive Kerala bridal makeup, hair styling, and wellness treatments tailored for your special wedding day in Thiruvalla.",
-      price: "9,999",
       duration: "4–6 hrs",
       image: "/images/bridal.jpg"
     },
@@ -142,7 +138,6 @@ export default function ServicesClient() {
       title: "Wedding & Event Preparation",
       category: "events",
       description: "Complete hair, skin, and styling packages for Kerala weddings and events — coordinated across the full bridal party.",
-      price: "4,999",
       duration: "2–4 hrs",
       image: "/images/model.jpeg"
     },
@@ -151,7 +146,6 @@ export default function ServicesClient() {
       title: "Makeup Services",
       category: "events",
       description: "Flawless HD and airbrush makeup styles for celebrity shoots, family events, and parties.",
-      price: "2,499",
       duration: "60–90 min",
       image: "/images/3.jpg"
     },
@@ -161,7 +155,6 @@ export default function ServicesClient() {
       title: "Gel Manicure",
       category: "nails",
       description: "Long-lasting gel polish manicure with cuticle care, nail shaping, and glossy topcoat.",
-      price: "999",
       duration: "45 min",
       image: "/images/Gel Manicure.png"
     },
@@ -170,7 +163,6 @@ export default function ServicesClient() {
       title: "Spa Pedicure",
       category: "nails",
       description: "Revitalizing foot spa therapy, organic scrub exfoliation, and precision nail care.",
-      price: "799",
       duration: "45–60 min",
       image: "/images/Spa pedicures.png"
     },
@@ -179,7 +171,6 @@ export default function ServicesClient() {
       title: "Acrylic Nails & Art",
       category: "nails",
       description: "High-quality, durable acrylic extensions with custom premium nail art and luxury finish.",
-      price: "1,499",
       duration: "60–90 min",
       image: "/images/nailart.jpg"
     },
@@ -189,7 +180,6 @@ export default function ServicesClient() {
       title: "Eyebrow Threading",
       category: "grooming",
       description: "Ultra-clean thread shaping for sharp, beautifully defined brow arches.",
-      price: "150",
       duration: "15 min",
       image: "/images/Eyebrow threading.png"
     },
@@ -198,7 +188,6 @@ export default function ServicesClient() {
       title: "Eyelash Extensions",
       category: "grooming",
       description: "Premium individual eyelashes and volume extension services for a mesmerizing, natural look.",
-      price: "999",
       duration: "60–90 min",
       image: "/images/Eyelash Extensions.png"
     },
@@ -207,7 +196,6 @@ export default function ServicesClient() {
       title: "Shaving & Beard Styling",
       category: "grooming",
       description: "Traditional hot towel shave, beard detailing, precision edging, and skin hydration.",
-      price: "399",
       duration: "30–45 min",
       image: "/images/Shaving & Beard Styling.png"
     },
@@ -217,7 +205,6 @@ export default function ServicesClient() {
       title: "Body Waxing",
       category: "waxing",
       description: "Full-body smooth waxing treatment using soothing organic wax formulated for sensitive skin.",
-      price: "1,999",
       duration: "45–75 min",
       image: "/images/Body Waxing.png"
     },
@@ -226,19 +213,12 @@ export default function ServicesClient() {
       title: "Facial Waxing",
       category: "waxing",
       description: "Fast, gentle precision waxing for upper lip, chin, and full face by experienced estheticians.",
-      price: "299",
       duration: "20–30 min",
       image: "/images/Facial Waxing.png"
     },
   ];
 
   // ── Helpers ──
-  const totalPrice = selectedServices.reduce((sum, title) => {
-    const service = servicesData.find((s) => s.title === title);
-    if (!service?.price) return sum;
-    return sum + parseInt(service.price.replace(/,/g, ""), 10);
-  }, 0);
-
   const handleToggleService = (serviceTitle: string) => {
     setSelectedServices((prev) =>
       prev.includes(serviceTitle)
@@ -322,7 +302,7 @@ export default function ServicesClient() {
         {/* ── 1. HERO SECTION ── */}
         <section className="services-hero-section">
           <div className="hero-content-wrapper">
-            <span className="hero-badge-tag">GLAM'MORE EXPERIENCES</span>
+            <span className="hero-badge-tag">GLAM&apos;MORE EXPERIENCES</span>
             <h1 className="hero-main-title">Luxury Beauty & Styling Collections</h1>
             <p className="hero-intro-text">
               Immerse yourself in our curated luxury treatment menu. From bespoke bridal artistry to signature hair extensions and revitalizing spa rituals, explore our complete service offerings below.
@@ -330,10 +310,13 @@ export default function ServicesClient() {
           </div>
 
           <div className="hero-banner-image-container">
-            <img
+            <Image
               src="/images/Salon seating area.jpeg"
               alt="Glammore Salon Experience"
               className="hero-banner-image"
+              fill
+              preload
+              sizes="(max-width: 1280px) 100vw, 1280px"
             />
             <div className="hero-banner-overlay" />
           </div>
@@ -375,10 +358,12 @@ export default function ServicesClient() {
                 >
                   {/* Image Side */}
                   <div className="banner-image-wrapper">
-                    <img
+                    <Image
                       src={category.bannerImage}
                       alt={category.name}
                       className="banner-image"
+                      fill
+                      sizes="(max-width: 900px) 100vw, 55vw"
                     />
                     <div className="banner-image-gradient" />
                   </div>
@@ -438,7 +423,12 @@ export default function ServicesClient() {
                         >
                           <div className="sub-service-image-box">
                             {service.image ? (
-                              <img src={service.image} alt={service.title} />
+                              <Image
+                                src={service.image}
+                                alt={service.title}
+                                fill
+                                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                              />
                             ) : (
                               <div className="sub-service-placeholder" />
                             )}
@@ -453,9 +443,6 @@ export default function ServicesClient() {
                           <div className="sub-service-info">
                             <div className="sub-service-title-row">
                               <h3 className="sub-service-title">{service.title}</h3>
-                              {service.price && (
-                                <span className="sub-service-price">₹{service.price}</span>
-                              )}
                             </div>
                             <p className="sub-service-desc">{service.description}</p>
                             {service.duration && (
@@ -480,7 +467,7 @@ export default function ServicesClient() {
         <div className="booking-pill" onClick={() => setIsDrawerOpen(true)}>
           <div className="booking-pill-text">
             <span className="count">
-              {selectedServices.length} service{selectedServices.length !== 1 ? "s" : ""} selected · Est. ₹{totalPrice.toLocaleString("en-IN")}
+              {selectedServices.length} service{selectedServices.length !== 1 ? "s" : ""} selected
             </span>
             <span className="label">Schedule Visit</span>
           </div>
@@ -586,13 +573,6 @@ export default function ServicesClient() {
               className="luxury-input textarea"
             />
           </div>
-
-          {totalPrice > 0 && (
-            <div className="drawer-total">
-              <span className="drawer-total-label">Estimated Total</span>
-              <span className="drawer-total-price">₹{totalPrice.toLocaleString("en-IN")}</span>
-            </div>
-          )}
 
           <button type="submit" className="btn-luxury drawer-submit-btn">
             Confirm via WhatsApp <span className="btn-luxury-hover-effect" />
