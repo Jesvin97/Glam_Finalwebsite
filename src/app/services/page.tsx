@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import ServicesClient from "./ServicesClient";
 
 export const metadata: Metadata = {
-  title: "Services & Treatments | Glam'more Salon Thiruvalla",
-  description: "Explore our full menu of hair cutting, creative coloring, acrylic gel nail extensions, spa pedicures, and skincare treatments at Glam'more.",
+  title: "Haircuts, Bridal Makeup, Facials & Nails in Thiruvalla | Glam'more Salon",
+  description: "Haircuts, colouring, keratin, bridal makeup, facials, massage, nails, and waxing for men and women at Glam'more Unisex Salon, Thukalassery, Thiruvalla.",
+  alternates: { canonical: "/services" },
 };
 
 export default function Page() {

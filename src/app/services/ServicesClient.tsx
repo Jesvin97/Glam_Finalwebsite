@@ -10,17 +10,19 @@ import { Calendar } from "@/components/ui/calendar";
 
 const WHATSAPP_NUMBER = "919645915329";
 
+type CategoryId = "hair" | "events" | "skin" | "spa" | "nails" | "grooming" | "waxing";
+
 interface ServiceItem {
   id: string;
   title: string;
-  category: "hair" | "nails" | "grooming" | "waxing" | "events";
+  category: CategoryId;
   description: string;
   duration?: string;
   image?: string;
 }
 
 interface CategoryMeta {
-  id: "hair" | "events" | "nails" | "grooming" | "waxing";
+  id: CategoryId;
   name: string;
   tagline: string;
   description: string;
@@ -52,67 +54,95 @@ export default function ServicesClient() {
   });
 
   const filterCategories = [
-    { id: "all", name: "All Collections" },
-    { id: "hair", name: "Hair Styling & Extensions" },
-    { id: "events", name: "Bridal, Makeup & Events" },
-    { id: "nails", name: "Nail Care & Extensions" },
+    { id: "all", name: "All Services" },
+    { id: "hair", name: "Hair" },
+    { id: "events", name: "Bridal & Makeup" },
+    { id: "skin", name: "Facials & Skin Care" },
+    { id: "spa", name: "Spa & Massage" },
+    { id: "nails", name: "Nails" },
     { id: "grooming", name: "Brows, Lashes & Men's Grooming" },
-    { id: "waxing", name: "Waxing & Smooth Skin Care" },
+    { id: "waxing", name: "Waxing" },
   ];
 
   const categoryMetaList: CategoryMeta[] = [
     {
       id: "hair",
-      name: "Hair Styling & Extensions",
-      tagline: "Signature Hair Artistry",
-      description: "Transform your hair with precision cuts, couture blowouts, and 100% natural human hair extensions masterfully fitted for extraordinary length, volume, and silky movement.",
+      name: "Haircuts, Colour & Hair Treatments",
+      tagline: "Hair Salon in Thiruvalla",
+      description: "Haircuts for men and women, hair colouring, keratin and hair smoothening, occasion styling, and natural human hair extensions. Tell us how you wear your hair day to day and we'll cut and style for that.",
       bannerImage: "/images/Hair Styling & Extensions.png",
     },
     {
       id: "events",
-      name: "Bridal, Makeup & Event Glamour",
-      tagline: "Bridal Artistry & Occasions",
-      description: "Comprehensive Kerala bridal makeup, HD airbrush application, and full wedding party preparations tailored to make your most memorable celebrations truly magical.",
+      name: "Bridal Makeup & Event Styling",
+      tagline: "Bridal Makeup in Thiruvalla",
+      description: "Kerala bridal makeup in HD and airbrush, pre-bridal skin care, hairstyling, and saree draping, for the bride and the rest of the wedding party.",
       bannerImage: "/images/bridal.jpg",
     },
     {
+      id: "skin",
+      name: "Facials & Skin Care",
+      tagline: "Facials in Thiruvalla",
+      description: "Facials, de-tan, and clean-up treatments matched to your skin type, plus pre-bridal skin preparation in the weeks before a wedding.",
+      bannerImage: "/images/spa-area.jpeg",
+    },
+    {
+      id: "spa",
+      name: "Spa & Massage",
+      tagline: "Massage in Thiruvalla",
+      description: "Body and head massages in a private treatment room, to ease muscle tension or simply to unwind.",
+      bannerImage: "/images/spa.jpg",
+    },
+    {
       id: "nails",
-      name: "Nail Care & Extensions",
-      tagline: "Hand & Foot Spa Therapy",
-      description: "Durable luxury acrylic extensions, custom artistic detailing, high-shine gel manicures, and organic foot spa pedicures designed for timeless elegance.",
+      name: "Nail Art, Manicure & Pedicure",
+      tagline: "Nail Salon in Thiruvalla",
+      description: "Acrylic nail extensions, nail art, gel manicures, and spa pedicures.",
       bannerImage: "/images/nailart.jpg",
     },
     {
       id: "grooming",
       name: "Brows, Lashes & Men's Grooming",
-      tagline: "Essential Brow, Lash & Beard Care",
-      description: "Expertly contoured eyebrow threading, voluminous lash extensions, and classic hot-towel beard shaping designed for effortless daily refinement.",
+      tagline: "Threading, Lashes & Beard Care",
+      description: "Eyebrow threading, eyelash extensions, and hot-towel shaves with beard shaping.",
       bannerImage: "/images/male model.jpeg",
     },
     {
       id: "waxing",
-      name: "Waxing & Smooth Skin Care",
-      tagline: "",
-      description: "Silk-smooth body exfoliation and precision facial waxing treatments crafted with soothing botanical formulas for luminous, hair-free skin.",
+      name: "Waxing",
+      tagline: "Body & Facial Waxing",
+      description: "Full-body and facial waxing using wax suited to sensitive skin.",
       bannerImage: "/images/Waxing & Smooth Skin Care.png",
     },
   ];
 
   const servicesData: ServiceItem[] = [
-    // ── Hair Styling & Extensions ──
+    // ── Hair ──
     {
       id: "haircut",
       title: "Haircut",
       category: "hair",
-      description: "Precision styling, trend-forward haircuts, and expert hair texturizing by master stylists.",
+      description: "Haircuts for men and women, planned around your hair texture and how much time you spend styling it.",
       duration: "30–45 min",
       image: "/images/Haircut.png"
+    },
+    {
+      id: "hair-coloring",
+      title: "Hair Colouring",
+      category: "hair",
+      description: "Global colour, highlights, and grey coverage, with a shade consultation first.",
+    },
+    {
+      id: "keratin-smoothening",
+      title: "Keratin & Hair Smoothening",
+      category: "hair",
+      description: "Keratin and smoothening treatments to reduce frizz and make hair easier to manage.",
     },
     {
       id: "hairstyling",
       title: "Hairstyling",
       category: "hair",
-      description: "Luxury blowouts, elegant updos, and custom event hairstyling for all hair types.",
+      description: "Blow-dries, updos, and styling for weddings, functions, and parties.",
       duration: "45–60 min",
       image: "/images/Hair_stylingjpeg.jpeg"
     },
@@ -120,16 +150,16 @@ export default function ServicesClient() {
       id: "hair-extensions",
       title: "Hair Extensions",
       category: "hair",
-      description: "100% natural, premium human hair extensions for length, volume, and custom styling, professionally fitted.",
+      description: "Natural human hair extensions for added length or volume, colour-matched and fitted in the salon.",
       duration: "2–3 hrs",
       image: "/images/Hiar_extension.jpeg"
     },
-    // ── Bridal, Makeup & Event Glamour ──
+    // ── Bridal & Makeup ──
     {
       id: "bridal-services",
-      title: "Bridal Services",
+      title: "Bridal Makeup",
       category: "events",
-      description: "Luxury comprehensive Kerala bridal makeup, hair styling, and wellness treatments tailored for your special wedding day in Thiruvalla.",
+      description: "Kerala bridal makeup with hairstyling and saree draping, planned with you before the wedding day.",
       duration: "4–6 hrs",
       image: "/images/bridal.jpg"
     },
@@ -137,24 +167,52 @@ export default function ServicesClient() {
       id: "wedding-prep",
       title: "Wedding & Event Preparation",
       category: "events",
-      description: "Complete hair, skin, and styling packages for Kerala weddings and events — coordinated across the full bridal party.",
+      description: "Hair, makeup, and draping for the bride's family and bridal party, scheduled so everyone is ready on time.",
       duration: "2–4 hrs",
       image: "/images/model.jpeg"
     },
     {
       id: "makeup-services",
-      title: "Makeup Services",
+      title: "Party & Event Makeup",
       category: "events",
-      description: "Flawless HD and airbrush makeup styles for celebrity shoots, family events, and parties.",
+      description: "HD and airbrush makeup for engagements, receptions, parties, and photo shoots.",
       duration: "60–90 min",
       image: "/images/3.jpg"
     },
-    // ── Nail Care & Extensions ──
+    // ── Facials & Skin Care ──
+    {
+      id: "facials",
+      title: "Facials",
+      category: "skin",
+      description: "Facials chosen for your skin type, whether dry, oily, or sensitive, including pre-bridal facial courses.",
+      image: "/images/spa-area.jpeg"
+    },
+    {
+      id: "detan-cleanup",
+      title: "De-tan & Clean-up",
+      category: "skin",
+      description: "De-tan packs and clean-ups to lift sun tan and clear congested skin.",
+    },
+    // ── Spa & Massage ──
+    {
+      id: "body-massage",
+      title: "Body Massage",
+      category: "spa",
+      description: "Full-body relaxation massage with warm oil in a private room.",
+      image: "/images/spa.jpg"
+    },
+    {
+      id: "head-massage",
+      title: "Head & Shoulder Massage",
+      category: "spa",
+      description: "A shorter massage focused on the scalp, neck, and shoulders.",
+    },
+    // ── Nails ──
     {
       id: "gel-manicure",
       title: "Gel Manicure",
       category: "nails",
-      description: "Long-lasting gel polish manicure with cuticle care, nail shaping, and glossy topcoat.",
+      description: "Cuticle care, shaping, and gel polish that lasts without chipping.",
       duration: "45 min",
       image: "/images/Gel Manicure.png"
     },
@@ -162,15 +220,15 @@ export default function ServicesClient() {
       id: "pedicures",
       title: "Spa Pedicure",
       category: "nails",
-      description: "Revitalizing foot spa therapy, organic scrub exfoliation, and precision nail care.",
+      description: "Foot soak, scrub, callus care, nail shaping, and polish.",
       duration: "45–60 min",
       image: "/images/Spa pedicures.png"
     },
     {
       id: "acrylic-nails",
-      title: "Acrylic Nails & Art",
+      title: "Acrylic Nails & Nail Art",
       category: "nails",
-      description: "High-quality, durable acrylic extensions with custom premium nail art and luxury finish.",
+      description: "Acrylic nail extensions in your choice of length and shape, finished with custom nail art.",
       duration: "60–90 min",
       image: "/images/nailart.jpg"
     },
@@ -179,7 +237,7 @@ export default function ServicesClient() {
       id: "eyebrow-threading",
       title: "Eyebrow Threading",
       category: "grooming",
-      description: "Ultra-clean thread shaping for sharp, beautifully defined brow arches.",
+      description: "Threading to shape and define your brows.",
       duration: "15 min",
       image: "/images/Eyebrow threading.png"
     },
@@ -187,7 +245,7 @@ export default function ServicesClient() {
       id: "eyelashes",
       title: "Eyelash Extensions",
       category: "grooming",
-      description: "Premium individual eyelashes and volume extension services for a mesmerizing, natural look.",
+      description: "Classic and volume lash extensions, applied lash by lash.",
       duration: "60–90 min",
       image: "/images/Eyelash Extensions.png"
     },
@@ -195,16 +253,16 @@ export default function ServicesClient() {
       id: "shaving",
       title: "Shaving & Beard Styling",
       category: "grooming",
-      description: "Traditional hot towel shave, beard detailing, precision edging, and skin hydration.",
+      description: "Hot-towel shave, beard shaping, and edging, with advice on a beard style that suits your face.",
       duration: "30–45 min",
       image: "/images/Shaving & Beard Styling.png"
     },
-    // ── Waxing & Smooth Skin Care ──
+    // ── Waxing ──
     {
       id: "body-waxing",
       title: "Body Waxing",
       category: "waxing",
-      description: "Full-body smooth waxing treatment using soothing organic wax formulated for sensitive skin.",
+      description: "Arms, legs, and full-body waxing using wax suited to sensitive skin.",
       duration: "45–75 min",
       image: "/images/Body Waxing.png"
     },
@@ -212,7 +270,7 @@ export default function ServicesClient() {
       id: "waxing",
       title: "Facial Waxing",
       category: "waxing",
-      description: "Fast, gentle precision waxing for upper lip, chin, and full face by experienced estheticians.",
+      description: "Upper lip, chin, and full-face waxing.",
       duration: "20–30 min",
       image: "/images/Facial Waxing.png"
     },
@@ -303,9 +361,9 @@ export default function ServicesClient() {
         <section className="services-hero-section">
           <div className="hero-content-wrapper">
             <span className="hero-badge-tag">GLAM&apos;MORE EXPERIENCES</span>
-            <h1 className="hero-main-title">Luxury Beauty & Styling Collections</h1>
+            <h1 className="hero-main-title">Salon Services in Thiruvalla</h1>
             <p className="hero-intro-text">
-              Immerse yourself in our curated luxury treatment menu. From bespoke bridal artistry to signature hair extensions and revitalizing spa rituals, explore our complete service offerings below.
+              Hair, bridal makeup, facials, massage, nails, and grooming for men and women at our salon in Thukalassery, Thiruvalla. Choose your services and send the booking straight to us on WhatsApp.
             </p>
           </div>
 

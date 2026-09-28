@@ -20,29 +20,34 @@ export default function FAQ() {
 
   const fallbackFaqs = [
     {
-      question: "What makes Glam'more the unisex salon in Thiruvalla?",
+      question: "Where is Glam'more Unisex Salon in Thiruvalla?",
       answer:
-        "Glam'more is recognized as the leading unisex salon in Thiruvalla, offering world-class hair styling, skin therapies, and beauty treatments. Our team of expert stylists and certified therapists use top-tier global products to deliver customized grooming, precision cuts, and luxury beauty services in a pristine environment designed for both men and women.",
+        "We're on the first floor of the Professional Building on SH 1 (Kollam–Theni Highway) at Thukalassery, Thiruvalla, Kerala 689115. It's easy to reach from Thiruvalla town, Changanassery, Chengannur, and Pathanamthitta, and you can find us on Google Maps as Glam'more Unisex Salon.",
     },
     {
-      question: "Do you offer professional bridal makeup in Thiruvalla?",
+      question: "Do you offer bridal makeup in Thiruvalla?",
       answer:
-        "Yes, we specialize in high-end bridal makeup in Thiruvalla. Our master makeup artists provide custom HD and airbrush bridal makeups, pre-wedding skin preparation treatments, and comprehensive groom makeover packages, all tailored during personalized consultations to ensure you look breathtaking on your special day.",
+        "Yes. We do Kerala bridal makeup in HD and airbrush, along with bridal hairstyling, saree draping, and pre-bridal facials. We can also get the bride's family and bridal party ready on the day. Message us on WhatsApp to book a consultation or trial.",
     },
     {
-      question: "What hair care and styling services are available at your salon?",
+      question: "What hair services do you offer for men and women?",
       answer:
-        "As the best hair salon in Thiruvalla, we offer a comprehensive suite of hair care solutions, including precision haircuts, creative hair styling, keratin treatments, hair smoothening, global hair coloring, and organic hair spa therapies. Our master stylists are trained in modern international trends and cater to all hair textures.",
+        "Haircuts for men and women, hair colouring (global colour, highlights, and grey coverage), keratin treatments, hair smoothening, occasion hairstyling, and human hair extensions.",
     },
     {
-      question: "What are the operating hours for Glam'more Unisex Salon in Thiruvalla?",
+      question: "Do you offer facials, de-tan, and massage?",
       answer:
-        "Glam'more Unisex Salon in Thiruvalla is open every day from Monday to Sunday, from 8:30 AM to 8:00 PM (including Sundays). We recommend booking your appointments in advance to secure your preferred master stylist, although walk-in clients are always welcome based on seat availability.",
+        "Yes. We offer facials for different skin types, de-tan and clean-up treatments, and body and head-and-shoulder massages in a private treatment room.",
     },
     {
-      question: "Do you provide premium nail art and pedicure services?",
+      question: "Do you do nail extensions, manicures, and pedicures?",
       answer:
-        "Yes, we are a fully equipped nail art salon in Thiruvalla. Our services include high-quality acrylic gel nail extensions, custom nail art designs, spa pedicures, and pampering manicures. We use safe, long-lasting gel polishes to keep your nails looking flawless, strong, and beautiful.",
+        "Yes. We do acrylic nail extensions, nail art, gel manicures, and spa pedicures.",
+    },
+    {
+      question: "What are Glam'more's opening hours?",
+      answer:
+        "We're open every day, 8:30 AM to 8:00 PM. Walk-ins are welcome when a chair is free, but booking ahead on WhatsApp (+91 96459 15329) means you won't have to wait.",
     },
   ];
 
