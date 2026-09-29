@@ -1,12 +1,12 @@
 /* ── SERVICES PAGE WIREFRAME REDESIGN CSS ── */
 
 .services-page-container {
-  padding-top: 130px;
+  padding-top: 110px;
   min-height: 100vh;
   background-color: #080808;
   color: #fff;
   font-family: var(--font-inter-family), sans-serif;
-  padding-bottom: 160px;
+  padding-bottom: 120px;
   max-width: 1280px;
   margin: 0 auto;
   padding-left: 5%;
@@ -15,12 +15,12 @@
 
 /* ── 1. HERO SECTION ── */
 .services-hero-section {
-  margin-bottom: 60px;
+  margin-bottom: 32px;
   text-align: center;
 }
 
 .hero-content-wrapper {
-  margin: 0 auto 36px;
+  margin: 0 auto 24px;
   max-width: 900px;
   text-align: center;
 }
@@ -37,11 +37,11 @@
 
 .hero-main-title {
   font-family: var(--font-playfair-family), serif;
-  font-size: clamp(32px, 5vw, 54px);
+  font-size: clamp(30px, 4vw, 44px);
   font-weight: 400;
   color: #ffffff;
   line-height: 1.15;
-  margin-bottom: 18px;
+  margin-bottom: 12px;
   letter-spacing: -0.5px;
 }
 
@@ -55,7 +55,7 @@
 
 .hero-banner-image-container {
   width: 100%;
-  height: 420px;
+  height: 260px;
   border-radius: 24px;
   overflow: hidden;
   position: relative;
@@ -88,7 +88,7 @@
 
 /* ── CATEGORY FILTER NAV ── */
 .category-filter-nav {
-  margin-bottom: 60px;
+  margin-bottom: 36px;
   position: sticky;
   top: 90px;
   z-index: 40;
@@ -145,7 +145,7 @@
 .categories-stack {
   display: flex;
   flex-direction: column;
-  gap: 90px;
+  gap: 48px;
 }
 
 .category-block-section {
@@ -161,7 +161,7 @@
   border-radius: 24px;
   overflow: hidden;
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   transition: all 0.4s ease;
 }
 
@@ -178,9 +178,9 @@
 }
 
 .banner-image-wrapper {
-  flex: 1.1;
+  flex: 0.8;
   min-width: 0;
-  height: 380px;
+  height: 220px;
   position: relative;
   overflow: hidden;
   background: #111;
@@ -217,7 +217,7 @@
 
 .banner-text-content {
   flex: 1.2;
-  padding: 44px;
+  padding: 28px 36px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -234,18 +234,18 @@
 
 .banner-category-title {
   font-family: var(--font-playfair-family), serif;
-  font-size: clamp(28px, 3.5vw, 40px);
+  font-size: clamp(24px, 2.6vw, 30px);
   color: #ffffff;
   font-weight: 400;
-  margin-bottom: 16px;
+  margin-bottom: 10px;
   line-height: 1.2;
 }
 
 .banner-intro-paragraph {
-  font-size: 15px;
+  font-size: 14.5px;
   color: #aaa;
-  line-height: 1.7;
-  margin-bottom: 28px;
+  line-height: 1.65;
+  margin-bottom: 0;
 }
 
 .banner-cta-group {
@@ -298,7 +298,7 @@
   text-transform: uppercase;
   letter-spacing: 2px;
   color: #888;
-  margin-bottom: 20px;
+  margin-bottom: 14px;
   display: flex;
   align-items: center;
   gap: 8px;
@@ -312,8 +312,8 @@
 
 .sub-services-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
 }
 
 /* SUB-SERVICE CARD ITEM */
@@ -344,7 +344,7 @@
 
 .sub-service-image-box {
   width: 100%;
-  height: 220px;
+  height: 170px;
   position: relative;
   overflow: hidden;
   background: #0f0f11;
@@ -353,7 +353,7 @@
 .sub-service-image-box img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
   object-position: center;
   transition: transform 0.5s ease;
 }
@@ -399,7 +399,7 @@
 }
 
 .sub-service-info {
-  padding: 20px;
+  padding: 16px;
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -410,12 +410,12 @@
   justify-content: space-between;
   align-items: flex-start;
   gap: 12px;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 .sub-service-title {
   font-family: var(--font-playfair-family), serif;
-  font-size: 20px;
+  font-size: 18px;
   color: #ffffff;
   font-weight: 400;
   margin: 0;
@@ -426,7 +426,7 @@
   font-size: 13.5px;
   color: #888;
   line-height: 1.6;
-  margin: 0 0 16px;
+  margin: 0 0 12px;
   flex: 1;
 }
 
@@ -723,11 +723,11 @@
 /* ── 5. RESPONSIVE MEDIA QUERIES ── */
 @media (max-width: 1024px) {
   .sub-services-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 
   .banner-text-content {
-    padding: 30px;
+    padding: 24px 28px;
   }
 }
 
@@ -740,19 +740,49 @@
 
   .banner-image-wrapper {
     width: 100%;
-    height: 250px;
+    flex: none;
+    height: 170px;
   }
 
   .banner-text-content {
-    padding: 24px;
+    padding: 18px 20px 20px;
+  }
+
+  .categories-stack {
+    gap: 36px;
   }
 
   .sub-services-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .sub-service-image-box {
+    height: 120px;
+  }
+
+  .sub-service-info {
+    padding: 12px;
+  }
+
+  .sub-service-title {
+    font-size: 15.5px;
+  }
+
+  .sub-service-desc {
+    font-size: 12.5px;
+    line-height: 1.5;
+  }
+
+  .sub-service-add-btn {
+    top: 8px;
+    right: 8px;
+    width: 30px;
+    height: 30px;
   }
 
   .hero-banner-image-container {
-    height: 280px;
+    height: 180px;
   }
 
   .booking-drawer {
