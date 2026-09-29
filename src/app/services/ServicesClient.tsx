@@ -22,7 +22,7 @@ interface ServiceItem {
 }
 
 interface CategoryMeta {
-  id: CategoryId;
+  id: "hair" | "events" | "nails" | "grooming" | "waxing";
   name: string;
   tagline: string;
   description: string;
@@ -67,10 +67,10 @@ export default function ServicesClient() {
   const categoryMetaList: CategoryMeta[] = [
     {
       id: "hair",
-      name: "Haircuts, Colour & Hair Treatments",
-      tagline: "Hair Salon in Thiruvalla",
-      description: "Haircuts for men and women, hair colouring, keratin and hair smoothening, occasion styling, and natural human hair extensions. Tell us how you wear your hair day to day and we'll cut and style for that.",
-      bannerImage: "/images/Hair Styling & Extensions.png",
+      name: "Hair Styling & Extensions",
+      tagline: "Signature Hair Artistry",
+      description: "Transform your hair with precision cuts, couture blowouts, and 100% natural human hair extensions masterfully fitted for extraordinary length, volume, and silky movement.",
+      bannerImage: "/images/haircut.jpg",
     },
     {
       id: "events",
@@ -80,24 +80,10 @@ export default function ServicesClient() {
       bannerImage: "/images/bridal.jpg",
     },
     {
-      id: "skin",
-      name: "Facials & Skin Care",
-      tagline: "Facials in Thiruvalla",
-      description: "Facials, de-tan, and clean-up treatments matched to your skin type, plus pre-bridal skin preparation in the weeks before a wedding.",
-      bannerImage: "/images/spa-area.jpeg",
-    },
-    {
-      id: "spa",
-      name: "Spa & Massage",
-      tagline: "Massage in Thiruvalla",
-      description: "Body and head massages in a private treatment room, to ease muscle tension or simply to unwind.",
-      bannerImage: "/images/spa.jpg",
-    },
-    {
       id: "nails",
-      name: "Nail Art, Manicure & Pedicure",
-      tagline: "Nail Salon in Thiruvalla",
-      description: "Acrylic nail extensions, nail art, gel manicures, and spa pedicures.",
+      name: "Nail Care & Extensions",
+      tagline: "Hand & Foot Spa Therapy",
+      description: "Durable luxury acrylic extensions, custom artistic detailing, high-shine gel manicures, and organic foot spa pedicures designed for timeless elegance.",
       bannerImage: "/images/nailart.jpg",
     },
     {
