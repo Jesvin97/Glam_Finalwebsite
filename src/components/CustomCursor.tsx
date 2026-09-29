@@ -12,10 +12,10 @@ export default function CustomCursor() {
     const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
     if (isTouchDevice) return;
 
-    setHidden(false);
-
+    // Stays hidden until the first mouse move, so it never flashes at (-100, -100)
     const handleMouseMove = (e: MouseEvent) => {
       setPosition({ x: e.clientX, y: e.clientY });
+      setHidden(false);
     };
 
     const handleMouseLeave = () => setHidden(true);

@@ -1,7 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
 import ScrollReveal from "./ScrollReveal";
-import { client } from "@/sanity/client";
 
 import {
   Accordion,
@@ -10,14 +8,12 @@ import {
   AccordionContent,
 } from "@/components/ui/accordion";
 
-interface FAQItem {
+export interface FAQItem {
   question: string;
   answer: string;
 }
 
-export default function FAQ() {
-  const [faqs, setFaqs] = useState<FAQItem[]>([]);
-
+export default function FAQ({ faqs = [] }: { faqs?: FAQItem[] }) {
   const fallbackFaqs = [
     {
       question: "Where is Glam'more Unisex Salon in Thiruvalla?",
@@ -73,21 +69,6 @@ export default function FAQ() {
       answer: "അതെ, തിരുവല്ലയിലെ ഏറ്റവും മികച്ച നെയിൽ സ്റ്റുഡിയോയാണ് ഞങ്ങളുടേത്. അക്രിലിക് ജെൽ നെയിൽ എക്സ്റ്റൻഷൻ, പെഡിക്യൂർ, മാനിക്യൂർ സേവനങ്ങൾ എന്നിവ ഞങ്ങൾ നൽകുന്നു.",
     },
   ];
-
-  useEffect(() => {
-    async function fetchFaqs() {
-      try {
-        const query = `*[_type == "faq"] | order(order asc)`;
-        const data = await client.fetch(query);
-        if (data && data.length > 0) {
-          setFaqs(data);
-        }
-      } catch (err) {
-        console.error("Failed to fetch FAQs from Sanity, using fallback:", err);
-      }
-    }
-    fetchFaqs();
-  }, []);
 
   const displayFaqs = faqs.length > 0 ? faqs : fallbackFaqs;
 

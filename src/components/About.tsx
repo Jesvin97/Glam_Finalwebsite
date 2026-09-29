@@ -12,7 +12,7 @@ export default function About() {
         <div className="about-image">
           <Image
             src="/images/reception-area.jpg"
-            alt="Reception area at Glam'more Unisex Salon, Thiruvalla"
+            alt="Glam'more Premium Unisex Salon signboard on the Professional Building, Thukalassery, Thiruvalla"
             width={800}
             height={600}
             style={{ width: "100%", height: "auto" }}

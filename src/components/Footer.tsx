@@ -12,7 +12,7 @@ export default function Footer() {
       {/* LEFT */}
       <div className="footer-left">
         <h2 className="footer-title">
-          Glam'more Unisex Salon
+          Glam&apos;more Unisex Salon
         </h2>
         <p className="footer-text-muted">
           First Floor, Professional Building, SH 1, Kollam - Theni Hwy, Thukalassery, Thiruvalla, Kerala 689115, India

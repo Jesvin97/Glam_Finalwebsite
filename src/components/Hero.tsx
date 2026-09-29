@@ -1,7 +1,6 @@
 "use client";
 
 import ScrollReveal from "./ScrollReveal";
-import { useEffect, useState } from "react";
 import Image from "next/image";
 
 export default function Hero() {
@@ -13,7 +12,7 @@ export default function Hero() {
           src="/images/model.png"
           alt="Bride with a low bun hairstyle and bridal makeup holding a pink bouquet"
           fill
-          priority
+          preload
           style={{ objectFit: "cover", objectPosition: "top center" }}
         />
       </div>

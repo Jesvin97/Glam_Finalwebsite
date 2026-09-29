@@ -2,14 +2,14 @@
 
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import Blogs from "@/components/Blogs";
+import Blogs, { type BlogItem } from "@/components/Blogs";
 
-export default function BlogsClient() {
+export default function BlogsClient({ blogs }: { blogs: BlogItem[] }) {
   return (
     <>
       <Navbar />
       <main className="blogs-page">
-        <Blogs />
+        <Blogs blogs={blogs} />
       </main>
       <Footer />
     </>

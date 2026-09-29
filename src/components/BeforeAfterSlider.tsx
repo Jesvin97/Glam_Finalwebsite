@@ -100,8 +100,10 @@ export default function BeforeAfterSlider({
   // requestAnimationFrame throttling ref
   const animationFrameId = useRef<number | null>(null);
 
-  // Handle prop updates dynamically
-  useEffect(() => {
+  // Handle prop updates dynamically (adjust state during render, not in an effect)
+  const [prevProps, setPrevProps] = useState({ beforeSrc, afterSrc, title });
+  if (prevProps.beforeSrc !== beforeSrc || prevProps.afterSrc !== afterSrc || prevProps.title !== title) {
+    setPrevProps({ beforeSrc, afterSrc, title });
     if (beforeSrc || afterSrc || title) {
       setActiveSet({
         id: 0,
@@ -111,7 +113,7 @@ export default function BeforeAfterSlider({
         title: title || defaultSliderData.main.title
       });
     }
-  }, [beforeSrc, afterSrc, title]);
+  }
 
   // Monitor screen width to trigger toggle version under 640px
   useEffect(() => {

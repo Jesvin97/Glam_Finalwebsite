@@ -1,35 +1,19 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { client } from "@/sanity/client";
 import { urlFor } from "@/sanity/image";
+import type { SanityImageSource } from "@sanity/image-url";
 import Image from "next/image";
 import Link from "next/link";
 
-interface BlogItem {
+export interface BlogItem {
   title: string;
   description: string;
   category: string;
-  image: any;
+  image: SanityImageSource | string;
 }
 
-export default function Blog() {
-  const [blogs, setBlogs] = useState<BlogItem[]>([]);
+export default function Blog({ blogs = [] }: { blogs?: BlogItem[] }) {
 
-  useEffect(() => {
-    async function fetchBlogs() {
-      try {
-        const query = `*[_type == "blog"] | order(publishedAt desc)`;
-        const data = await client.fetch(query);
-        if (data && data.length > 0) {
-          setBlogs(data);
-        }
-      } catch (err) {
-        console.error("Failed to fetch blogs from Sanity:", err);
-      }
-    }
-    fetchBlogs();
-  }, []);
 
   return (
     <section className="blog-section" id="blog">
