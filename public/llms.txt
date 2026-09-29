@@ -1,49 +1,67 @@
 # Glam'more Unisex Salon — Official Site
 
-Premium unisex salon and spa in Thiruvalla, Kerala, India.
-Offering bridal makeup, haircuts, nail art, keratin treatments, facials, and luxury wellness therapies.
+Unisex salon in Thukalassery, Thiruvalla, Kerala, India.
+Haircuts, hair colouring, keratin and smoothening, bridal makeup, facials, massage, nail art, threading, and waxing for men and women.
 
 ## Base URL
 https://glammoresalon.in
 
 ## About
-Glam'more is Thiruvalla's premier unisex salon. We serve both men and women across 19 professional beauty and wellness services. Located at Club 7 Junction, MC Road, Thiruvalla, Kerala — easily accessible from Pathanamthitta, Kottayam, Alappuzha, and Ranni.
+Glam'more is a unisex salon serving men and women in Thiruvalla. Clients come for everyday services (haircuts, beard trims, threading) and for weddings and events (bridal makeup, saree draping, pre-bridal facials). The salon is on SH 1 (Kollam–Theni Highway) at Thukalassery and is easy to reach from Thiruvalla town, Changanassery, Chengannur, and Pathanamthitta.
 
 ## Services Offered
-- Acrylic nails
-- Body waxing
-- Bridal services (complete bridal makeup, hair & styling)
-- Eyebrow shaping
+### Hair
+- Haircuts (men & women)
+- Hair colouring (global colour, highlights, grey coverage)
+- Keratin treatment
+- Hair smoothening
+- Hairstyling for weddings and events
+- Human hair extensions
+
+### Bridal & Makeup
+- Kerala bridal makeup (HD and airbrush)
+- Bridal hairstyling and saree draping
+- Wedding party and family makeup
+- Party and event makeup
+
+### Facials & Skin Care
+- Facials by skin type
+- De-tan and clean-up
+- Pre-bridal skin care
+
+### Spa & Massage
+- Body massage
+- Head and shoulder massage
+
+### Nails
+- Acrylic nail extensions and nail art
+- Gel manicure
+- Spa pedicure
+
+### Brows, Lashes & Men's Grooming
 - Eyebrow threading
-- Eyelashes (extensions & styling)
-- Haircut (men & women)
-- Hair extensions
-- Hairstyling
-- Make-up services
-- Massages (therapeutic & relaxation)
-- Pedicures
-- Shampoo & conditioning
-- Shaving
-- Skin care treatments
-- Waxing
-- Wedding and event preparation
-- Facial spa
-- Nail salon (manicure, nail art, gel, acrylics)
+- Eyelash extensions
+- Shaving and beard styling
+
+### Waxing
+- Body waxing
+- Facial waxing
 
 ## Key Pages
-- [/](https://glammoresalon.in/): Homepage — hero, brand story, service overview, testimonials, contact
-- [/services](https://glammoresalon.in/services): Full interactive service catalogue with category filters and WhatsApp booking
-- [/blogs](https://glammoresalon.in/blogs): Beauty & skincare lifestyle journal
+- [/](https://glammoresalon.in/): Homepage — about the salon, service overview, customer reviews, FAQ, contact and map
+- [/services](https://glammoresalon.in/services): Full service list by category with WhatsApp booking
+- [/blogs](https://glammoresalon.in/blogs): Hair, skin, and bridal beauty tips
 
 ## Contact & Location
-- **Address:** Club 7 Junction, MC Road, Thiruvalla, Kerala 689101, India
-- **WhatsApp:** +91 9645915329
+- **Address:** First Floor, Professional Building, SH 1, Kollam - Theni Hwy, Thukalassery, Thiruvalla, Kerala 689115, India
+- **Google Maps:** https://maps.app.goo.gl/XUFVqGPK9REuB6yf8
+- **WhatsApp / Phone:** +91 96459 15329
 - **Instagram:** @glammore.unisex.salon
-- **Facebook:** glammoresalonthiruvalla
+- **Facebook:** glammoresalon
 - **YouTube:** @Glammoreunisexsalon
 
 ## Business Hours
-Monday–Sunday: 9:00 AM – 7:00 PM
+Monday–Sunday: 8:30 AM – 8:00 PM
 
 ## Powered by
 Raphael Group — https://raphaelgroup.in

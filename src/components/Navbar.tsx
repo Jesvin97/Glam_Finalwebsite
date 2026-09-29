@@ -63,7 +63,7 @@ export default function Navbar() {
             className="logo-image navbar-logo-img"
             width={60}
             height={60}
-            priority
+            loading="eager"
           />
           <span className="navbar-brand-text">
             Glam&apos;more Unisex Salon

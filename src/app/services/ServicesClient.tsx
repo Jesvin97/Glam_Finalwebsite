@@ -2,6 +2,7 @@
 import "./services.css";
 
 import { useState } from "react";
+import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { FaTimes, FaClock, FaUser, FaPlus, FaCheck, FaCalendarAlt, FaMagic } from "react-icons/fa";
@@ -9,12 +10,13 @@ import { Calendar } from "@/components/ui/calendar";
 
 const WHATSAPP_NUMBER = "919645915329";
 
+type CategoryId = "hair" | "events" | "skin" | "spa" | "nails" | "grooming" | "waxing";
+
 interface ServiceItem {
   id: string;
   title: string;
-  category: "hair" | "nails" | "grooming" | "waxing" | "events";
+  category: CategoryId;
   description: string;
-  price?: string;
   duration?: string;
   image?: string;
 }
@@ -52,12 +54,14 @@ export default function ServicesClient() {
   });
 
   const filterCategories = [
-    { id: "all", name: "All Collections" },
-    { id: "hair", name: "Hair Styling & Extensions" },
-    { id: "events", name: "Bridal, Makeup & Events" },
-    { id: "nails", name: "Nail Care & Extensions" },
+    { id: "all", name: "All Services" },
+    { id: "hair", name: "Hair" },
+    { id: "events", name: "Bridal & Makeup" },
+    { id: "skin", name: "Facials & Skin Care" },
+    { id: "spa", name: "Spa & Massage" },
+    { id: "nails", name: "Nails" },
     { id: "grooming", name: "Brows, Lashes & Men's Grooming" },
-    { id: "waxing", name: "Waxing & Smooth Skin Care" },
+    { id: "waxing", name: "Waxing" },
   ];
 
   const categoryMetaList: CategoryMeta[] = [
@@ -70,9 +74,9 @@ export default function ServicesClient() {
     },
     {
       id: "events",
-      name: "Bridal, Makeup & Event Glamour",
-      tagline: "Bridal Artistry & Occasions",
-      description: "Comprehensive Kerala bridal makeup, HD airbrush application, and full wedding party preparations tailored to make your most memorable celebrations truly magical.",
+      name: "Bridal Makeup & Event Styling",
+      tagline: "Bridal Makeup in Thiruvalla",
+      description: "Kerala bridal makeup in HD and airbrush, pre-bridal skin care, hairstyling, and saree draping, for the bride and the rest of the wedding party.",
       bannerImage: "/images/bridal.jpg",
     },
     {
@@ -85,36 +89,46 @@ export default function ServicesClient() {
     {
       id: "grooming",
       name: "Brows, Lashes & Men's Grooming",
-      tagline: "Essential Brow, Lash & Beard Care",
-      description: "Expertly contoured eyebrow threading, voluminous lash extensions, and classic hot-towel beard shaping designed for effortless daily refinement.",
+      tagline: "Threading, Lashes & Beard Care",
+      description: "Eyebrow threading, eyelash extensions, and hot-towel shaves with beard shaping.",
       bannerImage: "/images/male model.jpeg",
     },
     {
       id: "waxing",
-      name: "Waxing & Smooth Skin Care",
-      tagline: "Botanical Skin Care",
-      description: "Silk-smooth body exfoliation and precision facial waxing treatments crafted with soothing botanical formulas for luminous, hair-free skin.",
-      bannerImage: "/images/10.webp",
+      name: "Waxing",
+      tagline: "Body & Facial Waxing",
+      description: "Full-body and facial waxing using wax suited to sensitive skin.",
+      bannerImage: "/images/Waxing & Smooth Skin Care.png",
     },
   ];
 
   const servicesData: ServiceItem[] = [
-    // ── Hair Styling & Extensions ──
+    // ── Hair ──
     {
       id: "haircut",
       title: "Haircut",
       category: "hair",
-      description: "Precision styling, trend-forward haircuts, and expert hair texturizing by master stylists.",
-      price: "499",
+      description: "Haircuts for men and women, planned around your hair texture and how much time you spend styling it.",
       duration: "30–45 min",
       image: "/images/Haircut.png"
+    },
+    {
+      id: "hair-coloring",
+      title: "Hair Colouring",
+      category: "hair",
+      description: "Global colour, highlights, and grey coverage, with a shade consultation first.",
+    },
+    {
+      id: "keratin-smoothening",
+      title: "Keratin & Hair Smoothening",
+      category: "hair",
+      description: "Keratin and smoothening treatments to reduce frizz and make hair easier to manage.",
     },
     {
       id: "hairstyling",
       title: "Hairstyling",
       category: "hair",
-      description: "Luxury blowouts, elegant updos, and custom event hairstyling for all hair types.",
-      price: "799",
+      description: "Blow-dries, updos, and styling for weddings, functions, and parties.",
       duration: "45–60 min",
       image: "/images/Hair_stylingjpeg.jpeg"
     },
@@ -122,18 +136,16 @@ export default function ServicesClient() {
       id: "hair-extensions",
       title: "Hair Extensions",
       category: "hair",
-      description: "100% natural, premium human hair extensions for length, volume, and custom styling, professionally fitted.",
-      price: "5,999",
+      description: "Natural human hair extensions for added length or volume, colour-matched and fitted in the salon.",
       duration: "2–3 hrs",
       image: "/images/Hiar_extension.jpeg"
     },
-    // ── Bridal, Makeup & Event Glamour ──
+    // ── Bridal & Makeup ──
     {
       id: "bridal-services",
-      title: "Bridal Services",
+      title: "Bridal Makeup",
       category: "events",
-      description: "Luxury comprehensive Kerala bridal makeup, hair styling, and wellness treatments tailored for your special wedding day in Thiruvalla.",
-      price: "9,999",
+      description: "Kerala bridal makeup with hairstyling and saree draping, planned with you before the wedding day.",
       duration: "4–6 hrs",
       image: "/images/bridal.jpg"
     },
@@ -141,27 +153,52 @@ export default function ServicesClient() {
       id: "wedding-prep",
       title: "Wedding & Event Preparation",
       category: "events",
-      description: "Complete hair, skin, and styling packages for Kerala weddings and events — coordinated across the full bridal party.",
-      price: "4,999",
+      description: "Hair, makeup, and draping for the bride's family and bridal party, scheduled so everyone is ready on time.",
       duration: "2–4 hrs",
       image: "/images/model.jpeg"
     },
     {
       id: "makeup-services",
-      title: "Makeup Services",
+      title: "Party & Event Makeup",
       category: "events",
-      description: "Flawless HD and airbrush makeup styles for celebrity shoots, family events, and parties.",
-      price: "2,499",
+      description: "HD and airbrush makeup for engagements, receptions, parties, and photo shoots.",
       duration: "60–90 min",
       image: "/images/3.jpg"
     },
-    // ── Nail Care & Extensions ──
+    // ── Facials & Skin Care ──
+    {
+      id: "facials",
+      title: "Facials",
+      category: "skin",
+      description: "Facials chosen for your skin type, whether dry, oily, or sensitive, including pre-bridal facial courses.",
+      image: "/images/spa-area.jpeg"
+    },
+    {
+      id: "detan-cleanup",
+      title: "De-tan & Clean-up",
+      category: "skin",
+      description: "De-tan packs and clean-ups to lift sun tan and clear congested skin.",
+    },
+    // ── Spa & Massage ──
+    {
+      id: "body-massage",
+      title: "Body Massage",
+      category: "spa",
+      description: "Full-body relaxation massage with warm oil in a private room.",
+      image: "/images/spa.jpg"
+    },
+    {
+      id: "head-massage",
+      title: "Head & Shoulder Massage",
+      category: "spa",
+      description: "A shorter massage focused on the scalp, neck, and shoulders.",
+    },
+    // ── Nails ──
     {
       id: "gel-manicure",
       title: "Gel Manicure",
       category: "nails",
-      description: "Long-lasting gel polish manicure with cuticle care, nail shaping, and glossy topcoat.",
-      price: "999",
+      description: "Cuticle care, shaping, and gel polish that lasts without chipping.",
       duration: "45 min",
       image: "/images/Gel Manicure.png"
     },
@@ -169,17 +206,15 @@ export default function ServicesClient() {
       id: "pedicures",
       title: "Spa Pedicure",
       category: "nails",
-      description: "Revitalizing foot spa therapy, organic scrub exfoliation, and precision nail care.",
-      price: "799",
+      description: "Foot soak, scrub, callus care, nail shaping, and polish.",
       duration: "45–60 min",
       image: "/images/Spa pedicures.png"
     },
     {
       id: "acrylic-nails",
-      title: "Acrylic Nails & Art",
+      title: "Acrylic Nails & Nail Art",
       category: "nails",
-      description: "High-quality, durable acrylic extensions with custom premium nail art and luxury finish.",
-      price: "1,499",
+      description: "Acrylic nail extensions in your choice of length and shape, finished with custom nail art.",
       duration: "60–90 min",
       image: "/images/nailart.jpg"
     },
@@ -188,8 +223,7 @@ export default function ServicesClient() {
       id: "eyebrow-threading",
       title: "Eyebrow Threading",
       category: "grooming",
-      description: "Ultra-clean thread shaping for sharp, beautifully defined brow arches.",
-      price: "150",
+      description: "Threading to shape and define your brows.",
       duration: "15 min",
       image: "/images/Eyebrow threading.png"
     },
@@ -197,8 +231,7 @@ export default function ServicesClient() {
       id: "eyelashes",
       title: "Eyelash Extensions",
       category: "grooming",
-      description: "Premium individual eyelashes and volume extension services for a mesmerizing, natural look.",
-      price: "999",
+      description: "Classic and volume lash extensions, applied lash by lash.",
       duration: "60–90 min",
       image: "/images/Eyelash Extensions.png"
     },
@@ -206,39 +239,30 @@ export default function ServicesClient() {
       id: "shaving",
       title: "Shaving & Beard Styling",
       category: "grooming",
-      description: "Traditional hot towel shave, beard detailing, precision edging, and skin hydration.",
-      price: "399",
+      description: "Hot-towel shave, beard shaping, and edging, with advice on a beard style that suits your face.",
       duration: "30–45 min",
       image: "/images/Shaving & Beard Styling.png"
     },
-    // ── Waxing & Smooth Skin Care ──
+    // ── Waxing ──
     {
       id: "body-waxing",
       title: "Body Waxing",
       category: "waxing",
-      description: "Full-body smooth waxing treatment using soothing organic wax formulated for sensitive skin.",
-      price: "1,999",
+      description: "Arms, legs, and full-body waxing using wax suited to sensitive skin.",
       duration: "45–75 min",
-      image: "/images/10.webp"
+      image: "/images/Body Waxing.png"
     },
     {
       id: "waxing",
       title: "Facial Waxing",
       category: "waxing",
-      description: "Fast, gentle precision waxing for upper lip, chin, and full face by experienced estheticians.",
-      price: "299",
+      description: "Upper lip, chin, and full-face waxing.",
       duration: "20–30 min",
-      image: "/images/2.webp"
+      image: "/images/Facial Waxing.png"
     },
   ];
 
   // ── Helpers ──
-  const totalPrice = selectedServices.reduce((sum, title) => {
-    const service = servicesData.find((s) => s.title === title);
-    if (!service?.price) return sum;
-    return sum + parseInt(service.price.replace(/,/g, ""), 10);
-  }, 0);
-
   const handleToggleService = (serviceTitle: string) => {
     setSelectedServices((prev) =>
       prev.includes(serviceTitle)
@@ -322,18 +346,21 @@ export default function ServicesClient() {
         {/* ── 1. HERO SECTION ── */}
         <section className="services-hero-section">
           <div className="hero-content-wrapper">
-            <span className="hero-badge-tag">GLAM'MORE EXPERIENCES</span>
-            <h1 className="hero-main-title">Luxury Beauty & Styling Collections</h1>
+            <span className="hero-badge-tag">GLAM&apos;MORE EXPERIENCES</span>
+            <h1 className="hero-main-title">Salon Services in Thiruvalla</h1>
             <p className="hero-intro-text">
-              Immerse yourself in our curated luxury treatment menu. From bespoke bridal artistry to signature hair extensions and revitalizing spa rituals, explore our complete service offerings below.
+              Hair, bridal makeup, facials, massage, nails, and grooming for men and women at our salon in Thukalassery, Thiruvalla. Choose your services and send the booking straight to us on WhatsApp.
             </p>
           </div>
 
           <div className="hero-banner-image-container">
-            <img
+            <Image
               src="/images/Salon seating area.jpeg"
               alt="Glammore Salon Experience"
               className="hero-banner-image"
+              fill
+              preload
+              sizes="(max-width: 1280px) 100vw, 1280px"
             />
             <div className="hero-banner-overlay" />
           </div>
@@ -365,7 +392,7 @@ export default function ServicesClient() {
               <section
                 key={category.id}
                 id={`category-${category.id}`}
-                className="category-block-section"
+                className={`category-block-section category-${category.id}`}
               >
                 {/* ── CATEGORY FEATURE BANNER ── */}
                 <div
@@ -375,10 +402,12 @@ export default function ServicesClient() {
                 >
                   {/* Image Side */}
                   <div className="banner-image-wrapper">
-                    <img
+                    <Image
                       src={category.bannerImage}
                       alt={category.name}
                       className="banner-image"
+                      fill
+                      sizes="(max-width: 900px) 100vw, 55vw"
                     />
                     <div className="banner-image-gradient" />
                   </div>
@@ -438,7 +467,12 @@ export default function ServicesClient() {
                         >
                           <div className="sub-service-image-box">
                             {service.image ? (
-                              <img src={service.image} alt={service.title} />
+                              <Image
+                                src={service.image}
+                                alt={service.title}
+                                fill
+                                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                              />
                             ) : (
                               <div className="sub-service-placeholder" />
                             )}
@@ -453,9 +487,6 @@ export default function ServicesClient() {
                           <div className="sub-service-info">
                             <div className="sub-service-title-row">
                               <h3 className="sub-service-title">{service.title}</h3>
-                              {service.price && (
-                                <span className="sub-service-price">₹{service.price}</span>
-                              )}
                             </div>
                             <p className="sub-service-desc">{service.description}</p>
                             {service.duration && (
@@ -480,7 +511,7 @@ export default function ServicesClient() {
         <div className="booking-pill" onClick={() => setIsDrawerOpen(true)}>
           <div className="booking-pill-text">
             <span className="count">
-              {selectedServices.length} service{selectedServices.length !== 1 ? "s" : ""} selected · Est. ₹{totalPrice.toLocaleString("en-IN")}
+              {selectedServices.length} service{selectedServices.length !== 1 ? "s" : ""} selected
             </span>
             <span className="label">Schedule Visit</span>
           </div>
@@ -586,13 +617,6 @@ export default function ServicesClient() {
               className="luxury-input textarea"
             />
           </div>
-
-          {totalPrice > 0 && (
-            <div className="drawer-total">
-              <span className="drawer-total-label">Estimated Total</span>
-              <span className="drawer-total-price">₹{totalPrice.toLocaleString("en-IN")}</span>
-            </div>
-          )}
 
           <button type="submit" className="btn-luxury drawer-submit-btn">
             Confirm via WhatsApp <span className="btn-luxury-hover-effect" />

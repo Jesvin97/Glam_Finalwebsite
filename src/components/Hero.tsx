@@ -1,7 +1,6 @@
 "use client";
 
 import ScrollReveal from "./ScrollReveal";
-import { useEffect, useState } from "react";
 import Image from "next/image";
 
 export default function Hero() {
@@ -11,9 +10,9 @@ export default function Hero() {
       <div className="hero-bg-parallax">
         <Image
           src="/images/model.png"
-          alt="Hero Background"
+          alt="Bride with a low bun hairstyle and bridal makeup holding a pink bouquet"
           fill
-          priority
+          preload
           style={{ objectFit: "cover", objectPosition: "top center" }}
         />
       </div>
@@ -23,13 +22,13 @@ export default function Hero() {
 
       <ScrollReveal direction="up" className="hero-content-wrapper">
         <div className="hero-text-content">
-          <p className="hero-subtitle">Thiruvalla's Premier Destination</p>
+          <p className="hero-subtitle">Thukalassery, Thiruvalla</p>
           <h1>
-            Luxury Grooming <br />
-            <span className="hero-gold-text">& Bridal Artistry</span>
+            Unisex Salon <br />
+            <span className="hero-gold-text">& Bridal Makeup</span>
           </h1>
           <p className="hero-description">
-            Step into a world where elegance, beauty, and luxury come together. Redefining the salon experience with bespoke treatments and masterful styling.
+            Haircuts, hair colour, bridal makeup, facials, massage, and nail art for men and women. Open every day, 8:30 AM to 8 PM.
           </p>
 
           <div className="hero-cta-container flex flex-col items-center">

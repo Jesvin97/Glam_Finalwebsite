@@ -6,24 +6,24 @@ import Link from "next/link";
 export default function Services() {
   const highlights = [
     { 
-      label: "Bridal & Wedding", 
-      image: "/images/bridal.jpg", // Ensure user uploads this
-      desc: "Bespoke bridal artistry and pre-wedding therapies."
+      label: "Bridal Makeup", 
+      image: "/images/bridal.jpg",
+      desc: "HD and airbrush bridal makeup, hairstyling, and saree draping."
     },
     { 
       label: "Hair & Styling", 
-      image: "/images/haircut.jpg", 
-      desc: "Masterful cuts, advanced coloring, and extensions."
+      image: "/images/Hair_stylingjpeg.jpeg", 
+      desc: "Haircuts, colouring, keratin smoothening, and extensions."
     },
     { 
       label: "Spa & Massage", 
       image: "/images/spa.jpg", 
-      desc: "Rejuvenating therapies for mind, body, and soul."
+      desc: "Body and head massages, plus facials and de-tan."
     },
     { 
-      label: "Nails & Beauty", 
+      label: "Nail Art & Pedicure", 
       image: "/images/nailart.jpg", 
-      desc: "Acrylics, gel art, and flawless manicures."
+      desc: "Acrylic extensions, nail art, gel manicures, and pedicures."
     }
   ];
 
@@ -31,8 +31,8 @@ export default function Services() {
     <section className="services-editorial" id="services">
       <ScrollReveal direction="up">
         <div className="section-title-editorial">
-          <p className="subtitle-elegant">Our Expertise</p>
-          <h2>Signature Services</h2>
+          <p className="subtitle-elegant">What We Do</p>
+          <h2>Our Salon Services</h2>
         </div>
       </ScrollReveal>
 
@@ -41,17 +41,19 @@ export default function Services() {
           <ScrollReveal direction="up" delay={i * 100} key={i}>
             <Link href="/services" style={{ textDecoration: 'none' }}>
               <div className="service-card-editorial">
-                {/* Replace with actual high-res images */}
-              <div 
-                className="service-card-bg"
-                style={{ backgroundColor: '#1a1a1a' }}
-              >
-                <Image src={h.image} alt={h.label} fill style={{ objectFit: "cover" }} />
-              </div>
-              <div className="service-card-overlay">
+                <div className="service-card-bg">
+                  <Image 
+                    src={h.image} 
+                    alt={`${h.label} at Glam'more salon, Thiruvalla`} 
+                    fill 
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                    className="object-cover w-full h-full"
+                  />
+                </div>
+                <div className="service-card-overlay z-10">
                 <h3>{h.label}</h3>
                 <p>{h.desc}</p>
-                <span className="discover-link">Discover ⟶</span>
+                <span className="discover-link">View services ⟶</span>
               </div>
             </div>
             </Link>

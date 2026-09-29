@@ -1,60 +1,19 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { client } from "@/sanity/client";
 import { urlFor } from "@/sanity/image";
+import type { SanityImageSource } from "@sanity/image-url";
 import Image from "next/image";
+import Link from "next/link";
 
-interface BlogItem {
+export interface BlogItem {
   title: string;
   description: string;
   category: string;
-  image: any;
+  image: SanityImageSource | string;
 }
 
-export default function Blog() {
-  const [blogs, setBlogs] = useState<BlogItem[]>([]);
+export default function Blog({ blogs = [] }: { blogs?: BlogItem[] }) {
 
-  const fallbackBlogs = [
-    {
-      image: "/images/model.jpeg",
-      category: "Beauty",
-      title: "Top Luxury Hair Trends in 2026",
-      description:
-        "Discover the latest luxury hairstyles and salon transformations dominating this year.",
-    },
-    {
-      image: "/images/model2.jpeg",
-      category: "Skincare",
-      title: "5 Secrets For Healthy Glowing Skin",
-      description:
-        "Professional skincare techniques used by skilled beauty specialists.",
-    },
-    {
-      image: "/images/spa-area.jpeg",
-      category: "Wellness",
-      title: "Why Spa Therapy Improves Mental Wellness",
-      description:
-        "Luxury spa sessions help reduce stress and improve self-confidence naturally.",
-    },
-  ];
-
-  useEffect(() => {
-    async function fetchBlogs() {
-      try {
-        const query = `*[_type == "blog"] | order(publishedAt desc)`;
-        const data = await client.fetch(query);
-        if (data && data.length > 0) {
-          setBlogs(data);
-        }
-      } catch (err) {
-        console.error("Failed to fetch blogs from Sanity, using fallback:", err);
-      }
-    }
-    fetchBlogs();
-  }, []);
-
-  const displayBlogs = blogs.length > 0 ? blogs : fallbackBlogs;
 
   return (
     <section className="blog-section" id="blog">
@@ -66,8 +25,15 @@ export default function Blog() {
         </h2>
       </div>
 
+      {blogs.length === 0 && (
+        <p style={{ textAlign: "center", maxWidth: 560, margin: "0 auto", color: "#999", lineHeight: 1.7 }}>
+          Hair care, skin care, and bridal tips from our stylists are coming soon. In the meantime,{" "}
+          <Link href="/services" style={{ color: "#d4af37" }}>browse our salon services</Link>.
+        </p>
+      )}
+
       <div className="blog-grid">
-        {displayBlogs.map((blog, index) => {
+        {blogs.map((blog, index) => {
           // Resolve image path safely (either local string or Sanity dynamic URL)
           const imageUrl = (blog.image && typeof blog.image !== "string")
             ? urlFor(blog.image).width(800).auto('format').quality(80).url()
@@ -87,7 +53,6 @@ export default function Blog() {
                 <span className="blog-category">{blog.category}</span>
                 <h3>{blog.title}</h3>
                 <p>{blog.description}</p>
-                <a href="#">Read More →</a>
               </div>
             </div>
           );

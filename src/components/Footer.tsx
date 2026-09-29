@@ -12,7 +12,7 @@ export default function Footer() {
       {/* LEFT */}
       <div className="footer-left">
         <h2 className="footer-title">
-          Glam'more Unisex Salon
+          Glam&apos;more Unisex Salon
         </h2>
         <p className="footer-text-muted">
           First Floor, Professional Building, SH 1, Kollam - Theni Hwy, Thukalassery, Thiruvalla, Kerala 689115, India
@@ -34,13 +34,7 @@ export default function Footer() {
         </p>
       </div>
 
-      {/* CENTER */}
-      <div className="footer-center">
-        <a href="/">Home</a>
-        <a href="/#about">About</a>
-        <a href="/blogs">Blogs</a>
-        <a href="/#contact">Contact</a>
-      </div>
+
 
       {/* RIGHT */}
       <div className="footer-right">
@@ -65,14 +59,6 @@ export default function Footer() {
             aria-label="Subscribe to Glam'more on YouTube"
           >
             <FaYoutube />
-          </a>
-          <a
-            href="https://wa.me/919645915329"
-            target="_blank"
-            className="whatsapp-green-text"
-            aria-label="Chat with Glam'more on WhatsApp"
-          >
-            <FaWhatsapp />
           </a>
           <a
             href="https://maps.app.goo.gl/XUFVqGPK9REuB6yf8"

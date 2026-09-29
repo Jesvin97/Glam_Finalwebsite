@@ -3,6 +3,7 @@
 import React from "react";
 import ScrollReveal from "./ScrollReveal";
 import Image from "next/image";
+import Link from "next/link";
 export default function About() {
 
   return (
@@ -10,10 +11,11 @@ export default function About() {
       <ScrollReveal direction="left" className="about-image-wrapper">
         <div className="about-image">
           <Image
-            src="/images/reception-area.jpeg"
-            alt="Glam'more Salon Interior Reception Area"
-            width={800}
-            height={600}
+            src="/images/reception-area.png"
+            alt="Glam'more Premium Unisex Salon signboard framed with flowers, Thukalassery, Thiruvalla"
+            width={1672}
+            height={941}
+            sizes="(max-width: 768px) 100vw, 50vw"
             style={{ width: "100%", height: "auto" }}
           />
         </div>
@@ -26,17 +28,17 @@ export default function About() {
           </p>
 
           <h2>
-            Luxury Salon Experience
+            A Unisex Salon for Everyday and Occasions
           </h2>
 
           <p className="about-description">
-            Step into a world where elegance, beauty and luxury come together. Our salon offers world-class beauty treatments, professional hair care, premium styling, and personalized wellness experiences designed for modern beauty standards.
+            Glam&apos;more is a unisex salon on the first floor of the Professional Building in Thukalassery, Thiruvalla. Men and women come to us for regular haircuts, beard trims, and threading, and for the bigger days: bridal makeup, saree draping, and pre-wedding facials. We also offer hair colouring, keratin smoothening, massage, and nail extensions, and we&apos;re happy to talk you through what suits your hair or skin before we start.
           </p>
 
-          <a href="/#contact" className="btn-luxury">
+          <Link href="/#contact" className="btn-luxury">
             Book Your Visit
             <span className="btn-luxury-hover-effect"></span>
-          </a>
+          </Link>
         </div>
       </ScrollReveal>
     </section>
