@@ -22,7 +22,7 @@ interface ServiceItem {
 }
 
 interface CategoryMeta {
-  id: "hair" | "events" | "nails" | "grooming" | "waxing";
+  id: CategoryId;
   name: string;
   tagline: string;
   description: string;
