@@ -9,6 +9,7 @@ export default function Gallery() {
   "/images/3.jpg",
   "/images/4.webp",
   "/images/5.webp",
+  "/images/gallery-10.webp",
 ];
 
 const row2 = [
@@ -17,6 +18,8 @@ const row2 = [
   "/images/8.webp",
   "/images/9.webp",
   "/images/10.webp",
+  "/images/gallery-11.webp",
+  "/images/gallery-12.webp",
 ];
 
   return (

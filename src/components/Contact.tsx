@@ -62,7 +62,7 @@ ${formData.message}`;
               ></iframe>
 
               <div className="map-details">
-                <h3>Glam'more Unisex Salon</h3>
+                <h3>Glam&apos;more Unisex Salon</h3>
                 <p className="contact-map-details-desc">
                   First Floor, Professional Building, SH 1, Kollam - Theni Hwy, Thukalassery, Thiruvalla, Kerala 689115, India
                 </p>

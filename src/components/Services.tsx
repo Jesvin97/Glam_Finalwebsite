@@ -48,7 +48,6 @@ export default function Services() {
                     fill 
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
                     className="object-cover w-full h-full"
-                    priority={i < 2}
                   />
                 </div>
                 <div className="service-card-overlay z-10">

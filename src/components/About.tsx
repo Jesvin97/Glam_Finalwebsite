@@ -11,10 +11,11 @@ export default function About() {
       <ScrollReveal direction="left" className="about-image-wrapper">
         <div className="about-image">
           <Image
-            src="/images/reception-area.jpg"
-            alt="Reception area at Glam'more Unisex Salon, Thiruvalla"
-            width={800}
-            height={600}
+            src="/images/reception-area.png"
+            alt="Glam'more Premium Unisex Salon signboard framed with flowers, Thukalassery, Thiruvalla"
+            width={1672}
+            height={941}
+            sizes="(max-width: 768px) 100vw, 50vw"
             style={{ width: "100%", height: "auto" }}
           />
         </div>

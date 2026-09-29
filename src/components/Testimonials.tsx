@@ -1,8 +1,8 @@
 "use client"
 
 import * as React from "react"
-import { client } from "@/sanity/client"
 import { urlFor } from "@/sanity/image"
+import type { SanityImageSource } from "@sanity/image-url"
 import ScrollReveal from "./ScrollReveal"
 
 // Lightweight classname helper to safely concat classes
@@ -13,7 +13,7 @@ function cn(...inputs: unknown[]) {
 export interface Testimonial {
   name: string
   text: string
-  avatar?: any
+  avatar?: SanityImageSource | string
   role?: string
   username?: string
   profileLink?: string
@@ -182,8 +182,7 @@ export function TestimonialMarquee({ items, variant = "default", className, spee
   )
 }
 
-export default function Testimonials() {
-  const [testimonials, setTestimonials] = React.useState<Testimonial[]>([]);
+export default function Testimonials({ testimonials = [] }: { testimonials?: Testimonial[] }) {
 
   const fallbackTestimonials: Testimonial[] = [
     {
@@ -262,21 +261,6 @@ export default function Testimonials() {
       text: "Great experience in Thiruvalla! Mohammed Rashid gave an excellent shave—professional, polite, and skilled. Highly recommended.",
     }
   ];
-
-  React.useEffect(() => {
-    async function fetchTestimonials() {
-      try {
-        const query = `*[_type == "testimonial"]`;
-        const data = await client.fetch(query);
-        if (data && data.length > 0) {
-          setTestimonials(data);
-        }
-      } catch (err) {
-        console.error("Failed to fetch testimonials from Sanity, using fallback:", err);
-      }
-    }
-    fetchTestimonials();
-  }, []);
 
   const displayItems = testimonials.length > 0 ? testimonials : fallbackTestimonials;
 

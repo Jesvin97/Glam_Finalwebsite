@@ -49,18 +49,24 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Glam'more | Unisex Salon & Bridal Makeup in Thiruvalla",
     description: "Unisex salon in Thukalassery, Thiruvalla for haircuts, hair colour, keratin, bridal makeup, facials, massage, and nail art.",
-    url: "https://glammoresalon.in",
+    url: "/",
     siteName: "Glam'more Unisex Salon",
     images: [
       {
-        url: "https://glammoresalon.in/images/logo.png",
-        width: 800,
-        height: 800,
-        alt: "Glam'more Unisex Salon Logo",
+        url: "/images/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Glam'more Premium Unisex Salon signboard, Thukalassery, Thiruvalla",
       },
     ],
-    locale: "en_US",
+    locale: "en_IN",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Glam'more | Unisex Salon & Bridal Makeup in Thiruvalla",
+    description: "Unisex salon in Thukalassery, Thiruvalla for haircuts, hair colour, keratin, bridal makeup, facials, massage, and nail art.",
+    images: ["/images/og-image.jpg"],
   },
 };
 
