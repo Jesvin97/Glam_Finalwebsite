@@ -573,14 +573,14 @@ export default function ServicesClient() {
           </div>
 
           <div className="form-group">
-            <label className="drawer-label">Time Slot (8:30 AM – 8:00 PM)</label>
+            <label className="drawer-label">Time Slot (10:00 AM – 8:30 PM)</label>
             <div className="input-with-icon">
               <FaClock className="input-icon" />
               <input
                 type="time"
                 name="time"
-                min="08:30"
-                max="20:00"
+                min="10:00"
+                max="20:30"
                 value={bookingDetails.time}
                 onChange={handleFormChange}
                 className={`luxury-input${formErrors.time ? " input-error" : ""}`}

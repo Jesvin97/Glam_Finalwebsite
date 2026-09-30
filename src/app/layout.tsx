@@ -22,7 +22,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL("https://glammoresalon.in"),
   title: "Glam'more | Unisex Salon & Bridal Makeup in Thiruvalla",
-  description: "Unisex salon in Thukalassery, Thiruvalla for haircuts, hair colour, keratin, bridal makeup, facials, massage, and nail art. Open daily, 8:30 AM to 8 PM.",
+  description: "Unisex salon in Thukalassery, Thiruvalla for haircuts, hair colour, keratin, bridal makeup, facials, massage, and nail art. Open daily, 10 AM to 8:30 PM.",
   keywords: [
     // Brand
     "Glammore salon", "Glam'more", "Glam'more Unisex Salon", "unisex salon Thiruvalla",
@@ -127,8 +127,8 @@ export default function RootLayout({
                   "Saturday",
                   "Sunday"
                 ],
-                "opens": "08:30",
-                "closes": "20:00"
+                "opens": "10:00",
+                "closes": "20:30"
               },
               "sameAs": [
                 "https://www.instagram.com/glammore.unisex.salon",

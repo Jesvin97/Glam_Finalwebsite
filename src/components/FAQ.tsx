@@ -43,7 +43,7 @@ export default function FAQ({ faqs = [] }: { faqs?: FAQItem[] }) {
     {
       question: "What are Glam'more's opening hours?",
       answer:
-        "We're open every day, 8:30 AM to 8:00 PM. Walk-ins are welcome when a chair is free, but booking ahead on WhatsApp (+91 96459 15329) means you won't have to wait.",
+        "We're open every day, 10:00 AM to 8:30 PM. Walk-ins are welcome when a chair is free, but booking ahead on WhatsApp (+91 96459 15329) means you won't have to wait.",
     },
   ];
 
@@ -62,7 +62,7 @@ export default function FAQ({ faqs = [] }: { faqs?: FAQItem[] }) {
     },
     {
       question: "ഗ്ലാംമോർ സലൂണിന്റെ പ്രവർത്തന സമയം എപ്പോഴൊക്കെയാണ്?",
-      answer: "ഞങ്ങൾ തിങ്കൾ മുതൽ ഞായർ വരെ എല്ലാ ദിവസവും രാവിലെ 8:30 മുതൽ രാത്രി 8:00 വരെ പ്രവർത്തിക്കുന്നു. ബുക്കിംഗുകൾ മുൻകൂട്ടി ചെയ്യുവാൻ ഞങ്ങൾ നിർദ്ദേശിക്കുന്നു.",
+      answer: "ഞങ്ങൾ തിങ്കൾ മുതൽ ഞായർ വരെ എല്ലാ ദിവസവും രാവിലെ 10:00 മുതൽ രാത്രി 8:30 വരെ പ്രവർത്തിക്കുന്നു. ബുക്കിംഗുകൾ മുൻകൂട്ടി ചെയ്യുവാൻ ഞങ്ങൾ നിർദ്ദേശിക്കുന്നു.",
     },
     {
       question: "നിങ്ങൾ നെയിൽ ആർട്ടും പെഡിക്യൂർ സേവനങ്ങളും നൽകാറുണ്ടോ?",
@@ -73,7 +73,7 @@ export default function FAQ({ faqs = [] }: { faqs?: FAQItem[] }) {
   const displayFaqs = faqs.length > 0 ? faqs : fallbackFaqs;
 
   return (
-    <section className="faq-section">
+    <section className="faq-section" id="faq">
       <ScrollReveal direction="up">
         <div className="section-title faq-title-container">
           <h2 className="gold-section-heading">Frequently Asked Questions</h2>

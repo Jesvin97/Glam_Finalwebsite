@@ -28,7 +28,7 @@ export default function Hero() {
             <span className="hero-gold-text">& Bridal Makeup</span>
           </h1>
           <p className="hero-description">
-            Haircuts, hair colour, bridal makeup, facials, massage, and nail art for men and women. Open every day, 8:30 AM to 8 PM.
+            Haircuts, hair colour, bridal makeup, facials, massage, and nail art for men and women. Open every day, 10 AM to 8:30 PM.
           </p>
 
           <div className="hero-cta-container flex flex-col items-center">
