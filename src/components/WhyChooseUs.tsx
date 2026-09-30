@@ -19,7 +19,7 @@ export default function WhyChooseUs() {
     },
     {
       icon: FaClock,
-      title: "Open 7 Days, 8:30 AM – 8 PM",
+      title: "Open 7 Days, 10 AM – 8:30 PM",
     },
   ];
 

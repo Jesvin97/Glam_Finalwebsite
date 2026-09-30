@@ -481,7 +481,7 @@ h1, h2, h3,
 
   display: flex;
 
-  align-items: center;
+  align-items: flex-start;
 
   justify-content: space-between;
 
@@ -1229,6 +1229,8 @@ h1, h2, h3,
   .about-section {
 
     flex-direction: column;
+
+    align-items: stretch;
 
     padding: 90px 20px;
 
@@ -3142,3 +3144,227 @@ h1, h2, h3,
 
 
 
+
+/* ========================================
+   CUSTOMER FEEDBACK SECTION
+======================================== */
+
+.feedback-section {
+  background: black;
+  padding: 70px 5% 80px;
+}
+
+.feedback-section .section-title {
+  text-align: center;
+}
+
+.feedback-photo-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  max-width: 1200px;
+  margin: 30px auto 0;
+}
+
+.feedback-photo {
+  margin: 0;
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(212, 175, 55, 0.15);
+}
+
+.feedback-photo img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+}
+
+.feedback-photo figcaption {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 24px 12px 10px;
+  font-size: 12.5px;
+  color: #eee;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+}
+
+.feedback-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  max-width: 1200px;
+  margin: 30px auto 0;
+}
+
+.feedback-card {
+  margin: 0;
+  padding: 20px;
+  background: #111;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+}
+
+.feedback-card p {
+  color: #bbb;
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 10px 0 12px;
+}
+
+.feedback-card footer {
+  color: #d4af37;
+  font-size: 13px;
+}
+
+.feedback-card footer span {
+  color: #777;
+}
+
+.feedback-stars {
+  color: #d4af37;
+  letter-spacing: 2px;
+  font-size: 15px;
+}
+
+.feedback-stars-empty {
+  color: #333;
+}
+
+.feedback-form {
+  max-width: 640px;
+  margin: 40px auto 0;
+  padding: 28px;
+  background: #0e0e0e;
+  border: 1px solid rgba(212, 175, 55, 0.15);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.feedback-form h3 {
+  font-family: var(--font-playfair-family), serif;
+  font-weight: 400;
+  font-size: 24px;
+  color: #fff;
+  text-align: center;
+  margin: 0;
+}
+
+.feedback-rating {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+}
+
+.feedback-rating button {
+  background: none;
+  border: none;
+  font-size: 30px;
+  line-height: 1;
+  color: #333;
+  cursor: pointer;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.feedback-rating button.active {
+  color: #d4af37;
+}
+
+.feedback-rating button:hover {
+  transform: scale(1.12);
+}
+
+.feedback-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.feedback-form input,
+.feedback-form select,
+.feedback-form textarea {
+  width: 100%;
+  background: #151515;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 13px 16px;
+  color: #fff;
+  font-size: 14px;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.feedback-form select {
+  color: #aaa;
+}
+
+.feedback-form input:focus,
+.feedback-form select:focus,
+.feedback-form textarea:focus {
+  border-color: #d4af37;
+}
+
+.feedback-form textarea {
+  resize: vertical;
+}
+
+.feedback-form .btn-luxury {
+  align-self: center;
+}
+
+.feedback-form .btn-luxury:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+.feedback-hp {
+  position: absolute !important;
+  left: -9999px !important;
+  width: 1px !important;
+  height: 1px !important;
+  opacity: 0 !important;
+}
+
+.feedback-status {
+  text-align: center;
+  font-size: 14px;
+  margin: 0;
+}
+
+.feedback-status.success {
+  color: #7fd18b;
+}
+
+.feedback-status.error {
+  color: #e05252;
+}
+
+@media (max-width: 900px) {
+  .feedback-photo-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .feedback-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .feedback-section {
+    padding: 50px 16px 60px;
+  }
+
+  .feedback-form {
+    padding: 20px;
+  }
+
+  .feedback-form-row {
+    grid-template-columns: 1fr;
+  }
+}
