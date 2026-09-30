@@ -73,7 +73,7 @@ export default function FAQ({ faqs = [] }: { faqs?: FAQItem[] }) {
   const displayFaqs = faqs.length > 0 ? faqs : fallbackFaqs;
 
   return (
-    <section className="faq-section">
+    <section className="faq-section" id="faq">
       <ScrollReveal direction="up">
         <div className="section-title faq-title-container">
           <h2 className="gold-section-heading">Frequently Asked Questions</h2>
