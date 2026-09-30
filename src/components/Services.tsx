@@ -47,7 +47,7 @@ export default function Services() {
                     alt={`${h.label} at Glam'more salon, Thiruvalla`} 
                     fill 
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
-                    className="object-cover w-full h-full"
+                    className="object-contain w-full h-full"
                   />
                 </div>
                 <div className="service-card-overlay z-10">

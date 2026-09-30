@@ -87,7 +87,7 @@ export default function CustomerFeedback({
           {photos.map((p) => (
             <figure className="feedback-photo" key={p._id}>
               <Image
-                src={urlFor(p.image).width(600).height(600).fit("crop").auto("format").url()}
+                src={urlFor(p.image).width(800).auto("format").url()}
                 alt={p.caption || "Glam'more customer"}
                 width={600}
                 height={600}

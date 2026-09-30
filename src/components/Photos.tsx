@@ -43,7 +43,7 @@ const row2 = [
                   alt={`Gallery Image ${index + 1}`}
                   width={280}
                   height={420}
-                  style={{ objectFit: "cover" }}
+                  style={{ objectFit: "contain" }}
                   quality={100}
                   unoptimized={true}
                 />
@@ -64,7 +64,7 @@ const row2 = [
                   alt={`Gallery Image ${index + 1}`}
                   width={280}
                   height={420}
-                  style={{ objectFit: "cover" }}
+                  style={{ objectFit: "contain" }}
                   quality={100}
                   unoptimized={true}
                 />

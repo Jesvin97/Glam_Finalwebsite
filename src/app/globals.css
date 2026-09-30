@@ -390,10 +390,11 @@ h1, h2, h3,
   background-size: cover;
   background-position: center;
   transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  background-color: #0f0f11;
 }
 
 .service-card-bg img {
-  object-fit: cover !important;
+  object-fit: contain !important;
   object-position: center !important;
   width: 100% !important;
   height: 100% !important;
@@ -1018,7 +1019,8 @@ h1, h2, h3,
 
   height: 300px;
 
-  object-fit: cover;
+  object-fit: contain;
+  background-color: #0f0f11;
 }
 
 /* CONTENT */
@@ -2293,12 +2295,13 @@ h1, h2, h3,
   flex-shrink: 0;
   overflow: hidden;
   border-radius: 20px;
+  background: #0f0f11;
 }
 
 .gallery-card img {
   width: 280px;
   height: 420px;
-  object-fit: cover;
+  object-fit: contain;
   border-radius: 20px;
   display: block;
   transition: all 0.5s ease;
@@ -3172,13 +3175,14 @@ h1, h2, h3,
   border-radius: 16px;
   overflow: hidden;
   border: 1px solid rgba(212, 175, 55, 0.15);
+  background: #0f0f11;
 }
 
 .feedback-photo img {
   width: 100%;
   height: auto;
   aspect-ratio: 1 / 1;
-  object-fit: cover;
+  object-fit: contain;
   display: block;
 }
 
