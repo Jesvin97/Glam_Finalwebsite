@@ -24,7 +24,7 @@ export default function Footer() {
           <Image src="/images/logo.png" alt="Glam'more logo" width={40} height={40} className="footer-logo" />
         </Link>
         <span className="footer-divider" aria-hidden="true">|</span>
-        <p className="footer-copyright">
+        <p className="footer-copyright" suppressHydrationWarning>
           {`© ${new Date().getFullYear()} Glam'more Unisex Salon`}
         </p>
         <div className="social-icons">

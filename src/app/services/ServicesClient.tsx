@@ -369,7 +369,7 @@ export default function ServicesClient() {
 
           <div className="hero-banner-image-container">
             <Image
-              src="/images/Salon seating area.jpeg"
+              src="/images/salon-interior.jpeg"
               alt="Glammore Salon Experience"
               className="hero-banner-image"
               fill
@@ -562,13 +562,17 @@ export default function ServicesClient() {
               Preferred Date
             </label>
             <div className="calendar-container">
-              <Calendar
-                mode="single"
-                selected={selectedDate}
-                onSelect={handleDateSelect}
-                disabled={{ before: new Date() }}
-                className="luxury-calendar"
-              />
+              {/* Rendered only when open: the page is prebuilt, so a server-rendered
+                  calendar would show the build date and cause a hydration mismatch. */}
+              {isDrawerOpen && (
+                <Calendar
+                  mode="single"
+                  selected={selectedDate}
+                  onSelect={handleDateSelect}
+                  disabled={{ before: new Date() }}
+                  className="luxury-calendar"
+                />
+              )}
             </div>
           </div>
 
