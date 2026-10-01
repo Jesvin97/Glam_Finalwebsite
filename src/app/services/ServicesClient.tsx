@@ -10,14 +10,13 @@ import { Calendar } from "@/components/ui/calendar";
 
 const WHATSAPP_NUMBER = "919645915329";
 
-type CategoryId = "hair" | "events" | "skin" | "spa" | "nails" | "grooming" | "waxing";
+type CategoryId = "hair" | "events" | "skin" | "spa" | "nails" | "brows" | "mens" | "waxing";
 
 interface ServiceItem {
   id: string;
   title: string;
   category: CategoryId;
   description: string;
-  duration?: string;
   image?: string;
 }
 
@@ -56,11 +55,12 @@ export default function ServicesClient() {
   const filterCategories = [
     { id: "all", name: "All Services" },
     { id: "hair", name: "Hair" },
-    { id: "events", name: "Bridal & Makeup" },
+    { id: "events", name: "Bride & Groom" },
     { id: "skin", name: "Facials & Skin Care" },
     { id: "spa", name: "Spa & Massage" },
     { id: "nails", name: "Nails" },
-    { id: "grooming", name: "Brows, Lashes & Men's Grooming" },
+    { id: "brows", name: "Brows & Lashes" },
+    { id: "mens", name: "Men's Grooming" },
     { id: "waxing", name: "Waxing" },
   ];
 
@@ -74,9 +74,9 @@ export default function ServicesClient() {
     },
     {
       id: "events",
-      name: "Bridal Makeup & Event Styling",
-      tagline: "Bridal Makeup in Thiruvalla",
-      description: "Kerala bridal makeup in HD and airbrush, pre-bridal skin care, hairstyling, and saree draping, for the bride and the rest of the wedding party.",
+      name: "Bride & Groom",
+      tagline: "Bridal & Groom Makeup in Thiruvalla",
+      description: "Kerala bridal makeup in HD and airbrush, hairstyling and saree draping for the bride, groom styling and makeup, and getting the whole wedding party ready on the day.",
       bannerImage: "/images/bridal.jpg",
     },
     {
@@ -84,14 +84,14 @@ export default function ServicesClient() {
       name: "Facials & Skin Care",
       tagline: "Facials in Thiruvalla",
       description: "Facials, de-tan, and clean-up treatments matched to your skin type, plus pre-bridal skin preparation in the weeks before a wedding.",
-      bannerImage: "/images/spa-area.jpeg",
+      bannerImage: "/images/services/facials-banner.jpg",
     },
     {
       id: "spa",
       name: "Spa & Massage",
       tagline: "Massage in Thiruvalla",
       description: "Body and head massages in a private treatment room, to ease muscle tension or simply to unwind.",
-      bannerImage: "/images/spa.jpg",
+      bannerImage: "/images/services/spa-banner.jpg",
     },
     {
       id: "nails",
@@ -101,11 +101,18 @@ export default function ServicesClient() {
       bannerImage: "/images/nailart.jpg",
     },
     {
-      id: "grooming",
-      name: "Brows, Lashes & Men's Grooming",
-      tagline: "Threading, Lashes & Beard Care",
-      description: "Eyebrow threading, eyelash extensions, and hot-towel shaves with beard shaping.",
-      bannerImage: "/images/male model.jpeg",
+      id: "brows",
+      name: "Brows & Lashes",
+      tagline: "Threading & Lash Extensions",
+      description: "Eyebrow threading for clean, defined brows, and classic or volume eyelash extensions.",
+      bannerImage: "/images/services/brows-lashes-banner.jpg",
+    },
+    {
+      id: "mens",
+      name: "Men's Grooming",
+      tagline: "Shaves & Beard Styling",
+      description: "Hot-towel shaves, beard shaping and edging, and styling advice for a look that suits your face.",
+      bannerImage: "/images/services/mens-grooming-banner.jpg",
     },
     {
       id: "waxing",
@@ -123,7 +130,6 @@ export default function ServicesClient() {
       title: "Haircut",
       category: "hair",
       description: "Haircuts for men and women, planned around your hair texture and how much time you spend styling it.",
-      duration: "30–45 min",
       image: "/images/Haircut.png"
     },
     {
@@ -131,19 +137,20 @@ export default function ServicesClient() {
       title: "Hair Colouring",
       category: "hair",
       description: "Global colour, highlights, and grey coverage, with a shade consultation first.",
+      image: "/images/services/hair-colouring.jpg"
     },
     {
       id: "keratin-smoothening",
       title: "Keratin & Hair Smoothening",
       category: "hair",
       description: "Keratin and smoothening treatments to reduce frizz and make hair easier to manage.",
+      image: "/images/services/keratin-smoothening.jpg"
     },
     {
       id: "hairstyling",
       title: "Hairstyling",
       category: "hair",
       description: "Blow-dries, updos, and styling for weddings, functions, and parties.",
-      duration: "45–60 min",
       image: "/images/Hair_stylingjpeg.jpeg"
     },
     {
@@ -151,7 +158,6 @@ export default function ServicesClient() {
       title: "Hair Extensions",
       category: "hair",
       description: "Natural human hair extensions for added length or volume, colour-matched and fitted in the salon.",
-      duration: "2–3 hrs",
       image: "/images/Hiar_extension.jpeg"
     },
     // ── Bridal & Makeup ──
@@ -160,7 +166,6 @@ export default function ServicesClient() {
       title: "Bridal Makeup",
       category: "events",
       description: "Kerala bridal makeup with hairstyling and saree draping, planned with you before the wedding day.",
-      duration: "4–6 hrs",
       image: "/images/bridal.jpg"
     },
     {
@@ -168,16 +173,14 @@ export default function ServicesClient() {
       title: "Wedding & Event Preparation",
       category: "events",
       description: "Hair, makeup, and draping for the bride's family and bridal party, scheduled so everyone is ready on time.",
-      duration: "2–4 hrs",
       image: "/images/model.jpeg"
     },
     {
-      id: "makeup-services",
-      title: "Party & Event Makeup",
+      id: "groom-makeup",
+      title: "Groom Makeup",
       category: "events",
-      description: "HD and airbrush makeup for engagements, receptions, parties, and photo shoots.",
-      duration: "60–90 min",
-      image: "/images/3.jpg"
+      description: "Groom styling for the wedding day: hair, beard trim and shaping, and light, natural makeup for photos.",
+      image: "/images/services/groom-makeup.jpg"
     },
     // ── Facials & Skin Care ──
     {
@@ -185,13 +188,14 @@ export default function ServicesClient() {
       title: "Facials",
       category: "skin",
       description: "Facials chosen for your skin type, whether dry, oily, or sensitive, including pre-bridal facial courses.",
-      image: "/images/spa-area.jpeg"
+      image: "/images/services/facials.jpg"
     },
     {
       id: "detan-cleanup",
       title: "De-tan & Clean-up",
       category: "skin",
       description: "De-tan packs and clean-ups to lift sun tan and clear congested skin.",
+      image: "/images/services/detan-cleanup.jpg"
     },
     // ── Spa & Massage ──
     {
@@ -206,6 +210,7 @@ export default function ServicesClient() {
       title: "Head & Shoulder Massage",
       category: "spa",
       description: "A shorter massage focused on the scalp, neck, and shoulders.",
+      image: "/images/services/head-massage.jpg"
     },
     // ── Nails ──
     {
@@ -213,7 +218,6 @@ export default function ServicesClient() {
       title: "Gel Manicure",
       category: "nails",
       description: "Cuticle care, shaping, and gel polish that lasts without chipping.",
-      duration: "45 min",
       image: "/images/Gel Manicure.png"
     },
     {
@@ -221,7 +225,6 @@ export default function ServicesClient() {
       title: "Spa Pedicure",
       category: "nails",
       description: "Foot soak, scrub, callus care, nail shaping, and polish.",
-      duration: "45–60 min",
       image: "/images/Spa pedicures.png"
     },
     {
@@ -229,32 +232,28 @@ export default function ServicesClient() {
       title: "Acrylic Nails & Nail Art",
       category: "nails",
       description: "Acrylic nail extensions in your choice of length and shape, finished with custom nail art.",
-      duration: "60–90 min",
       image: "/images/nailart.jpg"
     },
-    // ── Brows, Lashes & Men's Grooming ──
+    // ── Brows & Lashes / Men's Grooming ──
     {
       id: "eyebrow-threading",
       title: "Eyebrow Threading",
-      category: "grooming",
+      category: "brows",
       description: "Threading to shape and define your brows.",
-      duration: "15 min",
       image: "/images/Eyebrow threading.png"
     },
     {
       id: "eyelashes",
       title: "Eyelash Extensions",
-      category: "grooming",
+      category: "brows",
       description: "Classic and volume lash extensions, applied lash by lash.",
-      duration: "60–90 min",
       image: "/images/Eyelash Extensions.png"
     },
     {
       id: "shaving",
       title: "Shaving & Beard Styling",
-      category: "grooming",
+      category: "mens",
       description: "Hot-towel shave, beard shaping, and edging, with advice on a beard style that suits your face.",
-      duration: "30–45 min",
       image: "/images/Shaving & Beard Styling.png"
     },
     // ── Waxing ──
@@ -263,7 +262,6 @@ export default function ServicesClient() {
       title: "Body Waxing",
       category: "waxing",
       description: "Arms, legs, and full-body waxing using wax suited to sensitive skin.",
-      duration: "45–75 min",
       image: "/images/Body Waxing.png"
     },
     {
@@ -271,7 +269,6 @@ export default function ServicesClient() {
       title: "Facial Waxing",
       category: "waxing",
       description: "Upper lip, chin, and full-face waxing.",
-      duration: "20–30 min",
       image: "/images/Facial Waxing.png"
     },
   ];
@@ -503,11 +500,6 @@ export default function ServicesClient() {
                               <h3 className="sub-service-title">{service.title}</h3>
                             </div>
                             <p className="sub-service-desc">{service.description}</p>
-                            {service.duration && (
-                              <span className="sub-service-duration">
-                                <FaClock size={11} /> {service.duration}
-                              </span>
-                            )}
                           </div>
                         </div>
                       );
