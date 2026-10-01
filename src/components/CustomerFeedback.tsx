@@ -5,6 +5,7 @@ import Image from "next/image";
 import type { SanityImageSource } from "@sanity/image-url";
 import { urlFor } from "@/sanity/image";
 import ScrollReveal from "./ScrollReveal";
+import { FEEDBACK_SERVICES, MAX_WORDS, MIN_MEANINGFUL_WORDS, countWords, validateFeedback } from "@/lib/feedback";
 
 export interface FeedbackPhoto {
   _id: string;
@@ -13,28 +14,16 @@ export interface FeedbackPhoto {
 }
 
 export interface ApprovedFeedback {
-  _id: string;
+  id: number;
   name: string;
-  service?: string;
+  services: string[];
   rating: number;
   message: string;
 }
 
-const SERVICES = [
-  "Haircut / Hairstyling",
-  "Hair Colour / Keratin",
-  "Bridal Makeup",
-  "Party / Event Makeup",
-  "Facial / Skin Care",
-  "Massage",
-  "Nails",
-  "Threading / Lashes",
-  "Shaving / Beard",
-  "Waxing",
-  "Other",
-];
-
 type Status = { type: "idle" | "sending" | "success" | "error"; message?: string };
+
+const EMPTY_FORM = { name: "", email: "", message: "", website: "" };
 
 export default function CustomerFeedback({
   photos = [],
@@ -43,18 +32,26 @@ export default function CustomerFeedback({
   photos?: FeedbackPhoto[];
   feedback?: ApprovedFeedback[];
 }) {
-  const [form, setForm] = useState({ name: "", phone: "", service: "", message: "", website: "" });
+  const [form, setForm] = useState(EMPTY_FORM);
+  const [services, setServices] = useState<string[]>([]);
   const [rating, setRating] = useState(0);
   const [hover, setHover] = useState(0);
   const [status, setStatus] = useState<Status>({ type: "idle" });
 
-  const onChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) =>
+  const words = countWords(form.message);
+
+  const onChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
     setForm((f) => ({ ...f, [e.target.name]: e.target.value }));
+
+  const toggleService = (s: string) =>
+    setServices((prev) => (prev.includes(s) ? prev.filter((x) => x !== s) : [...prev, s]));
 
   const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!rating) {
-      setStatus({ type: "error", message: "Please choose a star rating." });
+    const payload = { name: form.name, email: form.email, services, rating, message: form.message };
+    const error = validateFeedback(payload);
+    if (error) {
+      setStatus({ type: "error", message: error });
       return;
     }
     setStatus({ type: "sending" });
@@ -62,12 +59,13 @@ export default function CustomerFeedback({
       const res = await fetch("/api/feedback", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...form, rating }),
+        body: JSON.stringify({ ...payload, website: form.website }),
       });
       const data = await res.json().catch(() => ({}));
       if (!res.ok) throw new Error(data.error || "Something went wrong. Please try again.");
       setStatus({ type: "success", message: "Thank you! Your feedback has been sent." });
-      setForm({ name: "", phone: "", service: "", message: "", website: "" });
+      setForm(EMPTY_FORM);
+      setServices([]);
       setRating(0);
     } catch (err) {
       setStatus({ type: "error", message: err instanceof Error ? err.message : "Something went wrong." });
@@ -102,7 +100,7 @@ export default function CustomerFeedback({
       {feedback.length > 0 && (
         <div className="feedback-list">
           {feedback.map((f) => (
-            <blockquote className="feedback-card" key={f._id}>
+            <blockquote className="feedback-card" key={f.id}>
               <div className="feedback-stars" aria-label={`${f.rating} out of 5 stars`}>
                 {"★".repeat(f.rating)}
                 <span className="feedback-stars-empty">{"★".repeat(5 - f.rating)}</span>
@@ -110,7 +108,7 @@ export default function CustomerFeedback({
               <p>{f.message}</p>
               <footer>
                 — {f.name}
-                {f.service && <span> · {f.service}</span>}
+                {f.services?.length > 0 && <span> · {f.services.join(", ")}</span>}
               </footer>
             </blockquote>
           ))}
@@ -139,18 +137,31 @@ export default function CustomerFeedback({
         </div>
 
         <div className="feedback-form-row">
-          <input name="name" value={form.name} onChange={onChange} placeholder="Your name *" maxLength={80} required />
-          <input name="phone" value={form.phone} onChange={onChange} placeholder="Phone (optional, kept private)" maxLength={20} inputMode="tel" />
+          <input name="name" value={form.name} onChange={onChange} placeholder="Your name *" maxLength={80} required autoComplete="name" />
+          <input name="email" type="email" value={form.email} onChange={onChange} placeholder="Email (kept private) *" maxLength={254} required autoComplete="email" />
         </div>
 
-        <select name="service" value={form.service} onChange={onChange} aria-label="Service">
-          <option value="">Which service did you have? (optional)</option>
-          {SERVICES.map((s) => (
-            <option key={s} value={s}>{s}</option>
-          ))}
-        </select>
+        <fieldset className="feedback-services">
+          <legend>Services you had * <span>(choose one or more)</span></legend>
+          <div className="feedback-service-chips">
+            {FEEDBACK_SERVICES.map((s) => {
+              const on = services.includes(s);
+              return (
+                <button type="button" key={s} className={on ? "chip active" : "chip"} aria-pressed={on} onClick={() => toggleService(s)}>
+                  {s}
+                </button>
+              );
+            })}
+          </div>
+        </fieldset>
 
-        <textarea name="message" value={form.message} onChange={onChange} placeholder="Tell us about your visit *" rows={4} maxLength={1000} required />
+        <div className="feedback-message">
+          <textarea name="message" value={form.message} onChange={onChange} placeholder="Tell us about your visit *" rows={4} required />
+          <p className={`feedback-word-count ${words.total > MAX_WORDS ? "over" : ""}`}>
+            {words.total}/{MAX_WORDS} words
+            {words.meaningful < MIN_MEANINGFUL_WORDS && ` · at least ${MIN_MEANINGFUL_WORDS} needed`}
+          </p>
+        </div>
 
         {/* Honeypot for bots; hidden from real visitors */}
         <input name="website" value={form.website} onChange={onChange} className="feedback-hp" tabIndex={-1} autoComplete="off" aria-hidden="true" />

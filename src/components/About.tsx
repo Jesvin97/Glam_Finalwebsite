@@ -32,7 +32,7 @@ export default function About() {
           </h2>
 
           <p className="about-description">
-            Glam&apos;more is a unisex salon on the first floor of the Professional Building in Thukalassery, Thiruvalla. Men and women come to us for regular haircuts, beard trims, and threading, and for the bigger days: bridal makeup, saree draping, and pre-wedding facials. We also offer hair colouring, keratin smoothening, massage, and nail extensions, and we&apos;re happy to talk you through what suits your hair or skin before we start.
+            Glam&apos;more is a premium unisex salon in Thiruvalla offering haircuts, hair colouring, keratin treatments, bridal makeup, facials, massage, and nail art for men and women. Visit us at Thukalassery for expert care in a relaxed, welcoming space.
           </p>
 
           <Link href="/#contact" className="btn-luxury">

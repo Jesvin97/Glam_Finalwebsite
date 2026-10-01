@@ -22,7 +22,6 @@ export default function Hero() {
 
       <ScrollReveal direction="up" className="hero-content-wrapper">
         <div className="hero-text-content">
-          <p className="hero-subtitle">Thukalassery, Thiruvalla</p>
           <h1>
             Unisex Salon <br />
             <span className="hero-gold-text">& Bridal Makeup</span>

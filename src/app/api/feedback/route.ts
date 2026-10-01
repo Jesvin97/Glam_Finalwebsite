@@ -1,15 +1,5 @@
-import { createClient } from "next-sanity";
-import { projectId, dataset, apiVersion } from "@/sanity/client";
-
-// Server-only client with write access. The token must never be exposed to the browser
-// (no NEXT_PUBLIC_ prefix). Create it in sanity.io/manage → API → Tokens with "Editor" rights.
-const writeClient = createClient({
-  projectId,
-  dataset,
-  apiVersion,
-  useCdn: false,
-  token: process.env.SANITY_API_WRITE_TOKEN,
-});
+import { getSupabase } from "@/lib/supabase";
+import { validateFeedback } from "@/lib/feedback";
 
 // Basic per-IP rate limit (per server instance): 3 submissions per 10 minutes.
 const WINDOW_MS = 10 * 60 * 1000;
@@ -29,8 +19,9 @@ function clean(value: unknown, max: number) {
 }
 
 export async function POST(request: Request) {
-  if (!process.env.SANITY_API_WRITE_TOKEN) {
-    console.error("SANITY_API_WRITE_TOKEN is not set; cannot save feedback.");
+  const supabase = getSupabase();
+  if (!supabase) {
+    console.error("Supabase env vars are not set; cannot save feedback.");
     return Response.json({ error: "Feedback is temporarily unavailable." }, { status: 503 });
   }
 
@@ -51,33 +42,27 @@ export async function POST(request: Request) {
     return Response.json({ error: "Too many submissions. Please try again later." }, { status: 429 });
   }
 
-  const name = clean(body.name, 80);
-  const phone = clean(body.phone, 20);
-  const service = clean(body.service, 80);
-  const message = clean(body.message, 1000);
-  const rating = Number(body.rating);
+  const input = {
+    name: clean(body.name, 80),
+    email: clean(body.email, 254).toLowerCase(),
+    services: Array.isArray(body.services) ? body.services.map((s) => clean(s, 80)).filter(Boolean).slice(0, 10) : [],
+    rating: Number(body.rating),
+    message: clean(body.message, 2000),
+  };
 
-  if (!name) return Response.json({ error: "Please enter your name." }, { status: 400 });
-  if (!Number.isInteger(rating) || rating < 1 || rating > 5)
-    return Response.json({ error: "Please choose a rating." }, { status: 400 });
-  if (message.length < 10)
-    return Response.json({ error: "Please write at least a few words of feedback." }, { status: 400 });
-  if (phone && !/^[0-9+\s\-()]{7,20}$/.test(phone))
-    return Response.json({ error: "Enter a valid phone number." }, { status: 400 });
+  const error = validateFeedback(input);
+  if (error) return Response.json({ error }, { status: 400 });
 
-  try {
-    await writeClient.create({
-      _type: "customerFeedback",
-      approved: false,
-      name,
-      phone: phone || undefined,
-      service: service || undefined,
-      rating,
-      message,
-      submittedAt: new Date().toISOString(),
-    });
-  } catch (err) {
-    console.error("Failed to save feedback to Sanity:", err);
+  const { error: dbError } = await supabase.from("customer_feedback").insert({
+    name: input.name,
+    email: input.email,
+    services: input.services,
+    rating: input.rating,
+    message: input.message,
+  });
+
+  if (dbError) {
+    console.error("Failed to save feedback to Supabase:", dbError);
     return Response.json({ error: "Could not save your feedback. Please try again." }, { status: 500 });
   }
 

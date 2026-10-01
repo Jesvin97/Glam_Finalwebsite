@@ -101,6 +101,10 @@ export default function Navbar() {
           </li>
 
           <li>
+            <Link href="/faq">FAQs</Link>
+          </li>
+
+          <li>
             <Link href="/#contact">Contact Us</Link>
           </li>
 
@@ -114,6 +118,7 @@ export default function Navbar() {
         <Link href="/#about" onClick={closeMenu}>About Us</Link>
         <Link href="/services" onClick={closeMenu}>Services</Link>
         <Link href="/blogs" onClick={closeMenu}>Blogs</Link>
+        <Link href="/faq" onClick={closeMenu}>FAQs</Link>
         <Link href="/#contact" onClick={closeMenu}>Contact Us</Link>
         
       </div>

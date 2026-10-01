@@ -13,70 +13,101 @@ export interface FAQItem {
   answer: string;
 }
 
-export default function FAQ({ faqs = [] }: { faqs?: FAQItem[] }) {
-  const fallbackFaqs = [
-    {
-      question: "Where is Glam'more Unisex Salon in Thiruvalla?",
-      answer:
-        "We're on the first floor of the Professional Building on SH 1 (Kollam–Theni Highway) at Thukalassery, Thiruvalla, Kerala 689115. It's easy to reach from Thiruvalla town, Changanassery, Chengannur, and Pathanamthitta, and you can find us on Google Maps as Glam'more Unisex Salon.",
-    },
-    {
-      question: "Do you offer bridal makeup in Thiruvalla?",
-      answer:
-        "Yes. We do Kerala bridal makeup in HD and airbrush, along with bridal hairstyling, saree draping, and pre-bridal facials. We can also get the bride's family and bridal party ready on the day. Message us on WhatsApp to book a consultation or trial.",
-    },
-    {
-      question: "What hair services do you offer for men and women?",
-      answer:
-        "Haircuts for men and women, hair colouring (global colour, highlights, and grey coverage), keratin treatments, hair smoothening, occasion hairstyling, and human hair extensions.",
-    },
-    {
-      question: "Do you offer facials, de-tan, and massage?",
-      answer:
-        "Yes. We offer facials for different skin types, de-tan and clean-up treatments, and body and head-and-shoulder massages in a private treatment room.",
-    },
-    {
-      question: "Do you do nail extensions, manicures, and pedicures?",
-      answer:
-        "Yes. We do acrylic nail extensions, nail art, gel manicures, and spa pedicures.",
-    },
-    {
-      question: "What are Glam'more's opening hours?",
-      answer:
-        "We're open every day, 10:00 AM to 8:30 PM. Walk-ins are welcome when a chair is free, but booking ahead on WhatsApp (+91 96459 15329) means you won't have to wait.",
-    },
-  ];
+// Shown when Sanity has no FAQs. Written around what people search for locally.
+export const fallbackFaqs: FAQItem[] = [
+  {
+    question: "Where is Glam'more Unisex Salon in Thiruvalla?",
+    answer:
+      "Glam'more is on the first floor of the Professional Building on SH 1 (Kollam–Theni Highway) at Thukalassery, Thiruvalla, Kerala 689115. It's easy to reach from Thiruvalla town, Changanassery, Chengannur, and Pathanamthitta. Search \"Glam'more Unisex Salon\" on Google Maps for directions.",
+  },
+  {
+    question: "What are Glam'more's opening hours?",
+    answer:
+      "We're open every day, including Sundays, from 10:00 AM to 8:30 PM.",
+  },
+  {
+    question: "Do I need an appointment, or can I walk in?",
+    answer:
+      "Walk-ins are welcome when a chair is free. To avoid waiting, especially on weekends and before festivals, book ahead on WhatsApp at +91 96459 15329 or through the Services page.",
+  },
+  {
+    question: "Is Glam'more a salon for both men and women?",
+    answer:
+      "Yes. Glam'more is a unisex salon. We offer haircuts, beard styling, and grooming for men, and hair, makeup, skin, and nail services for women.",
+  },
+  {
+    question: "Do you offer bridal makeup in Thiruvalla?",
+    answer:
+      "Yes. We do Kerala bridal makeup in HD and airbrush, with bridal hairstyling and saree draping. We can also get the bride's family and bridal party ready on the wedding day.",
+  },
+  {
+    question: "How early should I book bridal makeup?",
+    answer:
+      "Book as early as you can once your wedding date is fixed, ideally one to three months ahead, especially during the wedding season. We recommend a trial session a few weeks before the wedding.",
+  },
+  {
+    question: "Do you offer pre-bridal packages?",
+    answer:
+      "Yes. Pre-bridal care can include facials, de-tan, keratin or smoothening, waxing, threading, manicure, and pedicure, planned over the weeks before your wedding. Message us on WhatsApp and we'll suggest a plan.",
+  },
+  {
+    question: "What hair services do you offer?",
+    answer:
+      "Haircuts for men and women, hair colouring (global colour, highlights, and grey coverage), keratin treatments, hair smoothening, occasion hairstyling, and human hair extensions.",
+  },
+  {
+    question: "What is the difference between keratin and hair smoothening?",
+    answer:
+      "Keratin treatment reduces frizz and adds shine while keeping some natural movement. Hair smoothening gives a straighter, sleeker finish. Our stylists will check your hair type and recommend the one that suits you.",
+  },
+  {
+    question: "Do you offer facials and de-tan treatments?",
+    answer:
+      "Yes. We offer facials for different skin types, plus de-tan and clean-up treatments to lift sun tan and refresh dull skin.",
+  },
+  {
+    question: "Do you offer massage in Thiruvalla?",
+    answer:
+      "Yes. We offer full-body relaxation massage and head-and-shoulder massage in a private treatment room.",
+  },
+  {
+    question: "Do you do acrylic nails and nail art?",
+    answer:
+      "Yes. We do acrylic nail extensions, custom nail art, gel manicures, and spa pedicures.",
+  },
+  {
+    question: "Do you offer eyebrow threading, eyelash extensions, and waxing?",
+    answer:
+      "Yes. We offer eyebrow threading, classic and volume eyelash extensions, and full-body and facial waxing using wax suited to sensitive skin.",
+  },
+  {
+    question: "Do you offer beard styling and shaving for men?",
+    answer:
+      "Yes. We offer hot-towel shaves, beard shaping and edging, and men's haircuts, and we're happy to suggest a style that suits your face.",
+  },
+  {
+    question: "How can I book an appointment at Glam'more?",
+    answer:
+      "Choose your services on our Services page and send the booking to us on WhatsApp, or message us directly at +91 96459 15329.",
+  },
+];
 
-  const fallbackFaqsMl = [
-    {
-      question: "തിരുവല്ലയിൽ ഗ്ലാംമോറിനെ മികച്ച സലൂൺ ആക്കുന്നത് എന്താണ്?",
-      answer: "തിരുവല്ലയിലെ ഏറ്റവും പ്രശസ്തമായ യൂണിസെക്സ് സലൂണാണ് ഗ്ലാംമോർ. മികച്ച ഹെയർ സ്റ്റൈലിംഗ്, സ്കിൻ കെയർ തെറാപ്പികൾ, സൗന്ദര്യവർദ്ധക സേവനങ്ങൾ എന്നിവ ഞങ്ങൾ നൽകുന്നു. പ്രൊഫഷണൽ ഹെയർ സ്റ്റൈലിസ്റ്റുകളും മികച്ച ഉൽപ്പന്നങ്ങളുമാണ് ഞങ്ങളുടെ പ്രത്യേകത.",
-    },
-    {
-      question: "തിരുവല്ലയിൽ വിവാഹ മേക്കപ്പ് സേവനങ്ങൾ നൽകുന്നുണ്ടോ?",
-      answer: "അതെ, ഞങ്ങൾ ഉയർന്ന നിലവാരത്തിലുള്ള ബ്രൈഡൽ മേക്കപ്പ് സേവനങ്ങൾ നൽകുന്നു. എച്ച്ഡി (HD), എയർബ്രഷ് മേക്കപ്പ്, വിവാഹത്തിന് മുന്നോടിയായുള്ള ഫേഷ്യലുകൾ എന്നിവ ഞങ്ങളുടെ പ്രത്യേകതകളാണ്.",
-    },
-    {
-      question: "എന്തൊക്കെ ഹെയർ സ്റ്റൈലിംഗ് സേവനങ്ങളാണ് ഇവിടെ ലഭ്യമായിട്ടുള്ളത്?",
-      answer: "കൃത്യതയാർന്ന ഹെയർകട്ടുകൾ, ഹെയർ സ്റ്റൈലുകൾ, ഹെയർ സ്മൂത്തനിംഗ്, കെരാറ്റിൻ ട്രീറ്റ്മെന്റുകൾ, ഹെയർ സ്പാകൾ എന്നിവ ഞങ്ങൾ നൽകുന്നു.",
-    },
-    {
-      question: "ഗ്ലാംമോർ സലൂണിന്റെ പ്രവർത്തന സമയം എപ്പോഴൊക്കെയാണ്?",
-      answer: "ഞങ്ങൾ തിങ്കൾ മുതൽ ഞായർ വരെ എല്ലാ ദിവസവും രാവിലെ 10:00 മുതൽ രാത്രി 8:30 വരെ പ്രവർത്തിക്കുന്നു. ബുക്കിംഗുകൾ മുൻകൂട്ടി ചെയ്യുവാൻ ഞങ്ങൾ നിർദ്ദേശിക്കുന്നു.",
-    },
-    {
-      question: "നിങ്ങൾ നെയിൽ ആർട്ടും പെഡിക്യൂർ സേവനങ്ങളും നൽകാറുണ്ടോ?",
-      answer: "അതെ, തിരുവല്ലയിലെ ഏറ്റവും മികച്ച നെയിൽ സ്റ്റുഡിയോയാണ് ഞങ്ങളുടേത്. അക്രിലിക് ജെൽ നെയിൽ എക്സ്റ്റൻഷൻ, പെഡിക്യൂർ, മാനിക്യൂർ സേവനങ്ങൾ എന്നിവ ഞങ്ങൾ നൽകുന്നു.",
-    },
-  ];
-
+export default function FAQ({
+  faqs = [],
+  asPage = false,
+}: {
+  faqs?: FAQItem[];
+  /** On the standalone /faq page the heading is the page's h1. */
+  asPage?: boolean;
+}) {
   const displayFaqs = faqs.length > 0 ? faqs : fallbackFaqs;
+  const Heading = asPage ? "h1" : "h2";
 
   return (
     <section className="faq-section" id="faq">
       <ScrollReveal direction="up">
         <div className="section-title faq-title-container">
-          <h2 className="gold-section-heading">Frequently Asked Questions</h2>
+          <Heading className="gold-section-heading">Frequently Asked Questions</Heading>
         </div>
       </ScrollReveal>
 

@@ -7,21 +7,13 @@ import {
   FaGoogle,
 } from "react-icons/fa";
 
-const footerLinks = [
-  { href: "/services", label: "Services" },
-  { href: "/#about", label: "About Us" },
-  { href: "/blogs", label: "Blogs" },
-  { href: "/#faq", label: "FAQs" },
-  { href: "/#contact", label: "Contact" },
-];
-
 export default function Footer() {
   return (
     <footer className="footer">
       {/* TOP ROW: logo | copyright | social */}
       <div className="footer-top">
         <Link href="/" className="footer-logo-link" aria-label="Glam'more home">
-          <Image src="/images/logo.png" alt="Glam'more logo" width={40} height={40} className="footer-logo" />
+          <Image src="/images/logo.png" alt="Glam'more logo" width={56} height={56} className="footer-logo" />
         </Link>
         <span className="footer-divider" aria-hidden="true">|</span>
         <p className="footer-copyright" suppressHydrationWarning>
@@ -43,12 +35,6 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* LINKS ROW */}
-      <nav className="footer-links" aria-label="Footer">
-        {footerLinks.map((l) => (
-          <Link key={l.href} href={l.href}>{l.label}</Link>
-        ))}
-      </nav>
 
       {/* BOTTOM BAR: name · address · phone · credit */}
       <div className="footer-bottom">

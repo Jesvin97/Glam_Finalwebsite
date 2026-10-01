@@ -26,7 +26,7 @@ export default function WhyChooseUs() {
   return (
     <section className="why-choose-us-section">
       <div className="why-header">
-        <h2>Why Glam&apos;more?</h2>
+        <h2>Why Choose Glam&apos;more</h2>
         <div className="why-header-underline"></div>
       </div>
 
