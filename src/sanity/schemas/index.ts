@@ -2,6 +2,5 @@ import testimonial from "./testimonial";
 import service from "./service";
 import faq from "./faq";
 import blog from "./blog";
-import feedbackPhoto from "./feedbackPhoto";
 
-export const schemaTypes = [testimonial, service, faq, blog, feedbackPhoto];
+export const schemaTypes = [testimonial, service, faq, blog];

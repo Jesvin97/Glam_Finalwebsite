@@ -8,7 +8,7 @@ import Testimonials from "@/components/Testimonials";
 import Photos from "@/components/Photos";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import type { Testimonial } from "@/components/Testimonials";
-import CustomerFeedback, { type FeedbackPhoto, type ApprovedFeedback } from "@/components/CustomerFeedback";
+import CustomerFeedback, { type ApprovedFeedback } from "@/components/CustomerFeedback";
 import { fetchList } from "@/sanity/fetch";
 import { getSupabase } from "@/lib/supabase";
 
@@ -30,9 +30,8 @@ async function fetchApprovedFeedback(): Promise<ApprovedFeedback[]> {
 export const revalidate = 3600;
 
 export default async function Home() {
-  const [testimonials, feedbackPhotos, feedback] = await Promise.all([
+  const [testimonials, feedback] = await Promise.all([
     fetchList<Testimonial>(`*[_type == "testimonial"]`),
-    fetchList<FeedbackPhoto>(`*[_type == "feedbackPhoto" && defined(image)] | order(order asc, _createdAt desc){_id, image, caption}`),
     fetchApprovedFeedback(),
   ]);
 
@@ -44,7 +43,7 @@ export default async function Home() {
       <WhyChooseUs />
       <Services />
       <Testimonials testimonials={testimonials} />
-      <CustomerFeedback photos={feedbackPhotos} feedback={feedback} />
+      <CustomerFeedback feedback={feedback} />
       <Photos />
       <Contact />
       <Footer />

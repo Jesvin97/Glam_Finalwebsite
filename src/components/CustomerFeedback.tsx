@@ -1,17 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
-import type { SanityImageSource } from "@sanity/image-url";
-import { urlFor } from "@/sanity/image";
 import ScrollReveal from "./ScrollReveal";
 import { FEEDBACK_SERVICES, MAX_WORDS, MIN_MEANINGFUL_WORDS, countWords, validateFeedback } from "@/lib/feedback";
-
-export interface FeedbackPhoto {
-  _id: string;
-  image: SanityImageSource;
-  caption?: string;
-}
 
 export interface ApprovedFeedback {
   id: number;
@@ -26,10 +17,8 @@ type Status = { type: "idle" | "sending" | "success" | "error"; message?: string
 const EMPTY_FORM = { name: "", email: "", message: "", website: "" };
 
 export default function CustomerFeedback({
-  photos = [],
   feedback = [],
 }: {
-  photos?: FeedbackPhoto[];
   feedback?: ApprovedFeedback[];
 }) {
   const [form, setForm] = useState(EMPTY_FORM);
@@ -79,23 +68,6 @@ export default function CustomerFeedback({
           <h2 className="gold-section-heading">CUSTOMER FEEDBACK</h2>
         </div>
       </ScrollReveal>
-
-      {photos.length > 0 && (
-        <div className="feedback-photo-grid">
-          {photos.map((p) => (
-            <figure className="feedback-photo" key={p._id}>
-              <Image
-                src={urlFor(p.image).width(800).auto("format").url()}
-                alt={p.caption || "Glam'more customer"}
-                width={600}
-                height={600}
-                sizes="(max-width: 768px) 50vw, 25vw"
-              />
-              {p.caption && <figcaption>{p.caption}</figcaption>}
-            </figure>
-          ))}
-        </div>
-      )}
 
       {feedback.length > 0 && (
         <div className="feedback-list">
