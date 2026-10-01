@@ -366,7 +366,7 @@ export default function ServicesClient() {
 
           <div className="hero-banner-image-container">
             <Image
-              src="/images/salon-seating-wide.jpg"
+              src="/images/salon-interior.jpeg"
               alt=""
               aria-hidden="true"
               className="img-backdrop"
@@ -374,8 +374,8 @@ export default function ServicesClient() {
               sizes="64px"
             />
             <Image
-              src="/images/salon-seating-wide.jpg"
-              alt="Styling stations with mirrors at Glam'more Unisex Salon, Thukalassery, Thiruvalla"
+              src="/images/salon-interior.jpeg"
+              alt="Bright interior of Glam'more Unisex Salon in Thukalassery, Thiruvalla, with a teal accent wall and wooden panelling"
               className="hero-banner-image"
               fill
               preload
