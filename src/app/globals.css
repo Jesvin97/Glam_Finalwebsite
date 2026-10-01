@@ -1,6 +1,6 @@
 :root {
-  --site-bg: #0a0a0a; /* one background colour for every page and section */
-  --color-background-primary: #0a0a0a;
+  --site-bg: #080808; /* one flat background colour for every page and section */
+  --color-background-primary: var(--site-bg);
   --color-background-secondary: #121212;
   --color-border-tertiary: rgba(223, 186, 73, 0.25);
   --color-text-secondary: #b5b5b5;
@@ -28,18 +28,6 @@ body {
   overflow-x: hidden;
   position: relative;
 }
-
-/* Film Grain Overlay */
-body::before {
-  content: "";
-  position: fixed;
-  top: 0; left: 0; width: 100vw; height: 100vh;
-  pointer-events: none;
-  z-index: 9999;
-  background-image: url('data:image/svg+xml;utf8,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noiseFilter"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23noiseFilter)"/%3E%3C/svg%3E');
-  opacity: 0.035; /* Very subtle */
-}
-
 /* FONT SYSTEM */
 h1, h2, h3,
 .section-title h2,
@@ -93,7 +81,7 @@ h1, h2, h3,
 }
 
 .navbar-transparent {
-  background: #0a0a0a !important;
+  background: var(--site-bg) !important;
   backdrop-filter: none !important;
   -webkit-backdrop-filter: none !important;
   border-bottom: none;
@@ -101,7 +89,7 @@ h1, h2, h3,
 }
 
 .navbar-scrolled {
-  background: rgba(10, 10, 10, 0.95) !important;
+  background: rgba(8, 8, 8, 0.95) !important;
   backdrop-filter: blur(20px) !important;
   -webkit-backdrop-filter: blur(20px) !important;
   border-bottom: none;
@@ -212,9 +200,9 @@ h1, h2, h3,
   height: calc(100% - 80px);
   background: linear-gradient(
     to bottom,
-    rgba(10, 10, 10, 0.4) 0%,
-    rgba(10, 10, 10, 0.5) 60%,
-    rgba(10, 10, 10, 0.8) 100%
+    rgba(8, 8, 8, 0.4) 0%,
+    rgba(8, 8, 8, 0.5) 60%,
+    rgba(8, 8, 8, 0.8) 100%
   );
   z-index: 1;
 }
@@ -414,8 +402,8 @@ h1, h2, h3,
   height: 100%;
   background: linear-gradient(
     to bottom,
-    rgba(10, 10, 10, 0) 0%,
-    rgba(10, 10, 10, 0.9) 100%
+    rgba(8, 8, 8, 0) 0%,
+    rgba(8, 8, 8, 0.9) 100%
   );
   display: flex;
   flex-direction: column;
@@ -462,8 +450,8 @@ h1, h2, h3,
 .service-card-editorial:hover .service-card-overlay {
   background: linear-gradient(
     to bottom,
-    rgba(10, 10, 10, 0.2) 0%,
-    rgba(10, 10, 10, 0.95) 100%
+    rgba(8, 8, 8, 0.2) 0%,
+    rgba(8, 8, 8, 0.95) 100%
   );
 }
 
@@ -1567,7 +1555,7 @@ h1, h2, h3,
 
 .services-page {
   padding: 140px 80px 80px;
-  background: black;
+  background: var(--site-bg);
   min-height: 100vh;
 }
 
