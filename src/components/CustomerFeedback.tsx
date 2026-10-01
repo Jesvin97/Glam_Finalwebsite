@@ -52,7 +52,7 @@ export default function CustomerFeedback({
       });
       const data = await res.json().catch(() => ({}));
       if (!res.ok) throw new Error(data.error || "Something went wrong. Please try again.");
-      setStatus({ type: "success", message: "Thank you! Your feedback has been sent." });
+      setStatus({ type: "success", message: "Thank you! Your feedback has been received." });
       setForm(EMPTY_FORM);
       setServices([]);
       setRating(0);

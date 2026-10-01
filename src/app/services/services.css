@@ -3,7 +3,7 @@
 .services-page-container {
   padding-top: 110px;
   min-height: 100vh;
-  background-color: #080808;
+  background-color: var(--site-bg);
   color: #fff;
   font-family: var(--font-inter-family), sans-serif;
   padding-bottom: 120px;
