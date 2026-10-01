@@ -361,16 +361,8 @@ export default function ServicesClient() {
             <div className="banner-image-wrapper">
               <Image
                 src="/images/salon-interior.jpeg"
-                alt=""
-                aria-hidden="true"
-                className="img-backdrop"
-                fill
-                sizes="64px"
-              />
-              <Image
-                src="/images/salon-interior.jpeg"
                 alt="Bright interior of Glam'more Unisex Salon in Thukalassery, Thiruvalla, with a teal accent wall and wooden panelling"
-                className="banner-image"
+                className="banner-image hero-photo-fill"
                 fill
                 preload
                 sizes="(max-width: 768px) 100vw, 480px"

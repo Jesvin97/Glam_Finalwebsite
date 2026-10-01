@@ -730,3 +730,9 @@
 .services-hero-section .banner-text-content {
   text-align: left;
 }
+
+/* Top banner photo fills its whole area (cropped, not stretched) instead of sitting in the middle */
+.services-hero-section .hero-photo-fill {
+  object-fit: cover;
+  object-position: center 55%;
+}
