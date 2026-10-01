@@ -356,8 +356,9 @@ export default function ServicesClient() {
       <main className="services-page-container">
         {/* ── 1. HERO SECTION ── */}
         <section className="services-hero-section">
-          <div className="hero-banner-image-container">
-            <div className="hero-photo">
+          {/* Same layout as the category banners: photo on the left, text on the right */}
+          <div className="category-feature-banner banner-image-left">
+            <div className="banner-image-wrapper">
               <Image
                 src="/images/salon-interior.jpeg"
                 alt=""
@@ -369,20 +370,18 @@ export default function ServicesClient() {
               <Image
                 src="/images/salon-interior.jpeg"
                 alt="Bright interior of Glam'more Unisex Salon in Thukalassery, Thiruvalla, with a teal accent wall and wooden panelling"
-                className="hero-banner-image"
+                className="banner-image"
                 fill
                 preload
-                sizes="(max-width: 1280px) 100vw, 1280px"
+                sizes="(max-width: 768px) 100vw, 480px"
               />
-              <div className="hero-banner-overlay" />
+              <div className="banner-image-gradient" />
             </div>
 
-            <div className="hero-content-wrapper">
-              <div className="hero-title-block">
-                <span className="hero-badge-tag">GLAM&apos;MORE EXPERIENCES</span>
-                <h1 className="hero-main-title">Salon Services in Thiruvalla</h1>
-              </div>
-              <p className="hero-intro-text">
+            <div className="banner-text-content">
+              <span className="banner-category-tag">GLAM&apos;MORE EXPERIENCES</span>
+              <h1 className="banner-category-title">Salon Services in Thiruvalla</h1>
+              <p className="banner-intro-paragraph">
                 Hair, bridal makeup, facials, massage, nails, and grooming for men and women at our salon in Thukalassery, Thiruvalla. Choose your services and send the booking straight to us on WhatsApp.
               </p>
             </div>
