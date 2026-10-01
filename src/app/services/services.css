@@ -731,8 +731,23 @@
   text-align: left;
 }
 
-/* Top banner photo fills its whole area (cropped, not stretched) instead of sitting in the middle */
+/* Top banner: the photo column has the photo's own shape (9:16), so the whole photo shows
+   with no crop, no blur and no distortion. */
+.services-hero-section .banner-image-wrapper {
+  flex: 0 0 auto;
+  height: 420px;
+  aspect-ratio: 9 / 16;
+}
+
 .services-hero-section .hero-photo-fill {
-  object-fit: cover;
-  object-position: center 55%;
+  object-fit: contain;
+}
+
+@media (max-width: 768px) {
+  .services-hero-section .banner-image-wrapper {
+    width: 100%;
+    height: 360px;
+    aspect-ratio: auto;
+    background: #0f0f11;
+  }
 }
