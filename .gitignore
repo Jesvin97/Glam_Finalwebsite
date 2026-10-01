@@ -40,3 +40,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Full-size originals of the gallery photos (31 MB); web-sized gallery-1x.webp copies are used on the site
+public/images/1[0-2].jpeg

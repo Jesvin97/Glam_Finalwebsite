@@ -210,7 +210,6 @@ export default function ServicesClient() {
       title: "Head & Shoulder Massage",
       category: "spa",
       description: "A shorter massage focused on the scalp, neck, and shoulders.",
-      image: "/images/services/head-massage.jpg"
     },
     // ── Nails ──
     {
@@ -366,8 +365,16 @@ export default function ServicesClient() {
 
           <div className="hero-banner-image-container">
             <Image
-              src="/images/salon-interior.jpeg"
-              alt="Glammore Salon Experience"
+              src="/images/salon-seating-wide.jpg"
+              alt=""
+              aria-hidden="true"
+              className="img-backdrop"
+              fill
+              sizes="64px"
+            />
+            <Image
+              src="/images/salon-seating-wide.jpg"
+              alt="Styling stations with mirrors at Glam'more Unisex Salon, Thukalassery, Thiruvalla"
               className="hero-banner-image"
               fill
               preload
@@ -413,6 +420,14 @@ export default function ServicesClient() {
                 >
                   {/* Image Side */}
                   <div className="banner-image-wrapper">
+                    <Image
+                      src={category.bannerImage}
+                      alt=""
+                      aria-hidden="true"
+                      className="img-backdrop"
+                      fill
+                      sizes="64px"
+                    />
                     <Image
                       src={category.bannerImage}
                       alt={category.name}

@@ -784,3 +784,17 @@
     padding: 50px 20px 30px;
   }
 }
+
+/* Blurred copy of the photo behind it, so a full (uncropped) photo never leaves empty bars */
+.img-backdrop {
+  object-fit: cover;
+  filter: blur(22px) brightness(0.55);
+  transform: scale(1.2);
+  pointer-events: none;
+}
+
+.hero-banner-image,
+.banner-image {
+  position: relative;
+  z-index: 1;
+}
