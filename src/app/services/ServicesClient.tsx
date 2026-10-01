@@ -210,6 +210,7 @@ export default function ServicesClient() {
       title: "Head & Shoulder Massage",
       category: "spa",
       description: "A shorter massage focused on the scalp, neck, and shoulders.",
+      image: "/images/services/head-massage-scalp.jpg"
     },
     // ── Nails ──
     {
