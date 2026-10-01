@@ -356,32 +356,36 @@ export default function ServicesClient() {
       <main className="services-page-container">
         {/* ── 1. HERO SECTION ── */}
         <section className="services-hero-section">
-          <div className="hero-content-wrapper">
-            <span className="hero-badge-tag">GLAM&apos;MORE EXPERIENCES</span>
-            <h1 className="hero-main-title">Salon Services in Thiruvalla</h1>
-            <p className="hero-intro-text">
-              Hair, bridal makeup, facials, massage, nails, and grooming for men and women at our salon in Thukalassery, Thiruvalla. Choose your services and send the booking straight to us on WhatsApp.
-            </p>
-          </div>
-
           <div className="hero-banner-image-container">
-            <Image
-              src="/images/salon-interior.jpeg"
-              alt=""
-              aria-hidden="true"
-              className="img-backdrop"
-              fill
-              sizes="64px"
-            />
-            <Image
-              src="/images/salon-interior.jpeg"
-              alt="Bright interior of Glam'more Unisex Salon in Thukalassery, Thiruvalla, with a teal accent wall and wooden panelling"
-              className="hero-banner-image"
-              fill
-              preload
-              sizes="(max-width: 1280px) 100vw, 1280px"
-            />
-            <div className="hero-banner-overlay" />
+            <div className="hero-photo">
+              <Image
+                src="/images/salon-interior.jpeg"
+                alt=""
+                aria-hidden="true"
+                className="img-backdrop"
+                fill
+                sizes="64px"
+              />
+              <Image
+                src="/images/salon-interior.jpeg"
+                alt="Bright interior of Glam'more Unisex Salon in Thukalassery, Thiruvalla, with a teal accent wall and wooden panelling"
+                className="hero-banner-image"
+                fill
+                preload
+                sizes="(max-width: 1280px) 100vw, 1280px"
+              />
+              <div className="hero-banner-overlay" />
+            </div>
+
+            <div className="hero-content-wrapper">
+              <div className="hero-title-block">
+                <span className="hero-badge-tag">GLAM&apos;MORE EXPERIENCES</span>
+                <h1 className="hero-main-title">Salon Services in Thiruvalla</h1>
+              </div>
+              <p className="hero-intro-text">
+                Hair, bridal makeup, facials, massage, nails, and grooming for men and women at our salon in Thukalassery, Thiruvalla. Choose your services and send the booking straight to us on WhatsApp.
+              </p>
+            </div>
           </div>
         </section>
 
