@@ -277,7 +277,7 @@ export default function Testimonials({ testimonials = [] }: { testimonials?: Tes
       </ScrollReveal>
 
       <ScrollReveal direction="none" delay={200}>
-        <TestimonialMarquee items={displayItems} variant="dual" speed={30} />
+        <TestimonialMarquee items={displayItems} variant="dual" speed={45} />
       </ScrollReveal>
 
       {TESTIMONIAL_PLAYLIST_ID && <TestimonialVideos playlistId={TESTIMONIAL_PLAYLIST_ID} />}
