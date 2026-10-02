@@ -16,6 +16,7 @@ interface YTPlayer {
   playVideoAt(index: number): void;
   getPlaylist(): string[] | null;
   getPlaylistIndex(): number;
+  getPlayerState(): number;
   destroy(): void;
 }
 
@@ -81,11 +82,15 @@ export default function TestimonialVideos({ playlistId }: { playlistId: string }
   const playerRef = useRef<YTPlayer | null>(null);
   const userPausedRef = useRef(false);
   const inViewRef = useRef(false);
+  const mutedRef = useRef(true);
+  const askingForSoundRef = useRef(false);
 
   const [started, setStarted] = useState(false); // load the player only when the section nears the screen
   const [ready, setReady] = useState(false);
+  const [hasPlayed, setHasPlayed] = useState(false); // the video has actually started
   const [failed, setFailed] = useState(false);
   const [muted, setMuted] = useState(true);
+  const [inView, setInView] = useState(false);
 
   // Load lazily and pause when scrolled out of view (saves data, avoids sound from off-screen).
   useEffect(() => {
@@ -94,6 +99,7 @@ export default function TestimonialVideos({ playlistId }: { playlistId: string }
     const observer = new IntersectionObserver(
       ([entry]) => {
         inViewRef.current = entry.isIntersecting;
+        setInView(entry.isIntersecting);
         if (entry.isIntersecting) {
           setStarted(true);
           if (!userPausedRef.current) playerRef.current?.playVideo();
@@ -140,8 +146,12 @@ export default function TestimonialVideos({ playlistId }: { playlistId: string }
             onStateChange: (e) => {
               const { ENDED, PLAYING, PAUSED } = YT.PlayerState;
               // A pause while the section is on screen was the visitor tapping the video; remember it.
-              if (e.data === PLAYING) userPausedRef.current = false;
-              if (e.data === PAUSED && inViewRef.current) userPausedRef.current = true;
+              if (e.data === PLAYING) {
+                userPausedRef.current = false;
+                setHasPlayed(true);
+              }
+              // Ignore the pause a browser causes when it refuses sound (we handle that ourselves).
+              if (e.data === PAUSED && inViewRef.current && !askingForSoundRef.current) userPausedRef.current = true;
               // Safety net for the loop: if the last video ends and the playlist didn't restart, start over.
               if (e.data === ENDED) {
                 const list = e.target.getPlaylist();
@@ -161,14 +171,48 @@ export default function TestimonialVideos({ playlistId }: { playlistId: string }
     };
   }, [started, playlistId]);
 
+  // Ask for sound. Browsers only allow it after the visitor has interacted with the page, so if the
+  // video doesn't keep playing we go back to muted playback and keep showing "Tap for sound".
   const turnSoundOn = useCallback(() => {
     const p = playerRef.current;
     if (!p) return;
+    askingForSoundRef.current = true;
     p.unMute();
     p.setVolume(100);
     p.playVideo();
+    mutedRef.current = false;
     setMuted(false);
+    window.setTimeout(() => {
+      askingForSoundRef.current = false;
+      const player = playerRef.current;
+      if (!player || !window.YT) return;
+      // Only a PAUSED video means the browser refused sound; buffering/playing is fine.
+      if (player.getPlayerState() === window.YT.PlayerState.PAUSED && inViewRef.current && !userPausedRef.current) {
+        player.mute();
+        player.playVideo();
+        mutedRef.current = true;
+        setMuted(true);
+      }
+    }, 1500);
   }, []);
+
+  // The visitor has already tapped/clicked something on the site: sound is allowed, so use it as the
+  // video comes into view.
+  useEffect(() => {
+    if (!ready || !hasPlayed || !inView || !mutedRef.current) return;
+    if (navigator.userActivation?.hasBeenActive) turnSoundOn();
+  }, [ready, hasPlayed, inView, turnSoundOn]);
+
+  // First tap / key press anywhere while the video is on screen counts as a real gesture: turn sound on.
+  useEffect(() => {
+    if (!ready) return;
+    const onGesture = () => {
+      if (inViewRef.current && mutedRef.current && !userPausedRef.current) turnSoundOn();
+    };
+    const events = ["pointerup", "keydown"] as const;
+    events.forEach((ev) => window.addEventListener(ev, onGesture, { once: true }));
+    return () => events.forEach((ev) => window.removeEventListener(ev, onGesture));
+  }, [ready, turnSoundOn]);
 
   const playlistUrl = `https://www.youtube.com/playlist?list=${playlistId}`;
 
