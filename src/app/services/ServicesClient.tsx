@@ -110,8 +110,8 @@ export default function ServicesClient() {
     {
       id: "mens",
       name: "Men's Grooming",
-      tagline: "Shaves & Beard Styling",
-      description: "Hot-towel shaves, beard shaping and edging, and styling advice for a look that suits your face.",
+      tagline: "Haircuts, Shaves & Beard Styling",
+      description: "Men's haircuts, hot-towel shaves, beard shaping and edging, and styling advice for a look that suits your face.",
       bannerImage: "/images/services/mens-grooming-banner.jpg",
     },
     {
@@ -248,6 +248,13 @@ export default function ServicesClient() {
       category: "brows",
       description: "Classic and volume lash extensions, applied lash by lash.",
       image: "/images/Eyelash Extensions.png"
+    },
+    {
+      id: "mens-haircut",
+      title: "Men's Haircut",
+      category: "mens",
+      description: "Men's haircuts in your choice of style, finished with a clean neckline and styling advice.",
+      image: "/images/services/mens-haircut.jpg"
     },
     {
       id: "shaving",

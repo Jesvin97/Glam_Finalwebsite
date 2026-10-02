@@ -159,6 +159,7 @@ export default function RootLayout({
                   { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Pedicure" } },
                   { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Eyebrow Threading" } },
                   { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Eyelash Extensions" } },
+                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Men's Haircut" } },
                   { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Shaving and Beard Styling" } },
                   { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Body Waxing" } },
                   { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Facial Waxing" } }
