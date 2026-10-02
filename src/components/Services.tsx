@@ -12,7 +12,7 @@ export default function Services() {
     },
     { 
       label: "Women's Hair & Styling", 
-      image: "/images/Hair_stylingjpeg.jpeg", 
+      image: "/images/services/womens-haircut.jpg", 
       desc: "Women's haircuts, colouring, keratin smoothening, and extensions."
     },
     { 
