@@ -20,7 +20,7 @@ const securityHeaders = [
       "connect-src 'self' https:",
       "media-src 'self' https:",
       "worker-src 'self' blob:",
-      "frame-src https://www.google.com https://www.google.com/maps https://maps.google.com",
+      "frame-src https://www.google.com https://www.google.com/maps https://maps.google.com https://www.youtube-nocookie.com https://www.youtube.com",
       "frame-ancestors 'self'",
     ].join("; "),
   },
@@ -66,4 +66,4 @@ const nextConfig = {
 };
 
 module.exports = nextConfig;
-
+

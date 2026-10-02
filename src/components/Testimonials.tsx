@@ -4,6 +4,8 @@ import * as React from "react"
 import { urlFor } from "@/sanity/image"
 import type { SanityImageSource } from "@sanity/image-url"
 import ScrollReveal from "./ScrollReveal"
+import TestimonialVideos from "./TestimonialVideos"
+import { TESTIMONIAL_PLAYLIST_ID } from "@/lib/video"
 
 // Lightweight classname helper to safely concat classes
 function cn(...inputs: unknown[]) {
@@ -277,6 +279,8 @@ export default function Testimonials({ testimonials = [] }: { testimonials?: Tes
       <ScrollReveal direction="none" delay={200}>
         <TestimonialMarquee items={displayItems} variant="dual" speed={30} />
       </ScrollReveal>
+
+      {TESTIMONIAL_PLAYLIST_ID && <TestimonialVideos playlistId={TESTIMONIAL_PLAYLIST_ID} />}
     </section>
   );
 }
