@@ -1355,11 +1355,6 @@ h1, h2, h3,
   backface-visibility: hidden;
 }
 
-/* PAUSE ON HOVER */
-.group:hover .marquee-row {
-  animation-play-state: paused !important;
-}
-
 /* TESTIMONIAL CARD V2 */
 .testimonial-card-v2 {
   position: relative;

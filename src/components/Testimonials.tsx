@@ -56,7 +56,7 @@ const MarqueeRow = React.memo(({
   direction = "left",
   speed = 40,
   className,
-  pauseOnHover = true
+  pauseOnHover = false
 }: {
   children: React.ReactNode,
   direction?: "left" | "right"
