@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
-import { FaPause, FaPlay, FaStepBackward, FaStepForward, FaVolumeMute, FaVolumeUp } from "react-icons/fa";
+import { FaVolumeUp } from "react-icons/fa";
 
 // Minimal typing for the parts of the YouTube IFrame API we use.
 interface YTPlayer {
@@ -80,12 +80,12 @@ export default function TestimonialVideos({ playlistId }: { playlistId: string }
   const mountRef = useRef<HTMLDivElement>(null);
   const playerRef = useRef<YTPlayer | null>(null);
   const userPausedRef = useRef(false);
+  const inViewRef = useRef(false);
 
   const [started, setStarted] = useState(false); // load the player only when the section nears the screen
   const [ready, setReady] = useState(false);
   const [failed, setFailed] = useState(false);
   const [muted, setMuted] = useState(true);
-  const [playing, setPlaying] = useState(true);
 
   // Load lazily and pause when scrolled out of view (saves data, avoids sound from off-screen).
   useEffect(() => {
@@ -93,6 +93,7 @@ export default function TestimonialVideos({ playlistId }: { playlistId: string }
     if (!el) return;
     const observer = new IntersectionObserver(
       ([entry]) => {
+        inViewRef.current = entry.isIntersecting;
         if (entry.isIntersecting) {
           setStarted(true);
           if (!userPausedRef.current) playerRef.current?.playVideo();
@@ -138,8 +139,9 @@ export default function TestimonialVideos({ playlistId }: { playlistId: string }
             },
             onStateChange: (e) => {
               const { ENDED, PLAYING, PAUSED } = YT.PlayerState;
-              if (e.data === PLAYING) setPlaying(true);
-              if (e.data === PAUSED) setPlaying(false);
+              // A pause while the section is on screen was the visitor tapping the video; remember it.
+              if (e.data === PLAYING) userPausedRef.current = false;
+              if (e.data === PAUSED && inViewRef.current) userPausedRef.current = true;
               // Safety net for the loop: if the last video ends and the playlist didn't restart, start over.
               if (e.data === ENDED) {
                 const list = e.target.getPlaylist();
@@ -159,31 +161,14 @@ export default function TestimonialVideos({ playlistId }: { playlistId: string }
     };
   }, [started, playlistId]);
 
-  const toggleSound = useCallback(() => {
+  const turnSoundOn = useCallback(() => {
     const p = playerRef.current;
     if (!p) return;
-    if (muted) {
-      p.unMute();
-      p.setVolume(100);
-      p.playVideo();
-      setMuted(false);
-    } else {
-      p.mute();
-      setMuted(true);
-    }
-  }, [muted]);
-
-  const togglePlay = useCallback(() => {
-    const p = playerRef.current;
-    if (!p) return;
-    if (playing) {
-      userPausedRef.current = true;
-      p.pauseVideo();
-    } else {
-      userPausedRef.current = false;
-      p.playVideo();
-    }
-  }, [playing]);
+    p.unMute();
+    p.setVolume(100);
+    p.playVideo();
+    setMuted(false);
+  }, []);
 
   const playlistUrl = `https://www.youtube.com/playlist?list=${playlistId}`;
 
@@ -203,30 +188,13 @@ export default function TestimonialVideos({ playlistId }: { playlistId: string }
             <div className="tv-player" ref={mountRef} />
             {!ready && started && <div className="tv-loading">Loading…</div>}
             {ready && muted && (
-              <button type="button" className="tv-sound-hint" onClick={toggleSound}>
+              <button type="button" className="tv-sound-hint" onClick={turnSoundOn}>
                 <FaVolumeUp /> Tap for sound
               </button>
             )}
           </>
         )}
       </div>
-
-      {ready && !failed && (
-        <div className="tv-controls" role="group" aria-label="Video controls">
-          <button type="button" onClick={() => playerRef.current?.previousVideo()} aria-label="Previous video">
-            <FaStepBackward />
-          </button>
-          <button type="button" onClick={togglePlay} aria-label={playing ? "Pause" : "Play"}>
-            {playing ? <FaPause /> : <FaPlay />}
-          </button>
-          <button type="button" onClick={toggleSound} aria-label={muted ? "Turn sound on" : "Turn sound off"}>
-            {muted ? <FaVolumeMute /> : <FaVolumeUp />}
-          </button>
-          <button type="button" onClick={() => playerRef.current?.nextVideo()} aria-label="Next video">
-            <FaStepForward />
-          </button>
-        </div>
-      )}
     </div>
   );
 }

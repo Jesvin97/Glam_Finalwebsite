@@ -3465,32 +3465,6 @@ h1, h2, h3,
   50% { box-shadow: 0 0 0 8px rgba(212, 175, 55, 0); }
 }
 
-.tv-controls {
-  display: flex;
-  gap: 12px;
-  margin-top: 20px;
-}
-
-.tv-controls button {
-  width: 46px;
-  height: 46px;
-  border-radius: 50%;
-  background: #111;
-  border: 1px solid rgba(212, 175, 55, 0.3);
-  color: #d4af37;
-  font-size: 15px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: all 0.25s ease;
-}
-
-.tv-controls button:hover {
-  background: #d4af37;
-  color: #000;
-}
-
 @media (prefers-reduced-motion: reduce) {
   .tv-sound-hint { animation: none; }
 }
