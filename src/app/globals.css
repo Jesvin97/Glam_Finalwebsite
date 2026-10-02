@@ -540,8 +540,6 @@ h1, h2, h3,
   margin-bottom: 32px;
 }
 
-
-
 /* CONTACT */
 
 /* CONTACT SECTION */
@@ -2318,10 +2316,6 @@ h1, h2, h3,
 
 /* Pause on Hover */
 
-.gallery-marquee:hover .scroll-left,
-.gallery-marquee:hover .scroll-right {
-  animation-play-state: paused;
-}
 
 /* ========================================
    TABLET
