@@ -108,14 +108,14 @@ export const servicesData: ServiceItem[] = [
     title: "Hairstyling",
     category: "hair",
     description: "Blow-dries, updos, and styling for weddings, functions, and parties.",
-    image: "/images/Hair_stylingjpeg.jpeg"
+    image: "/images/services/hairstyling.jpg"
   },
   {
     id: "hair-extensions",
     title: "Hair Extensions",
     category: "hair",
     description: "Natural human hair extensions for added length or volume, colour-matched and fitted in the salon.",
-    image: "/images/Hiar_extension.jpeg"
+    image: "/images/services/hair-extensions.jpg"
   },
   // ── Bridal & Makeup ──
   {
@@ -123,14 +123,14 @@ export const servicesData: ServiceItem[] = [
     title: "Bridal Makeup",
     category: "events",
     description: "Kerala bridal makeup with hairstyling and saree draping, planned with you before the wedding day.",
-    image: "/images/bridal.jpg"
+    image: "/images/services/bridal-makeup.jpg"
   },
   {
     id: "wedding-prep",
     title: "Wedding & Event Preparation",
     category: "events",
     description: "Hair, makeup, and draping for the bride's family and bridal party, scheduled so everyone is ready on time.",
-    image: "/images/model.jpeg"
+    image: "/images/services/wedding-prep.jpg"
   },
   {
     id: "groom-makeup",
@@ -160,7 +160,7 @@ export const servicesData: ServiceItem[] = [
     title: "Body Massage",
     category: "spa",
     description: "Full-body relaxation massage with warm oil in a private room.",
-    image: "/images/spa.jpg"
+    image: "/images/services/body-massage.jpg"
   },
   {
     id: "head-massage",
@@ -189,7 +189,7 @@ export const servicesData: ServiceItem[] = [
     title: "Acrylic Nails & Nail Art",
     category: "nails",
     description: "Acrylic nail extensions in your choice of length and shape, finished with custom nail art.",
-    image: "/images/nailart.jpg"
+    image: "/images/services/acrylic-nails.jpg"
   },
   // ── Brows & Lashes / Men's Grooming ──
   {
@@ -218,7 +218,7 @@ export const servicesData: ServiceItem[] = [
     title: "Shaving & Beard Styling",
     category: "mens",
     description: "Hot-towel shave, beard shaping, and edging, with advice on a beard style that suits your face.",
-    image: "/images/Shaving & Beard Styling.png"
+    image: "/images/services/shaving-beard.jpg"
   },
   // ── Waxing ──
   {
