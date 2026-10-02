@@ -751,3 +751,31 @@
     background: #0f0f11;
   }
 }
+
+/* Top banner on desktop: bigger photo (still the full photo) and larger text to fill the box */
+@media (min-width: 769px) {
+  .services-hero-section .banner-image-wrapper {
+    height: 480px;
+  }
+
+  .services-hero-section .banner-text-content {
+    padding: 0 64px;
+  }
+
+  .services-hero-section .banner-category-tag {
+    font-size: 14px;
+    letter-spacing: 3px;
+    margin-bottom: 18px;
+  }
+
+  .services-hero-section .banner-category-title {
+    font-size: clamp(40px, 4.4vw, 60px);
+    line-height: 1.1;
+    margin-bottom: 24px;
+  }
+
+  .services-hero-section .banner-intro-paragraph {
+    font-size: clamp(18px, 1.7vw, 23px);
+    line-height: 1.65;
+  }
+}
