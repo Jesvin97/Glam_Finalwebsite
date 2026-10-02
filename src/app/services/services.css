@@ -744,11 +744,16 @@
 }
 
 @media (max-width: 768px) {
+  /* On phones the photo is stretched to fill its whole box (no dark bars at the sides) */
   .services-hero-section .banner-image-wrapper {
     width: 100%;
-    height: 360px;
+    height: 480px;
     aspect-ratio: auto;
     background: #0f0f11;
+  }
+
+  .services-hero-section .hero-photo-fill {
+    object-fit: fill;
   }
 }
 
