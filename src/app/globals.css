@@ -3493,3 +3493,13 @@ h1, h2, h3,
   padding-bottom: 8px;
   border-bottom: 1px solid rgba(212, 175, 55, 0.2);
 }
+
+/* FAQ page intro paragraph */
+.faq-intro {
+  max-width: 760px;
+  margin: 18px auto 0;
+  color: #aaa;
+  font-size: 15.5px;
+  line-height: 1.7;
+  text-align: center;
+}

@@ -9,9 +9,9 @@ import { BUSINESS_NAME } from "@/lib/site";
 
 export const revalidate = 3600;
 
-const TITLE = `FAQs | ${BUSINESS_NAME}, Thiruvalla`;
+const TITLE = `Salon FAQs & Beauty Advice | ${BUSINESS_NAME}`;
 const DESCRIPTION =
-  "Answers about Glam'more Premium Unisex Salon in Thukalassery, Thiruvalla: opening hours, location, booking, bridal makeup, hair, facials, massage and nails.";
+  "Hair colour, keratin, bridal makeup, facials, nails, waxing and men's grooming explained, with hours and booking, at Glam'more Premium Unisex Salon, Thiruvalla.";
 
 export const metadata: Metadata = {
   title: TITLE,
