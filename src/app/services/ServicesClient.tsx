@@ -54,7 +54,7 @@ export default function ServicesClient() {
 
   const filterCategories = [
     { id: "all", name: "All Services" },
-    { id: "hair", name: "Hair" },
+    { id: "hair", name: "Women's Hair" },
     { id: "events", name: "Bride & Groom" },
     { id: "skin", name: "Facials & Skin Care" },
     { id: "spa", name: "Spa & Massage" },
@@ -67,9 +67,9 @@ export default function ServicesClient() {
   const categoryMetaList: CategoryMeta[] = [
     {
       id: "hair",
-      name: "Haircuts, Colour & Hair Treatments",
-      tagline: "Hair Salon in Thiruvalla",
-      description: "Haircuts for men and women, hair colouring, keratin and hair smoothening, occasion styling, and natural human hair extensions. Tell us how you wear your hair day to day and we'll cut and style for that.",
+      name: "Women's Haircuts, Colour & Hair Treatments",
+      tagline: "Women's Hair Salon in Thiruvalla",
+      description: "Women's haircuts, hair colouring, keratin and hair smoothening, occasion styling, and natural human hair extensions. Tell us how you wear your hair day to day and we'll cut and style for that.",
       bannerImage: "/images/Hair Styling & Extensions.png",
     },
     {
@@ -127,10 +127,10 @@ export default function ServicesClient() {
     // ── Hair ──
     {
       id: "haircut",
-      title: "Haircut",
+      title: "Women's Haircut",
       category: "hair",
-      description: "Haircuts for men and women, planned around your hair texture and how much time you spend styling it.",
-      image: "/images/Haircut.png"
+      description: "Women's haircuts planned around your hair texture and how much time you spend styling it.",
+      image: "/images/services/womens-haircut.jpg"
     },
     {
       id: "hair-coloring",

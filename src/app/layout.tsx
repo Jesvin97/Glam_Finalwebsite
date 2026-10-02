@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     "Glammore salon", "Glam'more", "Glam'more Unisex Salon", "unisex salon Thiruvalla",
     "beauty parlour Thiruvalla", "salon near me Thiruvalla", "salon Thukalassery",
     // Hair
-    "haircut Thiruvalla", "men's haircut Thiruvalla", "hair colouring Thiruvalla",
+    "haircut Thiruvalla", "women's haircut Thiruvalla", "men's haircut Thiruvalla", "hair colouring Thiruvalla",
     "keratin treatment Thiruvalla", "hair smoothening Thiruvalla", "hairstyling Thiruvalla",
     "hair extensions Kerala",
     // Bridal & makeup
@@ -139,7 +139,7 @@ export default function RootLayout({
                 "@type": "OfferCatalog",
                 "name": "Salon & Beauty Services",
                 "itemListElement": [
-                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Haircut" } },
+                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Women's Haircut" } },
                   { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Hair Colouring" } },
                   { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Keratin Treatment" } },
                   { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Hair Smoothening" } },
