@@ -11,9 +11,9 @@ export default function Services() {
       desc: "HD and airbrush bridal makeup, hairstyling, and saree draping."
     },
     { 
-      label: "Hair & Styling", 
+      label: "Women's Hair & Styling", 
       image: "/images/Hair_stylingjpeg.jpeg", 
-      desc: "Haircuts, colouring, keratin smoothening, and extensions."
+      desc: "Women's haircuts, colouring, keratin smoothening, and extensions."
     },
     { 
       label: "Spa & Massage", 

@@ -3468,3 +3468,39 @@ h1, h2, h3,
 @media (prefers-reduced-motion: reduce) {
   .tv-sound-hint { animation: none; }
 }
+
+/* Blog page main heading (was an h2; now the page's h1) */
+.blog-heading {
+  font-family: var(--font-playfair-family), serif;
+  font-weight: 500;
+  font-size: clamp(28px, 4vw, 40px);
+  color: #f4f4f5;
+  margin: 0;
+}
+
+/* Home heading: the town on its own smaller line under the main title */
+.hero-text-content h1 .hero-city {
+  display: block;
+  margin-top: 12px;
+  font-family: var(--font-inter-family), sans-serif;
+  font-size: clamp(16px, 2.2vw, 26px);
+  font-weight: 400;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  color: #e8e8e8;
+}
+
+/* FAQ page topic headings */
+.faq-topic-group {
+  margin-bottom: 8px;
+}
+
+.faq-topic {
+  font-family: var(--font-playfair-family), serif;
+  font-weight: 500;
+  font-size: clamp(20px, 2.4vw, 26px);
+  color: #d4af37;
+  margin: 34px 0 14px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+}

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
+import { BUSINESS_NAME } from "@/lib/site";
 import Lottie, { LottieRefCurrentProps } from "lottie-react";
 import menuAnimation from "../../animation/navbar.json";
 import Link from "next/link";
@@ -66,7 +67,7 @@ export default function Navbar() {
             loading="eager"
           />
           <span className="navbar-brand-text">
-            Glam&apos;more Unisex Salon
+            {BUSINESS_NAME}
           </span>
         </Link>
 

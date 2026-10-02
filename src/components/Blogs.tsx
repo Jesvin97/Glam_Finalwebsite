@@ -19,10 +19,10 @@ export default function Blog({ blogs = [] }: { blogs?: BlogItem[] }) {
     <section className="blog-section" id="blog">
       <div className="section-title">
         <p>OUR BLOG</p>
-        <h2>
+        <h1 className="blog-heading">
           Beauty &
           <span className="gold-text"> Lifestyle Journal</span>
-        </h2>
+        </h1>
       </div>
 
       {blogs.length === 0 && (

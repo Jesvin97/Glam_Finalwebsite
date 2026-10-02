@@ -1,5 +1,6 @@
 'use client';
 import { useState } from "react";
+import { BUSINESS_NAME } from "@/lib/site";
 import ScrollReveal from "./ScrollReveal";
 import { FaPhoneAlt } from "react-icons/fa";
 
@@ -47,7 +48,7 @@ ${formData.message}`;
         <ScrollReveal direction="left" className="map-column contact-column-flex">
           <div>
             <h2 className="contact-section-title">
-              Find Us
+              Visit Us in Thukalassery, Thiruvalla
             </h2>
             <div className="map-container contact-map-wrapper">
               <iframe
@@ -58,11 +59,11 @@ ${formData.message}`;
                 allowFullScreen={true}
                 loading="lazy"
                 referrerPolicy="strict-origin-when-cross-origin"
-                title="Google Maps Location of Glam'more Unisex Salon in Thiruvalla"
+                title={`Google Maps location of ${BUSINESS_NAME} in Thiruvalla`}
               ></iframe>
 
               <div className="map-details">
-                <h3>Glam&apos;more Unisex Salon</h3>
+                <h3>{BUSINESS_NAME}</h3>
                 <p className="contact-map-details-desc">
                   First Floor, Professional Building, SH 1, Kollam - Theni Hwy, Thukalassery, Thiruvalla, Kerala 689115, India
                 </p>

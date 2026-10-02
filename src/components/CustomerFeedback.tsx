@@ -65,7 +65,7 @@ export default function CustomerFeedback({
     <section className="feedback-section" id="feedback">
       <ScrollReveal direction="up">
         <div className="section-title text-center">
-          <h2 className="gold-section-heading">CUSTOMER FEEDBACK</h2>
+          <h2 className="gold-section-heading">SHARE YOUR GLAM&apos;MORE EXPERIENCE</h2>
         </div>
       </ScrollReveal>
 

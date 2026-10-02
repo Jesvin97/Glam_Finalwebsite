@@ -1,13 +1,22 @@
 import type { Metadata } from "next";
 import ServicesClient from "./ServicesClient";
+import JsonLd from "@/components/JsonLd";
+import { breadcrumbList } from "@/lib/schema";
+import { BUSINESS_NAME } from "@/lib/site";
+
+const TITLE = `Salon Services | ${BUSINESS_NAME}, Thiruvalla`;
+const DESCRIPTION =
+  "Haircuts, colour, keratin, bridal and groom makeup, facials, massage, nails, brows, waxing and men's grooming at Glam'more Premium Unisex Salon, Thiruvalla.";
 
 export const metadata: Metadata = {
-  title: "Haircuts, Bridal Makeup, Facials & Nails in Thiruvalla | Glam'more Salon",
-  description: "Haircuts, colouring, keratin, bridal makeup, facials, massage, nails, and waxing for men and women at Glam'more Unisex Salon, Thukalassery, Thiruvalla.",
+  title: TITLE,
+  description: DESCRIPTION,
   alternates: { canonical: "/services" },
   openGraph: {
+    title: TITLE,
+    description: DESCRIPTION,
     url: "/services",
-    siteName: "Glam'more Unisex Salon",
+    siteName: BUSINESS_NAME,
     images: [{ url: "/images/og-image.jpg", width: 1200, height: 630 }],
     locale: "en_IN",
     type: "website",
@@ -15,5 +24,15 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-  return <ServicesClient />;
+  return (
+    <>
+      <JsonLd
+        data={breadcrumbList([
+          { name: "Home", path: "/" },
+          { name: "Services", path: "/services" },
+        ])}
+      />
+      <ServicesClient />
+    </>
+  );
 }

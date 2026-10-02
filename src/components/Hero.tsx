@@ -25,6 +25,7 @@ export default function Hero() {
           <h1>
             Unisex Salon <br />
             <span className="hero-gold-text">& Bridal Makeup</span>
+            <span className="hero-city"> in Thiruvalla</span>
           </h1>
           <p className="hero-description">
             Haircuts, hair colour, bridal makeup, facials, massage, and nail art for men and women. Open every day, 10 AM to 8:30 PM.

@@ -27,7 +27,7 @@ const row2 = [
       <ScrollReveal direction="up">
         <div className="gallery-header photos-title-container">
           <h2 className="gold-section-heading">
-            OUR GALLERY
+            SALON GALLERY
           </h2>
         </div>
       </ScrollReveal>

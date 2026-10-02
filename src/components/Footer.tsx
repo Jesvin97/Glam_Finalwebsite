@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { BUSINESS_NAME } from "@/lib/site";
 import Link from "next/link";
 import {
   FaInstagram,
@@ -17,7 +18,7 @@ export default function Footer() {
         </Link>
         <span className="footer-divider" aria-hidden="true">|</span>
         <p className="footer-copyright" suppressHydrationWarning>
-          {`© ${new Date().getFullYear()} Glam'more Unisex Salon`}
+          {`© ${new Date().getFullYear()} ${BUSINESS_NAME}`}
         </p>
         <div className="social-icons">
           <a href="https://instagram.com/glammore.unisex.salon" target="_blank" rel="noopener noreferrer" aria-label="Follow Glam'more on Instagram">
@@ -39,7 +40,7 @@ export default function Footer() {
       {/* BOTTOM BAR: name · address · phone · credit */}
       <div className="footer-bottom">
         <p>
-          <strong>Glam&apos;more Unisex Salon</strong>
+          <strong>{BUSINESS_NAME}</strong>
           {" · "}First Floor, Professional Building, SH 1, Kollam - Theni Hwy, Thukalassery, Thiruvalla, Kerala 689115
           {" · "}<a href="tel:+919645915329">+91 96459 15329</a>
           {" · "}Powered by{" "}

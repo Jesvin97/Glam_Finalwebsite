@@ -271,7 +271,7 @@ export default function Testimonials({ testimonials = [] }: { testimonials?: Tes
       <ScrollReveal direction="up">
         <div className="section-title text-center">
           <h2 className="gold-section-heading">
-            TESTIMONIALS
+            WHAT OUR CLIENTS SAY
           </h2>
         </div>
       </ScrollReveal>

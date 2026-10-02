@@ -219,7 +219,7 @@ export default function TestimonialVideos({ playlistId }: { playlistId: string }
   return (
     <div className="tv-section" ref={wrapRef}>
       <h3 className="tv-title">Watch Our Clients&apos; Stories</h3>
-      <p className="tv-sub">Real moments from Glam&apos;more Unisex Salon, Thiruvalla.</p>
+      <p className="tv-sub">Real moments from Glam&apos;more Premium Unisex Salon, Thiruvalla.</p>
 
       <div className="tv-phone">
         {failed ? (

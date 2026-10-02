@@ -1,7 +1,11 @@
 import type { Metadata } from "next";
 import { Playfair_Display, Inter } from "next/font/google";
-import Script from "next/script";
 import "./globals.css";
+import JsonLd from "@/components/JsonLd";
+import CustomCursor from "@/components/CustomCursor";
+import FloatingWhatsApp from "@/components/FloatingWhatsApp";
+import { siteGraph } from "@/lib/schema";
+import { BUSINESS_NAME, SITE_URL } from "@/lib/site";
 
 const playfair = Playfair_Display({
   variable: "--font-playfair",
@@ -18,45 +22,28 @@ const inter = Inter({
   weight: ["300", "400", "500", "600"],
 });
 
+const HOME_TITLE = `${BUSINESS_NAME} | Bridal Makeup in Thiruvalla`;
+const HOME_DESCRIPTION =
+  "Premium unisex salon in Thukalassery, Thiruvalla for haircuts, hair colour, bridal makeup, facials, massage and nails. Open daily, 10 AM to 8:30 PM.";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://glammoresalon.in"),
-  title: "Glam'more | Unisex Salon & Bridal Makeup in Thiruvalla",
-  description: "Unisex salon in Thukalassery, Thiruvalla for haircuts, hair colour, keratin, bridal makeup, facials, massage, and nail art. Open daily, 10 AM to 8:30 PM.",
-  keywords: [
-    // Brand
-    "Glammore salon", "Glam'more", "Glam'more Unisex Salon", "unisex salon Thiruvalla",
-    "beauty parlour Thiruvalla", "salon near me Thiruvalla", "salon Thukalassery",
-    // Hair
-    "haircut Thiruvalla", "women's haircut Thiruvalla", "men's haircut Thiruvalla", "hair colouring Thiruvalla",
-    "keratin treatment Thiruvalla", "hair smoothening Thiruvalla", "hairstyling Thiruvalla",
-    "hair extensions Kerala",
-    // Bridal & makeup
-    "bridal makeup Thiruvalla", "bridal makeup Kerala", "HD bridal makeup Thiruvalla",
-    "saree draping Thiruvalla", "party makeup Thiruvalla",
-    // Skin & spa
-    "facial Thiruvalla", "de-tan facial Thiruvalla", "massage Thiruvalla", "spa Thiruvalla",
-    // Nails & grooming
-    "nail salon Thiruvalla", "acrylic nails Thiruvalla", "nail art Thiruvalla", "pedicure Thiruvalla",
-    "eyebrow threading Thiruvalla", "eyelash extensions Thiruvalla", "beard styling Thiruvalla",
-    "waxing Thiruvalla",
-    // Nearby areas
-    "salon near Changanassery", "salon near Chengannur", "salon Pathanamthitta",
-  ],
+  metadataBase: new URL(SITE_URL),
+  title: HOME_TITLE,
+  description: HOME_DESCRIPTION,
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "Glam'more | Unisex Salon & Bridal Makeup in Thiruvalla",
-    description: "Unisex salon in Thukalassery, Thiruvalla for haircuts, hair colour, keratin, bridal makeup, facials, massage, and nail art.",
+    title: HOME_TITLE,
+    description: HOME_DESCRIPTION,
     url: "/",
-    siteName: "Glam'more Unisex Salon",
+    siteName: BUSINESS_NAME,
     images: [
       {
         url: "/images/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Glam'more Premium Unisex Salon signboard, Thukalassery, Thiruvalla",
+        alt: `${BUSINESS_NAME} signboard, Thukalassery, Thiruvalla`,
       },
     ],
     locale: "en_IN",
@@ -64,8 +51,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Glam'more | Unisex Salon & Bridal Makeup in Thiruvalla",
-    description: "Unisex salon in Thukalassery, Thiruvalla for haircuts, hair colour, keratin, bridal makeup, facials, massage, and nail art.",
+    title: HOME_TITLE,
+    description: HOME_DESCRIPTION,
     images: ["/images/og-image.jpg"],
   },
 };
@@ -75,11 +62,6 @@ export const viewport = {
   initialScale: 1,
 };
 
-
-import CustomCursor from "@/components/CustomCursor";
-import AudioBranding from "@/components/AudioBranding";
-import FloatingWhatsApp from "@/components/FloatingWhatsApp";
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -87,91 +69,14 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
+      lang="en-IN"
       className={`${playfair.variable} ${inter.variable} h-full antialiased`}
     >
       <head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "BeautySalon",
-              "name": "Glam'more Unisex Salon",
-              "image": "https://glammoresalon.in/images/logo.png",
-              "@id": "https://glammoresalon.in/#salon",
-              "url": "https://glammoresalon.in",
-              "telephone": "+919645915329",
-              "priceRange": "₹",
-              "address": {
-                "@type": "PostalAddress",
-                "streetAddress": "First Floor, Professional Building, SH 1, Kollam - Theni Hwy, Thukalassery",
-                "addressLocality": "Thiruvalla",
-                "addressRegion": "Kerala",
-                "postalCode": "689115",
-                "addressCountry": "IN"
-              },
-              "geo": {
-                "@type": "GeoCoordinates",
-                "latitude": 9.371003,
-                "longitude": 76.578111
-              },
-              "openingHoursSpecification": {
-                "@type": "OpeningHoursSpecification",
-                "dayOfWeek": [
-                  "Monday",
-                  "Tuesday",
-                  "Wednesday",
-                  "Thursday",
-                  "Friday",
-                  "Saturday",
-                  "Sunday"
-                ],
-                "opens": "10:00",
-                "closes": "20:30"
-              },
-              "sameAs": [
-                "https://www.instagram.com/glammore.unisex.salon",
-                "https://www.facebook.com/glammoresalon/",
-                "https://www.youtube.com/@Glammoreunisexsalon"
-              ],
-              "hasOfferCatalog": {
-                "@type": "OfferCatalog",
-                "name": "Salon & Beauty Services",
-                "itemListElement": [
-                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Women's Haircut" } },
-                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Hair Colouring" } },
-                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Keratin Treatment" } },
-                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Hair Smoothening" } },
-                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Hairstyling" } },
-                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Hair Extensions" } },
-                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Bridal Makeup" } },
-                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Wedding and Event Preparation" } },
-                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Party and Event Makeup" } },
-                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Saree Draping" } },
-                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Facial" } },
-                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "De-tan and Clean-up" } },
-                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Body Massage" } },
-                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Head and Shoulder Massage" } },
-                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Acrylic Nails" } },
-                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Nail Art" } },
-                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Gel Manicure" } },
-                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Pedicure" } },
-                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Eyebrow Threading" } },
-                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Eyelash Extensions" } },
-                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Men's Haircut" } },
-                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Shaving and Beard Styling" } },
-                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Body Waxing" } },
-                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Facial Waxing" } }
-                ]
-              }
-            }),
-          }}
-        />
+        <JsonLd data={siteGraph} />
       </head>
       <body className="min-h-full flex flex-col relative">
         <CustomCursor />
-        {/* <AudioBranding /> */}  {/* Temporarily disabled */}
         {children}
         <FloatingWhatsApp />
       </body>

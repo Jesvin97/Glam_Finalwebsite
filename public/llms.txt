@@ -1,28 +1,30 @@
-# Glam'more Unisex Salon — Official Site
+# Glam'more Premium Unisex Salon — Official Site
 
-Unisex salon in Thukalassery, Thiruvalla, Kerala, India.
-Haircuts, hair colouring, keratin and smoothening, bridal makeup, facials, massage, nail art, threading, and waxing for men and women.
+> Premium unisex salon in Thukalassery, Thiruvalla, Kerala, India. Women's and men's haircuts, hair colour, keratin and smoothening, bridal and groom makeup, facials, massage, nails, brows and lashes, and waxing.
+
+Also written as: Glam'more Unisex Salon, Glammore Salon.
+Last updated: 2026-10-02
 
 ## Base URL
 https://glammoresalon.in
 
 ## About
-Glam'more is a unisex salon serving men and women in Thiruvalla. Clients come for everyday services (haircuts, beard trims, threading) and for weddings and events (bridal makeup, saree draping, pre-bridal facials). The salon is on SH 1 (Kollam–Theni Highway) at Thukalassery and is easy to reach from Thiruvalla town, Changanassery, Chengannur, and Pathanamthitta.
+Glam'more Premium Unisex Salon serves men and women in Thiruvalla. Clients come for everyday services (haircuts, beard trims, threading) and for weddings and events (bridal makeup, groom makeup, saree draping, pre-bridal facials). The salon is on the first floor of the Professional Building on SH 1 (Kollam–Theni Highway) at Thukalassery, and is easy to reach from Thiruvalla town, Changanassery, Chengannur, and Pathanamthitta.
 
 ## Services Offered
-### Hair
+Prices are not listed on the website; message the salon on WhatsApp for a quote.
+
+### Women's Hair
 - Women's haircut
 - Hair colouring (global colour, highlights, grey coverage)
-- Keratin treatment
-- Hair smoothening
+- Keratin and hair smoothening
 - Hairstyling for weddings and events
 - Human hair extensions
 
-### Bridal & Makeup
-- Kerala bridal makeup (HD and airbrush)
-- Bridal hairstyling and saree draping
-- Wedding party and family makeup
-- Party and event makeup
+### Bride & Groom
+- Bridal makeup (Kerala bridal makeup, HD and airbrush) with bridal hairstyling and saree draping
+- Wedding and event preparation for the bride's family and bridal party
+- Groom makeup and styling (hair, beard trim and shaping, light natural makeup)
 
 ### Facials & Skin Care
 - Facials by skin type
@@ -34,25 +36,26 @@ Glam'more is a unisex salon serving men and women in Thiruvalla. Clients come fo
 - Head and shoulder massage
 
 ### Nails
-- Acrylic nail extensions and nail art
 - Gel manicure
 - Spa pedicure
+- Acrylic nail extensions and nail art
 
-### Brows, Lashes & Men's Grooming
+### Brows & Lashes
 - Eyebrow threading
-- Eyelash extensions
+- Eyelash extensions (classic and volume)
+
+### Men's Grooming
 - Men's haircut
-- Shaving and beard styling
+- Shaving and beard styling (hot-towel shave, beard shaping and edging)
 
 ### Waxing
 - Body waxing
 - Facial waxing
 
 ## Key Pages
-- [/](https://glammoresalon.in/): Homepage — about the salon, service overview, customer reviews and feedback, contact and map
-- [/services](https://glammoresalon.in/services): Full service list by category with WhatsApp booking
-- [/blogs](https://glammoresalon.in/blogs): Hair, skin, and bridal beauty tips
-- [/faq](https://glammoresalon.in/faq): Frequently asked questions — hours, location, booking, bridal, hair, skin, and nail services
+- [Home](https://glammoresalon.in/): about the salon, services overview, client reviews and video stories, feedback form, contact and map
+- [Services](https://glammoresalon.in/services): full service list by category, with WhatsApp booking
+- [FAQs](https://glammoresalon.in/faq): hours, location, booking, bridal and groom, hair, skin, spa and nails, brows, waxing and men's grooming
 
 ## Contact & Location
 - **Address:** First Floor, Professional Building, SH 1, Kollam - Theni Hwy, Thukalassery, Thiruvalla, Kerala 689115, India
@@ -63,7 +66,7 @@ Glam'more is a unisex salon serving men and women in Thiruvalla. Clients come fo
 - **YouTube:** @Glammoreunisexsalon
 
 ## Business Hours
-Monday–Sunday: 10:00 AM – 8:30 PM
+Monday–Sunday: 10:00 AM – 8:30 PM (open every day, including Sundays). Walk-ins are welcome when a chair is free; booking ahead on WhatsApp avoids waiting.
 
 ## Powered by
 Raphael Group — https://raphaelgroup.in
