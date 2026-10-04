@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import ScrollReveal from "./ScrollReveal";
-import { PHONE_DISPLAY, PHONE_E164 } from "@/lib/site";
 
 // Portraits shown inside the mirror. To add more, drop a photo in /public/images/hero and add a line here.
 const SLIDES = [
@@ -27,34 +26,16 @@ const SLIDES = [
     position: "50% 18%",
   },
   {
+    src: "/images/hero/hero-bridal.jpg",
+    alt: "Smiling bride in a red silk saree with a gold forehead ornament, layered gold necklaces and jasmine flowers",
+    caption: "Traditional bridal makeup",
+    position: "50% 25%",
+  },
+  {
     src: "/images/hero/hero-pink-gown.jpg",
     alt: "Bride in a pink beaded gown with a pearl hair accessory, holding a bouquet of pink and white roses",
     caption: "Reception & party looks",
     position: "50% 20%",
-  },
-  {
-    src: "/images/hero/hero-striped-wall.jpg",
-    alt: "Bride in a silk saree with jasmine flowers in her hair, standing against a striped wall under a chandelier",
-    caption: "Bridal saree draping",
-    position: "50% 55%",
-  },
-  {
-    src: "/images/hero/hero-banyan.jpg",
-    alt: "Bride in a cream and maroon Kerala kasavu saree seated under a large banyan tree",
-    caption: "Traditional kasavu styling",
-    position: "50% 62%",
-  },
-  {
-    src: "/images/hero/hero-groom-suit.jpg",
-    alt: "Groom in a navy suit with a pink pocket square, standing in a bright glass-walled room",
-    caption: "Groom suit & grooming",
-    position: "50% 50%",
-  },
-  {
-    src: "/images/hero/hero-hair.jpg",
-    alt: "Long glossy brown wavy hair after a salon blow-dry",
-    caption: "Hair colour & styling",
-    position: "50% 50%",
   },
 ];
 
@@ -105,9 +86,6 @@ export default function Hero() {
                 Book Your Visit
                 <span className="btn-luxury-hover-effect"></span>
               </Link>
-              <a href={`tel:${PHONE_E164}`} className="hero-phone">
-                Call {PHONE_DISPLAY}
-              </a>
             </div>
           </div>
         </ScrollReveal>
