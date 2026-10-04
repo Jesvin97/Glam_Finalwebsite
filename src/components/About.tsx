@@ -2,7 +2,6 @@
 
 import React from "react";
 import ScrollReveal from "./ScrollReveal";
-import Image from "next/image";
 import Link from "next/link";
 export default function About() {
 
@@ -10,13 +9,16 @@ export default function About() {
     <section className="about-section" id="about">
       <ScrollReveal direction="left" className="about-image-wrapper">
         <div className="about-image">
-          <Image
-            src="/images/reception-area.png"
-            alt="Glam'more Premium Unisex Salon signboard framed with flowers, Thukalassery, Thiruvalla"
-            width={1672}
-            height={941}
-            sizes="(max-width: 768px) 100vw, 50vw"
-            style={{ width: "100%", height: "auto" }}
+          <video
+            src="/video/hero.mp4"
+            poster="/video/hero-poster.jpg"
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            aria-label="A walk through Glam'more Premium Unisex Salon, Thukalassery, Thiruvalla"
+            style={{ width: "100%", height: "auto", display: "block", aspectRatio: "16 / 9" }}
           />
         </div>
       </ScrollReveal>

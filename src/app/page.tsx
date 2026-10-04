@@ -1,5 +1,5 @@
 import Navbar from "@/components/Navbar";
-import HeroVideo from "@/components/HeroVideo";
+import HeroBanner from "@/components/HeroBanner";
 import Services from "@/components/Services";
 import About from "@/components/About";
 import Contact from "@/components/Contact";
@@ -38,7 +38,7 @@ export default async function Home() {
   return (
     <main>
       <Navbar />
-      <HeroVideo />
+      <HeroBanner />
       <About />
       <WhyChooseUs />
       <Services />
