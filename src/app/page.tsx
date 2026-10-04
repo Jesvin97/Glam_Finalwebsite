@@ -5,6 +5,7 @@ import About from "@/components/About";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import Testimonials from "@/components/Testimonials";
+import HappyCustomers from "@/components/HappyCustomers";
 import Photos from "@/components/Photos";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import type { Testimonial } from "@/components/Testimonials";
@@ -44,6 +45,7 @@ export default async function Home() {
       <Services />
       <Testimonials testimonials={testimonials} />
       <CustomerFeedback feedback={feedback} />
+      <HappyCustomers />
       <Photos />
       <Contact />
       <Footer />

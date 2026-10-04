@@ -3899,3 +3899,45 @@ h1, h2, h3,
     background: linear-gradient(0deg, rgba(8, 8, 8, 0.88) 0%, rgba(8, 8, 8, 0.55) 55%, rgba(8, 8, 8, 0.3) 100%);
   }
 }
+
+/* ---- Happy customers (above the gallery) ---- */
+.happy-section {
+  padding: 100px 5% 40px;
+  background: var(--site-bg);
+}
+
+.happy-sub {
+  margin: 14px 0 0;
+  color: #cccccc;
+  font-size: 17px;
+}
+
+.happy-grid {
+  max-width: 1280px;
+  margin: 48px auto 0;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 18px;
+}
+
+.happy-card {
+  position: relative;
+  aspect-ratio: 2 / 3;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(212, 175, 55, 0.25);
+}
+
+@media (max-width: 900px) {
+  .happy-grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 14px;
+    padding-bottom: 12px;
+  }
+  .happy-card {
+    flex: 0 0 62%;
+    scroll-snap-align: center;
+  }
+}
