@@ -118,10 +118,6 @@ export default function Hero() {
               <div className="mirror-sheen" aria-hidden="true" />
             </div>
           </div>
-
-          <p className="mirror-caption" aria-live="polite">
-            {SLIDES[active].caption}
-          </p>
           <div className="mirror-dots" role="group" aria-label="Choose a portrait">
             {SLIDES.map((s, i) => (
               <button

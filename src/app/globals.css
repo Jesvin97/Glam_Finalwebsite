@@ -3666,24 +3666,11 @@ h1, h2, h3,
   50% { opacity: 0.5; }
 }
 
-.mirror-caption {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -30px;
-  text-align: center;
-  color: #e8e8e8;
-  font-family: var(--font-playfair-family), serif;
-  font-style: italic;
-  font-size: 17px;
-  margin: 0;
-}
-
 .mirror-dots {
   position: absolute;
   left: 0;
   right: 0;
-  bottom: -58px;
+  bottom: -34px;
   display: flex;
   justify-content: center;
   gap: 10px;
