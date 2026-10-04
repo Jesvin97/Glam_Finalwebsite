@@ -3504,6 +3504,270 @@ h1, h2, h3,
   text-align: center;
 }
 
+/* ========================================
+   HOME HERO: GLOWING VANITY MIRROR
+======================================== */
+.hero-mirror {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  padding: 96px 5% 40px;
+  background: var(--site-bg);
+  overflow: hidden;
+}
+
+.hero-mirror-glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 42% 62% at 74% 52%, rgba(212, 175, 55, 0.17), transparent 72%);
+  pointer-events: none;
+}
+
+.hero-mirror-inner {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  align-items: center;
+  gap: 40px;
+}
+
+.hero-mirror-text {
+  text-align: left;
+}
+
+.hero-mirror-text h1 {
+  font-size: clamp(38px, 5.2vw, 78px);
+  line-height: 1.08;
+  font-weight: 400;
+  color: #ffffff;
+  margin-bottom: 26px;
+}
+
+.hero-mirror-text .hero-city {
+  display: block;
+  margin-top: 12px;
+  font-family: var(--font-inter-family), sans-serif;
+  font-size: clamp(14px, 1.7vw, 22px);
+  font-weight: 400;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  color: #e8e8e8;
+}
+
+.hero-mirror-text .hero-description {
+  margin: 0 0 36px;
+  max-width: 520px;
+}
+
+.hero-mirror-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 18px 28px;
+}
+
+.hero-phone {
+  color: #d4af37;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.4);
+  padding-bottom: 3px;
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.hero-phone:hover {
+  color: #f5d76e;
+  border-color: #f5d76e;
+}
+
+/* The mirror */
+.hero-mirror-stage {
+  position: relative;
+  justify-self: center;
+  height: min(72vh, 620px);
+  aspect-ratio: 3 / 4;
+  margin-bottom: 64px;
+}
+
+.mirror-frame {
+  position: absolute;
+  inset: 5.5%;
+  border-radius: 50%;
+  padding: 7px;
+  background: linear-gradient(135deg, #f5d76e 0%, #9e7f22 45%, #f5d76e 100%);
+  box-shadow: 0 0 42px rgba(212, 175, 55, 0.35), inset 0 0 14px rgba(0, 0, 0, 0.55);
+}
+
+.mirror-glass {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #000;
+  box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.6);
+}
+
+.mirror-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 1.2s ease;
+}
+
+.mirror-slide.active {
+  opacity: 1;
+}
+
+.mirror-slide img {
+  transform: scale(1.12);
+  transition: transform 7s ease-out;
+}
+
+.mirror-slide.active img {
+  transform: scale(1);
+}
+
+/* A soft light sweep across the glass every few seconds */
+.mirror-sheen {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(115deg, transparent 36%, rgba(255, 255, 255, 0.17) 48%, transparent 60%);
+  transform: translateX(-120%);
+  animation: mirror-sheen 6.5s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes mirror-sheen {
+  0%, 55% { transform: translateX(-120%); }
+  100% { transform: translateX(120%); }
+}
+
+/* Bulbs round the mirror */
+.mirror-bulb {
+  position: absolute;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: #fff4cf;
+  box-shadow: 0 0 10px 3px rgba(255, 214, 120, 0.85), 0 0 24px 6px rgba(212, 175, 55, 0.45);
+  transform: translate(-50%, -50%);
+  animation: bulb-twinkle 2.4s ease-in-out infinite;
+}
+
+@keyframes bulb-twinkle {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.mirror-caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -30px;
+  text-align: center;
+  color: #e8e8e8;
+  font-family: var(--font-playfair-family), serif;
+  font-style: italic;
+  font-size: 17px;
+  margin: 0;
+}
+
+.mirror-dots {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -58px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.mirror-dots button {
+  width: 9px;
+  height: 9px;
+  padding: 0;
+  border-radius: 50%;
+  border: 1px solid rgba(212, 175, 55, 0.7);
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.mirror-dots button.active {
+  background: #d4af37;
+  width: 26px;
+  border-radius: 6px;
+}
+
+@media (max-width: 900px) {
+  .hero-mirror {
+    padding: 100px 6% 30px;
+  }
+
+  .hero-mirror-inner {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .hero-mirror-stage {
+    order: -1;
+    height: min(34vh, 290px);
+    margin-bottom: 56px;
+  }
+
+  .hero-mirror {
+    padding-top: 90px;
+  }
+
+  .hero-mirror-text h1 {
+    font-size: clamp(32px, 8.6vw, 44px);
+    margin-bottom: 16px;
+  }
+
+  .hero-mirror-text .hero-description {
+    margin-bottom: 22px;
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  .hero-mirror-text {
+    text-align: center;
+  }
+
+  .hero-mirror-text .hero-description {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-mirror-actions {
+    justify-content: center;
+  }
+
+  .hero-mirror-text .hero-city {
+    letter-spacing: 4px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mirror-bulb,
+  .mirror-sheen {
+    animation: none;
+  }
+
+  .mirror-slide img,
+  .mirror-slide.active img {
+    transform: none;
+    transition: none;
+  }
+}
+
 /* Top menu: six links plus the longer business name need less spacing on narrower laptops/tablets */
 @media (max-width: 1280px) {
   .nav-links {
