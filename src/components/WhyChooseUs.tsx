@@ -7,7 +7,7 @@ export default function WhyChooseUs() {
   const features = [
     {
       icon: FaHeart,
-      title: "3000+ Happy Clients",
+      title: "3000+ Happy Customers",
     },
     {
       icon: FaScissors,
