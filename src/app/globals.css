@@ -3922,9 +3922,13 @@ h1, h2, h3,
   height: 470px;
   margin: 56px auto 0;
   outline: none;
+  cursor: pointer;
 }
 
 .happy-poster {
+  --x: 0%;
+  --y: 0%;
+  --r: 0deg;
   position: absolute;
   left: 50%;
   top: 50%;
@@ -3933,7 +3937,8 @@ h1, h2, h3,
   overflow: hidden;
   border: 1px solid rgba(212, 175, 55, 0.45);
   box-shadow: 0 24px 50px -20px rgba(0, 0, 0, 0.85), 0 0 30px -8px rgba(212, 175, 55, 0.25);
-  transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.5s;
+  transform: translate(-50%, -50%) translate(var(--x), var(--y)) rotate(var(--r));
+  transition: transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.7s;
 }
 
 .happy-poster img {
@@ -3942,31 +3947,20 @@ h1, h2, h3,
   height: auto;
 }
 
-/* Front poster (portrait) */
-.happy-poster-1 {
-  z-index: 2;
-  width: 62%;
-  transform: translate(-50%, -50%) translate(-6%, 2%) rotate(-3deg);
-}
+.happy-poster.is-tall { width: 62%; }
+.happy-poster.is-wide { width: 92%; }
 
-/* Back poster (landscape) */
-.happy-poster-2 {
-  z-index: 1;
-  width: 92%;
-  transform: translate(-50%, -50%) translate(4%, -14%) rotate(4deg);
-}
+/* Position in the pile: 0 is on top, higher numbers sit further back */
+.happy-poster[data-rank="0"] { z-index: 4; --x: -6%; --y: 2%; --r: -3deg; }
+.happy-poster[data-rank="1"] { z-index: 3; --x: 4%; --y: -12%; --r: 4deg; }
+.happy-poster[data-rank="2"] { z-index: 2; --x: -3%; --y: -6%; --r: -7deg; }
+.happy-poster[data-rank="3"] { z-index: 1; --x: 0%; --y: -8%; --r: 6deg; opacity: 0; }
 
-.happy-pile:hover .happy-poster-1,
-.happy-pile:focus .happy-poster-1,
-.happy-pile:focus-within .happy-poster-1 {
-  transform: translate(-50%, -50%) translate(-34%, 0) rotate(-6deg);
-}
-
-.happy-pile:hover .happy-poster-2,
-.happy-pile:focus .happy-poster-2,
-.happy-pile:focus-within .happy-poster-2 {
-  transform: translate(-50%, -50%) translate(26%, -2%) rotate(4deg);
-}
+/* Spread the top two apart on hover or focus */
+.happy-pile:hover .happy-poster[data-rank="0"],
+.happy-pile:focus .happy-poster[data-rank="0"] { --x: -32%; --y: 0%; --r: -6deg; }
+.happy-pile:hover .happy-poster[data-rank="1"],
+.happy-pile:focus .happy-poster[data-rank="1"] { --x: 26%; --y: -2%; --r: 4deg; }
 
 .happy-pile:focus-visible {
   outline: 2px solid rgba(212, 175, 55, 0.8);
@@ -3975,23 +3969,13 @@ h1, h2, h3,
 }
 
 @media (max-width: 640px) {
-  .happy-pile {
-    height: 400px;
-  }
-  .happy-poster-1 {
-    width: 66%;
-  }
-  .happy-poster-2 {
-    width: 96%;
-  }
-  .happy-pile:hover .happy-poster-1,
-  .happy-pile:focus .happy-poster-1 {
-    transform: translate(-50%, -50%) translate(-14%, 10%) rotate(-5deg);
-  }
-  .happy-pile:hover .happy-poster-2,
-  .happy-pile:focus .happy-poster-2 {
-    transform: translate(-50%, -50%) translate(4%, -24%) rotate(4deg);
-  }
+  .happy-pile { height: 400px; }
+  .happy-poster.is-tall { width: 66%; }
+  .happy-poster.is-wide { width: 96%; }
+  .happy-pile:hover .happy-poster[data-rank="0"],
+  .happy-pile:focus .happy-poster[data-rank="0"] { --x: -14%; --y: 10%; --r: -5deg; }
+  .happy-pile:hover .happy-poster[data-rank="1"],
+  .happy-pile:focus .happy-poster[data-rank="1"] { --x: 4%; --y: -24%; --r: 4deg; }
 }
 
 @media (prefers-reduced-motion: reduce) {
