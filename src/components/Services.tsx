@@ -45,9 +45,10 @@ export default function Services() {
                   <Image 
                     src={h.image} 
                     alt={`${h.label} at Glam'more salon, Thiruvalla`} 
-                    fill 
+                    width={1136}
+                    height={1408}
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
-                    className="object-contain w-full h-full"
+                    className="object-contain w-full h-full fill-img"
                   />
                 </div>
                 <div className="service-card-overlay z-10">

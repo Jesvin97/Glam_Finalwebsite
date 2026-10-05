@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import HeroBanner from "@/components/HeroBanner";
 import Services from "@/components/Services";
@@ -27,6 +28,11 @@ async function fetchApprovedFeedback(): Promise<ApprovedFeedback[]> {
   }
   return data ?? [];
 }
+
+// Canonical lives here, not in the layout, so /studio, the 404 page and other routes don't all point at the home page.
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+};
 
 export const revalidate = 3600;
 

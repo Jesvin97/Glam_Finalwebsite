@@ -134,9 +134,10 @@ export default function ServicesClient() {
             <div className="banner-image-wrapper">
               <Image
                 src="/images/salon-interior.jpeg"
-                alt="Bright interior of Glam'more Premium Unisex Salon in Thukalassery, Thiruvalla, with a teal accent wall and wooden panelling"
-                className="banner-image hero-photo-fill"
-                fill
+                alt="Bright salon interior with a teal accent wall and wooden panelling"
+                className="banner-image hero-photo-fill fill-img"
+                width={1080}
+                height={1920}
                 preload
                 sizes="(max-width: 768px) 100vw, 480px"
               />
@@ -193,15 +194,17 @@ export default function ServicesClient() {
                       src={category.bannerImage}
                       alt=""
                       aria-hidden="true"
-                      className="img-backdrop"
-                      fill
+                      className="img-backdrop fill-img"
+                      width={64}
+                      height={64}
                       sizes="64px"
                     />
                     <Image
                       src={category.bannerImage}
                       alt={category.name}
-                      className="banner-image"
-                      fill
+                      className="banner-image fill-img"
+                      width={1536}
+                      height={1024}
                       sizes="(max-width: 768px) 100vw, 480px"
                     />
                     <div className="banner-image-gradient" />
@@ -265,7 +268,9 @@ export default function ServicesClient() {
                               <Image
                                 src={service.image}
                                 alt={service.title}
-                                fill
+                                className="fill-img"
+                                width={1136}
+                                height={1408}
                                 sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 300px"
                               />
                             ) : (

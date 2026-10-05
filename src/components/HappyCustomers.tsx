@@ -23,7 +23,7 @@ export default function HappyCustomers() {
         <div className="happy-grid">
           {CUSTOMERS.map((c) => (
             <div className="happy-card" key={c.src}>
-              <Image src={c.src} alt={c.alt} fill sizes="(max-width: 768px) 60vw, 20vw" style={{ objectFit: "cover", objectPosition: "50% 20%" }} />
+              <Image src={c.src} alt={c.alt} width={1200} height={1800} className="fill-img" sizes="(max-width: 768px) 60vw, 20vw" style={{ objectFit: "cover", objectPosition: "50% 20%" }} />
             </div>
           ))}
         </div>

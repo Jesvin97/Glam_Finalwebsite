@@ -7,12 +7,13 @@ export default function HeroBanner() {
   return (
     <section className="hero-banner">
       <Image
-        src="/images/reception-area.png"
+        src="/images/reception-area.jpg"
         alt="Glam'more Premium Unisex Salon signboard framed with flowers, Thukalassery, Thiruvalla"
-        fill
+        width={1672}
+        height={941}
         preload
         sizes="100vw"
-        className="hero-banner-bg"
+        className="hero-banner-bg fill-img"
       />
       <div className="hero-banner-overlay" aria-hidden="true" />
 

@@ -52,7 +52,7 @@ const salon = {
   logo: `${SITE_URL}/images/logo.png`,
   image: [
     `${SITE_URL}/images/og-image.jpg`,
-    `${SITE_URL}/images/reception-area.png`,
+    `${SITE_URL}/images/reception-area.jpg`,
     `${SITE_URL}/images/salon-interior.jpeg`,
   ],
   telephone: PHONE_E164,

@@ -3941,3 +3941,11 @@ h1, h2, h3,
     scroll-snap-align: center;
   }
 }
+
+/* Images that fill their box. Same result as next/image "fill", but they keep width/height attributes so the browser reserves space before they load. */
+.fill-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
