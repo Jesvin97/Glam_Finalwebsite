@@ -3902,8 +3902,12 @@ h1, h2, h3,
 
 /* ---- Happy customers (above the gallery) ---- */
 .happy-section {
-  padding: 100px 5% 40px;
+  padding: 100px 5% 60px;
   background: var(--site-bg);
+}
+
+.happy-section .section-title {
+  text-align: center;
 }
 
 .happy-sub {
@@ -3912,33 +3916,87 @@ h1, h2, h3,
   font-size: 17px;
 }
 
-.happy-grid {
-  max-width: 1280px;
-  margin: 48px auto 0;
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 18px;
-}
-
-.happy-card {
+.happy-pile {
   position: relative;
-  aspect-ratio: 2 / 3;
-  border-radius: 18px;
-  overflow: hidden;
-  border: 1px solid rgba(212, 175, 55, 0.25);
+  width: min(520px, 100%);
+  height: 470px;
+  margin: 56px auto 0;
+  outline: none;
 }
 
-@media (max-width: 900px) {
-  .happy-grid {
-    display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    gap: 14px;
-    padding-bottom: 12px;
+.happy-poster {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: 0;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(212, 175, 55, 0.45);
+  box-shadow: 0 24px 50px -20px rgba(0, 0, 0, 0.85), 0 0 30px -8px rgba(212, 175, 55, 0.25);
+  transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.5s;
+}
+
+.happy-poster img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Front poster (portrait) */
+.happy-poster-1 {
+  z-index: 2;
+  width: 62%;
+  transform: translate(-50%, -50%) translate(-6%, 2%) rotate(-3deg);
+}
+
+/* Back poster (landscape) */
+.happy-poster-2 {
+  z-index: 1;
+  width: 92%;
+  transform: translate(-50%, -50%) translate(4%, -14%) rotate(4deg);
+}
+
+.happy-pile:hover .happy-poster-1,
+.happy-pile:focus .happy-poster-1,
+.happy-pile:focus-within .happy-poster-1 {
+  transform: translate(-50%, -50%) translate(-34%, 0) rotate(-6deg);
+}
+
+.happy-pile:hover .happy-poster-2,
+.happy-pile:focus .happy-poster-2,
+.happy-pile:focus-within .happy-poster-2 {
+  transform: translate(-50%, -50%) translate(26%, -2%) rotate(4deg);
+}
+
+.happy-pile:focus-visible {
+  outline: 2px solid rgba(212, 175, 55, 0.8);
+  outline-offset: 10px;
+  border-radius: 20px;
+}
+
+@media (max-width: 640px) {
+  .happy-pile {
+    height: 400px;
   }
-  .happy-card {
-    flex: 0 0 62%;
-    scroll-snap-align: center;
+  .happy-poster-1 {
+    width: 66%;
+  }
+  .happy-poster-2 {
+    width: 96%;
+  }
+  .happy-pile:hover .happy-poster-1,
+  .happy-pile:focus .happy-poster-1 {
+    transform: translate(-50%, -50%) translate(-14%, 10%) rotate(-5deg);
+  }
+  .happy-pile:hover .happy-poster-2,
+  .happy-pile:focus .happy-poster-2 {
+    transform: translate(-50%, -50%) translate(4%, -24%) rotate(4deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .happy-poster {
+    transition: transform 0.2s;
   }
 }
 
