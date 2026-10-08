@@ -67,12 +67,12 @@ export default function RootLayout({
   return (
     <html
       lang="en-IN"
-      className={`${playfair.variable} ${inter.variable} h-full antialiased`}
+      className={`${playfair.variable} ${inter.variable} antialiased`}
     >
       <head>
         <JsonLd data={siteGraph} />
       </head>
-      <body className="min-h-full flex flex-col relative">
+      <body>
         <CustomCursor />
         {children}
         <FloatingWhatsApp />

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import HeroBanner from "@/components/HeroBanner";
 import Services from "@/components/Services";
+import SalonSplit from "@/components/SalonSplit";
 import About from "@/components/About";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
@@ -49,6 +50,7 @@ export default async function Home() {
       <About />
       <WhyChooseUs />
       <Services />
+      <SalonSplit />
       <Testimonials testimonials={testimonials} />
       <CustomerFeedback feedback={feedback} />
       <HappyCustomers />

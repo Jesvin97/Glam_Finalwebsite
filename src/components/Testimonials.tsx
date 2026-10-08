@@ -170,8 +170,8 @@ export function TestimonialMarquee({ items, variant = "default", className, spee
           <MarqueeRow speed={speed} direction="right" className="group [--gap:0rem] p-0">
             {itemsToDisplay.slice(Math.ceil(itemsToDisplay.length / 2)).map((item, i) => <TestimonialCard key={`fd-row2-${i}`} item={item} variant="flush" />)}
           </MarqueeRow>
-          <div className="pointer-gradient-left z-10" />
-          <div className="pointer-gradient-right z-10" />
+          <div className="pointer-gradient-left" />
+          <div className="pointer-gradient-right" />
         </div>
       ) : (
         <div className={cn("testimonial-marquee-wrapper", cnContainer)}>
@@ -269,7 +269,7 @@ export default function Testimonials({ testimonials = [] }: { testimonials?: Tes
   return (
     <section className="testimonials-section" id="testimonials">
       <ScrollReveal direction="up">
-        <div className="section-title text-center">
+        <div className="section-title">
           <h2 className="gold-section-heading">
             WHAT OUR CLIENTS SAY
           </h2>

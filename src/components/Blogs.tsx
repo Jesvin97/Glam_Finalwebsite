@@ -4,12 +4,30 @@ import { urlFor } from "@/sanity/image";
 import type { SanityImageSource } from "@sanity/image-url";
 import Image from "next/image";
 import Link from "next/link";
+import BlogBookshelf from "./BlogBookshelf";
 
 export interface BlogItem {
   title: string;
   description: string;
   category: string;
   image: SanityImageSource | string;
+  _id?: string;
+  publishedAt?: string;
+}
+
+// Book covers for the shelf, in the site's colours: black, cream, gold, deep brown (with a matching foil colour).
+const SHELF_COVERS = [
+  { color: "#1b1b1b", foil: "#f5d76e" },
+  { color: "#efe8d4", foil: "#7a5a10" },
+  { color: "#c9a227", foil: "#1a1408" },
+  { color: "#2a1d0b", foil: "#f2ead8" },
+];
+
+function shelfDate(iso?: string) {
+  if (!iso) return "";
+  return new Date(iso)
+    .toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric", timeZone: "UTC" })
+    .toUpperCase();
 }
 
 export default function Blog({ blogs = [] }: { blogs?: BlogItem[] }) {
@@ -30,6 +48,17 @@ export default function Blog({ blogs = [] }: { blogs?: BlogItem[] }) {
           Hair care, skin care, and bridal tips from our stylists are coming soon. In the meantime,{" "}
           <Link href="/services" style={{ color: "#d4af37" }}>browse our salon services</Link>.
         </p>
+      )}
+
+      {blogs.length > 0 && (
+        <BlogBookshelf
+          items={blogs.map((b, i) => ({
+            id: b._id ?? `post-${i}`,
+            title: b.title,
+            date: shelfDate(b.publishedAt),
+            ...SHELF_COVERS[i % SHELF_COVERS.length],
+          }))}
+        />
       )}
 
       <div className="blog-grid">

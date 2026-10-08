@@ -48,10 +48,10 @@ export default function Services() {
                     width={1136}
                     height={1408}
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
-                    className="object-contain w-full h-full fill-img"
+                    className="object-contain fill-img"
                   />
                 </div>
-                <div className="service-card-overlay z-10">
+                <div className="service-card-overlay">
                 <h3>{h.label}</h3>
                 <p>{h.desc}</p>
                 <span className="discover-link">View services ⟶</span>
