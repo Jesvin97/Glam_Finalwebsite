@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { motion, useScroll, useTransform, useMotionTemplate, useReducedMotion } from "framer-motion";
 import { useRef } from "react";
@@ -13,6 +14,8 @@ interface ScrollSplitCardItem {
   bgColor: string;
   textColor: string;
   icon?: React.ReactNode;
+  image?: string;
+  imageAlt?: string;
 }
 
 interface ScrollSplitCardProps {
@@ -76,9 +79,16 @@ export function ScrollSplitCard({
     return (
       <div className="mx-auto grid w-full max-w-4xl gap-4 px-4 sm:grid-cols-3">
         {cards.slice(0, 3).map((card, i) => (
-          <div key={i} className="rounded-2xl p-6" style={{ backgroundColor: card.bgColor, color: card.textColor }}>
+          <div key={i} className="overflow-hidden rounded-2xl" style={{ backgroundColor: card.bgColor, color: card.textColor }}>
+            {card.image && (
+              <div className="relative h-48 w-full">
+                <Image src={card.image} alt={card.imageAlt ?? ""} fill sizes="(max-width: 640px) 90vw, 300px" className="object-cover" />
+              </div>
+            )}
+            <div className="p-6">
             <h3 className="mb-3 text-2xl font-medium leading-tight">{card.title}</h3>
             <p className="text-sm opacity-80">{card.description}</p>
+            </div>
           </div>
         ))}
       </div>
@@ -164,6 +174,18 @@ export function ScrollSplitCard({
                     backgroundRepeat: "repeat",
                   }}
                 />
+
+                {card.image && (
+                  <div
+                    className="pointer-events-none absolute inset-x-0 top-0 h-[60%]"
+                    style={{
+                      maskImage: "linear-gradient(to bottom, #000 65%, transparent)",
+                      WebkitMaskImage: "linear-gradient(to bottom, #000 65%, transparent)",
+                    }}
+                  >
+                    <Image src={card.image} alt={card.imageAlt ?? ""} fill sizes="(max-width: 768px) 40vw, 300px" loading="eager" className="object-cover" />
+                  </div>
+                )}
 
                 <div className="relative z-10 mb-auto">{card.icon}</div>
                 <h3 className="relative z-10 mb-2 text-base font-medium leading-tight sm:mb-4 sm:text-2xl">
