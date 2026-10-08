@@ -14,8 +14,8 @@ const CARDS = [
   {
     title: "Bride & Groom",
     description: "Bridal and groom makeup, saree draping and wedding prep.",
-    image: "/images/hero/hero-saree.jpg",
-    imageAlt: "Bride in a cream and gold Kerala saree with jasmine flowers",
+    image: "/images/hero/bride-groom-card.jpg",
+    imageAlt: "A bride in a cream and gold Kerala saree beside a groom in a red kurta with a trimmed beard",
     bgColor: "#d4af37",
     textColor: "#1a1408",
   },
