@@ -3,7 +3,7 @@
 > Premium unisex salon in Thukalassery, Thiruvalla, Kerala, India. Women's and men's haircuts, hair colour, keratin and smoothening, bridal and groom makeup, facials, massage, nails, brows and lashes, and waxing.
 
 Also written as: Glam'more Unisex Salon, Glammore Salon.
-Last updated: 2026-10-02
+Last updated: 2026-10-31
 
 ## Base URL
 https://glammoreunisexsalon.in
@@ -55,6 +55,7 @@ Prices are not listed on the website; message the salon on WhatsApp for a quote.
 ## Key Pages
 - [Home](https://glammoreunisexsalon.in/): about the salon, services overview, client reviews and video stories, feedback form, contact and map
 - [Services](https://glammoreunisexsalon.in/services): full service list by category, with WhatsApp booking
+- Service pages: [Women's hair](https://glammoreunisexsalon.in/services/womens-hair), [Bridal & groom makeup](https://glammoreunisexsalon.in/services/bridal-and-groom-makeup), [Facials & skin care](https://glammoreunisexsalon.in/services/facials-and-skin-care), [Nails](https://glammoreunisexsalon.in/services/nails), [Men's grooming](https://glammoreunisexsalon.in/services/mens-grooming), [Massage & spa](https://glammoreunisexsalon.in/services/massage-and-spa)
 - [FAQs](https://glammoreunisexsalon.in/faq): 50+ answers on hours, location and booking, plus practical advice on haircuts, hair colour, keratin and smoothening, extensions, bridal and groom makeup, facials and de-tan, massage, gel and acrylic nails, threading, waxing, lash extensions and men's grooming
 
 ## Contact & Location

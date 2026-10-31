@@ -7,21 +7,25 @@ export default function Services() {
   const highlights = [
     { 
       label: "Bridal Makeup", 
+      slug: "bridal-and-groom-makeup",
       image: "/images/bridal.jpg",
       desc: "HD and airbrush bridal makeup, hairstyling, and saree draping."
     },
     { 
       label: "Women's Hair & Styling", 
+      slug: "womens-hair",
       image: "/images/services/womens-haircut.jpg", 
       desc: "Women's haircuts, colouring, keratin smoothening, and extensions."
     },
     { 
       label: "Spa & Massage", 
+      slug: "massage-and-spa",
       image: "/images/spa.jpg", 
       desc: "Body and head massages, plus facials and de-tan."
     },
     { 
       label: "Nail Art & Pedicure", 
+      slug: "nails",
       image: "/images/nailart.jpg", 
       desc: "Acrylic extensions, nail art, gel manicures, and pedicures."
     }
@@ -39,7 +43,7 @@ export default function Services() {
       <div className="services-editorial-grid">
         {highlights.map((h, i) => (
           <ScrollReveal direction="up" delay={i * 100} key={i}>
-            <Link href="/services" style={{ textDecoration: 'none' }}>
+            <Link href={`/services/${h.slug}`} style={{ textDecoration: 'none' }}>
               <div className="service-card-editorial">
                 <div className="service-card-bg">
                   <Image 
@@ -54,7 +58,7 @@ export default function Services() {
                 <div className="service-card-overlay">
                 <h3>{h.label}</h3>
                 <p>{h.desc}</p>
-                <span className="discover-link">View services ⟶</span>
+                <span className="discover-link">{`${h.label} in Thiruvalla ⟶`}</span>
               </div>
             </div>
             </Link>
