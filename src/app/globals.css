@@ -32,6 +32,18 @@ html {
   max-width: 100vw;
 }
 
+/* Lenis owns the smoothing when active; native smooth scroll would fight it. */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+html.lenis:not(.lenis-autoToggle) {
+  scroll-behavior: auto;
+}
+.lenis.lenis-stopped {
+  overflow: clip;
+}
+
 body {
   background: var(--site-bg); /* Deep Charcoal */
   color: #f4f4f5; /* Off-white for better readability */
