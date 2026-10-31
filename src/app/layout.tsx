@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Playfair_Display, Inter } from "next/font/google";
 import "./globals.css";
 import JsonLd from "@/components/JsonLd";
+import SmoothScroll from "@/components/SmoothScroll";
 import CustomCursor from "@/components/CustomCursor";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import { siteGraph } from "@/lib/schema";
@@ -73,6 +74,7 @@ export default function RootLayout({
         <JsonLd data={siteGraph} />
       </head>
       <body>
+        <SmoothScroll />
         <CustomCursor />
         {children}
         <FloatingWhatsApp />
