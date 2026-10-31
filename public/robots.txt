@@ -33,4 +33,4 @@ User-agent: Claude-SearchBot
 Allow: /
 Disallow: /studio/
 
-Sitemap: https://glammoresalon.in/sitemap.xml
+Sitemap: https://glammoreunisexsalon.in/sitemap.xml
