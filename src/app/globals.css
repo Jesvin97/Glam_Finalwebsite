@@ -4161,3 +4161,21 @@ h1, h2, h3,
     grid-template-columns: 1fr;
   }
 }
+
+/* Google review call-to-action (replaces the old feedback form) */
+.review-cta {
+  max-width: 560px;
+  margin: 28px auto 0;
+  text-align: center;
+}
+.review-cta p {
+  color: #cccccc;
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+.review-cta .review-cta-stars {
+  color: #d4af37;
+  font-size: 28px;
+  letter-spacing: 6px;
+  margin-bottom: 12px;
+}
