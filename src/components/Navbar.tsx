@@ -3,7 +3,7 @@
 import { useState, useRef, useEffect } from "react";
 import { BUSINESS_NAME } from "@/lib/site";
 import Lottie, { LottieRefCurrentProps } from "lottie-react";
-import menuAnimation from "../../animation/navbar.json";
+import menuAnimation from "@/assets/lottie/navbar.json";
 import Link from "next/link";
 import Image from "next/image";
 

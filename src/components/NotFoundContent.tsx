@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Lottie from "lottie-react";
-import binocularAnimation from "../../animation/d3ca2a84-1b6e-11f0-ade5-3fd05ee5aacb.json";
+import binocularAnimation from "@/assets/lottie/binoculars.json";
 
 export default function NotFoundContent() {
   return (
