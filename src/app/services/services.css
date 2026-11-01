@@ -41,6 +41,13 @@
   gap: 10px;
 }
 
+/* Keep pills out from under the floating WhatsApp button (bottom right) on wide screens. */
+@media (min-width: 769px) {
+  .filter-pill-list {
+    padding-right: 96px;
+  }
+}
+
 .filter-pill-list::-webkit-scrollbar {
   display: none;
 }
