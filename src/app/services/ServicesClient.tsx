@@ -316,7 +316,7 @@ export default function ServicesClient() {
 
       {/* ── SLIDE-OUT BOOKING DRAWER ── */}
       <div className={`drawer-overlay ${isDrawerOpen ? "open" : ""}`} onClick={() => setIsDrawerOpen(false)} />
-      <aside className={`booking-drawer ${isDrawerOpen ? "open" : ""}`}>
+      <aside data-lenis-prevent className={`booking-drawer ${isDrawerOpen ? "open" : ""}`}>
         <button className="drawer-close" onClick={() => setIsDrawerOpen(false)}>
           <FaTimes />
         </button>
