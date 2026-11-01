@@ -1,7 +1,7 @@
 // Business facts used by page metadata and structured data. Keep these in sync with the Google
 // Business Profile: the exact same name, address and phone should appear everywhere.
 
-export const SITE_URL = "https://glammoresalon.in";
+export const SITE_URL = "https://glammoreunisexsalon.in";
 
 // Matches the signboard. Alternate spellings people use are listed in `alternateName` in the schema.
 export const BUSINESS_NAME = "Glam'more Premium Unisex Salon";
@@ -32,3 +32,6 @@ export const SOCIAL_LINKS = [
 export const AREAS_SERVED = ["Thiruvalla", "Changanassery", "Chengannur", "Pathanamthitta"];
 
 export const HOURS = { opens: "10:00", closes: "20:30" } as const;
+
+// Opens the "write a review" box on the salon's Google Business Profile.
+export const GOOGLE_REVIEW_URL = "https://g.page/r/CQggnazf6vUdEAE/review";

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { BUSINESS_NAME } from "@/lib/site";
 import Link from "next/link";
+import { servicePages } from "@/lib/service-pages";
 import {
   FaInstagram,
   FaFacebookF,
@@ -36,6 +37,15 @@ export default function Footer() {
         </div>
       </div>
 
+
+      <nav className="footer-nav" aria-label="Salon services">
+        {servicePages.map((p) => (
+          <Link key={p.slug} href={`/services/${p.slug}`}>
+            {p.h1}
+          </Link>
+        ))}
+        <Link href="/faq">Salon FAQs</Link>
+      </nav>
 
       {/* BOTTOM BAR: name · address · phone · credit */}
       <div className="footer-bottom">

@@ -1,19 +1,20 @@
 import ScrollReveal from "./ScrollReveal";
+import { GOOGLE_REVIEW_URL } from "@/lib/site";
 
-// Paste the Google Form share link here.
-const GOOGLE_FORM_URL = "";
-
+// Reviews live on the Google Business Profile, so this section just sends happy clients there.
 export default function CustomerFeedback() {
   return (
     <section className="feedback-section" id="feedback">
       <ScrollReveal direction="up">
-        <div className="section-title">
+        <div className="section-title text-center">
           <h2 className="gold-section-heading">SHARE YOUR GLAM&apos;MORE EXPERIENCE</h2>
         </div>
-        <div style={{ textAlign: "center", marginTop: 24 }}>
-          <a className="btn-luxury" href={GOOGLE_FORM_URL} target="_blank" rel="noopener noreferrer">
-            <span>Leave a review</span>
-            <span className="btn-luxury-hover-effect" />
+        <div className="review-cta">
+          <p className="review-cta-stars" aria-hidden="true">★★★★★</p>
+          <p>Enjoyed your visit? A short Google review helps other people in Thiruvalla find us.</p>
+          <a className="btn-luxury" href={GOOGLE_REVIEW_URL} target="_blank" rel="noopener noreferrer">
+            Review us on Google
+            <span className="btn-luxury-hover-effect"></span>
           </a>
         </div>
       </ScrollReveal>
