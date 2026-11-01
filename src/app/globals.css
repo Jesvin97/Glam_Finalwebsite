@@ -3135,188 +3135,33 @@ h1, h2, h3,
 }
 
 /* ========================================
-   CUSTOMER FEEDBACK SECTION
+   CUSTOMER FEEDBACK SECTION (links to Google Business Profile reviews)
 ======================================== */
 
 .feedback-section {
   background: var(--site-bg);
   padding: 70px 5% 80px;
-}
-
-.feedback-section .section-title {
   text-align: center;
 }
 
-.feedback-list {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-  max-width: 1200px;
-  margin: 30px auto 0;
-}
-
-.feedback-card {
-  margin: 0;
-  padding: 20px;
-  background: #111;
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  border-radius: 16px;
-}
-
-.feedback-card p {
+.feedback-intro {
+  max-width: 560px;
+  margin: 18px auto 28px;
   color: #bbb;
-  font-size: 14px;
-  line-height: 1.6;
-  margin: 10px 0 12px;
-}
-
-.feedback-card footer {
-  color: #d4af37;
-  font-size: 13px;
-}
-
-.feedback-card footer span {
-  color: #777;
-}
-
-.feedback-stars {
-  color: #d4af37;
-  letter-spacing: 2px;
   font-size: 15px;
+  line-height: 1.7;
 }
 
-.feedback-stars-empty {
-  color: #333;
-}
-
-.feedback-form {
-  max-width: 640px;
-  margin: 40px auto 0;
-  padding: 28px;
-  background: #0e0e0e;
-  border: 1px solid rgba(212, 175, 55, 0.15);
-  border-radius: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-
-.feedback-form h3 {
-  font-family: var(--font-playfair-family), serif;
-  font-weight: 400;
-  font-size: 24px;
-  color: #fff;
-  text-align: center;
-  margin: 0;
-}
-
-.feedback-rating {
-  display: flex;
-  justify-content: center;
-  gap: 6px;
-}
-
-.feedback-rating button {
-  background: none;
-  border: none;
-  font-size: 30px;
-  line-height: 1;
-  color: #333;
-  cursor: pointer;
-  transition: color 0.2s ease, transform 0.2s ease;
-}
-
-.feedback-rating button.active {
+.feedback-stars-row {
   color: #d4af37;
-}
-
-.feedback-rating button:hover {
-  transform: scale(1.12);
-}
-
-.feedback-form-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 14px;
-}
-
-.feedback-form input,
-.feedback-form select,
-.feedback-form textarea {
-  width: 100%;
-  background: #151515;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 12px;
-  padding: 13px 16px;
-  color: #fff;
-  font-size: 14px;
-  font-family: inherit;
-  outline: none;
-  transition: border-color 0.3s ease;
-}
-
-.feedback-form select {
-  color: #aaa;
-}
-
-.feedback-form input:focus,
-.feedback-form select:focus,
-.feedback-form textarea:focus {
-  border-color: #d4af37;
-}
-
-.feedback-form textarea {
-  resize: vertical;
-}
-
-.feedback-form .btn-luxury {
-  align-self: center;
-}
-
-.feedback-form .btn-luxury:disabled {
-  opacity: 0.6;
-  cursor: wait;
-}
-
-.feedback-hp {
-  position: absolute !important;
-  left: -9999px !important;
-  width: 1px !important;
-  height: 1px !important;
-  opacity: 0 !important;
-}
-
-.feedback-status {
-  text-align: center;
-  font-size: 14px;
-  margin: 0;
-}
-
-.feedback-status.success {
-  color: #7fd18b;
-}
-
-.feedback-status.error {
-  color: #e05252;
-}
-
-@media (max-width: 900px) {
-  .feedback-list {
-    grid-template-columns: 1fr;
-  }
+  letter-spacing: 6px;
+  font-size: 28px;
+  margin-bottom: 22px;
 }
 
 @media (max-width: 600px) {
   .feedback-section {
     padding: 50px 16px 60px;
-  }
-
-  .feedback-form {
-    padding: 20px;
-  }
-
-  .feedback-form-row {
-    grid-template-columns: 1fr;
   }
 }
 
@@ -3325,68 +3170,6 @@ h1, h2, h3,
   background: var(--site-bg);
   padding-top: 110px;
   min-height: 70vh;
-}
-
-/* Feedback form: service chips + word count */
-.feedback-services {
-  border: none;
-  padding: 0;
-  margin: 0;
-}
-
-.feedback-services legend {
-  color: #ccc;
-  font-size: 14px;
-  margin-bottom: 10px;
-}
-
-.feedback-services legend span {
-  color: #777;
-  font-size: 12.5px;
-}
-
-.feedback-service-chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.feedback-service-chips .chip {
-  background: #151515;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  color: #bbb;
-  border-radius: 50px;
-  padding: 7px 14px;
-  font-size: 13px;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.feedback-service-chips .chip:hover {
-  border-color: rgba(212, 175, 55, 0.5);
-}
-
-.feedback-service-chips .chip.active {
-  background: rgba(212, 175, 55, 0.15);
-  border-color: #d4af37;
-  color: #f5d76e;
-}
-
-.feedback-message {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.feedback-word-count {
-  align-self: flex-end;
-  font-size: 12px;
-  color: #777;
-  margin: 0;
-}
-
-.feedback-word-count.over {
-  color: #e05252;
 }
 
 /* Testimonial videos (YouTube playlist, vertical reels) */
