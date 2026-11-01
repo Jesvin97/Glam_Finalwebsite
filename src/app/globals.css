@@ -62,7 +62,6 @@
   --hex-141416: #141416;
   --hex-1a1a1d: #1a1a1d;
   --hex-1c1c1e: #1c1c1e;
-  --hex-d4af37: #d4af37;
   --hex-e05252: #e05252;
   --hex-f5d76e: #f5d76e;
   --rgb-18-18-20: 18, 18, 20;
@@ -72,6 +71,9 @@
   --rgb-28-28-30: 28, 28, 30;
   --rgb-28-28-32: 28, 28, 32;
   --rgb-32-28-18: 32, 28, 18;
+  --hex-121212: #121212;
+  --hex-cfcfcf: #cfcfcf;
+  --hex-d8d8d8: #d8d8d8;
 }
 
 /* In the base layer so Tailwind utilities (p-8, mb-4 ...) can override it; every other site rule still wins as before. */
@@ -2522,7 +2524,7 @@ h1, h2, h3,
   text-transform: uppercase !important;
   letter-spacing: 4px !important;
   color: var(--gold) !important;
-  font-family: 'Playfair Display', serif !important;
+  font-family: var(--font-playfair-family) !important;
   font-weight: 700 !important;
 }
 
@@ -2560,7 +2562,7 @@ h1, h2, h3,
   letter-spacing: 2px !important;
   text-transform: uppercase !important;
   margin-bottom: 25px !important;
-  font-family: 'Playfair Display', serif !important;
+  font-family: var(--font-playfair-family) !important;
   text-align: center !important;
 }
 
@@ -3012,7 +3014,7 @@ h1, h2, h3,
     color: var(--gold);
     font-size: 1.6em;
     margin-bottom: 0.2em;
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-playfair-family);
     letter-spacing: 2px;
     text-transform: uppercase;
     line-height: 1.2;
@@ -3921,10 +3923,10 @@ h1, h2, h3,
   gap: 4px;
   list-style: none;
   font-size: 14px;
-  color: #b5b5b5;
+  color: var(--hex-b5b5b5);
 }
 .breadcrumbs a {
-  color: #d4af37;
+  color: var(--gold);
   text-decoration: none;
 }
 .breadcrumbs a:hover {
@@ -3941,11 +3943,11 @@ h1, h2, h3,
   font-size: 14px;
 }
 .footer-nav a {
-  color: #cfcfcf;
+  color: var(--hex-cfcfcf);
   text-decoration: none;
 }
 .footer-nav a:hover {
-  color: #d4af37;
+  color: var(--gold);
 }
 
 /* ---- Service pages (/services/[slug]) ---- */
@@ -3964,18 +3966,18 @@ h1, h2, h3,
 .service-page h1 {
   font-size: clamp(32px, 4.6vw, 56px);
   line-height: 1.12;
-  color: #ffffff;
+  color: var(--white);
   margin-bottom: 18px;
 }
 .service-page h2 {
   font-size: clamp(24px, 3vw, 34px);
-  color: #d4af37;
+  color: var(--gold);
   margin-bottom: 22px;
 }
 .service-page-lead {
   font-size: 18px;
   line-height: 1.7;
-  color: #d8d8d8;
+  color: var(--hex-d8d8d8);
   margin-bottom: 26px;
 }
 .service-page-actions {
@@ -3985,14 +3987,14 @@ h1, h2, h3,
   gap: 18px 26px;
 }
 .service-page-link {
-  color: #d4af37;
+  color: var(--gold);
 }
 .service-page-photo {
   position: relative;
   aspect-ratio: 3 / 2;
   border-radius: 18px;
   overflow: hidden;
-  border: 1px solid rgba(212, 175, 55, 0.25);
+  border: 1px solid rgba(var(--rgb-212-175-55), 0.25);
 }
 .service-page-section {
   margin-top: 56px;
@@ -4003,8 +4005,8 @@ h1, h2, h3,
   gap: 22px;
 }
 .service-page-card {
-  background: #121212;
-  border: 1px solid rgba(212, 175, 55, 0.18);
+  background: var(--hex-121212);
+  border: 1px solid rgba(var(--rgb-212-175-55), 0.18);
   border-radius: 16px;
   overflow: hidden;
   padding-bottom: 18px;
@@ -4018,37 +4020,37 @@ h1, h2, h3,
   font-size: 20px;
   padding: 0 18px;
   margin-bottom: 8px;
-  color: #ffffff;
+  color: var(--white);
 }
 .service-page-card p {
   padding: 0 18px;
   font-size: 15px;
   line-height: 1.6;
-  color: #cfcfcf;
+  color: var(--hex-cfcfcf);
 }
 .service-page-faqs details {
-  border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+  border-bottom: 1px solid rgba(var(--rgb-212-175-55), 0.2);
   padding: 16px 0;
 }
 .service-page-faqs summary {
   cursor: pointer;
   font-size: 18px;
-  color: #ffffff;
+  color: var(--white);
 }
 .service-page-faqs details p {
   margin-top: 12px;
   line-height: 1.7;
-  color: #cfcfcf;
+  color: var(--hex-cfcfcf);
 }
 .service-page-more {
   margin-top: 18px;
 }
 .service-page a:not(.btn-luxury) {
-  color: #d4af37;
+  color: var(--gold);
 }
 .service-page-visit p {
   line-height: 1.9;
-  color: #d8d8d8;
+  color: var(--hex-d8d8d8);
 }
 .service-page-links {
   list-style: none;
@@ -4070,12 +4072,12 @@ h1, h2, h3,
   text-align: center;
 }
 .review-cta p {
-  color: #cccccc;
+  color: var(--hex-cccccc);
   line-height: 1.7;
   margin-bottom: 24px;
 }
 .review-cta .review-cta-stars {
-  color: #d4af37;
+  color: var(--gold);
   font-size: 28px;
   letter-spacing: 6px;
   margin-bottom: 12px;
