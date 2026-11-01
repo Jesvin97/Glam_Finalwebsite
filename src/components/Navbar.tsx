@@ -67,7 +67,8 @@ export default function Navbar() {
             loading="eager"
           />
           <span className="navbar-brand-text">
-            {BUSINESS_NAME}
+            {BUSINESS_NAME.split(" ")[0]}
+            <small>{BUSINESS_NAME.split(" ").slice(1).join(" ")}</small>
           </span>
         </Link>
 
