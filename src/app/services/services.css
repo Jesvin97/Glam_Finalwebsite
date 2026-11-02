@@ -353,7 +353,7 @@
   font-weight: 400;
   margin: 0;
   line-height: 1.25;
-}
+}
 
 /* Only the heading text leaves the page (inline link); the rest of the card picks the service. */
 .sub-service-title-link {
