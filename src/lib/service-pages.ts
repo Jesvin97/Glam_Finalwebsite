@@ -625,6 +625,371 @@ export const servicePages: ServicePage[] = [
     ],
     updated: "2026-11-02",
   },
+  {
+    slug: "acrylic-nails-and-nail-art",
+    parent: "nails",
+    category: "nails",
+    serviceIds: ["acrylic-nails"],
+    h1: "Acrylic Nails & Nail Art in Thiruvalla",
+    shortName: "Acrylic nails & nail art",
+    title: "Acrylic Nails & Nail Art in Thiruvalla | Glam'more",
+    description:
+      "Acrylic nail extensions in your choice of length and shape, finished with custom nail art, at Glam'more Premium Unisex Salon, Thukalassery, Thiruvalla.",
+    lead: "Acrylic nail extensions in your choice of length and shape, finished with custom nail art.",
+    faqTopics: ["Nails"],
+    faqIncludes: ["acrylic"],
+    intro: [
+      "Acrylic nails are for people who want length, strength or a particular shape that their own nails will not give them. At Glam'more in Thukalassery, Thiruvalla, we build acrylic extensions in the length and shape you choose, and finish them with custom nail art if you want it.",
+      "Acrylic is a stronger, sculpted material, which is the main difference from gel. Gel polish is a thin, flexible coat over your natural nail, so it suits a glossy manicure at your own length. If you want extensions, acrylic is the one to ask for.",
+      "A good set depends on preparation and on the shape being planned around your hands and daily routine, so we talk through length and shape before we start, not after.",
+    ],
+    steps: [
+      {
+        title: "Plan the set",
+        text: "Tell us the length and shape you want, and show a photo if you have one. We tell you what suits your nail beds and how you use your hands, so the set is practical as well as pretty.",
+      },
+      {
+        title: "Prepare the nails",
+        text: "Old polish is removed and the natural nails are shaped and cleaned, with cuticle care, so that the extension has a clean surface to bond to.",
+      },
+      {
+        title: "Build and shape",
+        text: "The acrylic extensions are sculpted on the nail and filed to the shape you chose, then smoothed and finished with colour.",
+      },
+      {
+        title: "Nail art",
+        text: "Custom nail art is added if you want it, from a simple accent to a full design matched to an outfit or an occasion.",
+      },
+    ],
+    suits: [
+      "People who want added length or a specific shape that their natural nails cannot hold.",
+      "Anyone who likes custom nail art and wants a set built to carry it.",
+      "Brides and wedding guests who want nails planned around an outfit and jewellery.",
+      "Those who are happy to come back for a fill every two to three weeks.",
+    ],
+    tips: [
+      "Come with old polish removed if you can, and do not cut your own cuticles beforehand, which raises the risk of infection.",
+      "Tell us about any cuts, fungal infection or skin conditions on your hands before we start.",
+      "Never peel or pull acrylics off. Have them soaked off and removed professionally.",
+      "Wear gloves for washing and cleaning, and do not use your nails as tools.",
+    ],
+    more: [
+      {
+        heading: "Gel or acrylic: which should you choose?",
+        paragraphs: [
+          "Gel polish is cured under a lamp and sits as a thin, flexible coat over your natural nail. It suits a glossy manicure at your own nail length and usually lasts around two to three weeks without chipping, depending on how hard you use your hands.",
+          "Acrylic is stronger and is used to add length and shape. If you want extensions, choose acrylic. If you want a neat, natural-length finish, gel is usually the simpler option. Tell us what your week looks like and we will suggest one.",
+        ],
+      },
+      {
+        heading: "Fills and nail health",
+        paragraphs: [
+          "As your natural nail grows, a gap appears near the cuticle, and acrylics usually need a fill every two to three weeks to keep the set strong and tidy.",
+          "Acrylics do not have to damage your natural nails when they are applied and removed properly. The damage comes from peeling or pulling them off, which takes layers of the natural nail with it. If you want a set removed, book it with us instead of removing it at home.",
+        ],
+      },
+      {
+        heading: "Planning nail art",
+        paragraphs: [
+          "Nail art works best when it is planned with the shape and length, because a long coffin or almond shape carries a design differently from a short square one. Bring photos of designs you like and tell us how much detail you want.",
+          "For a wedding or event, plan the nail art around the outfit and jewellery, and book a few days ahead so that the set has settled before photographs.",
+        ],
+      },
+    ],
+    updated: "2026-11-02",
+  },
+  {
+    slug: "beard-and-shaving",
+    parent: "mens-grooming",
+    category: "mens",
+    serviceIds: ["shaving"],
+    h1: "Beard Styling & Hot-Towel Shave in Thiruvalla",
+    shortName: "Beard & shaving",
+    title: "Beard Styling & Hot-Towel Shave in Thiruvalla | Glam'more",
+    description:
+      "Hot-towel shave, beard shaping and edging with advice on a beard style that suits your face, at Glam'more Premium Unisex Salon, Thukalassery, Thiruvalla.",
+    lead: "Hot-towel shave, beard shaping and edging, with advice on a beard style that suits your face.",
+    faqTopics: ["Men's Grooming"],
+    faqIncludes: ["beard", "shave"],
+    intro: [
+      "A beard looks deliberate when its lines are clean and its shape suits the face. At Glam'more in Thukalassery, Thiruvalla, we shape and edge beards to suit your face and how densely your beard grows, and we offer a hot-towel shave for a close, comfortable finish.",
+      "Whether you are growing a beard out, keeping a short one sharp or clean-shaving for an occasion, tell us what you want and we will say honestly whether it will suit you.",
+      "We are open every day, including Sundays, so a quick tidy-up before work, a function or a wedding is easy to fit in.",
+    ],
+    steps: [
+      {
+        title: "Talk it through",
+        text: "Tell us whether you want a full beard, a short one or a clean shave. We look at your face shape and how your beard grows and suggest a style.",
+      },
+      {
+        title: "Warm towel",
+        text: "A warm towel softens the hair and opens the skin before the razor, so the shave is closer and more comfortable with less irritation.",
+      },
+      {
+        title: "Shave or shape",
+        text: "The beard is shaped and edged, or shaved, with a clean neckline and defined cheek lines.",
+      },
+      {
+        title: "Finish",
+        text: "A cooling towel and moisturiser finish the shave. We show you how to maintain the shape at home and when to come back.",
+      },
+    ],
+    suits: [
+      "Men who get razor bumps or irritation from ordinary shaving.",
+      "Anyone growing a beard who wants it shaped as it fills in.",
+      "Men who want a short beard kept sharp, with defined lines.",
+      "Grooms and guests who want a neat finish for photographs.",
+    ],
+    tips: [
+      "Tidy the neckline and cheek lines every one to two weeks, and have the shape set by a barber about once a month.",
+      "Tell us about sensitive skin, razor bumps or any skin condition before the shave.",
+      "For a wedding or event, trim the beard the day before or on the morning itself for sharp lines.",
+      "Moisturise daily so skin does not look dry or patchy.",
+    ],
+    more: [
+      {
+        heading: "Choosing a beard style",
+        paragraphs: [
+          "Your face shape and how densely your beard grows decide what works. Fuller sides can balance a long face, while a defined jawline and neat edges suit most shapes.",
+          "Patchy growth does not mean you cannot have a beard. A shorter, well-shaped style often looks better than a long one with gaps. We will tell you plainly what your beard can carry.",
+        ],
+      },
+      {
+        heading: "What a hot-towel shave does",
+        paragraphs: [
+          "A warm towel softens the hair and opens the skin before the razor, so the shave is closer and more comfortable with less irritation. It is finished with a cooling towel and moisturiser.",
+          "It is a good choice before a wedding or event, and if you get razor bumps with ordinary shaving.",
+        ],
+      },
+      {
+        heading: "Keeping it neat between visits",
+        paragraphs: [
+          "The neckline and cheek lines grow out first, so a quick tidy every one to two weeks keeps the shape looking deliberate.",
+          "Wash the beard regularly, keep the skin underneath moisturised, and come back about once a month to have the shape reset by a barber.",
+        ],
+      },
+    ],
+    updated: "2026-11-02",
+  },
+  {
+    slug: "hair-extensions",
+    parent: "womens-hair",
+    category: "hair",
+    serviceIds: ["hair-extensions"],
+    h1: "Hair Extensions in Thiruvalla",
+    shortName: "Hair extensions",
+    title: "Hair Extensions in Thiruvalla | Glam'more Unisex Salon",
+    description:
+      "Natural human hair extensions for added length or volume, colour-matched and fitted in the salon at Glam'more, Thukalassery, Thiruvalla.",
+    lead: "Natural human hair extensions for added length or volume, colour-matched and fitted in the salon.",
+    faqTopics: ["Hair Extensions"],
+    intro: [
+      "Hair extensions add length, volume or both, without waiting months for your own hair to grow. At Glam'more in Thukalassery, Thiruvalla, we use natural human hair extensions, which are colour-matched to your hair and fitted in the salon.",
+      "The aim is a result that looks like your own hair. That depends on matching the colour and texture, on not adding more weight than your hair can carry, and on fitting the extensions neatly.",
+      "Tell us how much length or volume you want and what you are using the extensions for, a wedding or everyday wear, and we will recommend what your hair can comfortably carry.",
+    ],
+    steps: [
+      {
+        title: "Consultation",
+        text: "We look at your hair's length, thickness and condition, and talk about the length or volume you want and how long you want to wear them.",
+      },
+      {
+        title: "Colour and texture matching",
+        text: "The extensions are matched to your hair colour and texture so that they blend, and we tell you if a small colour change would help.",
+      },
+      {
+        title: "Fitting",
+        text: "The extensions are fitted in the salon, with the weight kept appropriate for your hair, and the cut and styling blended around them.",
+      },
+      {
+        title: "Care advice",
+        text: "You are shown how to brush, wash and style the hair with the extensions, and what to avoid so they last and your own hair stays healthy.",
+      },
+    ],
+    suits: [
+      "People who want length for a wedding, a function or a change of look.",
+      "Anyone with fine or thin hair who wants more volume.",
+      "Those who would like both length and volume without a long wait.",
+      "Brides who want a fuller hairstyle for the wedding day.",
+    ],
+    tips: [
+      "Tell us how much length or volume you want, so we can recommend what your hair can comfortably carry.",
+      "Brush gently and wash carefully, as good brushing and gentle washing make the biggest difference to how long extensions last.",
+      "Avoid heat damage, and use a heat protectant when you style.",
+      "Have extensions removed in the salon, not at home, since removing them yourself can damage your own hair.",
+    ],
+    more: [
+      {
+        heading: "How long do extensions last?",
+        paragraphs: [
+          "It depends on the type and on how you care for them. Clip-in extensions can be reused many times, while longer-wear methods are worn for weeks to months before they need to be moved up or removed.",
+          "Good brushing, gentle washing and avoiding heat damage make the biggest difference. Ask us which type suits your plans before you decide.",
+        ],
+      },
+      {
+        heading: "Will extensions damage your own hair?",
+        paragraphs: [
+          "Not when they are fitted well, kept light, brushed properly and removed correctly. Problems usually come from extensions that are too heavy for your hair, left in too long, or removed at home.",
+          "That is why we ask how much length or volume you want, and recommend only what your hair can comfortably carry.",
+        ],
+      },
+      {
+        heading: "Extensions for a wedding",
+        paragraphs: [
+          "Extensions are often used for bridal hairstyles that need fullness, such as a long braid, a bun or loose curls. Plan them with the hairstyle, and try the look at your bridal trial.",
+          "If you want to wear extensions on the wedding day, book a consultation a few weeks ahead so that the colour match and fitting can be checked, and any cut or colour can be done first.",
+        ],
+      },
+    ],
+    updated: "2026-11-02",
+  },
+  {
+    slug: "groom-makeup",
+    parent: "bridal-and-groom-makeup",
+    category: "events",
+    serviceIds: ["groom-makeup"],
+    h1: "Groom Makeup & Styling in Thiruvalla",
+    shortName: "Groom makeup",
+    title: "Groom Makeup & Styling in Thiruvalla | Glam'more",
+    description:
+      "Groom styling for the wedding day: hair, beard trim and shaping, and light, natural makeup for photos, at Glam'more Salon, Thukalassery, Thiruvalla.",
+    lead: "Groom styling for the wedding day: hair, beard trim and shaping, and light, natural makeup for photos.",
+    faqTopics: ["Bridal & Groom"],
+    faqIncludes: ["groom"],
+    intro: [
+      "A groom is photographed all day, often at close range, so clean hair and beard lines and even skin matter. At Glam'more in Thukalassery, Thiruvalla, groom styling covers the haircut, beard trim and shaping, and light, natural makeup for photos.",
+      "The aim is to look like yourself on a good day, not made up. The makeup is light, and its job is to even out skin tone and take away shine under flash and strong light.",
+      "We can plan the groom's styling together with the bride's schedule, so that both are ready on time.",
+    ],
+    steps: [
+      {
+        title: "Plan ahead",
+        text: "Message us with the wedding date. We suggest when to get the haircut and a clean-up or facial, so everything has settled by the day.",
+      },
+      {
+        title: "Haircut and beard",
+        text: "The haircut and beard trim are done a few days before, and the beard is tidied again on the morning if needed, for sharp lines.",
+      },
+      {
+        title: "Skin and light makeup",
+        text: "On the day the skin is prepared and light, natural makeup is applied to even the tone and reduce shine for photographs.",
+      },
+      {
+        title: "Final check",
+        text: "A last check of the hair, the beard and the skin before you leave, so you are ready for photographs.",
+      },
+    ],
+    suits: [
+      "Grooms who want a polished, natural look in wedding photos.",
+      "Men who do not usually wear makeup and want it to look invisible.",
+      "Grooms who want a haircut, beard and skin plan across the days before the wedding.",
+      "Families who need the groom and the bride ready on the same morning.",
+    ],
+    tips: [
+      "Get the haircut three to five days before so it settles, and trim the beard the day before or on the morning itself.",
+      "A clean-up or facial a few days ahead helps skin look even in photos.",
+      "Moisturise daily so skin does not look dry or patchy under makeup.",
+      "Do not try new skincare products in the week before the wedding.",
+    ],
+    more: [
+      {
+        heading: "How should a groom prepare for the wedding day?",
+        paragraphs: [
+          "Plan the haircut about three to five days before, so that it looks natural rather than freshly cut. Trim the beard the day before or on the morning itself for sharp lines.",
+          "A clean-up or facial a few days ahead helps skin look even in photos, and moisturising daily stops it looking dry or patchy under makeup.",
+        ],
+      },
+      {
+        heading: "What does groom makeup involve?",
+        paragraphs: [
+          "Groom makeup is light and natural. It evens out the skin tone, covers marks and takes away shine, so that the skin looks healthy under flash and bright light.",
+          "If you are unsure about wearing makeup, tell us. We can keep it to the minimum and show you what it looks like before the day.",
+        ],
+      },
+      {
+        heading: "Hair and beard on the day",
+        paragraphs: [
+          "The hairstyle and beard are finished on the morning of the wedding, with the neckline and cheek lines cleaned up. If you want a hot-towel shave, plan it with us for a close, comfortable finish.",
+          "If other family members need styling as well, let us know when you book, so the schedule works for everyone.",
+        ],
+      },
+    ],
+    updated: "2026-11-02",
+  },
+  {
+    slug: "lash-extensions",
+    parent: "brows-and-lashes",
+    category: "brows",
+    serviceIds: ["eyelashes"],
+    h1: "Eyelash Extensions in Thiruvalla",
+    shortName: "Eyelash extensions",
+    title: "Eyelash Extensions in Thiruvalla | Glam'more Salon",
+    description:
+      "Classic and volume eyelash extensions, applied lash by lash, at Glam'more Premium Unisex Salon, Thukalassery, Thiruvalla.",
+    lead: "Classic and volume lash extensions, applied lash by lash.",
+    faqTopics: ["Brows, Lashes & Waxing"],
+    faqIncludes: ["eyelash"],
+    intro: [
+      "Eyelash extensions give the eyes more definition without mascara. At Glam'more in Thukalassery, Thiruvalla, we apply classic and volume lash extensions lash by lash.",
+      "Classic extensions place one extension on each natural lash, for a natural, defined look. Volume extensions give a fuller, denser look.",
+      "Extensions need some upkeep, so tell us what you wear every day and how much maintenance you are happy with, and we will suggest a style that fits.",
+      "Lashes also work well alongside brow threading, and many people book both in the same visit before a wedding or an event. We are open every day, including Sundays, and walk-ins are welcome when a chair is free, although lash extensions take time, so booking ahead is better.",
+    ],
+    steps: [
+      {
+        title: "Choose the style",
+        text: "We talk about whether you want a natural, classic look or a fuller, volume look, and how much upkeep suits you.",
+      },
+      {
+        title: "Prepare",
+        text: "The eye area is cleaned and the natural lashes are prepared, so that the extensions bond properly.",
+      },
+      {
+        title: "Application",
+        text: "The extensions are applied lash by lash, with care taken to keep the natural lashes separate.",
+      },
+      {
+        title: "Aftercare",
+        text: "We show you how to keep the extensions clean and what to avoid, and suggest when to come back for a fill.",
+      },
+    ],
+    suits: [
+      "Anyone who wants defined eyes without mascara every day.",
+      "Brides who want lashes planned as part of the wedding look.",
+      "People going on holiday or to an event who want a low-effort look.",
+      "Those happy to return for a fill every two to three weeks.",
+    ],
+    tips: [
+      "Tell us about any allergy, eye condition or sensitivity before we start.",
+      "Keep the extensions dry for the first 24 hours.",
+      "Avoid oil-based cleansers and waterproof mascara, never pull or pick at the extensions, and brush them gently with a clean spoolie.",
+      "Do not remove extensions yourself. Come back to have them taken off properly.",
+    ],
+    more: [
+      {
+        heading: "Classic or volume lashes",
+        paragraphs: [
+          "Classic lashes place one extension on each natural lash, which gives a natural, defined look. They suit people who want enhancement without drama.",
+          "Volume lashes use finer extensions in fans, which gives a fuller, denser look. Choose volume if you want more drama, and tell us how bold you want to go.",
+        ],
+      },
+      {
+        heading: "How long do they last?",
+        paragraphs: [
+          "Extensions shed naturally with your own lashes, which renew over about six to eight weeks, so most people have a fill every two to three weeks.",
+          "How long a set looks good depends on your own lash cycle, how you care for them, and how often you rub your eyes.",
+        ],
+      },
+      {
+        heading: "Looking after your lashes",
+        paragraphs: [
+          "Keep them dry for the first 24 hours, avoid oil-based cleansers and waterproof mascara, never pull or pick at them, and brush them gently with a clean spoolie.",
+          "If your eyes feel irritated or sore, get in touch with us and see a doctor if it does not settle.",
+        ],
+      },
+    ],
+    updated: "2026-11-02",
+  },
 ];
 
 export const servicePageBySlug = (slug: string) => servicePages.find((p) => p.slug === slug);
