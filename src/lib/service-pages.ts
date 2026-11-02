@@ -13,8 +13,16 @@ export interface ServicePage {
   faqTopics: string[];
   /** When a topic is shared by two pages, keep only FAQs whose question contains one of these words. */
   faqIncludes?: string[];
+  /** Detail page for one service: the slug of the group page it belongs to. Group pages list their detail pages. */
+  parent?: string;
+  /** Detail pages show only these services from services-data.ts (and use the first one's photo). */
+  serviceIds?: string[];
+  /** Replaces the category description under the heading. */
+  lead?: string;
   /** Opening paragraphs, shown under the page heading. */
   intro: string[];
+  /** Extra sections for deeper guidance, shown after the tips. */
+  more?: { heading: string; paragraphs: string[] }[];
   /** "What to expect" steps, in order. */
   steps: { title: string; text: string }[];
   /** Who the service suits. */
@@ -389,6 +397,231 @@ export const servicePages: ServicePage[] = [
       "Exfoliate gently the day before, and tell us about any skin conditions or recent treatments.",
       "For 24 hours afterwards, avoid sun, hot showers, saunas, heavy workouts and tight clothes.",
       "Do not scrub or apply perfumed products to the waxed area straight away.",
+    ],
+    updated: "2026-11-02",
+  },
+  {
+    slug: "bridal-makeup",
+    parent: "bridal-and-groom-makeup",
+    category: "events",
+    serviceIds: ["bridal-services"],
+    h1: "Bridal Makeup in Thiruvalla",
+    shortName: "Bridal makeup",
+    title: "Bridal Makeup in Thiruvalla: HD & Airbrush | Glam'more",
+    description:
+      "Kerala bridal makeup in HD or airbrush, with bridal hairstyling and saree draping, planned with a trial at Glam'more Premium Unisex Salon, Thukalassery, Thiruvalla.",
+    lead: "Kerala bridal makeup in HD or airbrush, with hairstyling and saree draping, planned with you well before the wedding day.",
+    faqTopics: ["Bridal & Groom"],
+    faqIncludes: ["bridal"],
+    intro: [
+      "Bridal makeup has to look right in person, in photographs and on video, and it has to last through a long, hot day of rituals, travel and greetings. That is why we plan it in stages: a conversation about the look you want, a trial, and then the wedding-day application, instead of one rushed session.",
+      "At Glam'more in Thukalassery, Thiruvalla, bridal makeup is done in HD or airbrush, together with bridal hairstyling and saree draping. You choose the finish at the trial, once you have seen both on your own skin, rather than having to decide in advance from a photograph.",
+      "We also get the bride's family and bridal party ready on the day, scheduled so that everyone finishes on time, and we can plan a pre-bridal care routine in the weeks beforehand.",
+    ],
+    steps: [
+      {
+        title: "Fix the date and message us",
+        text: "As soon as the wedding date is fixed, message us on WhatsApp. Booking one to three months ahead is ideal, and earlier in the wedding season, when the busiest dates fill first.",
+      },
+      {
+        title: "Share the look",
+        text: "Send reference photos and tell us about your outfit, jewellery and the time of the ceremony. A look planned around the saree colour and the lighting at the venue works better than one chosen in isolation.",
+      },
+      {
+        title: "Trial",
+        text: "A few weeks before the wedding we try makeup and hair on you, so you can change the colours, the finish or the hairstyle while there is still time.",
+      },
+      {
+        title: "Wedding day",
+        text: "On the day the makeup, hairstyle and saree draping are done in the agreed order, with a final check before you leave for photographs.",
+      },
+    ],
+    suits: [
+      "Brides who want a Kerala bridal look, traditional or modern, planned around their saree and jewellery.",
+      "Brides who are unsure whether to choose HD or airbrush and want to see both before deciding.",
+      "Families who need the bride and several relatives ready within the same morning.",
+      "Brides who also want pre-bridal skin and hair care planned across the weeks before the wedding.",
+    ],
+    tips: [
+      "Wear a neckline similar to your wedding outfit at the trial, and bring jewellery or a dupatta reference so the colours work together.",
+      "Prepare your skin with a cleanser, a moisturiser and a primer that suits your skin type, and ask for long-wear or waterproof products.",
+      "Do not try new skincare or treatments in the week before the wedding.",
+      "Keep blotting papers and a few touch-up items with someone close by for a hot, humid day.",
+    ],
+    more: [
+      {
+        heading: "HD or airbrush bridal makeup",
+        paragraphs: [
+          "HD makeup uses camera-friendly formulas applied with brushes and sponges, and it gives fuller, more defined coverage. Airbrush sprays a very fine mist of makeup onto the skin, which gives a thin, even, lightweight finish.",
+          "Neither is better for everyone. The right choice depends on your skin, the look you want and how long the day is, which is why we suggest trying both at the trial. Tell us about your skin, any sensitivity and the climate on the day, and we will give you an honest recommendation.",
+        ],
+      },
+      {
+        heading: "Hairstyling and saree draping",
+        paragraphs: [
+          "The hairstyle is planned together with the makeup, the jewellery and the veil or flowers you plan to wear, so the whole look balances. We can try the hairstyle at the trial as well, since a style that looks fine in a photo can behave differently with your hair type and the weight of the accessories.",
+          "Saree draping is part of the bridal service. A well-draped saree sits securely and photographs neatly, and it is easier to move in through a long day. Bring the saree and the blouse, and any pins or jewellery you plan to wear, to the trial if you can.",
+        ],
+      },
+      {
+        heading: "Pre-bridal care before the wedding",
+        paragraphs: [
+          "Skin and hair look their best when they have been looked after for several weeks, not only on the day. Pre-bridal care can include facials, de-tan, keratin or smoothening, waxing, threading, a manicure and a pedicure, spread across the weeks before the wedding so that each treatment has time to settle.",
+          "Message us on WhatsApp with your wedding date and we will suggest a plan that fits it. If you already have a trial booked, we can plan the care around that date as well.",
+        ],
+      },
+    ],
+    updated: "2026-11-02",
+  },
+  {
+    slug: "hair-colouring",
+    parent: "womens-hair",
+    category: "hair",
+    serviceIds: ["hair-coloring"],
+    h1: "Hair Colouring in Thiruvalla",
+    shortName: "Hair colouring",
+    title: "Hair Colouring in Thiruvalla: Global, Highlights | Glam'more",
+    description:
+      "Global hair colour, highlights and grey coverage with a shade consultation first, at Glam'more Premium Unisex Salon, Thukalassery, Thiruvalla.",
+    lead: "Global colour, highlights and grey coverage, with a shade consultation before any colour is applied.",
+    faqTopics: ["Hair Colour"],
+    intro: [
+      "Good hair colour begins before the colour is mixed. The shade has to suit your skin tone, your natural base colour and how much upkeep you are happy with, and the hair itself has to be healthy enough for the treatment. At Glam'more in Thukalassery, Thiruvalla, we start every colour service with a shade consultation.",
+      "We offer global colour, highlights and grey coverage. Global colour changes the whole head to one shade, highlights add lighter strands for dimension, and grey coverage blends or covers white hair so that it looks even.",
+      "Tell us about any earlier colouring, smoothening or other chemical treatment at the consultation, because that history decides what is safe to do and how many visits a big change will need.",
+    ],
+    steps: [
+      {
+        title: "Shade consultation",
+        text: "We talk through the colour you want, look at your current hair and skin tone, and agree on a shade before anything is applied. Reference photos help.",
+      },
+      {
+        title: "Check your hair",
+        text: "We ask about earlier colour, bleaching, smoothening and heat styling, and we tell you if your hair needs a rest or a conditioning treatment first.",
+      },
+      {
+        title: "Colour service",
+        text: "The colour is applied in the salon. Global colour, highlights and grey coverage are each done differently, so the time they take varies.",
+      },
+      {
+        title: "Aftercare plan",
+        text: "You leave with advice on washing, products and sun protection, and a suggestion for when to come back for a root touch-up or a refresh.",
+      },
+    ],
+    suits: [
+      "Anyone covering grey who wants an even result and a clear plan for root touch-ups.",
+      "People who want a new all-over shade and would like it checked against their skin tone first.",
+      "Those who want highlights for dimension and are happy to refresh them every couple of months.",
+      "Brides and guests who want fresh colour timed before a wedding or function.",
+    ],
+    tips: [
+      "If you have never used that colour product, do a small skin patch test about 48 hours beforehand, and tell us about any past reaction.",
+      "Tell us about earlier colouring, bleaching or smoothening before we start.",
+      "Colour first and keratin afterwards, or wait about two weeks after keratin before colouring.",
+      "Wash less often, use lukewarm or cool water, and choose a shampoo made for coloured hair.",
+    ],
+    more: [
+      {
+        heading: "Choosing between global colour, highlights and grey coverage",
+        paragraphs: [
+          "Global colour is the simplest option when you want a new overall shade or a rich, even tone. It does need root touch-ups as your hair grows, usually every four to six weeks for permanent colour.",
+          "Highlights and balayage grow out more softly, so they are lower maintenance, and they are usually refreshed every two to three months. Lightening is what makes highlights possible, and it is also the part that can dry the hair, so it should be done carefully and followed with conditioning.",
+          "Grey coverage can be done with global colour or a blended approach. If you are not sure whether to cover grey fully or soften it, tell us how you want your hair to look in between visits and we will suggest what fits.",
+        ],
+      },
+      {
+        heading: "Colour and the health of your hair",
+        paragraphs: [
+          "Adding colour without lightening is gentle on most hair. Lightening is what causes dryness and breakage. Healthy hair handles it well when it is done carefully, spaced out, and followed with conditioning treatments.",
+          "If your hair has been smoothened, bleached or coloured recently, tell us. Sometimes the kindest plan is to colour in stages, and sometimes it is to wait. We will say so honestly rather than promise a result your hair cannot take.",
+        ],
+      },
+      {
+        heading: "Making your colour last",
+        paragraphs: [
+          "Fading is mostly caused by hot water, frequent washing and sun exposure. Wash less often with lukewarm or cool water, use a shampoo made for coloured hair, condition regularly, use a heat protectant before blow-drying or ironing, and cover your hair in strong sun.",
+          "Semi-permanent colour fades gradually over several weeks of washing, so it needs more frequent refreshing than permanent colour.",
+        ],
+      },
+    ],
+    updated: "2026-11-02",
+  },
+  {
+    slug: "keratin-and-hair-smoothening",
+    parent: "womens-hair",
+    category: "hair",
+    serviceIds: ["keratin-smoothening"],
+    h1: "Keratin & Hair Smoothening in Thiruvalla",
+    shortName: "Keratin & smoothening",
+    title: "Keratin & Hair Smoothening in Thiruvalla | Glam'more",
+    description:
+      "Keratin and hair smoothening to reduce frizz and make hair easier to manage, with advice on which suits your hair, at Glam'more Salon, Thukalassery, Thiruvalla.",
+    lead: "Keratin and smoothening treatments to reduce frizz and make hair easier to manage.",
+    faqTopics: ["Keratin & Hair Smoothening"],
+    intro: [
+      "If your hair is frizzy, rough or takes a long time to style in Kerala's humidity, a keratin or smoothening treatment can make daily care much easier. At Glam'more in Thukalassery, Thiruvalla, our stylists check your hair type first and then recommend the treatment that suits it.",
+      "Keratin reduces frizz and adds shine while keeping some natural movement in the hair. Hair smoothening gives a straighter, sleeker finish. They are different results, so it helps to decide which one you actually want before you book.",
+      "Both are chemical treatments, so we ask about your hair history, any recent colour and your health, and we tell you honestly if it is better to wait.",
+    ],
+    steps: [
+      {
+        title: "Hair assessment",
+        text: "Your stylist looks at your hair type, its condition and any earlier colour, bleach or smoothening, and asks what result you want.",
+      },
+      {
+        title: "Choose keratin or smoothening",
+        text: "Keratin keeps natural movement and softens frizz. Smoothening gives a straighter finish. We explain the difference and recommend one for your hair.",
+      },
+      {
+        title: "Treatment",
+        text: "The treatment is applied and finished in the salon. The room should be well ventilated, and you can ask which product is being used.",
+      },
+      {
+        title: "Aftercare instructions",
+        text: "You are told how long to wait before washing, what to avoid in the first days and which shampoo to use, because the exact instructions depend on the product used.",
+      },
+    ],
+    suits: [
+      "People with frizzy or rough hair who spend a long time blow-drying and straightening.",
+      "Anyone who wants softer, shinier hair that holds its shape in humid weather.",
+      "Those who want a straighter, sleeker finish and are happy to use smoothening.",
+      "Brides who want hair that is easier to style, planned weeks before the wedding.",
+    ],
+    tips: [
+      "Tell us about any recent colour, bleaching or earlier smoothening before we start.",
+      "Follow the washing and tying instructions you are given on the day. Commonly you wait two to three days and do not tie, clip or tuck your hair behind your ears.",
+      "Use a sulfate-free shampoo afterwards, which helps the treatment last longer.",
+      "If you are pregnant or breastfeeding, check with your doctor before any chemical hair treatment.",
+    ],
+    more: [
+      {
+        heading: "Keratin or smoothening: which should you choose?",
+        paragraphs: [
+          "Choose keratin if you want less frizz, more shine and hair that is easier to manage but still has some natural bend. Choose smoothening if you want hair that looks straighter and sleeker.",
+          "If you are not sure, tell us how you wear your hair on an ordinary day and how much time you want to spend on it. We will recommend the treatment that fits, and we will say so if neither is a good idea for your hair right now.",
+        ],
+      },
+      {
+        heading: "How long does it last?",
+        paragraphs: [
+          "A keratin treatment typically lasts three to five months, depending on your hair type, how often you wash it and which shampoo you use. It fades gradually rather than all at once, and hair growing from the roots stays natural, so you will see the contrast in time.",
+          "These are typical ranges and not guarantees. They vary with your hair and how you look after it.",
+        ],
+      },
+      {
+        heading: "Keratin and colour",
+        paragraphs: [
+          "It is usually better to colour first and do keratin afterwards, or to wait around two weeks after keratin before colouring. Colouring too soon can affect both the shade and how long the treatment lasts.",
+          "Tell us what you plan to do over the next few months, and we will suggest the best order for your hair.",
+        ],
+      },
+      {
+        heading: "Safety and pregnancy",
+        paragraphs: [
+          "Some smoothening and keratin products release fumes that can irritate the eyes and lungs, so ask which product is being used and make sure the room is well ventilated.",
+          "If you are pregnant or breastfeeding, check with your doctor first before any chemical hair treatment, and tell us before the appointment.",
+        ],
+      },
     ],
     updated: "2026-11-02",
   },

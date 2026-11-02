@@ -43,15 +43,26 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
   if (!page) notFound();
 
   const category = categoryMetaList.find((c) => c.id === page.category)!;
-  const services = servicesData.filter((s) => s.category === page.category);
+  const services = servicesData.filter((s) =>
+    page.serviceIds ? page.serviceIds.includes(s.id) : s.category === page.category,
+  );
+  const parent = page.parent ? servicePageBySlug(page.parent) : undefined;
+  const children = servicePages.filter((p) => p.parent === page.slug);
+  const heroImage = page.serviceIds ? (services[0]?.image ?? category.bannerImage) : category.bannerImage;
   const faqs = fallbackFaqs.filter(
     (f) =>
       f.topic &&
       page.faqTopics.includes(f.topic) &&
       (!page.faqIncludes || page.faqIncludes.some((word) => f.question.toLowerCase().includes(word))),
   );
-  const others = servicePages.filter((p) => p.slug !== page.slug);
+  const others = servicePages.filter((p) => p.slug !== page.slug && !p.parent);
   const whatsapp = `https://wa.me/${PHONE_E164.slice(1)}?text=${encodeURIComponent(`Hello Glam'more, I'd like to book: ${page.shortName}`)}`;
+
+  const parentNote = parent ? (
+    <p className="service-page-more">
+      Part of our <Link href={`/services/${parent.slug}`}>{parent.h1.toLowerCase()}</Link> services.
+    </p>
+  ) : null;
 
   return (
     <>
@@ -59,6 +70,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
         data={breadcrumbList([
           { name: "Home", path: "/" },
           { name: "Services", path: "/services" },
+          ...(parent ? [{ name: parent.shortName, path: `/services/${parent.slug}` }] : []),
           { name: page.shortName, path: `/services/${page.slug}` },
         ])}
       />
@@ -77,12 +89,19 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
       )}
       <Navbar />
       <main className="service-page">
-        <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Services", href: "/services" }, { name: page.shortName }]} />
+        <Breadcrumbs
+          items={[
+            { name: "Home", href: "/" },
+            { name: "Services", href: "/services" },
+            ...(parent ? [{ name: parent.shortName, href: `/services/${parent.slug}` }] : []),
+            { name: page.shortName },
+          ]}
+        />
 
         <header className="service-page-head">
           <div>
             <h1>{page.h1}</h1>
-            <p className="service-page-lead">{category.description}</p>
+            <p className="service-page-lead">{page.lead ?? category.description}</p>
             <div className="service-page-actions">
               <a className="btn-luxury" href={whatsapp} target="_blank" rel="noopener noreferrer">
                 Book on WhatsApp
@@ -95,12 +114,12 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
           </div>
           <div className="service-page-photo">
             <Image
-              src={category.bannerImage}
+              src={heroImage}
               alt={`${page.shortName} at ${BUSINESS_NAME}, Thiruvalla`}
               fill
               preload
               sizes="(max-width: 900px) 90vw, 480px"
-              style={{ objectFit: "contain" }}
+              style={{ objectFit: page.serviceIds ? "cover" : "contain" }}
             />
           </div>
         </header>
@@ -159,6 +178,28 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
           </div>
         </section>
 
+        {page.more?.map((m) => (
+          <section key={m.heading} className="service-page-section service-page-intro">
+            <h2>{m.heading}</h2>
+            {m.paragraphs.map((text) => (
+              <p key={text}>{text}</p>
+            ))}
+          </section>
+        ))}
+
+        {children.length > 0 && (
+          <nav className="service-page-section" aria-label={`${page.shortName} in more detail`}>
+            <h2>{page.shortName} in more detail</h2>
+            <ul className="service-page-links">
+              {children.map((c) => (
+                <li key={c.slug}>
+                  <Link href={`/services/${c.slug}`}>{c.h1}</Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        )}
+
         <section className="service-page-section service-page-intro">
           <h2>Booking and prices</h2>
           <p>
@@ -171,6 +212,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
         {faqs.length > 0 && (
           <section className="service-page-section">
             <h2>Questions about {page.shortName.toLowerCase()}</h2>
+            {parentNote}
             <div className="service-page-faqs">
               {faqs.map((f) => (
                 <details key={f.question}>

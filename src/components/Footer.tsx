@@ -39,7 +39,7 @@ export default function Footer() {
 
 
       <nav className="footer-nav" aria-label="Salon services">
-        {servicePages.map((p) => (
+        {servicePages.filter((p) => !p.parent).map((p) => (
           <Link key={p.slug} href={`/services/${p.slug}`}>
             {p.h1}
           </Link>
