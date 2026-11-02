@@ -1,6 +1,6 @@
 'use client';
 import { useState } from "react";
-import { BUSINESS_NAME } from "@/lib/site";
+import { ADDRESS, AREAS_SERVED, BUSINESS_NAME, MAPS_URL, PHONE_DISPLAY, PHONE_E164 } from "@/lib/site";
 import ScrollReveal from "./ScrollReveal";
 import { FaPhoneAlt } from "react-icons/fa";
 
@@ -28,7 +28,7 @@ export default function Contact() {
   ) => {
     e.preventDefault();
 
-    const phoneNumber = "919645915329";
+    const phoneNumber = PHONE_E164.slice(1);
     const text = `Hello Glam'more Salon,
 
 My name is ${formData.name}.
@@ -65,11 +65,11 @@ ${formData.message}`;
               <div className="map-details">
                 <h3>{BUSINESS_NAME}</h3>
                 <p className="contact-map-details-desc">
-                  First Floor, Professional Building, SH 1, Kollam - Theni Hwy, Thukalassery, Thiruvalla, Kerala 689115, India
+                  {ADDRESS.streetAddress}, {ADDRESS.addressLocality}, {ADDRESS.addressRegion} {ADDRESS.postalCode}, India
                 </p>
                 <p className="contact-map-details-phone">
-                  <a href="tel:+919645915329" style={{ color: '#d4af37', textDecoration: 'underline', display: 'inline-flex', alignItems: 'center', gap: '8px', fontWeight: 'bold' }}>
-                    <FaPhoneAlt size={14} /> Phone: +91 96459 15329
+                  <a href={`tel:${PHONE_E164}`} style={{ color: '#d4af37', textDecoration: 'underline', display: 'inline-flex', alignItems: 'center', gap: '8px', fontWeight: 'bold' }}>
+                    <FaPhoneAlt size={14} /> Phone: {PHONE_DISPLAY}
                   </a>
                 </p>
               </div>
@@ -111,6 +111,24 @@ ${formData.message}`;
             </form>
           </div>
         </ScrollReveal>
+      </div>
+
+      <div className="contact-areas">
+        <h2 className="contact-section-title">Areas we serve</h2>
+        <p>
+          We are on SH 1 (the Kollam–Theni Highway) at Thukalassery, and clients come to us from {AREAS_SERVED.join(", ")}. We have one
+          salon, at the address above, and we don&apos;t have branches in these towns. Use{" "}
+          <a href={MAPS_URL} target="_blank" rel="noopener noreferrer">
+            Google Maps
+          </a>{" "}
+          for directions and travel time from where you are, or call us on <a href={`tel:${PHONE_E164}`}>{PHONE_DISPLAY}</a> and we&apos;ll
+          help you find us.
+        </p>
+        <ul>
+          {AREAS_SERVED.map((area) => (
+            <li key={area}>{area}</li>
+          ))}
+        </ul>
       </div>
     </section>
   );

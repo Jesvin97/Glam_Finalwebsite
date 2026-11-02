@@ -44,7 +44,12 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
 
   const category = categoryMetaList.find((c) => c.id === page.category)!;
   const services = servicesData.filter((s) => s.category === page.category);
-  const faqs = fallbackFaqs.filter((f) => f.topic && page.faqTopics.includes(f.topic));
+  const faqs = fallbackFaqs.filter(
+    (f) =>
+      f.topic &&
+      page.faqTopics.includes(f.topic) &&
+      (!page.faqIncludes || page.faqIncludes.some((word) => f.question.toLowerCase().includes(word))),
+  );
   const others = servicePages.filter((p) => p.slug !== page.slug);
   const whatsapp = `https://wa.me/${PHONE_E164.slice(1)}?text=${encodeURIComponent(`Hello Glam'more, I'd like to book: ${page.shortName}`)}`;
 
@@ -100,6 +105,12 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
           </div>
         </header>
 
+        <section className="service-page-section service-page-intro">
+          {page.intro.map((text) => (
+            <p key={text}>{text}</p>
+          ))}
+        </section>
+
         <section className="service-page-section">
           <h2>What&apos;s included</h2>
           <div className="service-page-grid">
@@ -115,6 +126,46 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
               </article>
             ))}
           </div>
+        </section>
+
+        <section className="service-page-section">
+          <h2>What to expect</h2>
+          <ol className="service-page-steps">
+            {page.steps.map((s) => (
+              <li key={s.title}>
+                <h3>{s.title}</h3>
+                <p>{s.text}</p>
+              </li>
+            ))}
+          </ol>
+        </section>
+
+        <section className="service-page-section service-page-split">
+          <div>
+            <h2>Who it&apos;s for</h2>
+            <ul className="service-page-list">
+              {page.suits.map((t) => (
+                <li key={t}>{t}</li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <h2>Before and after your visit</h2>
+            <ul className="service-page-list">
+              {page.tips.map((t) => (
+                <li key={t}>{t}</li>
+              ))}
+            </ul>
+          </div>
+        </section>
+
+        <section className="service-page-section service-page-intro">
+          <h2>Booking and prices</h2>
+          <p>
+            We don&apos;t publish a fixed price list, because the right service and the cost depend on your hair, skin and the look you
+            want. Message us on WhatsApp with what you have in mind and we&apos;ll reply with a quote before you visit. Walk-ins are
+            welcome when a chair is free, but booking ahead avoids a wait, especially on weekends and before festivals.
+          </p>
         </section>
 
         {faqs.length > 0 && (
