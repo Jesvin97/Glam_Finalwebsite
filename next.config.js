@@ -48,8 +48,9 @@ const securityHeaders = [
 
 const nextConfig = {
   reactStrictMode: true,
+  poweredByHeader: false,
   images: {
-    qualities: [75, 100],
+    qualities: [60, 75, 100],
     remotePatterns: [
       {
         protocol: 'https',

@@ -13,18 +13,16 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const posts = await fetchList<{ _id: string }>(`*[_type == "blog"]{_id}`);
 
   const pages: MetadataRoute.Sitemap = [
-    { url: SITE_URL, lastModified: HOME_UPDATED, changeFrequency: "monthly", priority: 1 },
-    { url: `${SITE_URL}/services`, lastModified: SERVICES_UPDATED, changeFrequency: "monthly", priority: 0.9 },
+    { url: SITE_URL, lastModified: HOME_UPDATED },
+    { url: `${SITE_URL}/services`, lastModified: SERVICES_UPDATED },
     ...servicePages.map((p) => ({
       url: `${SITE_URL}/services/${p.slug}`,
       lastModified: p.updated,
-      changeFrequency: "monthly" as const,
-      priority: 0.8,
     })),
-    { url: `${SITE_URL}/faq`, lastModified: FAQ_UPDATED, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${SITE_URL}/faq`, lastModified: FAQ_UPDATED },
   ];
   if (posts.length > 0) {
-    pages.push({ url: `${SITE_URL}/blogs`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.6 });
+    pages.push({ url: `${SITE_URL}/blogs`, lastModified: new Date() });
   }
   return pages;
 }

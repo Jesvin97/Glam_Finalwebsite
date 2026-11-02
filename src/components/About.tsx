@@ -11,7 +11,7 @@ export default function About() {
         <div className="about-image">
           <video
             src="/video/hero.mp4"
-            poster="/video/hero-poster.jpg"
+            poster="/video/hero-poster-800.jpg"
             autoPlay
             muted
             loop

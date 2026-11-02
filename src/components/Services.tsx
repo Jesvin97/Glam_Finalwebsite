@@ -51,7 +51,7 @@ export default function Services() {
                     alt={`${h.label} at Glam'more salon, Thiruvalla`} 
                     width={1136}
                     height={1408}
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                    sizes="(max-width: 768px) 280px, (max-width: 1200px) 50vw, 25vw"
                     className="object-contain fill-img"
                   />
                 </div>

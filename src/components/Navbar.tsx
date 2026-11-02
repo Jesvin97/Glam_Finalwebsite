@@ -64,7 +64,7 @@ export default function Navbar() {
             className="logo-image navbar-logo-img"
             width={60}
             height={60}
-            loading="eager"
+            preload
           />
           <span className="navbar-brand-text">
             {BUSINESS_NAME.split(" ")[0]}

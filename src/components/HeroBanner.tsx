@@ -12,6 +12,7 @@ export default function HeroBanner() {
         width={1672}
         height={941}
         preload
+        quality={60}
         sizes="100vw"
         className="hero-banner-bg fill-img"
       />
