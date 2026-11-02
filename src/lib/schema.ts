@@ -12,7 +12,25 @@ import {
 } from "./site";
 import { categoryMetaList, servicesData } from "./services-data";
 
-const SALON_ID = `${SITE_URL}/#salon`;
+// Real service topics only; the long search-phrase list stays in SEO_KEYWORDS for page metadata.
+const KNOWS_ABOUT = [
+  "Women's haircuts",
+  "Men's haircuts and beard styling",
+  "Hair colouring",
+  "Keratin and hair smoothening",
+  "Hair extensions",
+  "Bridal makeup",
+  "Groom styling",
+  "Facials and de-tan",
+  "Body and head massage",
+  "Manicure and pedicure",
+  "Nail art and acrylic extensions",
+  "Eyebrow threading",
+  "Eyelash extensions",
+  "Waxing",
+];
+
+const SALON_ID =`${SITE_URL}/#salon`;
 const WEBSITE_ID = `${SITE_URL}/#website`;
 
 // Service catalogue built from the same data as the services page, grouped by category.
@@ -46,6 +64,7 @@ const salon = {
   "@id": SALON_ID,
   name: BUSINESS_NAME,
   alternateName: ALTERNATE_NAMES,
+  knowsAbout: KNOWS_ABOUT,
   description:
     "Premium unisex salon in Thukalassery, Thiruvalla, Kerala for women's and men's haircuts, hair colour, keratin and smoothening, bridal and groom makeup, facials, massage, nails, brows and lashes, and waxing.",
   url: SITE_URL,
@@ -62,18 +81,25 @@ const salon = {
     contactType: "customer service",
     areaServed: "IN",
   },
-  priceRange: "₹",
+  priceRange: "₹₹",
   address: { "@type": "PostalAddress", ...ADDRESS },
   geo: { "@type": "GeoCoordinates", ...GEO },
   hasMap: MAPS_URL,
-  areaServed: AREAS_SERVED.map((name) => ({ "@type": "City", name })),
-  openingHoursSpecification: {
-    "@type": "OpeningHoursSpecification",
-    dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-    opens: HOURS.opens,
-    closes: HOURS.closes,
-  },
-  sameAs: SOCIAL_LINKS,
+  // Pathanamthitta is a district; the others are towns.
+  areaServed: AREAS_SERVED.map((name) => ({
+    "@type": name === "Pathanamthitta" ? "AdministrativeArea" : "City",
+    name,
+  })),
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      opens: HOURS.opens,
+      closes: HOURS.closes,
+    },
+  ],
+  // hasMap already carries the Maps link.
+  sameAs: SOCIAL_LINKS.filter((url) => url !== MAPS_URL),
   hasOfferCatalog: offerCatalog(),
 };
 

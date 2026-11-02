@@ -6,7 +6,7 @@ import SmoothScroll from "@/components/SmoothScroll";
 import CustomCursor from "@/components/CustomCursor";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import { siteGraph } from "@/lib/schema";
-import { BUSINESS_NAME, SITE_URL } from "@/lib/site";
+import { BUSINESS_NAME, SEO_KEYWORDS, SITE_URL } from "@/lib/site";
 
 const playfair = Playfair_Display({
   variable: "--font-playfair",
@@ -31,6 +31,8 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: HOME_TITLE,
   description: HOME_DESCRIPTION,
+  keywords: SEO_KEYWORDS,
+  verification: { google: "8-wtlpUJAHNInHP5TKGr7SKsJ8Wg4DmSCTlf5UXyl-4" },
   openGraph: {
     title: HOME_TITLE,
     description: HOME_DESCRIPTION,
