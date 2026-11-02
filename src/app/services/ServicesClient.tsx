@@ -1,16 +1,21 @@
 "use client";
 import "./services.css";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { FaTimes, FaClock, FaUser, FaPlus, FaCheck, FaCalendarAlt, FaMagic, FaPhoneAlt } from "react-icons/fa";
+import { FaTimes, FaClock, FaUser, FaPlus, FaCheck, FaCalendarAlt, FaMagic, FaPhoneAlt, FaArrowRight } from "react-icons/fa";
 import { Calendar } from "@/components/ui/calendar";
 
 import { categoryMetaList, servicesData } from "@/lib/services-data";
+import { servicePageForService } from "@/lib/service-pages";
 
 const WHATSAPP_NUMBER = "919645915329";
+
+// The picked services live in this tab's session storage, so leaving for a service page and coming back keeps them.
+const SELECTION_KEY = "glammore:selected-services";
 
 const toDateString = (d: Date) => {
   const year = d.getFullYear();
@@ -21,6 +26,7 @@ const toDateString = (d: Date) => {
 
 export default function ServicesClient() {
   const [selectedServices, setSelectedServices] = useState<string[]>([]);
+  const [selectionRestored, setSelectionRestored] = useState(false);
   const [categoryFilter, setCategoryFilter] = useState<string>("all");
   const [isDrawerOpen, setIsDrawerOpen] = useState<boolean>(false);
   const [formErrors, setFormErrors] = useState<{ name?: string; phone?: string; time?: string }>({});
@@ -33,6 +39,34 @@ export default function ServicesClient() {
     time: "",
     message: "",
   });
+
+  // Restore after the first render (not during it) so the server and browser markup match.
+  // Storage can be blocked (private mode), so every access is guarded.
+  useEffect(() => {
+    try {
+      const saved = JSON.parse(sessionStorage.getItem(SELECTION_KEY) ?? "[]");
+      if (Array.isArray(saved)) {
+        const known = new Set(servicesData.map((s) => s.title));
+        const valid = saved.filter((t): t is string => typeof t === "string" && known.has(t));
+        // Browser-only storage can't seed the initial state without a server/browser mismatch, so it is read after mount.
+        // eslint-disable-next-line react-hooks/set-state-in-effect
+        if (valid.length > 0) setSelectedServices(valid);
+      }
+    } catch {
+      /* no saved selection */
+    }
+    setSelectionRestored(true);
+  }, []);
+
+  useEffect(() => {
+    if (!selectionRestored) return;
+    try {
+      if (selectedServices.length > 0) sessionStorage.setItem(SELECTION_KEY, JSON.stringify(selectedServices));
+      else sessionStorage.removeItem(SELECTION_KEY);
+    } catch {
+      /* storage unavailable: the page still works, it just won't remember */
+    }
+  }, [selectedServices, selectionRestored]);
 
   const filterCategories = [
     { id: "all", name: "All Services" },
@@ -116,6 +150,7 @@ export default function ServicesClient() {
 
     window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`, "_blank");
     setIsDrawerOpen(false);
+    setSelectedServices([]);
   };
 
   const visibleCategories = categoryMetaList.filter(
@@ -253,14 +288,14 @@ export default function ServicesClient() {
                   <div className="sub-services-grid">
                     {catSubServices.map((service) => {
                       const isSelected = selectedServices.includes(service.title);
+                      const detailPage = servicePageForService(service);
+                      // A tap anywhere on the card picks the service; only the heading text leaves the page.
+                      // Keyboard users pick with the add button (its click reaches this handler) and follow the link separately.
                       return (
                         <div
                           key={service.id}
                           className={`sub-service-card ${isSelected ? "selected" : ""}`}
                           onClick={() => handleToggleService(service.title)}
-                          role="button"
-                          tabIndex={0}
-                          aria-pressed={isSelected}
                         >
                           <div className="sub-service-image-box">
                             {service.image ? (
@@ -276,8 +311,10 @@ export default function ServicesClient() {
                               <div className="sub-service-placeholder" />
                             )}
                             <button
+                              type="button"
                               className="sub-service-add-btn"
-                              aria-label={isSelected ? "Remove service" : "Add service"}
+                              aria-pressed={isSelected}
+                              aria-label={isSelected ? `Remove ${service.title}` : `Add ${service.title}`}
                             >
                               {isSelected ? <FaCheck size={13} /> : <FaPlus size={13} />}
                             </button>
@@ -285,7 +322,21 @@ export default function ServicesClient() {
 
                           <div className="sub-service-info">
                             <div className="sub-service-title-row">
-                              <h3 className="sub-service-title">{service.title}</h3>
+                              <h3 className="sub-service-title">
+                                {detailPage ? (
+                                  <Link
+                                    href={`/services/${detailPage.slug}`}
+                                    className="sub-service-title-link"
+                                    onClick={(e) => e.stopPropagation()}
+                                    aria-label={`${service.title}: read more`}
+                                  >
+                                    {service.title}
+                                    <FaArrowRight className="sub-service-title-arrow" aria-hidden="true" />
+                                  </Link>
+                                ) : (
+                                  service.title
+                                )}
+                              </h3>
                             </div>
                             <p className="sub-service-desc">{service.description}</p>
                           </div>

@@ -995,3 +995,7 @@ export const servicePages: ServicePage[] = [
 
 export const servicePageBySlug = (slug: string) => servicePages.find((p) => p.slug === slug);
 export const servicePageByCategory = (category: CategoryId) => servicePages.find((p) => p.category === category);
+
+/** The page that explains one service: its own detail page if it has one, else its group page. */
+export const servicePageForService = (service: { id: string; category: CategoryId }) =>
+  servicePages.find((p) => p.serviceIds?.includes(service.id)) ?? servicePageByCategory(service.category);
