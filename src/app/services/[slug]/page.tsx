@@ -203,17 +203,10 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
         <section className="service-page-section service-page-intro">
           <h2>Booking, prices and finding us</h2>
           <p>
-            We&apos;re open every day, including Sunday, from {HOURS.opens} to {HOURS.closes}. To book an appointment for{" "}
-            {page.shortName.toLowerCase()}, message us on WhatsApp. Walk-ins are welcome when a chair is free, but booking ahead avoids a
-            wait, especially on weekends and before festivals.
-          </p>
-          <p>
-            We don&apos;t publish a fixed price list, because the price of {page.shortName.toLowerCase()} depends on your hair, skin and
-            the look you want. Tell us what you have in mind and we&apos;ll reply with a quote before you visit.
-          </p>
-          <p>
-            Our one salon is at Thukalassery on SH 1, and clients come to us for {page.shortName.toLowerCase()} from{" "}
-            {AREAS_SERVED.slice(0, -1).join(", ")} and {AREAS_SERVED[AREAS_SERVED.length - 1]}.
+            Book an appointment for {page.shortName.toLowerCase()} on WhatsApp and we&apos;ll quote the price before you visit, since it
+            depends on your hair, skin and the look you want. We&apos;re open every day, including Sunday, {HOURS.opens} to {HOURS.closes}, at
+            our one salon in Thukalassery, and clients come from {AREAS_SERVED.slice(0, -1).join(", ")} and{" "}
+            {AREAS_SERVED[AREAS_SERVED.length - 1]}.
           </p>
         </section>
 

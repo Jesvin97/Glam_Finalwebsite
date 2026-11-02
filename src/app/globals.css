@@ -2090,8 +2090,8 @@ h1, h2, h3,
 }
 
 .input-group:focus-within {
-  border-color: var(--gold);
-  box-shadow: 0 0 10px rgba(var(--gold-rgb), 0.1);
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
 }
 
 .input-icon {
@@ -2136,8 +2136,8 @@ h1, h2, h3,
 }
 
 .booking-sidebar-form textarea:focus {
-  border-color: var(--gold);
-  box-shadow: 0 0 10px rgba(var(--gold-rgb), 0.1);
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
 }
 
 .booking-submit-btn {
@@ -3954,7 +3954,7 @@ h1, h2, h3,
 .service-page {
   max-width: 1180px;
   margin: 0 auto;
-  padding: 120px 5% 70px;
+  padding: 120px 5% 72px;
 }
 .service-page-head {
   display: grid;
@@ -3967,24 +3967,24 @@ h1, h2, h3,
   font-size: clamp(32px, 4.6vw, 56px);
   line-height: 1.12;
   color: var(--white);
-  margin-bottom: 18px;
+  margin-bottom: 16px;
 }
 .service-page h2 {
   font-size: clamp(24px, 3vw, 34px);
   color: var(--gold);
-  margin-bottom: 22px;
+  margin-bottom: 24px;
 }
 .service-page-lead {
   font-size: 18px;
   line-height: 1.7;
   color: var(--hex-d8d8d8);
-  margin-bottom: 26px;
+  margin-bottom: 24px;
 }
 .service-page-actions {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 18px 26px;
+  gap: 16px 24px;
 }
 .service-page-link {
   color: var(--gold);
@@ -4002,28 +4002,29 @@ h1, h2, h3,
 .service-page-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  gap: 22px;
+  gap: 24px;
 }
 .service-page-card {
+  color: var(--hex-cfcfcf);
   background: var(--hex-121212);
   border: 1px solid rgba(var(--rgb-212-175-55), 0.18);
   border-radius: 16px;
   overflow: hidden;
-  padding-bottom: 18px;
+  padding-bottom: 16px;
 }
 .service-page-card-img {
   position: relative;
   aspect-ratio: 4 / 3;
-  margin-bottom: 14px;
+  margin-bottom: 16px;
 }
 .service-page-card h3 {
   font-size: 20px;
-  padding: 0 18px;
+  padding: 0 16px;
   margin-bottom: 8px;
   color: var(--white);
 }
 .service-page-card p {
-  padding: 0 18px;
+  padding: 0 16px;
   font-size: 15px;
   line-height: 1.6;
   color: var(--hex-cfcfcf);
@@ -4043,7 +4044,7 @@ h1, h2, h3,
   color: var(--hex-cfcfcf);
 }
 .service-page-more {
-  margin-top: 18px;
+  margin-top: 16px;
 }
 .service-page a:not(.btn-luxury) {
   color: var(--gold);
@@ -4063,21 +4064,21 @@ h1, h2, h3,
   counter-reset: step;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-  gap: 22px;
+  gap: 24px;
 }
 .service-page-steps li {
   counter-increment: step;
   background: var(--hex-121212);
   border: 1px solid rgba(var(--rgb-212-175-55), 0.18);
   border-radius: 16px;
-  padding: 20px 18px;
+  padding: 20px 16px;
 }
 .service-page-steps li::before {
   content: counter(step);
   display: block;
   font-size: 28px;
   color: var(--gold);
-  margin-bottom: 6px;
+  margin-bottom: 8px;
 }
 .service-page-steps h3 {
   font-size: 19px;
@@ -4106,7 +4107,7 @@ h1, h2, h3,
   list-style: none;
   display: flex;
   flex-wrap: wrap;
-  gap: 10px 26px;
+  gap: 8px 24px;
 }
 
 @media (max-width: 900px) {
@@ -4152,12 +4153,12 @@ h1, h2, h3,
   list-style: none;
   display: flex;
   flex-wrap: wrap;
-  gap: 10px 14px;
-  margin-top: 18px;
+  gap: 8px 16px;
+  margin-top: 16px;
 }
 .contact-areas li {
   border: 1px solid rgba(var(--rgb-212-175-55), 0.3);
   border-radius: 999px;
-  padding: 6px 16px;
+  padding: 8px 16px;
   color: var(--white);
 }

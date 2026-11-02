@@ -985,6 +985,7 @@ export const servicePages: ServicePage[] = [
         paragraphs: [
           "Keep them dry for the first 24 hours, avoid oil-based cleansers and waterproof mascara, never pull or pick at them, and brush them gently with a clean spoolie.",
           "If your eyes feel irritated or sore, get in touch with us and see a doctor if it does not settle.",
+          "Sleeping on your back, washing your face gently around the eyes and keeping the lashes brushed will help a set stay neat between fills. If a few extensions fall out early, that is normal, because each one sheds with the natural lash it was attached to.",
         ],
       },
     ],

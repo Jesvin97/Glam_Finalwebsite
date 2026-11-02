@@ -5,7 +5,7 @@ import { useState } from "react";
 import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { FaTimes, FaClock, FaUser, FaPlus, FaCheck, FaCalendarAlt, FaMagic } from "react-icons/fa";
+import { FaTimes, FaClock, FaUser, FaPlus, FaCheck, FaCalendarAlt, FaMagic, FaPhoneAlt } from "react-icons/fa";
 import { Calendar } from "@/components/ui/calendar";
 
 import { categoryMetaList, servicesData } from "@/lib/services-data";
@@ -145,10 +145,9 @@ export default function ServicesClient() {
             </div>
 
             <div className="banner-text-content">
-              <span className="banner-category-tag">GLAM&apos;MORE EXPERIENCES</span>
               <h1 className="banner-category-title">Salon Services in Thiruvalla</h1>
               <p className="banner-intro-paragraph">
-                Hair, bridal makeup, facials, massage, nails, and grooming for men and women at our salon in Thukalassery, Thiruvalla. Choose your services and send the booking straight to us on WhatsApp.
+                Hair, bridal makeup, facials, massage, nails and grooming for men and women, booked on WhatsApp.
               </p>
             </div>
           </div>
@@ -339,7 +338,7 @@ export default function ServicesClient() {
         <form onSubmit={handleBookingSubmit} className="drawer-form" noValidate>
           <div className="form-group">
             <label className="drawer-label">
-              <FaCalendarAlt style={{ display: "inline", marginRight: 6, color: "#d4af37" }} />
+              <FaCalendarAlt style={{ display: "inline", marginRight: 6, color: "var(--gold)" }} />
               Preferred Date
             </label>
             <div className="calendar-container">
@@ -393,7 +392,9 @@ export default function ServicesClient() {
           <div className="form-group">
             <label className="drawer-label">Phone Number</label>
             <div className="input-with-icon">
-              <span className="input-icon" style={{ fontSize: 14 }}>📞</span>
+              <span className="input-icon" style={{ fontSize: 14 }}>
+                <FaPhoneAlt aria-hidden="true" />
+              </span>
               <input
                 type="tel"
                 name="phone"
