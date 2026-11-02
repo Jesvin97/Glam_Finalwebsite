@@ -45,7 +45,7 @@ export const servicePages: ServicePage[] = [
     faqTopics: ["Hair Cuts & Care", "Hair Colour", "Keratin & Hair Smoothening", "Hair Extensions"],
     intro: [
       "A good haircut or colour starts with a conversation. At Glam'more in Thukalassery, Thiruvalla, your stylist first looks at your hair texture, its density and how much time you really spend styling it each morning, and only then plans the cut, colour or treatment.",
-      "We cover the full range for women: haircuts, global colour, highlights and grey coverage, keratin and hair smoothening, blow-dries, updos for weddings and functions, and natural human hair extensions that are colour-matched and fitted in the salon.",
+      "We cover the full range for ladies and women, whether you think of us as a salon or a beauty parlour: haircuts, global colour, highlights and grey coverage, keratin and hair smoothening for straighter, smoother hair, hairstyles and updos for weddings and functions, and natural human hair extensions that are colour-matched and fitted in the salon.",
     ],
     steps: [
       {
@@ -224,7 +224,7 @@ export const servicePages: ServicePage[] = [
       "Men's haircuts, hot-towel shaves and beard shaping at Glam'more Premium Unisex Salon, Thukalassery, Thiruvalla. Open every day, 10 AM to 8:30 PM.",
     faqTopics: ["Men's Grooming"],
     intro: [
-      "A good men's cut is about the neckline, the sides and how the hair sits on a normal Monday, not only on the day you leave the chair. At Glam'more we cut for your hair type and face shape, finish with a clean neckline, and give you styling advice you can use at home.",
+      "A good men's or gents' haircut is about the neckline, the sides and how the hair sits on a normal Monday, not only on the day you leave the chair. At Glam'more we cut for your hair type and face shape, finish with a clean neckline, and give you styling advice you can use at home.",
       "Beard work is the same: shaping and edging to suit your face and how densely your beard grows, and a hot-towel shave for a close, comfortable finish. We are open every day, including Sundays, from 10 AM to 8:30 PM, and walk-ins are welcome when a chair is free.",
     ],
     steps: [

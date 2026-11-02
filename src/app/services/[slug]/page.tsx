@@ -10,7 +10,7 @@ import { fallbackFaqs } from "@/lib/faq-data";
 import { breadcrumbList } from "@/lib/schema";
 import { categoryMetaList, servicesData } from "@/lib/services-data";
 import { servicePageBySlug, servicePages } from "@/lib/service-pages";
-import { ADDRESS, BUSINESS_NAME, HOURS, MAPS_URL, PHONE_DISPLAY, PHONE_E164 } from "@/lib/site";
+import { ADDRESS, AREAS_SERVED, BUSINESS_NAME, HOURS, MAPS_URL, PHONE_DISPLAY, PHONE_E164 } from "@/lib/site";
 
 export const dynamicParams = false;
 
@@ -201,11 +201,19 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
         )}
 
         <section className="service-page-section service-page-intro">
-          <h2>Booking and prices</h2>
+          <h2>Booking, prices and finding us</h2>
           <p>
-            We don&apos;t publish a fixed price list, because the right service and the cost depend on your hair, skin and the look you
-            want. Message us on WhatsApp with what you have in mind and we&apos;ll reply with a quote before you visit. Walk-ins are
-            welcome when a chair is free, but booking ahead avoids a wait, especially on weekends and before festivals.
+            We&apos;re open every day, including Sunday, from {HOURS.opens} to {HOURS.closes}. To book an appointment for{" "}
+            {page.shortName.toLowerCase()}, message us on WhatsApp. Walk-ins are welcome when a chair is free, but booking ahead avoids a
+            wait, especially on weekends and before festivals.
+          </p>
+          <p>
+            We don&apos;t publish a fixed price list, because the price of {page.shortName.toLowerCase()} depends on your hair, skin and
+            the look you want. Tell us what you have in mind and we&apos;ll reply with a quote before you visit.
+          </p>
+          <p>
+            Our one salon is at Thukalassery on SH 1, and clients come to us for {page.shortName.toLowerCase()} from{" "}
+            {AREAS_SERVED.slice(0, -1).join(", ")} and {AREAS_SERVED[AREAS_SERVED.length - 1]}.
           </p>
         </section>
 
