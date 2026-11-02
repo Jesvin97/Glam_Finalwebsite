@@ -4062,7 +4062,7 @@ h1, h2, h3,
   list-style: none;
   counter-reset: step;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
   gap: 22px;
 }
 .service-page-steps li {
