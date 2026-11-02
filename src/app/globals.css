@@ -3933,23 +3933,6 @@ h1, h2, h3,
   text-decoration: underline;
 }
 
-/* ---- Footer service links ---- */
-.footer-nav {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 8px 22px;
-  padding: 0 20px;
-  font-size: 14px;
-}
-.footer-nav a {
-  color: var(--hex-cfcfcf);
-  text-decoration: none;
-}
-.footer-nav a:hover {
-  color: var(--gold);
-}
-
 /* ---- Service pages (/services/[slug]) ---- */
 .service-page {
   max-width: 1180px;
