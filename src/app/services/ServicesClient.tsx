@@ -194,7 +194,13 @@ export default function ServicesClient() {
             {filterCategories.map((cat) => (
               <li key={cat.id}>
                 <button
-                  onClick={() => setCategoryFilter(cat.id)}
+                  onClick={(e) => {
+                    setCategoryFilter(cat.id);
+                    // On phones the pills sit in one swipeable row: bring the chosen one into view.
+                    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+                    e.currentTarget.scrollIntoView({ inline: "center", block: "nearest", behavior: reduce ? "auto" : "smooth" });
+                  }}
+                  aria-pressed={categoryFilter === cat.id}
                   className={`filter-pill-btn ${categoryFilter === cat.id ? "active" : ""}`}
                 >
                   {cat.name}

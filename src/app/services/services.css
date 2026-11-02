@@ -52,6 +52,36 @@
   display: none;
 }
 
+/* Phones: one swipeable row instead of six wrapped lines, so the sticky bar stays slim.
+   The right edge fades to show there is more; the end padding keeps the last pill clear of the fade. */
+@media (max-width: 768px) {
+  .category-filter-nav {
+    padding: 8px 0;
+    margin-bottom: 24px;
+  }
+
+  .filter-pill-list {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 8px;
+    padding-right: 40px;
+    scroll-snap-type: x proximity;
+    scrollbar-width: none;
+    -webkit-mask-image: linear-gradient(to right, var(--black) calc(100% - 40px), transparent);
+    mask-image: linear-gradient(to right, var(--black) calc(100% - 40px), transparent);
+  }
+
+  .filter-pill-list li {
+    flex: none;
+    scroll-snap-align: start;
+  }
+
+  .filter-pill-btn {
+    font-size: 12px;
+    padding: 8px 16px;
+  }
+}
+
 .filter-pill-btn {
   background: rgba(var(--rgb-255-255-255), 0.03);
   border: 1px solid rgba(var(--rgb-255-255-255), 0.08);
