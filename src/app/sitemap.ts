@@ -7,8 +7,8 @@ import { servicePages } from "@/lib/service-pages";
 // because a date that is always "today" teaches Google to ignore it.
 // /blogs is only listed once there is at least one post, matching its noindex.
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const HOME_UPDATED = "2026-10-08";
-  const SERVICES_UPDATED = "2026-10-31";
+  const HOME_UPDATED = "2026-11-02";
+  const SERVICES_UPDATED = "2026-11-02";
   const FAQ_UPDATED = "2026-10-02";
   const posts = await fetchList<{ _id: string }>(`*[_type == "blog"]{_id}`);
 
