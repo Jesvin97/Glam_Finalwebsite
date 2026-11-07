@@ -41,6 +41,9 @@ export default function About() {
             Book Your Visit
             <span className="btn-luxury-hover-effect"></span>
           </Link>
+          <p style={{ marginTop: 18 }}>
+            <Link href="/about" style={{ color: "#d4af37" }}>Read the Glam&apos;more story</Link>
+          </p>
         </div>
       </ScrollReveal>
     </section>
