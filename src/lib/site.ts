@@ -139,3 +139,6 @@ export const HOURS = { opens: "10:00", closes: "20:30" } as const;
 
 // Opens the "write a review" box on the salon's Google Business Profile.
 export const GOOGLE_REVIEW_URL = "https://g.page/r/CQggnazf6vUdEAE/review";
+
+// Google Tag Manager container (loads analytics and any other tags managed in tagmanager.google.com).
+export const GTM_ID = "GTM-5SM6MQNH";

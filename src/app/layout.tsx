@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import { Playfair_Display, Inter } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import JsonLd from "@/components/JsonLd";
 import SmoothScroll from "@/components/SmoothScroll";
 import CustomCursor from "@/components/CustomCursor";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import { siteGraph } from "@/lib/schema";
-import { BUSINESS_NAME, SEO_KEYWORDS, SITE_URL } from "@/lib/site";
+import { BUSINESS_NAME, GTM_ID, SEO_KEYWORDS, SITE_URL } from "@/lib/site";
 
 const playfair = Playfair_Display({
   variable: "--font-playfair",
@@ -76,6 +77,11 @@ export default function RootLayout({
         <JsonLd data={siteGraph} />
       </head>
       <body>
+        {/* Standard GTM loader: queue the start event, then fetch the container. */}
+        <Script id="gtm-init" strategy="afterInteractive">
+          {`window.dataLayer=window.dataLayer||[];window.dataLayer.push({"gtm.start":new Date().getTime(),event:"gtm.js"});`}
+        </Script>
+        <Script id="gtm" src={`https://www.googletagmanager.com/gtm.js?id=${GTM_ID}`} strategy="afterInteractive" />
         <SmoothScroll />
         <CustomCursor />
         {children}
