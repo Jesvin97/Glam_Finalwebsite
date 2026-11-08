@@ -1,4 +1,4 @@
--- Customer feedback for glammoresalon.in
+-- Customer feedback for glammoreunisexsalon.in
 -- Run once in Supabase: Dashboard → SQL Editor → New query → paste → Run.
 
 create table if not exists public.customer_feedback (
