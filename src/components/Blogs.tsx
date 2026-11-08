@@ -13,6 +13,7 @@ export interface BlogItem {
   image: SanityImageSource | string;
   _id?: string;
   publishedAt?: string;
+  href?: string; // set for posts that have their own page
 }
 
 // Book covers for the shelf, in the site's colours: black, cream, gold, deep brown (with a matching foil colour).
@@ -80,8 +81,9 @@ export default function Blog({ blogs = [] }: { blogs?: BlogItem[] }) {
 
               <div className="blog-content">
                 <span className="blog-category">{blog.category}</span>
-                <h3>{blog.title}</h3>
+                <h3>{blog.href ? <Link href={blog.href}>{blog.title}</Link> : blog.title}</h3>
                 <p>{blog.description}</p>
+                {blog.href && <Link href={blog.href}>Read more</Link>}
               </div>
             </div>
           );
