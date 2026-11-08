@@ -5,6 +5,8 @@ meta_description: Does keratin treatment work in Kerala's humidity? How long it 
 target_keyword: keratin treatment Kerala
 salon_keywords: keratin treatment in Thiruvalla, hair smoothening in Thiruvalla
 category: Hair Care
+publish_at: 2026-12-02T09:00:00+05:30
+cover: /images/Hair_stylingjpeg.jpeg
 service_link: /services/womens-hair
 ---
 

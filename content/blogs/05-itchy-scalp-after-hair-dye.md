@@ -5,6 +5,8 @@ meta_description: Itchy scalp after hair dye? Learn the difference between mild 
 target_keyword: itchy scalp after hair dye
 salon_keywords: hair colour salon Thiruvalla, patch test hair colour
 category: Hair Colour
+publish_at: 2026-11-18T09:00:00+05:30
+cover: /images/Hair_stylingjpeg.jpeg
 service_link: /services/womens-hair
 ---
 

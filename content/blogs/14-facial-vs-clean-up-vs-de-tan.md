@@ -5,6 +5,8 @@ meta_description: Confused between a facial, clean-up and de-tan? Learn what eac
 target_keyword: facial vs clean up
 salon_keywords: facial in Thiruvalla, de-tan in Thiruvalla, clean-up in Thiruvalla
 category: Skin Care
+publish_at: 2026-12-09T09:00:00+05:30
+cover: /images/Waxing & Smooth Skin Care.png
 service_link: /services/facials-and-skin-care
 ---
 

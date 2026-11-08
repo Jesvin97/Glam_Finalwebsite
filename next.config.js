@@ -48,6 +48,12 @@ const securityHeaders = [
 
 const nextConfig = {
   reactStrictMode: true,
+  // The scheduled blog posts are read from disk at runtime, so make sure they ship with the deployment.
+  outputFileTracingIncludes: {
+    "/blogs": ["./content/blogs/**/*"],
+    "/blogs/[slug]": ["./content/blogs/**/*"],
+    "/sitemap.xml": ["./content/blogs/**/*"],
+  },
   images: {
     qualities: [75, 100],
     remotePatterns: [

@@ -5,6 +5,8 @@ meta_description: Planning Kerala Christian bridal makeup? Ideas for church wedd
 target_keyword: Kerala Christian bridal makeup
 salon_keywords: bridal makeup in Thiruvalla, Kerala bridal makeup in Thiruvalla, saree draping in Thiruvalla
 category: Bridal
+publish_at: 2026-12-04T09:00:00+05:30
+cover: /images/bridal.jpg
 service_link: /services/bridal-and-groom-makeup
 ---
 

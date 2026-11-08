@@ -5,6 +5,8 @@ meta_description: Can you get burgundy on naturally black hair? How a subtle bur
 target_keyword: burgundy hair colour on black hair
 salon_keywords: hair colour in Thiruvalla, burgundy hair colour in Thiruvalla
 category: Hair Colour
+publish_at: 2026-11-20T09:00:00+05:30
+cover: /images/Hair_stylingjpeg.jpeg
 service_link: /services/womens-hair
 ---
 

@@ -5,6 +5,8 @@ meta_description: Henna or hair dye for grey hair? Compare colour results, damag
 target_keyword: henna vs hair dye for grey hair
 salon_keywords: grey coverage in Thiruvalla, ladies beauty parlour in Thiruvalla
 category: Hair Colour
+publish_at: 2026-11-13T09:00:00+05:30
+cover: /images/Hair_stylingjpeg.jpeg
 service_link: /services/womens-hair
 ---
 

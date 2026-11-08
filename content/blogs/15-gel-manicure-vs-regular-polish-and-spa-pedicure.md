@@ -5,6 +5,8 @@ meta_description: Gel manicure or regular polish? Compare lasting power, removal
 target_keyword: gel manicure vs regular polish
 salon_keywords: gel manicure in Thiruvalla, spa pedicure in Thiruvalla
 category: Nails
+publish_at: 2026-12-11T09:00:00+05:30
+cover: /images/Gel Manicure.png
 service_link: /services/nails
 ---
 

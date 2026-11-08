@@ -5,6 +5,8 @@ meta_description: Planning a pre-bridal package in Thiruvalla? A simple timeline
 target_keyword: pre-bridal package
 salon_keywords: pre-bridal facial in Thiruvalla, bridal makeup in Thiruvalla
 category: Bridal
+publish_at: 2026-11-27T09:00:00+05:30
+cover: /images/bridal.jpg
 service_link: /services/bridal-and-groom-makeup
 ---
 

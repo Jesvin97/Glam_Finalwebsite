@@ -5,6 +5,8 @@ meta_description: Ammonia-free hair colour is gentler in smell and feel, but is 
 target_keyword: ammonia-free hair colour
 salon_keywords: hair colour in Thiruvalla, ammonia-free colour for grey coverage
 category: Hair Colour
+publish_at: 2026-11-16T09:00:00+05:30
+cover: /images/Hair_stylingjpeg.jpeg
 service_link: /services/womens-hair
 ---
 

@@ -5,6 +5,8 @@ meta_description: Covering grey in your beard or moustache? How beard dye works,
 target_keyword: grey beard dye
 salon_keywords: gents salon in Thiruvalla, beard trim in Thiruvalla
 category: Men's Grooming
+publish_at: 2026-11-25T09:00:00+05:30
+cover: /images/Shaving & Beard Styling.png
 service_link: /services/mens-grooming
 ---
 

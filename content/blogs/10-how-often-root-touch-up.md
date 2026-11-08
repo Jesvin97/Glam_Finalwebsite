@@ -5,6 +5,8 @@ meta_description: How often to touch up hair roots? Guidance by grey level and s
 target_keyword: how often root touch up
 salon_keywords: hair colour in Thiruvalla, grey coverage in Thiruvalla
 category: Hair Colour
+publish_at: 2026-11-30T09:00:00+05:30
+cover: /images/Hair_stylingjpeg.jpeg
 service_link: /services/womens-hair
 ---
 

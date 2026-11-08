@@ -5,6 +5,8 @@ meta_description: Grey hair turning purple after black dye is common. Learn why 
 target_keyword: grey hair turned purple after dye
 salon_keywords: hair colouring in Thiruvalla, grey coverage in Thiruvalla
 category: Hair Colour
+publish_at: 2026-11-09T09:00:00+05:30
+cover: /images/Hair_stylingjpeg.jpeg
 service_link: /services/womens-hair
 ---
 

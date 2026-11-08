@@ -5,6 +5,8 @@ meta_description: Groom makeup and grooming plan: haircut, beard shape, facial a
 target_keyword: groom makeup
 salon_keywords: groom makeup in Thiruvalla, men's salon in Thiruvalla
 category: Men's Grooming
+publish_at: 2026-12-07T09:00:00+05:30
+cover: /images/Shaving & Beard Styling.png
 service_link: /services/bridal-and-groom-makeup
 ---
 

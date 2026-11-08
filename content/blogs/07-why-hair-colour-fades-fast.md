@@ -5,6 +5,8 @@ meta_description: Hair colour fading fast? Heat, sun, harsh shampoo and porous h
 target_keyword: why does hair colour fade fast
 salon_keywords: hair colour in Thiruvalla, keratin treatment in Thiruvalla
 category: Hair Care
+publish_at: 2026-11-23T09:00:00+05:30
+cover: /images/Hair_stylingjpeg.jpeg
 service_link: /services/womens-hair
 ---
 
