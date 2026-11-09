@@ -68,6 +68,11 @@ const salon = {
   description:
     "Premium unisex salon in Thukalassery, Thiruvalla, Kerala for women's and men's haircuts, hair colour, keratin and smoothening, bridal and groom makeup, facials, massage, nails, brows and lashes, and waxing.",
   url: SITE_URL,
+  foundingDate: "2026",
+  founder: [
+    { "@type": "Person", name: "Alina" },
+    { "@type": "Person", name: "Vinod" },
+  ],
   logo: `${SITE_URL}/images/logo.png`,
   image: [
     `${SITE_URL}/images/og-image.jpg`,

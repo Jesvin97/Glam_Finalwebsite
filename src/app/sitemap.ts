@@ -23,6 +23,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       url: `${SITE_URL}/services/${p.slug}`,
       lastModified: p.updated,
     })),
+    { url: `${SITE_URL}/about`, lastModified: "2026-11-07" },
     { url: `${SITE_URL}/faq`, lastModified: FAQ_UPDATED },
   ];
   const scheduled = getPublishedPosts();

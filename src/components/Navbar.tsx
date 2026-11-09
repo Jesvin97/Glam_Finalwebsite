@@ -91,7 +91,7 @@ export default function Navbar() {
           </li>
 
           <li>
-            <Link href="/#about">About Us</Link>
+            <Link href="/about">About Us</Link>
           </li>
 
           <li>
@@ -117,7 +117,7 @@ export default function Navbar() {
       {/* MOBILE MENU */}
       <div className={`mobile-menu ${isMenuOpen ? "active" : ""}`}>
         <Link href="/" onClick={closeMenu}>Home</Link>
-        <Link href="/#about" onClick={closeMenu}>About Us</Link>
+        <Link href="/about" onClick={closeMenu}>About Us</Link>
         <Link href="/services" onClick={closeMenu}>Services</Link>
         <Link href="/blogs" onClick={closeMenu}>Blogs</Link>
         <Link href="/faq" onClick={closeMenu}>FAQs</Link>
