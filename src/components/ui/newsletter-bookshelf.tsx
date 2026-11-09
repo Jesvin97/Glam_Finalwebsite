@@ -480,8 +480,20 @@ function coverTexture(book: BookLayout, brand: string, face: "cover" | "spine") 
     context.save();
     context.translate(canvas.width / 2, 58);
     context.rotate(Math.PI / 2);
-    context.font = "700 37px Georgia, serif";
-    const title = book.title.length > 36 ? `${book.title.slice(0, 34)}â€¦` : book.title;
+    // The spine runs from the top rule to the motif (about 560px). Shrink long titles to fit,
+    // and only cut with an ellipsis if even the smallest size is too long.
+    const spineSpace = 560;
+    let size = 37;
+    let title = book.title;
+    context.font = `700 ${size}px Georgia, serif`;
+    while (size > 26 && context.measureText(title).width > spineSpace) {
+      size -= 2;
+      context.font = `700 ${size}px Georgia, serif`;
+    }
+    if (context.measureText(title).width > spineSpace) {
+      while (title.length > 1 && context.measureText(`${title}…`).width > spineSpace) title = title.slice(0, -1);
+      title = `${title.trimEnd()}…`;
+    }
     context.fillText(title, 0, 13);
     context.restore();
     drawMotif(context, book.motif, 29, 625, 54, book.foil);
