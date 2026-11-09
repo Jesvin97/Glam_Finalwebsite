@@ -463,7 +463,6 @@ function coverTexture(book: BookLayout, brand: string, face: "cover" | "spine") 
     if (line) lines.push(line);
     lines.slice(0, 5).forEach((text, index) => context.fillText(text, margin, 180 + index * 61));
     context.fillRect(margin, 180 + Math.min(lines.length, 5) * 61 + 24, 92, 5);
-    drawMotif(context, book.motif, 316, 510, 130, book.foil);
     context.font = "700 19px ui-monospace, SFMono-Regular, monospace";
     context.fillText(brand.toUpperCase(), margin, 690);
   } else {
