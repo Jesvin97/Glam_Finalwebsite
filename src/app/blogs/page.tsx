@@ -21,7 +21,7 @@ async function loadBlogs(): Promise<BlogItem[]> {
   const cms = await fetchList<BlogItem>(POSTS_QUERY);
   const scheduled: BlogItem[] = getPublishedPosts().map((p) => ({
     title: p.title,
-    description: p.intro || p.metaDescription,
+    description: (p.intro || p.metaDescription).replaceAll("**", ""),
     category: p.category,
     image: p.cover,
     _id: p.slug,
