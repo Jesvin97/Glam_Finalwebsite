@@ -2,6 +2,10 @@ import type { MetadataRoute } from "next";
 import { fetchList } from "@/sanity/fetch";
 import { SITE_URL } from "@/lib/site";
 import { servicePages } from "@/lib/service-pages";
+import { getPublishedPosts } from "@/lib/blog-posts";
+
+// Rebuilt every 15 minutes so a scheduled blog post is listed soon after it goes live.
+export const revalidate = 900;
 
 // Dates are the last time each page's content really changed. Update them when you edit a page,
 // because a date that is always "today" teaches Google to ignore it.
@@ -22,8 +26,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${SITE_URL}/about`, lastModified: "2026-11-07" },
     { url: `${SITE_URL}/faq`, lastModified: FAQ_UPDATED },
   ];
-  if (posts.length > 0) {
+  const scheduled = getPublishedPosts();
+  if (posts.length + scheduled.length > 0) {
     pages.push({ url: `${SITE_URL}/blogs`, lastModified: new Date() });
+  }
+  for (const p of scheduled) {
+    pages.push({ url: `${SITE_URL}/blogs/${p.slug}`, lastModified: new Date(p.publishAt) });
   }
   return pages;
 }
