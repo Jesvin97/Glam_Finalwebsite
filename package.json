@@ -4,10 +4,12 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "check:blogs": "node scripts/check-blog-posts.mjs",
+    "prebuild": "npm run check:blogs",
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "test": "node --experimental-strip-types --disable-warning=ExperimentalWarning --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --test tests/blog-schedule.test.mjs"
+    "test": "node --experimental-strip-types --disable-warning=ExperimentalWarning --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --test tests/blog-schedule.test.mjs tests/blog-check.test.mjs"
   },
   "dependencies": {
     "@react-three/drei": "^10.7.7",
