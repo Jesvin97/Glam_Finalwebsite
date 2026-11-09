@@ -125,6 +125,52 @@ export const fallbackFaqs: FAQItem[] = [
       "Some smoothening and keratin products release fumes that can irritate the eyes and lungs, so ask which product is being used and make sure the room is well ventilated. If you are pregnant or breastfeeding, check with your doctor first before any chemical hair treatment.",
   },
 
+  // ── Hair Botox ──
+  {
+    topic: "Hair Botox",
+    question: "What is hair botox, and does it contain Botox?",
+    answer:
+      "No. Hair botox is only a name. It is a deep-conditioning repair treatment that coats and fills rough, damaged strands to reduce frizz and add shine. It has nothing to do with the injection used on skin.",
+  },
+  {
+    topic: "Hair Botox",
+    question: "What is the difference between hair botox and keratin?",
+    answer:
+      "Hair botox focuses on repairing and conditioning damaged hair, and it keeps your natural wave or curl. Keratin and smoothening change the shape more and give a straighter, sleeker finish. If you are not sure which suits you, your stylist will look at your hair and advise.",
+  },
+  {
+    topic: "Hair Botox",
+    question: "How long does hair botox last?",
+    answer:
+      "The effect is temporary and fades gradually with washing. How long it lasts depends on your hair, how often you wash it and which shampoo you use. A sulfate-free shampoo helps it last longer.",
+  },
+  {
+    topic: "Hair Botox",
+    question: "Can I get hair botox on coloured or bleached hair?",
+    answer:
+      "Often yes, and it is a popular choice for dry, coloured or heat-damaged hair. Tell us about any recent colour, bleach or smoothening so we can plan the order and timing.",
+  },
+
+  // ── Hair Spa ──
+  {
+    topic: "Hair Spa",
+    question: "What happens in a hair spa?",
+    answer:
+      "Your hair and scalp are cleansed, a conditioning mask matched to your hair is applied, and the treatment is finished with a relaxing head massage. It is about care and upkeep rather than changing how your hair looks.",
+  },
+  {
+    topic: "Hair Spa",
+    question: "How often should I get a hair spa?",
+    answer:
+      "Many people come once a month or every few weeks, more often for very dry or coloured hair. Your stylist can suggest a gap after seeing your hair and scalp.",
+  },
+  {
+    topic: "Hair Spa",
+    question: "Is a hair spa the same as a hair treatment like keratin?",
+    answer:
+      "No. A hair spa conditions and refreshes your hair and scalp, and the results are short term. Keratin and smoothening are longer lasting treatments that change the texture. A spa can be a good way to keep treated or coloured hair in good condition.",
+  },
+
   // ── Hair Extensions ──
   {
     topic: "Hair Extensions",

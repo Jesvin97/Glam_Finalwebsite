@@ -991,6 +991,118 @@ export const servicePages: ServicePage[] = [
     ],
     updated: "2026-11-02",
   },
+  {
+    slug: "hair-botox",
+    parent: "womens-hair",
+    category: "hair",
+    serviceIds: ["hair-botox"],
+    h1: "Hair Botox in Thiruvalla",
+    shortName: "Hair botox",
+    title: "Hair Botox in Thiruvalla for Frizzy, Damaged Hair | Glam'more",
+    description:
+      "Hair botox for frizzy, dry and damaged hair at Glam'more Premium Unisex Salon, Thukalassery, Thiruvalla. Smoother, shinier hair with natural movement.",
+    lead: "A deep-repair treatment for frizzy, rough or damaged hair that keeps your natural movement.",
+    faqTopics: ["Hair Botox"],
+    intro: [
+      "Hair botox is a deep-conditioning repair treatment, and despite the name it has nothing to do with the skin injection. It coats and fills rough, damaged strands so hair feels smoother, looks shinier and frizzes less. At Glam'more in Thukalassery, Thiruvalla, your stylist checks your hair first and tells you plainly whether it is the right treatment.",
+      "It suits hair that is dry, frizzy or worn down by colour, bleach, heat styling or humidity. Unlike keratin or smoothening, which change the shape of the hair, hair botox is about repair and condition, so your natural wave or curl stays.",
+      "The effect is not permanent. It fades gradually as you wash your hair, and how long it lasts depends on your hair and how you look after it.",
+    ],
+    steps: [
+      {
+        title: "Hair check",
+        text: "We look at your hair's texture and condition and ask about earlier colour, bleach, smoothening and heat styling, so the treatment is planned around your hair.",
+      },
+      {
+        title: "Wash and prepare",
+        text: "Your hair is cleansed so the treatment can reach the strands properly.",
+      },
+      {
+        title: "The treatment",
+        text: "The repair formula is worked through your hair and left to take effect, following the instructions of the product being used.",
+      },
+      {
+        title: "Finish and aftercare",
+        text: "Your hair is rinsed and styled, and you leave knowing how to wash it, which shampoo to use and how to keep the results going.",
+      },
+    ],
+    suits: [
+      "Anyone with frizzy, dry or rough hair who wants it smoother without changing its natural shape.",
+      "People whose hair has been damaged by colour, bleach or heat styling.",
+      "Those unsure whether they want keratin or smoothening and would like a gentler first step.",
+      "Anyone who wants shinier, easier-to-manage hair before a wedding or function.",
+    ],
+    tips: [
+      "Tell us about any recent colour, bleach or smoothening before we start.",
+      "Follow the washing and tying instructions you are given on the day, since they depend on the product used.",
+      "Use a sulfate-free shampoo and a conditioner, and a heat protectant before blow-drying or ironing.",
+      "If you are pregnant or breastfeeding, check with your doctor before any chemical hair treatment.",
+    ],
+    more: [
+      {
+        heading: "Hair botox, keratin or hair spa?",
+        paragraphs: [
+          "Hair botox repairs and conditions damaged hair and keeps your natural movement. Keratin and smoothening reduce frizz more strongly and give a straighter, sleeker finish. A hair spa is lighter care for your hair and scalp, with shorter-lasting results.",
+          "If you cannot decide, bring a few photos of how you want your hair to look and tell us how much time you spend styling it. We will recommend the one that fits, even if that is the simpler option.",
+        ],
+      },
+      {
+        heading: "Making the results last",
+        paragraphs: [
+          "Washing less often, using lukewarm rather than hot water and choosing a sulfate-free shampoo all help the treatment last longer. Regular conditioning and heat protection keep damage from building up again.",
+        ],
+      },
+    ],
+    updated: "2026-11-08",
+  },
+  {
+    slug: "hair-spa",
+    parent: "womens-hair",
+    category: "hair",
+    serviceIds: ["hair-spa"],
+    h1: "Hair Spa in Thiruvalla",
+    shortName: "Hair spa",
+    title: "Hair Spa in Thiruvalla: Scalp Care & Conditioning | Glam'more",
+    description:
+      "Hair spa with cleansing, a conditioning mask and a relaxing head massage at Glam'more Premium Unisex Salon, Thukalassery, Thiruvalla.",
+    lead: "A cleansing, conditioning and scalp-care treatment with a relaxing head massage.",
+    faqTopics: ["Hair Spa"],
+    intro: [
+      "A hair spa is care for your hair and scalp rather than a change of look. Your hair is cleansed, a conditioning mask chosen for your hair is applied, and the treatment ends with a relaxing head massage. At Glam'more in Thukalassery, Thiruvalla, we start by looking at your hair and scalp so the products suit them.",
+      "It is a good fit for dry, dull or tired hair, for hair that is coloured or heat styled, and for anyone who simply wants an hour to unwind. The results are short term, so it works best as regular upkeep.",
+    ],
+    steps: [
+      {
+        title: "Hair and scalp check",
+        text: "We look at your hair and scalp and ask about dryness, dandruff, itching and any recent treatments, so we choose the right products.",
+      },
+      {
+        title: "Cleanse",
+        text: "Your hair and scalp are washed gently to remove build-up from products, oil and dust.",
+      },
+      {
+        title: "Mask and massage",
+        text: "A conditioning mask is applied and left to work, with a relaxing head massage as part of the treatment.",
+      },
+      {
+        title: "Rinse and style",
+        text: "The mask is rinsed out and your hair is dried and styled. We suggest how often to come back based on your hair.",
+      },
+    ],
+    suits: [
+      "Anyone with dry, dull or frizzy hair who wants it to feel softer.",
+      "People with coloured, smoothened or heat-styled hair who want to keep it in good condition.",
+      "Those who want a relaxing head massage along with hair care.",
+      "Anyone who wants fresher-looking hair before a function or a wedding.",
+    ],
+    tips: [
+      "Tell us if your scalp is sensitive, itchy or flaky so we can choose suitable products.",
+      "Come with clean, untangled hair if you can, and tell us about any recent colour or chemical treatment.",
+      "Use a mild shampoo and a conditioner at home, and avoid very hot water on your hair.",
+      "For a longer-lasting change in texture, ask us about hair botox or keratin instead.",
+    ],
+    updated: "2026-11-08",
+  },
 ];
 
 export const servicePageBySlug = (slug: string) => servicePages.find((p) => p.slug === slug);

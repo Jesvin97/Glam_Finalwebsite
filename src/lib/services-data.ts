@@ -104,6 +104,18 @@ export const servicesData: ServiceItem[] = [
     image: "/images/services/keratin-smoothening.jpg"
   },
   {
+    id: "hair-botox",
+    title: "Hair Botox",
+    category: "hair",
+    description: "A deep-repair treatment that smooths frizz and rough, damaged hair while keeping natural movement.",
+  },
+  {
+    id: "hair-spa",
+    title: "Hair Spa",
+    category: "hair",
+    description: "A cleansing, conditioning and scalp-care treatment with a relaxing head massage.",
+  },
+  {
     id: "hairstyling",
     title: "Hairstyling",
     category: "hair",
