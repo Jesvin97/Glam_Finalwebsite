@@ -1338,7 +1338,7 @@ h1, h2, h3,
 
   .blog-section {
 
-    padding: 90px 20px;
+    padding: 110px 20px 90px; /* clears the fixed header (about 77px on phones) */
   }
 
   .blog-grid {
@@ -3034,7 +3034,7 @@ h1, h2, h3,
   }
 
   .navbar-logo-img {
-    width: 75px !important;
+    width: 52px !important; /* 75px made the phone header about 100px tall */
   }
 }
 
@@ -4156,4 +4156,21 @@ h1, h2, h3,
   border-radius: 999px;
   padding: 8px 16px;
   color: var(--white);
+}
+
+/* Phones: the two-column service cards are narrow, so keep the title inside the card.
+   The description and link only appear on hover, which phones don't have, so they are dropped. */
+@media (max-width: 768px) {
+  .service-card-overlay {
+    padding: 14px;
+  }
+  .service-card-editorial h3 {
+    font-size: 20px;
+    line-height: 1.25;
+    margin-bottom: 0;
+  }
+  .service-card-editorial p,
+  .service-card-editorial .discover-link {
+    display: none;
+  }
 }

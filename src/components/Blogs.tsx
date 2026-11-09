@@ -75,7 +75,7 @@ export default function Blog({ blogs = [] }: { blogs?: BlogItem[] }) {
                 alt={blog.title} 
                 width={800} 
                 height={500} 
-                style={{ width: '100%', height: 'auto', objectFit: 'cover' }} 
+                style={{ width: '100%', height: 'auto', aspectRatio: '16 / 10', objectFit: 'cover' }} 
               />
 
               <div className="blog-content">
