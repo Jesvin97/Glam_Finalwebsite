@@ -4158,21 +4158,6 @@ h1, h2, h3,
   color: var(--white);
 }
 
-/* Review helper (/review) */
-.review-page { padding: 8rem 1.25rem 4rem; }
-.review-helper { max-width: 640px; margin: 0 auto; display: grid; gap: 1rem; color: #fff; }
-.review-lead { opacity: 0.8; }
-.review-label { font-size: 0.9rem; color: var(--gold); margin-top: 0.5rem; display: block; }
-.review-chips { display: flex; flex-wrap: wrap; gap: 0.5rem; }
-.review-chip { padding: 0.45rem 0.9rem; border-radius: 999px; border: 1px solid rgba(var(--gold-rgb), 0.4); background: transparent; color: inherit; cursor: pointer; }
-.review-chip.on { background: var(--gold); color: #000; }
-.review-helper textarea, .review-helper input { width: 100%; padding: 0.7rem; background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(var(--gold-rgb), 0.3); color: #fff; border-radius: 6px; font: inherit; }
-.review-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-.review-draft { display: grid; gap: 0.6rem; justify-items: start; }
-.review-error { color: #ff8a8a; }
-.review-helper .btn-luxury:disabled { opacity: 0.5; cursor: not-allowed; }
-@media (max-width: 520px) { .review-row { grid-template-columns: 1fr; } }
-
 /* Phones: the two-column service cards are narrow, so keep the title inside the card.
    The description and link only appear on hover, which phones don't have, so they are dropped. */
 @media (max-width: 768px) {
