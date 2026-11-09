@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { BUSINESS_NAME } from "@/lib/site";
 import Link from "next/link";
+import { servicePages } from "@/lib/service-pages";
 import {
   FaInstagram,
   FaFacebookF,
@@ -36,6 +37,18 @@ export default function Footer() {
         </div>
       </div>
 
+
+      {/* Site-wide internal links so every service page and the FAQ are crawlable from every page */}
+      <nav className="footer-bottom" aria-label="Site pages">
+        <p>
+          <Link href="/about">About</Link>
+          {" · "}<Link href="/services">Services</Link>
+          {" · "}<Link href="/faq">FAQ</Link>
+          {servicePages.map((p) => (
+            <span key={p.slug}>{" · "}<Link href={`/services/${p.slug}`}>{p.shortName}</Link></span>
+          ))}
+        </p>
+      </nav>
 
       {/* BOTTOM BAR: name · address · phone · credit */}
       <div className="footer-bottom">
