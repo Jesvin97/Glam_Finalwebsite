@@ -33,7 +33,10 @@ export const metadata: Metadata = {
   title: HOME_TITLE,
   description: HOME_DESCRIPTION,
   keywords: SEO_KEYWORDS,
-  verification: { google: "8-wtlpUJAHNInHP5TKGr7SKsJ8Wg4DmSCTlf5UXyl-4" },
+  verification: {
+    google: "8-wtlpUJAHNInHP5TKGr7SKsJ8Wg4DmSCTlf5UXyl-4",
+    other: { "msvalidate.01": "F6238405EE45658E19187B9DC7AC23F3" },
+  },
   openGraph: {
     title: HOME_TITLE,
     description: HOME_DESCRIPTION,
