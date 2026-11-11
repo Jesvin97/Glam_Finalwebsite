@@ -75,6 +75,8 @@ export default function RootLayout({
     >
       <head>
         <JsonLd data={siteGraph} />
+        {/* Plain tag in the server HTML so Ahrefs' installation check can find it. */}
+        <script src="https://analytics.ahrefs.com/analytics.js" data-key="Z0nH2O5arE58pIlqyT7B8w" async />
       </head>
       <body>
         {/* Standard GTM loader: queue the start event, then fetch the container. */}
