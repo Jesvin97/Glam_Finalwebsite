@@ -111,6 +111,12 @@ export const SEO_KEYWORDS = [
   "salon near me Thiruvalla",
 ];
 
+export const LOCATION_PAGES = [
+  { path: "/salon-in-thiruvalla", label: "Salon in Thiruvalla" },
+  { path: "/best-salon-in-thiruvalla", label: "Best salon in Thiruvalla" },
+  { path: "/best-unisex-salon-in-thiruvalla", label: "Best unisex salon in Thiruvalla" },
+] as const;
+
 export const PHONE_E164 = "+919645915329";
 export const PHONE_DISPLAY = "+91 96459 15329";
 

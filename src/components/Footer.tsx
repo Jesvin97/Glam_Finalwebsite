@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { BUSINESS_NAME } from "@/lib/site";
+import { BUSINESS_NAME, LOCATION_PAGES } from "@/lib/site";
 import Link from "next/link";
 import { servicePages } from "@/lib/service-pages";
 import {
@@ -44,6 +44,9 @@ export default function Footer() {
           <Link href="/about">About</Link>
           {" · "}<Link href="/services">Services</Link>
           {" · "}<Link href="/faq">FAQ</Link>
+          {LOCATION_PAGES.map((p) => (
+            <span key={p.path}>{" · "}<Link href={p.path}>{p.label}</Link></span>
+          ))}
           {servicePages.map((p) => (
             <span key={p.slug}>{" · "}<Link href={`/services/${p.slug}`}>{p.shortName}</Link></span>
           ))}

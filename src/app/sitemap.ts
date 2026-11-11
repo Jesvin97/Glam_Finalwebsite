@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 import { fetchList } from "@/sanity/fetch";
-import { SITE_URL } from "@/lib/site";
+import { LOCATION_PAGES, SITE_URL } from "@/lib/site";
 import { servicePages } from "@/lib/service-pages";
 import { getPublishedPosts } from "@/lib/blog-posts";
 
@@ -22,6 +22,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...servicePages.map((p) => ({
       url: `${SITE_URL}/services/${p.slug}`,
       lastModified: p.updated,
+    })),
+    ...LOCATION_PAGES.map(({ path }) => ({
+      url: `${SITE_URL}${path}`,
+      lastModified: "2026-11-11",
     })),
     { url: `${SITE_URL}/about`, lastModified: "2026-11-07" },
     { url: `${SITE_URL}/faq`, lastModified: FAQ_UPDATED },
