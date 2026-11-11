@@ -134,7 +134,14 @@ export const servicesData: ServiceItem[] = [
     id: "bridal-services",
     title: "Bridal Makeup",
     category: "events",
-    description: "Kerala bridal makeup with hairstyling and saree draping, planned with you before the wedding day.",
+    description: "Christian and Hindu bridal makeup in HD or airbrush with hairstyling and saree draping, planned with you before the wedding day.",
+    image: "/images/services/bridal-makeup.jpg"
+  },
+  {
+    id: "saree-party-makeup",
+    title: "Saree Draping & Party Makeup",
+    category: "events",
+    description: "Saree draping, evening party makeup and hairstyling for wedding guests, Holy Communion and receptions.",
     image: "/images/services/bridal-makeup.jpg"
   },
   {
@@ -208,7 +215,7 @@ export const servicesData: ServiceItem[] = [
     id: "eyebrow-threading",
     title: "Eyebrow Threading",
     category: "brows",
-    description: "Threading to shape and define your brows.",
+    description: "Threading and eyebrow shaping to define your brows, matched to your face structure.",
     image: "/images/Eyebrow threading.png"
   },
   {

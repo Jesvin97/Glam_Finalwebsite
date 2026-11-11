@@ -1103,6 +1103,54 @@ export const servicePages: ServicePage[] = [
     ],
     updated: "2026-11-08",
   },
+  {
+    slug: "saree-draping-and-party-makeup",
+    parent: "bridal-and-groom-makeup",
+    category: "events",
+    serviceIds: ["saree-party-makeup"],
+    h1: "Saree Draping & Party Makeup in Thiruvalla",
+    shortName: "Saree draping & party makeup",
+    title: "Saree Draping & Party Makeup in Thiruvalla | Glam'more",
+    description:
+      "Saree draping, evening party makeup and hairstyling for wedding guests, Holy Communion and receptions at Glam'more Premium Unisex Salon, Thukalassery, Thiruvalla.",
+    lead: "Saree draping, party makeup and hairstyling for wedding guests, Holy Communion and receptions.",
+    faqTopics: ["Party Makeup & Saree Draping"],
+    intro: [
+      "You do not have to be the bride to want to look your best at a wedding, a Holy Communion or a reception. At Glam'more in Thukalassery, Thiruvalla, we drape your saree, do your party makeup and style your hair, so you can walk in ready and not worry about pins slipping or makeup fading.",
+      "The look is planned around your outfit and the occasion: softer for a daytime church function, more defined for an evening reception. Tell us what you are wearing and we will suggest what works.",
+    ],
+    steps: [
+      {
+        title: "Tell us the occasion",
+        text: "Message us the date, the time of the function and what you are wearing, with a photo of the saree and blouse if you can.",
+      },
+      {
+        title: "Makeup and hair",
+        text: "Your makeup is chosen to suit your skin and outfit, and your hair is styled to go with the saree and any jewellery.",
+      },
+      {
+        title: "Saree draping",
+        text: "The saree is draped neatly and pinned so the pleats sit well and it stays comfortable to wear through the event.",
+      },
+      {
+        title: "Final check",
+        text: "A last look at the drape, makeup and hair before you leave, so you are ready for photographs.",
+      },
+    ],
+    suits: [
+      "Guests attending weddings, engagements and receptions.",
+      "Families getting ready for Holy Communion and other church functions.",
+      "Anyone who wants a neat saree drape that stays in place all day.",
+      "Groups of family or friends who want to be ready at the same time.",
+    ],
+    tips: [
+      "Bring the saree, blouse, petticoat and any pins or jewellery you plan to wear.",
+      "Wear a blouse that fits properly, since it affects how the drape sits.",
+      "Come with clean, dry hair and a moisturised face.",
+      "Book early for wedding season and for groups, so everyone gets a slot before the function.",
+    ],
+    updated: "2026-11-10",
+  },
 ];
 
 export const servicePageBySlug = (slug: string) => servicePages.find((p) => p.slug === slug);

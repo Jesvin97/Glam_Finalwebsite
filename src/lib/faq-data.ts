@@ -235,6 +235,26 @@ export const fallbackFaqs: FAQItem[] = [
       "Get the haircut 3 to 5 days before so it settles, and trim the beard the day before or on the morning itself for sharp lines. A clean-up or facial a few days ahead helps skin look even in photos, and moisturising daily keeps it from looking dry or patchy under makeup.",
   },
 
+  // ── Party Makeup & Saree Draping ──
+  {
+    topic: "Party Makeup & Saree Draping",
+    question: "Do you offer saree draping and party makeup in Thiruvalla?",
+    answer:
+      "Yes. We drape sarees and do evening party makeup and hairstyling for wedding guests, Holy Communion and receptions at our salon in Thukalassery, Thiruvalla.",
+  },
+  {
+    topic: "Party Makeup & Saree Draping",
+    question: "What should I bring for saree draping?",
+    answer:
+      "Bring the saree, the blouse, a petticoat and any pins or jewellery you plan to wear. A properly fitting blouse helps the drape sit well.",
+  },
+  {
+    topic: "Party Makeup & Saree Draping",
+    question: "Can you get a group ready for a function?",
+    answer:
+      "Yes. Tell us how many people and the time of the function when you book, and we will plan the order so everyone is ready on time. Book early during wedding season.",
+  },
+
   // ── Facials & De-tan ──
   {
     topic: "Facials & De-tan",
