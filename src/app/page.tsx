@@ -11,24 +11,8 @@ import HappyCustomers from "@/components/HappyCustomers";
 import Photos from "@/components/Photos";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import type { Testimonial } from "@/components/Testimonials";
-import CustomerFeedback, { type ApprovedFeedback } from "@/components/CustomerFeedback";
+import CustomerFeedback from "@/components/CustomerFeedback";
 import { fetchList } from "@/sanity/fetch";
-import { getSupabase } from "@/lib/supabase";
-
-async function fetchApprovedFeedback(): Promise<ApprovedFeedback[]> {
-  const supabase = getSupabase();
-  if (!supabase) return [];
-  const { data, error } = await supabase
-    .from("approved_feedback")
-    .select("id, name, services, rating, message")
-    .order("created_at", { ascending: false })
-    .limit(6);
-  if (error) {
-    console.error("Failed to load approved feedback:", error.message);
-    return [];
-  }
-  return data ?? [];
-}
 
 // Canonical lives here, not in the layout, so /studio, the 404 page and other routes don't all point at the home page.
 export const metadata: Metadata = {
@@ -38,10 +22,7 @@ export const metadata: Metadata = {
 export const revalidate = 3600;
 
 export default async function Home() {
-  const [testimonials, feedback] = await Promise.all([
-    fetchList<Testimonial>(`*[_type == "testimonial"]`),
-    fetchApprovedFeedback(),
-  ]);
+  const testimonials = await fetchList<Testimonial>(`*[_type == "testimonial"]`);
 
   return (
     <main>
@@ -52,7 +33,7 @@ export default async function Home() {
       <Services />
       <SalonSplit />
       <Testimonials testimonials={testimonials} />
-      <CustomerFeedback feedback={feedback} />
+      <CustomerFeedback />
       <HappyCustomers />
       <Photos />
       <Contact />

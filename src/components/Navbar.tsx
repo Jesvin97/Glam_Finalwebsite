@@ -3,7 +3,7 @@
 import { useState, useRef, useEffect } from "react";
 import { BUSINESS_NAME } from "@/lib/site";
 import Lottie, { LottieRefCurrentProps } from "lottie-react";
-import menuAnimation from "../../animation/navbar.json";
+import menuAnimation from "@/assets/lottie/navbar.json";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -64,10 +64,11 @@ export default function Navbar() {
             className="logo-image navbar-logo-img"
             width={60}
             height={60}
-            loading="eager"
+            preload
           />
           <span className="navbar-brand-text">
-            {BUSINESS_NAME}
+            {BUSINESS_NAME.split(" ")[0]}
+            <small>{BUSINESS_NAME.split(" ").slice(1).join(" ")}</small>
           </span>
         </Link>
 
@@ -90,7 +91,7 @@ export default function Navbar() {
           </li>
 
           <li>
-            <Link href="/#about">About Us</Link>
+            <Link href="/about">About Us</Link>
           </li>
 
           <li>
@@ -116,7 +117,7 @@ export default function Navbar() {
       {/* MOBILE MENU */}
       <div className={`mobile-menu ${isMenuOpen ? "active" : ""}`}>
         <Link href="/" onClick={closeMenu}>Home</Link>
-        <Link href="/#about" onClick={closeMenu}>About Us</Link>
+        <Link href="/about" onClick={closeMenu}>About Us</Link>
         <Link href="/services" onClick={closeMenu}>Services</Link>
         <Link href="/blogs" onClick={closeMenu}>Blogs</Link>
         <Link href="/faq" onClick={closeMenu}>FAQs</Link>
