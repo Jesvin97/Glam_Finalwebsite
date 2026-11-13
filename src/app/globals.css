@@ -2532,12 +2532,12 @@ h1, h2, h3,
 ======================================== */
 
 .gold-section-heading {
-  font-size: clamp(32px, 6vw, 52px) !important;
-  text-transform: uppercase !important;
-  letter-spacing: 4px !important;
+  font-size: clamp(30px, 4vw, 44px) !important;
+  text-transform: none !important;
+  letter-spacing: normal !important;
   color: var(--gold) !important;
   font-family: var(--font-playfair-family) !important;
-  font-weight: 700 !important;
+  font-weight: 400 !important;
 }
 
 .navbar-logo-link {
@@ -4197,3 +4197,55 @@ h1, h2, h3,
 .blog-article-faq { margin-top: 44px; padding-top: 10px; border-top: 1px solid rgba(212,175,55,0.2); }
 .blog-article-cta { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 40px; }
 .blog-article-cta a { border: 1px solid #d4af37; padding: 12px 22px; border-radius: 999px; text-decoration: none; font-weight: bold; }
+
+/* ========================================
+   AUDIT FIXES: tap targets, type scale, reduced motion
+======================================== */
+
+/* Readable body text; headings keep a tight line height unless a rule sets its own. */
+body {
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+}
+
+/* One heading size and style for every home-page section title. */
+.about-content h2,
+.why-header h2,
+.section-title-editorial h2 {
+  font-family: var(--font-playfair-family), serif;
+  font-size: clamp(30px, 4vw, 44px);
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+/* Tap targets of at least 44px: top navigation and the mobile menu. */
+.nav-links a {
+  display: inline-block;
+  padding: 14px 0;
+}
+
+.nav-links a::after {
+  bottom: 8px;
+}
+
+.mobile-menu a {
+  padding: 8px 20px;
+}
+
+/* Honour the visitor's reduced-motion setting everywhere, not only for a few animations. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

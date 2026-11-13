@@ -91,6 +91,7 @@
   letter-spacing: 1px;
   font-weight: 500;
   padding: 10px 22px;
+  min-height: 44px;
   border-radius: 50px;
   cursor: pointer;
   white-space: nowrap;
@@ -862,4 +863,52 @@
 .category-brows .sub-service-image-box,
 .category-waxing .sub-service-image-box {
   aspect-ratio: 3 / 2;
+}
+
+/* ── SEARCH AND OCCASION SHORTCUTS ── */
+.services-search {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 720px;
+  margin: 0 auto 20px;
+  padding: 0 5%;
+}
+
+.services-search-input {
+  width: 100%;
+  min-height: 48px;
+  padding: 12px 20px;
+  border-radius: 50px;
+  border: 1px solid rgba(var(--rgb-255-255-255), 0.12);
+  background: rgba(var(--rgb-255-255-255), 0.04);
+  color: var(--white);
+  font-size: 16px;
+}
+
+.services-search-input:focus {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+
+.services-occasions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
+
+.services-empty {
+  text-align: center;
+  color: var(--hex-888888);
+}
+
+.services-empty button {
+  background: none;
+  border: none;
+  color: var(--gold);
+  text-decoration: underline;
+  cursor: pointer;
+  font: inherit;
+  min-height: 44px;
 }

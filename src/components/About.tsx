@@ -1,22 +1,31 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import ScrollReveal from "./ScrollReveal";
 import Link from "next/link";
 export default function About() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  // The 2.7 MB video only loads on wide screens with data saver and reduced motion off; phones keep the poster.
+  useEffect(() => {
+    const video = videoRef.current;
+    const saveData = (navigator as Navigator & { connection?: { saveData?: boolean } }).connection?.saveData;
+    if (!video || saveData || !window.matchMedia("(min-width: 768px) and (prefers-reduced-motion: no-preference)").matches) return;
+    video.src = "/video/hero.mp4";
+    video.play().catch(() => {});
+  }, []);
 
   return (
     <section className="about-section" id="about">
       <ScrollReveal direction="left" className="about-image-wrapper">
         <div className="about-image">
           <video
-            src="/video/hero.mp4"
+            ref={videoRef}
             poster="/video/hero-poster-800.jpg"
-            autoPlay
             muted
             loop
             playsInline
-            preload="metadata"
+            preload="none"
             aria-label="A walk through Glam'more Premium Unisex Salon, Thukalassery, Thiruvalla"
             style={{ width: "100%", height: "auto", display: "block", aspectRatio: "16 / 9" }}
           />

@@ -24,10 +24,19 @@ const toDateString = (d: Date) => {
   return `${year}-${month}-${day}`;
 };
 
+// "I'm looking for..." shortcuts: each one shows the categories that matter for that occasion.
+const OCCASIONS = [
+  { id: "bridal", name: "Bridal & wedding", categories: ["events", "skin", "nails", "brows", "waxing"] },
+  { id: "party", name: "Party & functions", categories: ["events", "hair", "nails", "brows"] },
+  { id: "men", name: "For men", categories: ["mens"] },
+];
+
 export default function ServicesClient() {
   const [selectedServices, setSelectedServices] = useState<string[]>([]);
   const [selectionRestored, setSelectionRestored] = useState(false);
   const [categoryFilter, setCategoryFilter] = useState<string>("all");
+  const [query, setQuery] = useState("");
+  const [occasion, setOccasion] = useState("");
   const [isDrawerOpen, setIsDrawerOpen] = useState<boolean>(false);
   const [formErrors, setFormErrors] = useState<{ name?: string; phone?: string; time?: string }>({});
 
@@ -153,8 +162,19 @@ export default function ServicesClient() {
     setSelectedServices([]);
   };
 
+  // The search box and the occasion chips narrow the same list the category pills do.
+  const q = query.trim().toLowerCase();
+  const servicesIn = (cat: (typeof categoryMetaList)[number]) =>
+    servicesData.filter(
+      (s) =>
+        s.category === cat.id &&
+        (!q || `${s.title} ${s.description}`.toLowerCase().includes(q) || cat.name.toLowerCase().includes(q))
+    );
   const visibleCategories = categoryMetaList.filter(
-    (cat) => categoryFilter === "all" || categoryFilter === cat.id
+    (cat) =>
+      (categoryFilter === "all" || categoryFilter === cat.id) &&
+      (!occasion || OCCASIONS.find((o) => o.id === occasion)?.categories.includes(cat.id)) &&
+      servicesIn(cat).length > 0
   );
 
   return (
@@ -188,6 +208,31 @@ export default function ServicesClient() {
           </div>
         </section>
 
+        {/* ── SEARCH AND OCCASION SHORTCUTS ── */}
+        <div className="services-search">
+          <input
+            type="search"
+            className="services-search-input"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            placeholder="Search services, e.g. facial, keratin, beard"
+            aria-label="Search salon services"
+          />
+          <div className="services-occasions" role="group" aria-label="I'm looking for">
+            {OCCASIONS.map((o) => (
+              <button
+                key={o.id}
+                type="button"
+                className={`filter-pill-btn ${occasion === o.id ? "active" : ""}`}
+                aria-pressed={occasion === o.id}
+                onClick={() => setOccasion(occasion === o.id ? "" : o.id)}
+              >
+                {o.name}
+              </button>
+            ))}
+          </div>
+        </div>
+
         {/* ── CATEGORY FILTER NAVIGATION ── */}
         <nav className="category-filter-nav">
           <ul className="filter-pill-list">
@@ -212,8 +257,16 @@ export default function ServicesClient() {
 
         {/* ── 2. CATEGORY SECTIONS (ALTERNATING IMAGE LEFT / IMAGE RIGHT) ── */}
         <div className="categories-stack">
+          {visibleCategories.length === 0 && (
+            <p className="services-empty" role="status">
+              No services match that search.{" "}
+              <button type="button" onClick={() => { setQuery(""); setOccasion(""); setCategoryFilter("all"); }}>
+                Clear filters
+              </button>
+            </p>
+          )}
           {visibleCategories.map((category, index) => {
-            const catSubServices = servicesData.filter((s) => s.category === category.id);
+            const catSubServices = servicesIn(category);
             const isImageLeft = index % 2 === 0;
 
             return (
